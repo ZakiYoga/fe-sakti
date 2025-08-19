@@ -258,7 +258,7 @@ export default function HeroSection(): JSX.Element {
           transition={{ duration: 1, delay: 0.5 }}
         >
 
-          {/* Breadcrumbs */}
+          {/* SAKTI 200gr */}
           <motion.div
             className="absolute -translate-y-1/2 top-1/2 right-[14%] md:right-[10%]"
             variants={product2}
@@ -271,7 +271,7 @@ export default function HeroSection(): JSX.Element {
             }}
           >
             <Image
-              src="/images/products/Sakti500gOutline.png"
+              src="/images/hero/Sakti200gOutline.png"
               alt="Sakti 200g Package"
               width={500}
               height={500}
@@ -294,7 +294,7 @@ export default function HeroSection(): JSX.Element {
           >
             <div className="relative">
               <Image
-                src="/images/products/Sakti500gOutline.png"
+                src="/images/hero/Sakti500gOutline.png"
                 alt="Sakti 500g Package"
                 width={500}
                 height={500}
@@ -468,7 +468,7 @@ export default function HeroSection(): JSX.Element {
       >
         <Image
           src="/images/hero/sendok.png"
-          alt="Sakti 500g Package"
+          alt="Sendok Breadscrumbs"
           width={500}
           height={500}
           className="drop-shadow-[0px_0px_2px_rgba(225,225,225, 1)] max-w-30 md:max-w-36 filter brightness-110"
