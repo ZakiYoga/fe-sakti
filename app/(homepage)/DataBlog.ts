@@ -26,7 +26,7 @@ export const generateBlogPosts = (): BlogPost[] => [
     description:
       "Buat fish & chips crispy seperti di restoran dengan teknik breadcrumb yang tepat dan saus tartar segar.",
     image:
-      "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1485995768424-01c1ccc33f7a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Seafood",
     author: {
       name: "Chef John",

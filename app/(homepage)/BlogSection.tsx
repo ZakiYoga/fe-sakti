@@ -318,7 +318,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
               </motion.div> */}
 
               <motion.h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bebas-neue tracking-widest font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent"
+                className="text-3xl sm:text-4xl lg:text-6xl text-orange-500 drop-shadow-[4px_3px_0px_rgba(0,0,0,0.6)] font-bebas-neue tracking-widest font-bold"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                 transition={{ delay: 0.3, duration: 0.6 }}

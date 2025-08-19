@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                 y: -5,
                 transition: { duration: 0.3 }
             }}
-            className="flex-shrink-0 w-88 transition-all duration-300"
+            className="flex-shrink-0 w-90 transition-all duration-300"
         >
             <Card className="group relative h-full border-0 rounded-lg transition-all duration-300 bg-transparent">
                 <div className="relative">

@@ -26,7 +26,7 @@ export default function Homepage() {
       <MarqueeBrandProduct />
       {/* <AvailabilitySection /> */}
       <BlogSection
-        title="Blog Terbaru"
+        title="Sakti News"
         subtitle="Dapatkan informasi terbaru dan tips menarik dari blog kami."
         className="my-custom-class"
       />
