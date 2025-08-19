@@ -1,10 +1,8 @@
-'use client'
 import './globals.css'
 import { Bebas_Neue, Poppins, Ephesis } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '@/lib/ThemeProvider'
-import { LoadingProvider } from '../components/LoadingProvider'
 
 const ephesis = Ephesis({
   weight: '400',
@@ -36,11 +34,9 @@ export default function RootLayout({
     <html lang="id" suppressHydrationWarning>
       <body className={`${bebasNeue.variable} ${ephesis.variable} ${poppins.variable} bg-white text-gray-900 antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LoadingProvider>
             <Navbar />
             {children}
             <Footer />
-          </LoadingProvider>
         </ThemeProvider>
       </body>
     </html>

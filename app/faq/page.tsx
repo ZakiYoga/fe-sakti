@@ -1,3 +1,5 @@
+'use client'
+
 import React, { JSX } from 'react'
 import FAQSection from './FaqSection'
 
