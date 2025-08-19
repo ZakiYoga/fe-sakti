@@ -271,7 +271,7 @@ export default function HeroSection(): JSX.Element {
             }}
           >
             <Image
-              src="/images/hero/Sakti200g.png"
+              src="/images/products/Sakti200gOutline.png"
               alt="Sakti 200g Package"
               width={500}
               height={500}
@@ -294,7 +294,7 @@ export default function HeroSection(): JSX.Element {
           >
             <div className="relative">
               <Image
-                src="/images/hero/Sakti500g.png"
+                src="/images/products/sakti500gOutline.png"
                 alt="Sakti 500g Package"
                 width={500}
                 height={500}
