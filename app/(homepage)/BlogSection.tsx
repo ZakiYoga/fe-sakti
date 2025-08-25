@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -8,23 +8,49 @@ import { Badge } from '@/components/ui/badge'
 import {
   Clock,
   Users,
-  Heart,
+  Eye,
   Newspaper,
   ChevronLeft,
   ChevronRight,
-  ArrowRight,
-  TrendingUp
+  Calendar,
+  TrendingUp,
+  Loader2,
+  AlertTriangle,
+  RefreshCw
 } from 'lucide-react'
 import Image from 'next/image'
-import { generateBlogPosts } from '../../DataDummy/DataBlog'
-import { BlogCardProps, BlogPost, BlogSectionProps, LoadingIndicatorProps, NavButtonProps } from '@/types/blog.types'
 import Link from 'next/link'
+import useSWR from 'swr'
+import { blogApi, extractApiData } from '../../lib/api'
+import { Blog, BlogParams, PaginatedResponse } from '@/types/blog.types'
+
+// Types for component props
+interface BlogSectionProps {
+  title?: string
+  subtitle?: string
+  description?: string
+  className?: string
+  showViewAll?: boolean
+  autoScroll?: boolean
+  cardVariant?: 'default' | 'featured'
+  limit?: number
+}
+
+interface BlogCardProps {
+  blog: Blog
+  index: number
+  containerWidth: number
+}
+
+interface NavButtonProps {
+  direction: 'left' | 'right'
+  onClick: () => void
+  disabled?: boolean
+}
 
 // Constants
-const LOAD_MORE_COUNT = 6
-const MAX_POSTS = 24
 const SCROLL_THRESHOLD = 300
-const LOAD_DELAY = 800
+const DEFAULT_LIMIT = 6
 
 // Animation variants
 const cardVariants = {
@@ -39,23 +65,6 @@ const headerVariants = {
 }
 
 // Utility Functions
-const generateMorePosts = (startId: number, count: number): BlogPost[] => {
-  const basePosts = generateBlogPosts()
-  return Array.from({ length: count }, (_, i) => {
-    const basePost = basePosts[i % basePosts.length]
-    return {
-      ...basePost,
-      id: startId + i,
-      title: `${basePost.title} - Edisi ${Math.floor(startId / LOAD_MORE_COUNT) + 1}`,
-      publishedAt: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000)
-        .toISOString()
-        .split('T')[0],
-      likes: Math.floor(Math.random() * 500) + 50,
-      views: Math.floor(Math.random() * 2000) + 200,
-    }
-  })
-}
-
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString)
   const now = new Date()
@@ -68,12 +77,29 @@ const formatDate = (dateString: string): string => {
   return `${Math.floor(diffDays / 30)} bulan lalu`
 }
 
+const calculateReadTime = (content: string): number => {
+  const wordsPerMinute = 200
+  const wordCount = content.split(' ').length
+  return Math.max(1, Math.ceil(wordCount / wordsPerMinute))
+}
+
+// Fetcher function for SWR
+const fetcher = async (url: string, params: BlogParams): Promise<PaginatedResponse<Blog>> => {
+  const response = await blogApi.getAll(params)
+  return extractApiData(response)
+}
 
 // Blog Card Component
-const BlogCard: React.FC<BlogCardProps> = ({ post, index, containerWidth }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
   const cardRef = useRef(null)
   const isInView = useInView(cardRef, { once: true, margin: "-50px" })
   const cardWidth = Math.max(320, containerWidth / 4.2)
+  
+  const readTime = calculateReadTime(blog.content || '')
+  const formattedDate = formatDate(blog.published_at)
+  
+  // Default image if no featured image
+  const imageUrl = blog.featured_image || '/images/blog-placeholder.jpg'
 
   return (
     <motion.div
@@ -90,107 +116,137 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index, containerWidth }) => {
       className="flex-none cursor-pointer"
       style={{ width: cardWidth }}
     >
-      <Card className="group overflow-hidden border border-gray-100 bg-white hover:border-orange-200 transition-all duration-500 shadow-sm hover:shadow-xl rounded-xl">
-        {/* Image Container */}
-        <div className="relative overflow-hidden aspect-[16/10]">
-          <Image
-            src={post.image}
-            alt={post.title}
-            width={400}
-            height={250}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            loading="lazy"
-          />
+      <Link href={`/blog/${blog.slug}`}>
+        <Card className="group overflow-hidden border border-gray-100 bg-white hover:border-orange-200 transition-all duration-500 shadow-sm hover:shadow-xl rounded-xl">
+          {/* Image Container */}
+          <div className="relative overflow-hidden aspect-[16/10]">
+            <Image
+              src={imageUrl}
+              alt={blog.title}
+              width={400}
+              height={250}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement
+                target.src = '/images/blog-placeholder.jpg'
+              }}
+            />
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-          {/* Category Badge */}
-          <div className="absolute top-3 left-3">
-            <Badge className="bg-white/90 text-gray-700 hover:bg-white font-medium text-xs px-3 py-1">
-              {post.category}
-            </Badge>
-          </div>
-
-          {/* Featured Badge */}
-          {post.isFeatured && (
-            <div className="absolute top-3 right-3">
-              <Badge className="bg-orange-500 text-white text-xs px-2 py-1">
-                <TrendingUp className="h-3 w-3 mr-1" />
-                Trending
-              </Badge>
-            </div>
-          )}
-
-          {/* Quick Stats */}
-          <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="flex items-center gap-1 bg-white/90 text-gray-700 text-xs px-2 py-1 rounded-full">
-              <Heart className="h-3 w-3" />
-              <span>{post.likes}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <CardContent className="p-5">
-          <div className="space-y-3">
-            {/* Title */}
-            <h3 className="font-bold text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors duration-300 text-lg leading-snug">
-              {post.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">
-              {post.description}
-            </p>
-
-            {/* Meta Info */}
-            <div className="flex items-center justify-between pt-2 border-t border-gray-50">
-              <div className="flex items-center gap-2">
-                <Image
-                  width={32}
-                  height={32}
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-                <div className="text-xs">
-                  <p className="font-medium text-gray-900">{post.author.name}</p>
-                  <p className="text-gray-500">{formatDate(post.publishedAt)}</p>
-                </div>
+            {/* Category Badge */}
+            {blog.category && (
+              <div className="absolute top-3 left-3">
+                <Badge 
+                  className="bg-white/90 text-gray-700 hover:bg-white font-medium text-xs px-3 py-1"
+                >
+                  {blog.category.name}
+                </Badge>
               </div>
+            )}
 
-              <div className="flex items-center gap-3 text-xs text-gray-500">
-                <div className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  <span>{post.readTime}m</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                </div>
+            {/* Views count on hover */}
+            <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="flex items-center gap-1 bg-white/90 text-gray-700 text-xs px-2 py-1 rounded-full">
+                <Eye className="h-3 w-3" />
+                {/* <span>{blog.views || 0}</span> */}
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+
+          {/* Content */}
+          <CardContent className="p-5">
+            <div className="space-y-3">
+              {/* Title */}
+              <h3 className="font-bold text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors duration-300 text-lg leading-snug">
+                {blog.title}
+              </h3>
+
+              {/* Description/Excerpt */}
+              <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">
+                {blog.excerpt || 'Baca artikel lengkap untuk mengetahui lebih lanjut...'}
+              </p>
+
+              {/* Meta Info */}
+              <div className="flex items-center justify-between pt-2 border-t border-gray-50">
+                <div className="flex items-center gap-2">
+                  {/* Author info */}
+                  <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                    <Users className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div className="text-xs">
+                    <p className="font-medium text-gray-900">
+                      {blog.user?.name || 'Admin'}
+                    </p>
+                    <div className="flex items-center gap-1 text-gray-500">
+                      <Calendar className="h-3 w-3" />
+                      <span>{formattedDate}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 text-xs text-gray-500">
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-3 w-3" />
+                    <span>{readTime}m</span>
+                  </div>
+                  {/* {blog.views && (
+                    <div className="flex items-center gap-1">
+                      <Eye className="h-3 w-3" />
+                      <span>{blog.views}</span>
+                    </div>
+                  )} */}
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </Link>
     </motion.div>
   )
 }
 
 // Loading Component
-const LoadingIndicator: React.FC<LoadingIndicatorProps> = ({ className = "" }) => (
+const LoadingIndicator: React.FC<{ className?: string }> = ({ className = "" }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     className={`flex-none w-80 h-96 flex items-center justify-center ${className}`}
   >
     <div className="text-center">
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-        className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full mx-auto mb-3"
-      />
+      <Loader2 className="w-8 h-8 text-orange-500 animate-spin mx-auto mb-3" />
       <p className="text-gray-600 text-sm">Memuat Berita lainnya...</p>
+    </div>
+  </motion.div>
+)
+
+// Error Component
+const ErrorState: React.FC<{ onRetry: () => void }> = ({ onRetry }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="flex-none w-80 h-96 flex items-center justify-center"
+  >
+    <div className="text-center">
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
+        <AlertTriangle className="h-8 w-8" />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        Gagal Memuat Berita
+      </h3>
+      <p className="text-gray-600 text-sm mb-4">
+        Terjadi kesalahan saat mengambil data
+      </p>
+      <Button
+        onClick={onRetry}
+        size="sm"
+        className="bg-orange-500 hover:bg-orange-600 text-white"
+      >
+        <RefreshCw className="h-4 w-4 mr-2" />
+        Coba Lagi
+      </Button>
     </div>
   </motion.div>
 )
@@ -212,6 +268,40 @@ const NavButton: React.FC<NavButtonProps> = ({ direction, onClick, disabled = fa
   </Button>
 )
 
+// Skeleton Loading Component
+const BlogSkeleton: React.FC<{ containerWidth: number }> = ({ containerWidth }) => {
+  const cardWidth = Math.max(320, containerWidth / 4.2)
+  
+  return (
+    <div className="flex gap-6">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div key={index} className="flex-none animate-pulse" style={{ width: cardWidth }}>
+          <Card className="overflow-hidden border border-gray-100 bg-white rounded-xl">
+            <div className="aspect-[16/10] bg-gray-200" />
+            <CardContent className="p-5 space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-3/4" />
+              <div className="space-y-2">
+                <div className="h-3 bg-gray-200 rounded" />
+                <div className="h-3 bg-gray-200 rounded w-2/3" />
+              </div>
+              <div className="flex justify-between items-center pt-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full" />
+                  <div className="space-y-1">
+                    <div className="h-3 bg-gray-200 rounded w-16" />
+                    <div className="h-3 bg-gray-200 rounded w-20" />
+                  </div>
+                </div>
+                <div className="h-3 bg-gray-200 rounded w-12" />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 // Main Blog Section Component
 const BlogSection: React.FC<BlogSectionProps> = ({
   title = "Berita Terkini",
@@ -220,12 +310,10 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   className = "",
   showViewAll = true,
   autoScroll = false,
-  cardVariant = "default"
+  cardVariant = "default",
+  limit = DEFAULT_LIMIT
 }) => {
   // State Management
-  const [posts, setPosts] = useState<BlogPost[]>(generateBlogPosts())
-  const [loading, setLoading] = useState(false)
-  const [hasMore, setHasMore] = useState(true)
   const [containerWidth, setContainerWidth] = useState(1200)
 
   // Refs
@@ -236,8 +324,19 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   // Animations
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
+  // SWR for data fetching
+  const { data: blogData, error, mutate } = useSWR<PaginatedResponse<Blog>>(
+    ['blogs-homepage', { page: 1, per_page: limit, status: 'published' }],
+    ([url, params]: [string, BlogParams]) => fetcher(url, params),
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: true,
+      refreshInterval: 5 * 60 * 1000, // Refresh every 5 minutes
+    }
+  )
+
   // Effects
-  useEffect(() => {
+  React.useEffect(() => {
     const updateWidth = () => {
       if (containerRef.current) {
         setContainerWidth(containerRef.current.offsetWidth)
@@ -248,22 +347,6 @@ const BlogSection: React.FC<BlogSectionProps> = ({
     window.addEventListener('resize', updateWidth)
     return () => window.removeEventListener('resize', updateWidth)
   }, [])
-
-  // Load More Posts Function
-  const loadMorePosts = useCallback(() => {
-    if (loading || !hasMore) return
-
-    setLoading(true)
-    setTimeout(() => {
-      const newPosts = generateMorePosts(posts.length + 1, LOAD_MORE_COUNT)
-      setPosts(prev => [...prev, ...newPosts])
-      setLoading(false)
-
-      if (posts.length >= MAX_POSTS) {
-        setHasMore(false)
-      }
-    }, LOAD_DELAY)
-  }, [posts.length, loading, hasMore])
 
   // Scroll Navigation
   const scroll = useCallback((direction: 'left' | 'right') => {
@@ -279,15 +362,19 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   }, [containerWidth])
 
   // Auto scroll effect
-  useEffect(() => {
-    if (!autoScroll) return
+  React.useEffect(() => {
+    if (!autoScroll || !blogData?.data.length) return
 
     const interval = setInterval(() => {
       scroll('right')
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [autoScroll, scroll])
+  }, [autoScroll, scroll, blogData?.data.length])
+
+  const handleRetry = () => {
+    mutate()
+  }
 
   return (
     <section
@@ -295,10 +382,8 @@ const BlogSection: React.FC<BlogSectionProps> = ({
       className={`px-4 sm:px-8 lg:px-16 xl:px-20 py-8 lg:py-2 bg-gradient-to-br from-gray-50 to-white ${className}`}
     >
       <div ref={containerRef} className="container mx-auto">
-
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
-
           {/* Title and Description - 1/4 width on large screens */}
           <motion.div
             initial="hidden"
@@ -308,16 +393,6 @@ const BlogSection: React.FC<BlogSectionProps> = ({
             className="lg:w-1/4 flex-shrink-0 items-center flex flex-col justify-center"
           >
             <div className="space-y-4">
-              {/* <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-              >
-                <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100 mb-4">
-                  {subtitle}
-                </Badge>
-              </motion.div> */}
-
               <motion.div
                 className="text-3xl sm:text-4xl lg:text-6xl tracking-widest font-bold"
                 initial={{ opacity: 0, x: -30 }}
@@ -328,7 +403,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                   Sakti
                   <span className="ml-1 text-green-500 dark:text-green-200">News</span>
                 </p>
-                <h2 className="text-orange-500 drop-shadow-[4px_2px_0px_rgba(0,0,0,0.7)] font-bebas-neue ">
+                <h2 className="text-orange-500 drop-shadow-[4px_2px_0px_rgba(0,0,0,0.7)] font-bebas-neue">
                   {title}
                 </h2>
               </motion.div>
@@ -349,7 +424,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                   transition={{ delay: 0.5, duration: 0.6 }}
                   className="hidden lg:block pt-4"
                 >
-                  <Link href="/about" className="w-fit">
+                  <Link href="/blog" className="w-fit">
                     <Button
                       size="lg"
                       variant="press"
@@ -366,22 +441,23 @@ const BlogSection: React.FC<BlogSectionProps> = ({
 
           {/* Cards Container - 3/4 width on large screens */}
           <div className="lg:w-3/4 flex-1">
-
             {/* Navigation Controls */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex justify-end items-center my-4"
-            >
-              {/* <div className="text-sm text-gray-500">
-                <span className="font-medium text-gray-900">{posts.length}</span> Berita tersedia
-              </div> */}
-              <div className="flex gap-2">
-                <NavButton direction="left" onClick={() => scroll('left')} />
-                <NavButton direction="right" onClick={() => scroll('right')} />
-              </div>
-            </motion.div>
+            {blogData?.data.length && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="flex justify-between items-center my-4"
+              >
+                <div className="text-sm text-gray-500">
+                  <span className="font-medium text-gray-900">{blogData.total}</span> Berita tersedia
+                </div>
+                <div className="flex gap-2">
+                  <NavButton direction="left" onClick={() => scroll('left')} />
+                  <NavButton direction="right" onClick={() => scroll('right')} />
+                </div>
+              </motion.div>
+            )}
 
             {/* Blog Cards Container */}
             <motion.div
@@ -398,42 +474,79 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                   WebkitOverflowScrolling: 'touch'
                 }}
               >
-                <AnimatePresence mode="wait">
-                  {posts.map((post, index) => (
-                    <motion.div
-                      key={post.id}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.4 }}
-                      style={{ scrollSnapAlign: 'start' }}
-                    >
-                      <BlogCard
-                        post={post}
-                        index={index}
-                        containerWidth={containerWidth * 0.75}
-                      />
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+                {/* Loading State */}
+                {!blogData && !error && (
+                  <BlogSkeleton containerWidth={containerWidth * 0.75} />
+                )}
 
-                {loading && <LoadingIndicator />}
+                {/* Error State */}
+                {error && (
+                  <ErrorState onRetry={handleRetry} />
+                )}
+
+                {/* Blog Cards */}
+                {blogData?.data && (
+                  <AnimatePresence mode="wait">
+                    {blogData.data.map((blog, index) => (
+                      <motion.div
+                        key={blog.id}
+                        layout
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.4 }}
+                        style={{ scrollSnapAlign: 'start' }}
+                      >
+                        <BlogCard
+                          blog={blog}
+                          index={index}
+                          containerWidth={containerWidth * 0.75}
+                        />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                )}
+
+                {/* Empty State */}
+                {blogData?.data.length === 0 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex-none w-full text-center py-16"
+                  >
+                    <div className="text-6xl mb-4">📰</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Belum Ada Berita
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      Berita terbaru sedang dalam proses. Silakan kembali lagi nanti.
+                    </p>
+                    <Button
+                      onClick={handleRetry}
+                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                    >
+                      <RefreshCw className="h-4 w-4 mr-2" />
+                      Muat Ulang
+                    </Button>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
 
             {/* Mobile View All Button */}
-            {showViewAll && (
+            {showViewAll && blogData?.data.length && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
                 className="flex justify-center mt-8 lg:hidden"
               >
-                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                  <Newspaper className="mr-2 h-4 w-4" />
-                  Lihat Semua Berita
-                </Button>
+                <Link href="/blog">
+                  <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Newspaper className="mr-2 h-4 w-4" />
+                    Lihat Semua Berita
+                  </Button>
+                </Link>
               </motion.div>
             )}
           </div>

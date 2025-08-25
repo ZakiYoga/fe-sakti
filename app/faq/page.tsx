@@ -10,7 +10,6 @@ import {
   ChevronDown, 
   Building2, 
   Phone,
-  Mail,
   Package,
   Factory,
   Users,
