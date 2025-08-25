@@ -19,7 +19,7 @@ import {
   MessageSquare,
   Headphones
 } from 'lucide-react'
-import { ContactFormData, ContactPageProps } from '@/types/contact.types'
+import { ContactFormData } from '@/types/contact.types'
 import { companyContactData, contactInfoData } from '@/DataDummy/DataContact'
 import { MapLocation } from '@/types/map.types'
 import StyledMapWrapper from '@/components/Map/StyledMapWrapper'
@@ -68,7 +68,12 @@ const ContactInfoCard = ({ info, index }: { info: ContactInfo, index: number }) 
   )
 }
 
-const ContactPage: React.FC<ContactPageProps> = ({ className }) => {
+interface ContactPageParams {
+  params: Promise<Record<string, string>>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}
+
+const ContactPage: React.FC<ContactPageParams> = ({ params, searchParams }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -189,7 +194,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ className }) => {
   ]
 
   return (
-    <div className={`min-h-screen flex flex-col ${className || ''}`}>
+    <div className="min-h-screen flex flex-col">
       <HeaderPages
         title="Hubungi Kami"
         description="Kami siap membantu Anda. Hubungi tim profesional kami untuk informasi lebih lanjut tentang produk dan layanan"
