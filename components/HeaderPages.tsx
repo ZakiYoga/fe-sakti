@@ -18,10 +18,10 @@ interface HeaderPagesProps {
 
 // Konfigurasi height variants
 const heightVariants = {
-  sm: 'h-64 md:h-72',
-  md: 'h-80 md:h-96', 
-  lg: 'h-96 md:h-[28rem]',
-  xl: 'h-[28rem] md:h-[32rem]'
+  sm: 'h-48 md:h-56',
+  md: 'h-56 md:h-64', 
+  lg: 'h-64 md:h-80',
+  xl: 'h-80 md:h-96'
 }
 
 // Konfigurasi text alignment
@@ -68,7 +68,7 @@ const HeaderPages: React.FC<HeaderPagesProps> = ({
       )}
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-16 max-w-4xl">
+      <div className="relative z-10 container mx-auto px-4 py-6 sm:px-6 lg:px-8 mt-16 max-w-6xl">
         <motion.div 
           className={`${textAlignVariants[textAlign]}`}
           initial={{ opacity: 0, y: 30 }}
@@ -81,9 +81,9 @@ const HeaderPages: React.FC<HeaderPagesProps> = ({
           {/* Title */}
           <motion.h1 
             className={`
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+              text-xl sm:text-2xl md:text-3xl lg:text-4xl 
               font-bold text-white mb-4
-              drop-shadow-[2px_2px_4px_rgba(0,0,0,0.6)]
+              drop-shadow-[2px_2px_2px_rgba(0,0,0,0.8)]
               leading-tight
               ${titleClassName}
             `}
@@ -102,7 +102,7 @@ const HeaderPages: React.FC<HeaderPagesProps> = ({
           {description && (
             <motion.p 
               className={`
-                text-lg sm:text-xl md:text-2xl 
+                lg:text-lg 
                 text-white/90 max-w-3xl mx-auto
                 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.6)]
                 leading-relaxed
@@ -123,8 +123,6 @@ const HeaderPages: React.FC<HeaderPagesProps> = ({
         </motion.div>
       </div>
 
-      {/* Gradient bottom fade - optional */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/50 to-transparent" />
     </section>
   )
 }

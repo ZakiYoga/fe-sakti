@@ -2,35 +2,117 @@
 
 import React, { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
+import HeaderPages from '@/components/HeaderPages'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { 
   ChevronDown, 
-  ChevronUp, 
   Building2, 
   Phone,
   Mail,
-  MapPin,
+  Package,
+  Factory,
+  Users,
+  Award,
+  HelpCircle,
+  Search,
+  Star,
+  Clock
 } from 'lucide-react'
-import { FAQCardProps, FAQItem, FAQSectionProps } from '@/types/faq.types'
-import { faqData } from '../(homepage)/DataFaq'
 
-// FAQ Categories
-const categories = [
+// Types and Interfaces
+interface FAQ {
+  id: number
+  category: string
+  question: string
+  answer: string
+  icon: React.ComponentType<{ className?: string }>
+  isPopular: boolean
+}
+
+interface FAQCardProps {
+  faq: FAQ
+  index: number
+  isOpen: boolean
+  onToggle: () => void
+}
+
+interface FAQPageProps {
+  className?: string
+}
+
+// FAQ Data
+const faqData: FAQ[] = [
+  {
+    id: 1,
+    category: "Perusahaan",
+    question: "Apa visi dan misi PT Sakti Pangan Perkasa?",
+    answer: "Visi kami adalah menjadi Perusahaan Pengelolaan Makanan yang mampu bersaing secara nasional dengan selalu melakukan inovasi. Misi kami mencakup berintegritas, profesional, kreatif dan inovatif, serta efektif dan efisien dalam setiap operasional.",
+    icon: Building2,
+    isPopular: true
+  },
+  {
+    id: 2,
+    category: "Produk",
+    question: "Apa saja produk unggulan yang diproduksi?",
+    answer: "Kami memproduksi berbagai produk pangan berkualitas tinggi termasuk minyak kelapa premium, produk olahan kelapa, dan berbagai produk pangan lainnya yang telah tersertifikasi halal dan BPOM.",
+    icon: Package,
+    isPopular: true
+  },
+  {
+    id: 3,
+    category: "Kualitas",
+    question: "Sertifikasi apa saja yang dimiliki perusahaan?",
+    answer: "Kami memiliki berbagai sertifikasi internasional termasuk ISO 9001:2015, Sertifikasi Halal MUI, Sertifikasi BPOM, dan ISO 22000 untuk standar keamanan pangan internasional.",
+    icon: Award,
+    isPopular: false
+  },
+  {
+    id: 4,
+    category: "Produksi",
+    question: "Di mana lokasi fasilitas produksi?",
+    answer: "Kami memiliki 3 fasilitas produksi yang berlokasi strategis di Indonesia, dengan fasilitas utama di kawasan Jababeka, Cikarang, Jawa Barat.",
+    icon: Factory,
+    isPopular: false
+  },
+  {
+    id: 5,
+    category: "Kemitraan",
+    question: "Bagaimana cara menjadi mitra bisnis?",
+    answer: "Anda dapat menghubungi tim business development kami melalui email atau telepon. Kami terbuka untuk berbagai bentuk kemitraan strategis yang saling menguntungkan.",
+    icon: Users,
+    isPopular: true
+  },
+  {
+    id: 6,
+    category: "Kontak",
+    question: "Bagaimana cara menghubungi customer service?",
+    answer: "Tim customer service kami dapat dihubungi melalui telepon (021) 8934-5678 pada jam kerja atau email info@saktipangan.co.id dengan response time maksimal 24 jam.",
+    icon: Phone,
+    isPopular: false
+  }
+]
+
+// Categories matching the data
+const categories: string[] = [
   "Semua",
   "Perusahaan", 
   "Produk", 
   "Kualitas", 
   "Produksi", 
   "Kemitraan",
-  "Lokasi",
   "Kontak"
 ]
 
 // FAQ Card Component
-const FAQCard: React.FC<FAQCardProps> = ({ faq, index, isOpen, onToggle }) => {
-  const cardRef = useRef(null)
+const FAQCard: React.FC<FAQCardProps> = ({
+  faq,
+  index,
+  isOpen,
+  onToggle
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(cardRef, { once: true, margin: "-50px" })
 
   return (
@@ -38,67 +120,51 @@ const FAQCard: React.FC<FAQCardProps> = ({ faq, index, isOpen, onToggle }) => {
       ref={cardRef}
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ scale: 1.01, y: -2 }}
-      className="w-full"
     >
-      <Card className={`group overflow-hidden transition-all duration-300 cursor-pointer border-0 bg-white/80 backdrop-blur-sm ${
-        isOpen 
-          ? 'shadow-2xl ring-2 ring-blue-500/20 bg-gradient-to-br from-blue-50/50 to-white' 
-          : 'shadow-lg hover:shadow-xl hover:bg-gradient-to-br hover:from-gray-50/50 hover:to-white'
+      <Card className={`border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer ${
+        isOpen ? 'ring-2 ring-orange-500/20 bg-gradient-to-br from-orange-100/50 to-orange-50 dark:from-orange-900/50 dark:to-gray-900/60' : ''
       }`}>
         <motion.div
           onClick={onToggle}
-          className="p-6 cursor-pointer"
+          className="p-6 sm:p-8"
           whileTap={{ scale: 0.995 }}
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`p-2 rounded-xl transition-all duration-300 ${
-                    isOpen 
-                      ? 'bg-blue-100 text-blue-600' 
-                      : 'bg-gray-100 text-gray-600 group-hover:bg-blue-100 group-hover:text-blue-600'
-                  }`}
-                >
-                  <faq.icon className="h-5 w-5" />
-                </motion.div>
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full transition-all duration-300 ${
+                  isOpen 
+                    ? 'bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400' 
+                    : 'bg-orange-100/70 text-orange-500 group-hover:bg-orange-100 group-hover:text-orange-600 dark:bg-orange-900/70 dark:text-orange-400 dark:group-hover:bg-orange-900'
+                }`}>
+                  <faq.icon className="h-6 w-6 sm:h-8 sm:w-8" />
+                </div>
                 
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Badge 
                     variant="outline" 
                     className={`text-xs transition-all duration-300 ${
                       isOpen 
-                        ? 'border-blue-300 text-blue-700 bg-blue-50' 
-                        : 'border-gray-300 text-gray-600 group-hover:border-blue-300 group-hover:text-blue-700'
+                        ? 'border-orange-300 text-orange-700 bg-orange-50 dark:border-orange-600 dark:text-orange-300 dark:bg-orange-900/50' 
+                        : 'border-orange-300 text-orange-600 group-hover:border-orange-400 group-hover:text-orange-700 dark:border-orange-600 dark:text-orange-400'
                     }`}
                   >
                     {faq.category}
                   </Badge>
                   {faq.isPopular && (
-                    <motion.div
-                      initial={{ scale: 0, rotate: -90 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.3, duration: 0.5 }}
-                    >
-                      <Badge className="text-xs bg-orange-500 hover:bg-orange-600 text-white">
-                        Popular
-                      </Badge>
-                    </motion.div>
+                    <Badge className="text-xs bg-orange-500 hover:bg-orange-600 text-white">
+                      Popular
+                    </Badge>
                   )}
                 </div>
               </div>
               
-              <h3 className={`font-semibold text-lg leading-tight transition-colors duration-300 ${
+              <h3 className={`font-bold text-lg sm:text-xl leading-tight transition-colors duration-300 ${
                 isOpen 
-                  ? 'text-blue-900' 
-                  : 'text-gray-900 group-hover:text-blue-800'
+                  ? 'text-orange-700 dark:text-orange-300' 
+                  : 'text-gray-900 group-hover:text-orange-800 dark:text-white dark:group-hover:text-orange-300'
               }`}>
                 {faq.question}
               </h3>
@@ -106,11 +172,11 @@ const FAQCard: React.FC<FAQCardProps> = ({ faq, index, isOpen, onToggle }) => {
             
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className={`p-2 rounded-full transition-all duration-300 ${
+              transition={{ duration: 0.3 }}
+              className={`p-2 sm:p-3 rounded-full transition-all duration-300 flex-shrink-0 ${
                 isOpen 
-                  ? 'bg-blue-100 text-blue-600' 
-                  : 'bg-gray-100 text-gray-500 group-hover:bg-blue-100 group-hover:text-blue-600'
+                  ? 'bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400' 
+                  : 'bg-orange-100/70 text-orange-500 group-hover:bg-orange-100 group-hover:text-orange-600 dark:bg-orange-900/70 dark:text-orange-400'
               }`}
             >
               <ChevronDown className="h-5 w-5" />
@@ -124,23 +190,17 @@ const FAQCard: React.FC<FAQCardProps> = ({ faq, index, isOpen, onToggle }) => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <CardContent className="px-6 pb-6 pt-0">
-                <motion.div
-                  initial={{ y: -10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  transition={{ delay: 0.1, duration: 0.3 }}
-                  className="pl-14"
-                >
-                  <div className="border-l-4 border-blue-200 pl-4">
-                    <p className="text-gray-700 leading-relaxed text-sm">
+              <CardContent className="px-6 pb-6 pt-0 sm:px-8 sm:pb-8">
+                <div className="pl-16 sm:pl-20">
+                  <div className="border-l-4 border-orange-200 dark:border-orange-700 pl-4 sm:pl-6">
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                       {faq.answer}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </CardContent>
             </motion.div>
           )}
@@ -150,22 +210,15 @@ const FAQCard: React.FC<FAQCardProps> = ({ faq, index, isOpen, onToggle }) => {
   )
 }
 
-// Main FAQ Section Component
-const FAQSection: React.FC<FAQSectionProps> = ({ 
-  title = "Frequently Asked Questions",
-  subtitle = "Temukan jawaban untuk pertanyaan yang sering diajukan tentang perusahaan kami",
-  companyName = "PT Sakti Pangan Perkasa",
-  className = ""
-}) => {
-  const [openItems, setOpenItems] = useState<number[]>([1]) // FAQ pertama terbuka by default
+const FAQPage: React.FC<FAQPageProps> = ({ className }) => {
+  const [openItems, setOpenItems] = useState<number[]>([1])
   const [activeCategory, setActiveCategory] = useState<string>("Semua")
-  const [filteredFAQs, setFilteredFAQs] = useState<FAQItem[]>(faqData)
-
-  const sectionRef = useRef(null)
+  const [filteredFAQs, setFilteredFAQs] = useState<FAQ[]>(faqData)
+  const [searchTerm, setSearchTerm] = useState<string>("")
+  const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
-  // Toggle FAQ item
-  const toggleItem = (id: number) => {
+  const toggleItem = (id: number): void => {
     setOpenItems(prev => 
       prev.includes(id) 
         ? prev.filter(item => item !== id)
@@ -173,237 +226,202 @@ const FAQSection: React.FC<FAQSectionProps> = ({
     )
   }
 
-  // Filter FAQs by category
-  const filterByCategory = (category: string) => {
+  const filterByCategory = (category: string): void => {
     setActiveCategory(category)
-    if (category === "Semua") {
-      setFilteredFAQs(faqData)
-    } else {
-      setFilteredFAQs(faqData.filter(faq => faq.category === category))
+    let filtered = category === "Semua" 
+      ? faqData 
+      : faqData.filter(faq => faq.category === category)
+    
+    if (searchTerm) {
+      filtered = filtered.filter(faq => 
+        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      )
     }
-    // Reset open items when filtering
+    
+    setFilteredFAQs(filtered)
     setOpenItems([])
   }
 
-  // Expand all FAQs
-  const expandAll = () => {
-    setOpenItems(filteredFAQs.map(faq => faq.id))
+  const handleSearch = (term: string): void => {
+    setSearchTerm(term)
+    let filtered = activeCategory === "Semua" 
+      ? faqData 
+      : faqData.filter(faq => faq.category === activeCategory)
+    
+    if (term) {
+      filtered = filtered.filter(faq => 
+        faq.question.toLowerCase().includes(term.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(term.toLowerCase())
+      )
+    }
+    
+    setFilteredFAQs(filtered)
   }
 
-  // Collapse all FAQs
-  const collapseAll = () => {
-    setOpenItems([])
-  }
+  const expandAll = (): void => setOpenItems(filteredFAQs.map(faq => faq.id))
+  const collapseAll = (): void => setOpenItems([])
 
   return (
-    <section 
-      ref={sectionRef}
-      className={`py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 ${className}`}
-    >
-      <div className="container mx-auto px-4 max-w-5xl">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full text-sm font-semibold mb-6"
-          >
-            <Building2 className="h-5 w-5" />
-            {companyName}
-          </motion.div>
-          
-          <motion.h2 
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            {title}
-          </motion.h2>
-          
-          <motion.p 
-            className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            {subtitle}
-          </motion.p>
-        </motion.div>
+    <div className={`min-h-screen flex flex-col ${className || ''}`}>
+      <HeaderPages
+        title="FAQ"
+        description="Temukan jawaban untuk pertanyaan yang sering diajukan tentang PT Sakti Pangan Perkasa"
+        backgroundImage="/images/bg-header.png"
+        height="md"
+        className="py-16"
+      />
 
-        {/* Category Filter & Controls */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mb-12"
-        >
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8">
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category, index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.7 + index * 0.05, duration: 0.5 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+      {/* FAQ Stats Section */}
+      {/* <section className="py-8 sm:py-10 md:py-14 lg:py-16 bg-gradient-to-tr from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <HelpCircle className="h-4 w-4" />
+              Pusat Bantuan
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto sm:text-lg">
+              Dapatkan jawaban cepat untuk pertanyaan yang paling sering diajukan tentang produk dan layanan kami
+            </p>
+          </motion.div>
+        </div>
+      </section> */}
+
+      {/* Main FAQ Section */}
+      <section ref={sectionRef} className="py-8 sm:py-10 md:py-14 lg:py-16 bg-gradient-to-br from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          {/* Search Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8 sm:mb-12"
+          >
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Cari pertanyaan..."
+                  value={searchTerm}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-gray-900 placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Category Filter & Controls */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="mb-8 sm:mb-12"
+          >
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8">
+              <div className="flex flex-wrap justify-center gap-2 lg:gap-3">
+                {categories.map((category) => (
                   <Button
+                    key={category}
                     variant={activeCategory === category ? "default" : "outline"}
                     size="sm"
                     onClick={() => filterByCategory(category)}
                     className={`transition-all duration-300 ${
                       activeCategory === category
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg'
-                        : 'bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 border-gray-300 hover:border-blue-300'
+                        ? 'bg-orange-500 hover:bg-orange-600 text-white scale-105'
+                        : 'bg-white hover:bg-orange-50 text-gray-700 hover:text-orange-600 border-gray-300 hover:border-orange-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-orange-900/20 dark:border-gray-600'
                     }`}
                   >
                     {category}
                     {category !== "Semua" && (
-                      <span className="ml-2 text-xs bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full">
+                      <span className="ml-2 text-xs bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-0.5 rounded-full">
                         {faqData.filter(faq => faq.category === category).length}
                       </span>
                     )}
                   </Button>
-                </motion.div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            {/* Control Buttons */}
-            <div className="flex gap-2">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={expandAll}
-                  className="bg-white hover:bg-green-50 text-green-700 hover:text-green-800 border-green-300 hover:border-green-400 transition-all duration-300"
+                  className="bg-white hover:bg-green-50 text-green-700 hover:text-green-800 border-green-300 hover:border-green-400 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-green-900/20 dark:border-green-600"
                 >
-                  <ChevronDown className="h-4 w-4 mr-1" />
                   Buka Semua
                 </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={collapseAll}
-                  className="bg-white hover:bg-red-50 text-red-700 hover:text-red-800 border-red-300 hover:border-red-400 transition-all duration-300"
+                  className="bg-white hover:bg-red-50 text-red-700 hover:text-red-800 border-red-300 hover:border-red-400 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-red-900/20 dark:border-red-600"
                 >
-                  <ChevronUp className="h-4 w-4 mr-1" />
                   Tutup Semua
                 </Button>
-              </motion.div>
+              </div>
             </div>
-          </div>
 
-          {/* Results Count */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="text-center text-gray-600 text-sm"
-          >
-            Menampilkan {filteredFAQs.length} dari {faqData.length} pertanyaan
+            <div className="text-center text-gray-600 dark:text-gray-400 text-sm">
+              Menampilkan {filteredFAQs.length} dari {faqData.length} pertanyaan
+            </div>
           </motion.div>
-        </motion.div>
 
-        {/* FAQ Items */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ delay: 0.9, duration: 1 }}
-          className="space-y-4"
-        >
-          <AnimatePresence mode="wait">
-            {filteredFAQs.map((faq, index) => (
-              <motion.div
-                key={`${activeCategory}-${faq.id}`}
-                layout
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <FAQCard
-                  faq={faq}
-                  index={index}
-                  isOpen={openItems.includes(faq.id)}
-                  onToggle={() => toggleItem(faq.id)}
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Contact Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-16 pt-12 border-t border-gray-200"
-        >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Masih Ada Pertanyaan?
-            </h3>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Tim customer service kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui berbagai channel yang tersedia.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: Phone,
-                  title: "Telepon",
-                  info: "(021) 8934-5678",
-                  description: "Senin - Jumat, 08:00 - 17:00",
-                  color: "blue"
-                },
-                {
-                  icon: Mail,
-                  title: "Email",
-                  info: "info@saktipangan.co.id",
-                  description: "Response dalam 24 jam",
-                  color: "green"
-                },
-                {
-                  icon: MapPin,
-                  title: "Kunjungi Kami",
-                  info: "Jababeka, Cikarang",
-                  description: "Jawa Barat, Indonesia",
-                  color: "orange"
-                }
-              ].map((contact, index) => (
+          {/* FAQ Items */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            className="space-y-4 lg:space-y-6"
+          >
+            <AnimatePresence mode="wait">
+              {filteredFAQs.length > 0 ? (
+                filteredFAQs.map((faq, index) => (
+                  <motion.div
+                    key={`${activeCategory}-${faq.id}`}
+                    layout
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <FAQCard
+                      faq={faq}
+                      index={index}
+                      isOpen={openItems.includes(faq.id)}
+                      onToggle={() => toggleItem(faq.id)}
+                    />
+                  </motion.div>
+                ))
+              ) : (
                 <motion.div
-                  key={contact.title}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 hover:border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-12"
                 >
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full bg-${contact.color}-100 text-${contact.color}-600 mb-4`}>
-                    <contact.icon className="h-7 w-7" />
-                  </div>
-                  <h4 className="font-semibold text-lg text-gray-900 mb-2">{contact.title}</h4>
-                  <p className="font-medium text-gray-800 mb-1">{contact.info}</p>
-                  <p className="text-sm text-gray-600">{contact.description}</p>
+                  <HelpCircle className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+                  <p className="text-gray-500 dark:text-gray-400 text-lg">
+                    Tidak ada pertanyaan yang cocok dengan pencarian Anda
+                  </p>
+                  <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">
+                    Coba gunakan kata kunci yang berbeda atau pilih kategori lain
+                  </p>
                 </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }
 
-export default FAQSection
+export default FAQPage

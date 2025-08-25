@@ -213,9 +213,9 @@ export default function AboutSection({
           >
             <Link href="/about" className="w-fit">
               <Button
-
+                size="lg"
                 variant="press"
-                className="w-fit text-sm sm:text-base active:text-orange-500 bg-orange-500 border-orange-700 text-gray-800 font-poppins font-normal"
+                className="w-fit px-4 active:text-orange-500 bg-orange-500 border-orange-700 text-orange-50"
               >
                 {buttonText}
               </Button>

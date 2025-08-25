@@ -182,7 +182,7 @@ export default function HeroSection(): JSX.Element {
 
       {/* Main content container */}
       <motion.div
-        className="flex flex-col-reverse w-full md:flex-row md:min-h-[80vh] justify-start md:justify-between items-center sm:mx-12 lg:mx-16 xl:mx-20 mb-8 md:my-12 relative"
+        className="flex flex-col-reverse w-full lg:flex-row min-h-auto lg:min-h-[80vh] justify-start md:justify-between items-center sm:mx-12 lg:mx-16 xl:mx-20 mb-8 lg:my-12 relative"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -260,7 +260,7 @@ export default function HeroSection(): JSX.Element {
 
           {/* SAKTI 200gr */}
           <motion.div
-            className="absolute -translate-y-1/2 top-1/2 right-[14%] md:right-[10%]"
+            className="absolute -translate-y-1/2 top-1/2 right-[6%] md:right-0 lg:right-[10%]"
             variants={product2}
             initial="hidden"
             animate="visible"
@@ -282,7 +282,7 @@ export default function HeroSection(): JSX.Element {
 
           {/* SAKTI 500gr */}
           <motion.div
-            className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 right-[24%] md:right-[25%]"
+            className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 right-[12%] sm:right-[22%] md:right-[12%] lg:right-[20%]"
             variants={product1}
             initial="hidden"
             animate="visible"
@@ -306,7 +306,7 @@ export default function HeroSection(): JSX.Element {
                 alt="Sakti 500g Package"
                 width={500}
                 height={500}
-                className="absolute -top-16 -left-16 drop-shadow-[0px_0px_2px_rgba(225,225,225, 1)] w-24 h-auto"
+                className="absolute -top-12 -left-12 md:-top-16 md:-left-16 drop-shadow-[0px_0px_2px_rgba(225,225,225, 1)] w-20 md:w-24 h-auto"
                 priority
               />
               <div className="blur-md bg-amber-50">
@@ -317,7 +317,7 @@ export default function HeroSection(): JSX.Element {
 
           {/* Breadcrumb */}
           <motion.div
-            className="absolute -translate-x-1/2 -translate-y-1/2 bottom-2 right-8"
+            className="absolute -translate-y-1/2 bottom-6 right-1/3 md:right-[10%] md:bottom-12 lg:right-[25%]"
             variants={breadcrumbs}
             initial="hidden"
             animate="visible"

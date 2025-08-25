@@ -3,179 +3,26 @@
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import HeaderPages from '@/components/HeaderPages'
+import StatsSection from '@/components/StatsSection'
+import CTASection from '@/components/CTASection'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Users, 
-  Target, 
-  Award, 
-  Globe,
+import {
+  Users,
+  Award,
   Factory,
-  Leaf,
-  Shield,
-  Heart,
-  Lightbulb,
-  TrendingUp,
-  Calendar,
-  MapPin,
-  Phone,
   Mail,
   Play,
-  ChevronRight,
   CheckCircle,
-  Star,
-  User
+  FileBadge,
 } from 'lucide-react'
-
-// Company Stats
-const companyStats = [
-  { icon: Calendar, label: "Tahun Berdiri", value: "2015", description: "Lebih dari 8 tahun pengalaman" },
-  { icon: Users, label: "Karyawan", value: "250+", description: "Tim profesional berpengalaman" },
-  { icon: Factory, label: "Fasilitas Produksi", value: "3", description: "Lokasi strategis di Indonesia" },
-  { icon: Globe, label: "Jangkauan Pasar", value: "15+", description: "Provinsi di Indonesia" }
-]
-
-// Company Values
-const companyValues = [
-  {
-    icon: Shield,
-    title: "Kualitas Terjamin",
-    description: "Komitmen terhadap standar kualitas tertinggi dalam setiap produk yang kami hasilkan",
-    color: "blue"
-  },
-  {
-    icon: Leaf,
-    title: "Berkelanjutan",
-    description: "Praktik bisnis yang ramah lingkungan dan mendukung keberlanjutan ekosistem",
-    color: "green"
-  },
-  {
-    icon: Heart,
-    title: "Kepuasan Pelanggan",
-    description: "Mengutamakan kepuasan dan kepercayaan pelanggan sebagai prioritas utama",
-    color: "red"
-  },
-  {
-    icon: Lightbulb,
-    title: "Inovasi Berkelanjutan",
-    description: "Terus berinovasi mengembangkan produk dan layanan yang lebih baik",
-    color: "yellow"
-  }
-]
-
-// Timeline Data
-const timeline = [
-  {
-    year: "2015",
-    title: "Pendirian Perusahaan",
-    description: "PT Sakti Pangan Perkasa didirikan dengan visi menjadi produsen pangan terkemuka di Indonesia",
-    milestone: "Founding"
-  },
-  {
-    year: "2017",
-    title: "Ekspansi Produk",
-    description: "Meluncurkan lini produk minyak kelapa premium dan memperoleh sertifikasi halal pertama",
-    milestone: "Product Launch"
-  },
-  {
-    year: "2019",
-    title: "Sertifikasi Internasional",
-    description: "Meraih sertifikasi ISO 22000 dan HACCP untuk standar keamanan pangan internasional",
-    milestone: "Certification"
-  },
-  {
-    year: "2021",
-    title: "Ekspansi Regional",
-    description: "Membuka fasilitas produksi kedua dan memperluas jangkauan distribusi ke seluruh Indonesia",
-    milestone: "Expansion"
-  },
-  {
-    year: "2023",
-    title: "Era Digital",
-    description: "Meluncurkan platform e-commerce dan sistem manajemen terintegrasi berbasis teknologi",
-    milestone: "Digital"
-  },
-  {
-    year: "2024",
-    title: "Sustainable Future",
-    description: "Menginisiasi program keberlanjutan dan persiapan ekspansi ke pasar internasional",
-    milestone: "Sustainability"
-  }
-]
-
-// Leadership Team
-const leadership = [
-  {
-    name: "Budi Santoso",
-    position: "Chief Executive Officer",
-    experience: "15+ tahun",
-    background: "Mantan Director di perusahaan FMCG multinasional",
-    image: "/images/ceo-placeholder.jpg"
-  },
-  {
-    name: "Siti Nurhaliza",
-    position: "Chief Operating Officer", 
-    experience: "12+ tahun",
-    background: "Expert dalam operations management dan supply chain",
-    image: "/images/coo-placeholder.jpg"
-  },
-  {
-    name: "Dr. Ahmad Wijaya",
-    position: "Chief Technology Officer",
-    experience: "10+ tahun",
-    background: "PhD dalam Food Science, pioneer teknologi pangan Indonesia",
-    image: "/images/cto-placeholder.jpg"
-  },
-  {
-    name: "Maya Kartika",
-    position: "Chief Marketing Officer",
-    experience: "8+ tahun",
-    background: "Marketing strategist dengan track record membangun brand ternama",
-    image: "/images/cmo-placeholder.jpg"
-  }
-]
-
-// Achievements
-const achievements = [
-  "Top Brand Award 2023 - Kategori Minyak Kelapa Premium",
-  "ISO 22000:2018 Food Safety Management System",
-  "Sertifikasi Halal MUI untuk semua produk",
-  "HACCP (Hazard Analysis Critical Control Points)",
-  "Penghargaan Sustainable Business Practice 2023",
-  "Best Employer Award - Kategori Industri Pangan"
-]
-
-// Hero Stats Component
-const StatsCard = ({ stat, index }: { stat: any, index: number }) => {
-  const cardRef = useRef(null)
-  const isInView = useInView(cardRef, { once: true, margin: "-50px" })
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 30, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ scale: 1.05, y: -5 }}
-    >
-      <Card className="text-center border-0 bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300">
-        <CardContent className="p-6">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 text-orange-600 rounded-full mb-4">
-            <stat.icon className="h-8 w-8" />
-          </div>
-          <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h3>
-          <p className="font-semibold text-gray-800 mb-1">{stat.label}</p>
-          <p className="text-sm text-gray-600">{stat.description}</p>
-        </CardContent>
-      </Card>
-    </motion.div>
-  )
-}
+import { achievements, companyStats, companyValues, missionPoints, tabs, timeline } from '@/DataDummy/DataAbout'
+import { Achievement, CompanyValue, MissionPoint, Tab, TimelineItem } from '@/types/about.types'
 
 // Values Card Component
-const ValueCard = ({ value, index }: { value: any, index: number }) => {
-  const cardRef = useRef(null)
+const ValueCard = ({ value, index }: { value: CompanyValue, index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(cardRef, { once: true, margin: "-50px" })
 
   return (
@@ -186,15 +33,15 @@ const ValueCard = ({ value, index }: { value: any, index: number }) => {
       transition={{ duration: 0.8, delay: index * 0.2 }}
       whileHover={{ scale: 1.02, y: -5 }}
     >
-      <Card className="h-full border-0 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <Card className="h-full border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 group">
         <CardContent className="p-8 text-center">
-          <div className={`inline-flex items-center justify-center w-20 h-20 bg-${value.color}-100 text-${value.color}-600 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
+          <div className={`inline-flex items-center justify-center w-20 h-20 bg-orange-100 text-orange-500 group-hover:bg-orange-200 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
             <value.icon className="h-10 w-10" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
+          <h3 className="text-xl font-bold text-orange-500 mb-4 group-hover:text-orange-600 transition-colors">
             {value.title}
           </h3>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             {value.description}
           </p>
         </CardContent>
@@ -204,8 +51,8 @@ const ValueCard = ({ value, index }: { value: any, index: number }) => {
 }
 
 // Timeline Item Component
-const TimelineItem = ({ item, index, isLast }: { item: any, index: number, isLast: boolean }) => {
-  const itemRef = useRef(null)
+const TimelineItemComponent = ({ item, index, isLast }: { item: TimelineItem, index: number, isLast: boolean }) => {
+  const itemRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(itemRef, { once: true, margin: "-100px" })
 
   return (
@@ -218,29 +65,33 @@ const TimelineItem = ({ item, index, isLast }: { item: any, index: number, isLas
     >
       {/* Timeline Line */}
       {!isLast && (
-        <div className="absolute left-1/2 top-24 w-0.5 h-32 bg-orange-200 transform -translate-x-1/2 z-0" />
+        <div className="absolute left-[20%] sm:left-[15%] md:left-1/2 top-16 sm:top-24 w-0.5 h-[calc(100%-40px)] sm:h-32 bg-orange-200 transform -translate-x-1/2 z-0" />
       )}
-      
+
       {/* Timeline Dot */}
-      <div className="absolute left-1/2 top-8 w-4 h-4 bg-orange-500 rounded-full transform -translate-x-1/2 z-10 border-4 border-white shadow-lg" />
-      
+      <div className="absolute left-[20%] sm:left-[15%] md:left-1/2 top-6 sm:top-8 w-3 h-3 sm:w-4 sm:h-4 bg-orange-500 rounded-full transform -translate-x-1/2 z-10 border-2 sm:border-4 border-white shadow-lg" />
+
       {/* Content */}
-      <div className={`w-full ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-        <div className={`flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-          <Card className="w-80 border-0 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 group">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Badge className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
+      <div className={`w-full`}>
+        <div className={`flex md:px-6 lg:px-24 ${
+          index % 2 === 0 
+            ? 'justify-end sm:justify-center md:justify-end' 
+            : 'justify-end sm:justify-center md:justify-start'
+        }`}>
+          <Card className="w-full max-w-xs sm:max-w-sm lg:max-w-96 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl hover:border-orange-500 dark:hover:border-orange-900 border transition-all duration-300 group">
+            <CardContent className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3">
+                <Badge className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm">
                   {item.year}
                 </Badge>
                 <Badge variant="outline" className="border-orange-300 text-orange-700 text-xs">
                   {item.milestone}
                 </Badge>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+              <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed">
                 {item.description}
               </p>
             </CardContent>
@@ -251,104 +102,55 @@ const TimelineItem = ({ item, index, isLast }: { item: any, index: number, isLas
   )
 }
 
-// Leadership Card Component
-const LeaderCard = ({ leader, index }: { leader: any, index: number }) => {
-  const cardRef = useRef(null)
-  const isInView = useInView(cardRef, { once: true, margin: "-50px" })
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ scale: 1.03, y: -10 }}
-    >
-      <Card className="h-full border-0 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden">
-        <div className="aspect-square bg-gradient-to-br from-orange-100 to-orange-200 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
-          <div className="w-24 h-24 bg-orange-300 rounded-full flex items-center justify-center">
-            <User className="h-12 w-12 text-orange-600" />
-          </div>
-        </div>
-        
-        <CardContent className="p-6 text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
-            {leader.name}
-          </h3>
-          <p className="text-orange-600 font-semibold mb-3">{leader.position}</p>
-          
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center justify-center gap-2">
-              <TrendingUp className="h-4 w-4 text-gray-400" />
-              <span className="text-sm text-gray-600">{leader.experience}</span>
-            </div>
-          </div>
-          
-          <p className="text-gray-600 text-sm leading-relaxed">
-            {leader.background}
-          </p>
-        </CardContent>
-      </Card>
-    </motion.div>
-  )
-}
-
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState('story')
-  const sectionRef = useRef(null)
+  const [activeTab, setActiveTab] = useState<string>('story')
+  const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
-  const tabs = [
-    { id: 'story', label: 'Cerita Kami', icon: Heart },
-    { id: 'values', label: 'Nilai-Nilai', icon: Target },
-    { id: 'team', label: 'Tim Kepemimpinan', icon: Users },
-    { id: 'achievements', label: 'Pencapaian', icon: Award }
+  // Data untuk CTA Section
+  const ctaButtons = [
+    {
+      label: 'Karir Bersama Kami (Sakti Careers)',
+      icon: Users,
+      variant: 'default' as const,
+      onClick: () => console.log('Navigate to careers page')
+    },
+    {
+      label: 'Hubungi Kami',
+      icon: Mail,
+      variant: 'outline' as const,
+      onClick: () => console.log('Navigate to contact page')
+    }
   ]
 
   return (
     <div className="min-h-screen flex flex-col">
       <HeaderPages
         title="Tentang Kami"
-        description="Cerita perjalanan PT Sakti Pangan Perkasa dalam menghadirkan produk pangan berkualitas terbaik untuk Indonesia"
+        description="Cerita perjalanan PT Sakti Pangan Perkasa dalam menghadirkan produk tepung roti berkualitas untuk masakan kuliner Indonesia"
         backgroundImage="/images/bg-header.png"
-        height="lg"
-        overlay="gradient"
+        height="md"
+        className="py-16"
       />
 
-      {/* Company Stats */}
-      <section className="py-16 bg-gradient-to-br from-orange-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/bg.png')] opacity-10" />
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">PT Sakti Pangan Perkasa dalam Angka</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Pencapaian dan pertumbuhan yang konsisten selama bertahun-tahun menjadi bukti dedikasi kami
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {companyStats.map((stat, index) => (
-              <StatsCard key={stat.label} stat={stat} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Company Stats - Menggunakan komponen yang sudah dipisahkan */}
+      <StatsSection
+        title="PT Sakti Pangan Perkasa"
+        description="Pencapaian dan pertumbuhan yang konsisten selama bertahun-tahun menjadi bukti dedikasi kami"
+        stats={companyStats}
+        showIcons={true}
+      />
 
       {/* Company Story & Mission */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="pt-6 sm:pt-8 lg:pt-16 bg-gradient-to-tr from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-y-8 gap-x-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center relative overflow-hidden group">
+              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
                 <div className="text-center">
                   <Play className="h-20 w-20 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-orange-700 font-semibold">Video Profil Perusahaan</p>
@@ -362,45 +164,40 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 <Factory className="h-4 w-4" />
                 Visi & Misi Perusahaan
               </div>
-              
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Membangun Indonesia yang <span className="text-orange-600">Lebih Sehat</span>
-              </h2>
-              
-              <div className="space-y-6">
+
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Visi Kami</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Menjadi perusahaan pangan terkemuka di Indonesia yang menghadirkan produk berkualitas tinggi, 
-                    berkelanjutan, dan terjangkau untuk meningkatkan kualitas hidup masyarakat Indonesia.
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white  mb-3">Visi Kami</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Menjadi Perusahaan Pengelolaan Makanan yang mampu bersaing secara nasional dengan
+                    selalu melakukan inovasi sehingga dapat memberikan nilai tambah bagi seluruh shareholder dan stakeholder
+                    secara berkesinambungan.
                   </p>
                 </div>
-                
+
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Misi Kami</h3>
-                  <ul className="space-y-2">
-                    {[
-                      "Menghasilkan produk pangan berkualitas dengan standar internasional",
-                      "Menerapkan praktik bisnis yang berkelanjutan dan ramah lingkungan",
-                      "Memberdayakan petani dan UMKM lokal dalam rantai supply kami",
-                      "Berinovasi secara berkelanjutan untuk memenuhi kebutuhan konsumen"
-                    ].map((mission, index) => (
-                      <motion.li
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Misi Kami</h3>
+                  <div className="space-y-3">
+                    {missionPoints.map((mission: MissionPoint, index: number) => (
+                      <motion.div
                         key={index}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                        className="flex items-start gap-3"
+                        className="flex items-start gap-3 p-3 bg-orange-50 dark:bg-gray-900/60 duration-200 transition-all hover:-translate-y-0.5 backdrop-blur-lg rounded-lg"
                       >
-                        <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600">{mission}</span>
-                      </motion.li>
+                        <CheckCircle className="h-5 w-5 text-orange-500 dark:text-orange-800 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{mission.title}</h4>
+                          <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{mission.description}</p>
+                        </div>
+                      </motion.div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -409,26 +206,25 @@ export default function AboutPage() {
       </section>
 
       {/* Interactive Tabs Section */}
-      <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section ref={sectionRef} className="py-8 sm:py-10 md:py-14 lg:py-20 bg-gradient-to-br from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
+        <div className="container mx-auto max-w-6xl">
           {/* Tab Navigation */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
+            className="flex flex-wrap justify-center gap-4 lg:gap-8 mb-16"
           >
-            {tabs.map((tab) => (
+            {tabs.map((tab: Tab) => (
               <Button
                 key={tab.id}
                 variant={activeTab === tab.id ? "default" : "outline"}
                 size="lg"
                 onClick={() => setActiveTab(tab.id)}
-                className={`transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-orange-500 hover:bg-orange-600 text-white scale-105'
-                    : 'bg-white hover:bg-orange-50 text-gray-700 hover:text-orange-600 border-gray-300 hover:border-orange-300'
-                }`}
+                className={`transition-all duration-300 ${activeTab === tab.id
+                  ? 'bg-orange-500 hover:bg-orange-600 text-white scale-105'
+                  : 'bg-white hover:bg-orange-50 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-gray-300 hover:border-orange-300'
+                  }`}
               >
                 <tab.icon className="mr-2 h-5 w-5" />
                 {tab.label}
@@ -445,20 +241,20 @@ export default function AboutPage() {
           >
             {/* Company Story */}
             {activeTab === 'story' && (
-              <div>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">Perjalanan Kami</h2>
-                  <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              <div className="pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Histori Perjalanan Kami</h2>
+                  <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto sm:text-lg">
                     Dari visi sederhana hingga menjadi salah satu produsen pangan terpercaya di Indonesia
                   </p>
                 </div>
-                
-                <div className="space-y-16">
-                  {timeline.map((item, index) => (
-                    <TimelineItem 
-                      key={item.year} 
-                      item={item} 
-                      index={index} 
+
+                <div className="space-y-6">
+                  {timeline.map((item: TimelineItem, index: number) => (
+                    <TimelineItemComponent
+                      key={item.year}
+                      item={item}
+                      index={index}
                       isLast={index === timeline.length - 1}
                     />
                   ))}
@@ -468,35 +264,17 @@ export default function AboutPage() {
 
             {/* Company Values */}
             {activeTab === 'values' && (
-              <div>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">Nilai-Nilai Perusahaan</h2>
-                  <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              <div className="pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Nilai-Nilai Perusahaan</h2>
+                  <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
                     Prinsip-prinsip fundamental yang menjadi landasan dalam setiap keputusan dan tindakan kami
                   </p>
                 </div>
-                
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {companyValues.map((value, index) => (
-                    <ValueCard key={value.title} value={value} index={index} />
-                  ))}
-                </div>
-              </div>
-            )}
 
-            {/* Leadership Team */}
-            {activeTab === 'team' && (
-              <div>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">Tim Kepemimpinan</h2>
-                  <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                    Para pemimpin berpengalaman yang membawa visi dan dedikasi untuk kemajuan perusahaan
-                  </p>
-                </div>
-                
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {leadership.map((leader, index) => (
-                    <LeaderCard key={leader.name} leader={leader} index={index} />
+                  {companyValues.map((value: CompanyValue, index: number) => (
+                    <ValueCard key={value.title} value={value} index={index} />
                   ))}
                 </div>
               </div>
@@ -504,16 +282,16 @@ export default function AboutPage() {
 
             {/* Achievements */}
             {activeTab === 'achievements' && (
-              <div>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">Pencapaian & Sertifikasi</h2>
-                  <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              <div className="pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Pencapaian & Sertifikasi</h2>
+                  <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
                     Pengakuan dan sertifikasi yang membuktikan komitmen kami terhadap kualitas dan keunggulan
                   </p>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {achievements.map((achievement, index) => (
+                  {achievements.map((achievement: Achievement, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -521,13 +299,16 @@ export default function AboutPage() {
                       transition={{ delay: index * 0.1, duration: 0.5 }}
                       whileHover={{ scale: 1.02, y: -5 }}
                     >
-                      <Card className="border-0 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                      <Card className="border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 group">
                         <CardContent className="p-6 text-center">
                           <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 text-orange-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <Award className="h-8 w-8" />
+                            {achievement.type === 'award' ?
+                              <Award className="h-8 w-8" /> :
+                              <FileBadge className="h-8 w-8" />
+                            }
                           </div>
-                          <p className="text-gray-800 font-semibold group-hover:text-orange-600 transition-colors">
-                            {achievement}
+                          <p className="font-semibold group-hover:text-orange-600 transition-colors">
+                            {achievement.title}
                           </p>
                         </CardContent>
                       </Card>
@@ -540,33 +321,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Bergabunglah dengan Perjalanan Kami
-            </h2>
-            <p className="text-orange-100 text-xl mb-8 max-w-2xl mx-auto">
-              Mari bersama-sama membangun masa depan industri pangan Indonesia yang lebih baik dan berkelanjutan
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
-                <Users className="mr-2 h-5 w-5" />
-                Karir Bersama Kami (Sakti Careers)
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white bg-orange-500 hover:text-orange-600">
-                <Mail className="mr-2 h-5 w-5" />
-                Hubungi Kami
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Section - Menggunakan komponen yang sudah dipisahkan */}
+      <CTASection
+        title="Bergabunglah dengan Perjalanan Kami"
+        description="Mari bersama-sama membangun masa depan industri pangan Indonesia yang lebih baik dan berkelanjutan"
+        buttons={ctaButtons}
+      />
     </div>
   )
 }

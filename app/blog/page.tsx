@@ -1,374 +1,465 @@
-'use client'
-
-import React, { useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import HeaderPages from '@/components/HeaderPages'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Input } from '@/components/ui/input'
+"use client";
+import { JSX, useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
+import { blogApi, extractApiData } from '../../lib/api';
+import useSWR from 'swr';
+import { Blog, BlogParams, Category, PaginatedResponse } from '@/types/blog.types';
+import Image from 'next/image';
+import HeaderPages from '@/components/HeaderPages';
+import StatsSection from '@/components/StatsSection';
+import CTASection from '@/components/CTASection';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { 
-  Calendar, 
-  Clock, 
-  User, 
   Search, 
-  BookOpen, 
-  TrendingUp,
-  Eye,
-  MessageCircle,
-  Share2,
+  Filter, 
+  Calendar, 
+  User, 
+  ArrowRight, 
+  ChevronLeft, 
   ChevronRight,
-  Filter
-} from 'lucide-react'
+  BookOpen,
+  Users,
+  TrendingUp,
+  Mail,
+  Bell,
+  AlertTriangle,
+  RefreshCw,
+  Loader2
+} from 'lucide-react';
 
-interface BlogPost {
-  id: number
-  title: string
-  excerpt: string
-  content: string
-  author: string
-  date: string
-  readTime: string
-  category: string
-  tags: string[]
-  image: string
-  views: number
-  comments: number
-  featured: boolean
-}
+// Fetcher function with proper typing
+const fetcher = async (url: string, params: BlogParams): Promise<PaginatedResponse<Blog>> => {
+  const response = await blogApi.getAll(params);
+  return extractApiData(response);
+};
 
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Inovasi Terbaru dalam Industri Pangan: Teknologi Food Processing Modern",
-    excerpt: "Mengenal lebih dekat teknologi terbaru yang kami terapkan untuk menghasilkan produk pangan berkualitas tinggi dengan standar internasional.",
-    content: "Content lengkap artikel...",
-    author: "Tim R&D Sakti Pangan",
-    date: "2024-01-15",
-    readTime: "5 menit",
-    category: "Teknologi",
-    tags: ["inovasi", "teknologi", "food processing"],
-    image: "/images/blog/blog1.jpg",
-    views: 1250,
-    comments: 23,
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Komitmen Kualitas: Sertifikasi ISO dan HACCP PT Sakti Pangan Perkasa",
-    excerpt: "Perjalanan kami dalam meraih berbagai sertifikasi internasional untuk memastikan kualitas dan keamanan produk pangan.",
-    content: "Content lengkap artikel...",
-    author: "Quality Assurance Team",
-    date: "2024-01-10",
-    readTime: "7 menit",
-    category: "Kualitas",
-    tags: ["sertifikasi", "ISO", "HACCP", "kualitas"],
-    image: "/images/blog/blog2.jpg",
-    views: 980,
-    comments: 17,
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Sustainability dalam Industri Pangan: Langkah Menuju Masa Depan Hijau",
-    excerpt: "Inisiatif ramah lingkungan dan program keberlanjutan yang kami jalankan untuk menjaga kelestarian alam.",
-    content: "Content lengkap artikel...",
-    author: "Environmental Team",
-    date: "2024-01-05",
-    readTime: "6 menit",
-    category: "Lingkungan",
-    tags: ["sustainability", "ramah lingkungan", "green technology"],
-    image: "/images/blog/blog3.jpg",
-    views: 756,
-    comments: 12,
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Kemitraan Strategis: Membangun Ekosistem Pangan Indonesia",
-    excerpt: "Bagaimana kami membangun kemitraan dengan petani lokal dan distributor untuk memperkuat rantai pasok pangan nasional.",
-    content: "Content lengkap artikel...",
-    author: "Partnership Team",
-    date: "2023-12-28",
-    readTime: "4 menit",
-    category: "Partnership",
-    tags: ["kemitraan", "petani lokal", "rantai pasok"],
-    image: "/images/blog/blog4.jpg",
-    views: 643,
-    comments: 8,
-    featured: false
-  }
-]
+const categoriesFetcher = async (): Promise<Category[]> => {
+  const response = await blogApi.getCategories();
+  return extractApiData(response);
+};
 
-const categories = ["Semua", "Teknologi", "Kualitas", "Lingkungan", "Partnership"]
+// Loading Skeleton Component
+const BlogSkeleton = () => (
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {Array.from({ length: 6 }).map((_, index) => (
+      <Card key={index} className="border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg overflow-hidden">
+        <div className="animate-pulse">
+          <div className="aspect-video bg-gray-300 dark:bg-gray-700" />
+          <CardContent className="p-6 space-y-3">
+            <div className="flex justify-between items-center">
+              <div className="h-5 bg-gray-300 dark:bg-gray-700 rounded w-20" />
+              <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-24" />
+            </div>
+            <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded" />
+            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4" />
+            <div className="space-y-2">
+              <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded" />
+              <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-2/3" />
+            </div>
+            <div className="flex justify-between items-center">
+              <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-20" />
+              <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-16" />
+            </div>
+          </CardContent>
+        </div>
+      </Card>
+    ))}
+  </div>
+);
 
-export default function BlogPage() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("Semua")
-  const [filteredPosts, setFilteredPosts] = useState(blogPosts)
+// Error State Component
+const ErrorState = ({ onRetry }: { onRetry: () => void }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="text-center py-16"
+  >
+    <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 text-red-600 rounded-full mb-6">
+      <AlertTriangle className="h-10 w-10" />
+    </div>
+    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+      Gagal Memuat Artikel
+    </h3>
+    <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-md mx-auto">
+      Terjadi kesalahan saat mengambil data artikel. Periksa koneksi internet Anda dan coba lagi.
+    </p>
+    <Button
+      onClick={onRetry}
+      className="bg-orange-500 hover:bg-orange-600 text-white"
+    >
+      <RefreshCw className="h-4 w-4 mr-2" />
+      Coba Lagi
+    </Button>
+  </motion.div>
+);
 
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+// Blog Card Component with Animation
+const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, { once: true, margin: "-50px" });
 
-  // Filter posts based on search and category
-  React.useEffect(() => {
-    let filtered = blogPosts
-
-    if (selectedCategory !== "Semua") {
-      filtered = filtered.filter(post => post.category === selectedCategory)
-    }
-
-    if (searchTerm) {
-      filtered = filtered.filter(post => 
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      )
-    }
-
-    setFilteredPosts(filtered)
-  }, [searchTerm, selectedCategory])
+  const formatDate = (dateString: string): string => {
+    return new Date(dateString).toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50">
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02, y: -5 }}
+      className="h-full"
+    >
+      <Card className="group h-full border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+        {blog.featured_image && (
+          <div className="aspect-video relative overflow-hidden">
+            <Image
+              src={blog.featured_image}
+              alt={blog.title}
+              fill
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        )}
+
+        <CardContent className="p-6">
+          <div className="flex items-center justify-between mb-3">
+            {blog.category && (
+              <Badge variant="outline" className="text-xs border-orange-200 text-orange-700">
+                {blog.category.name}
+              </Badge>
+            )}
+            <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+              <Calendar className="h-3 w-3" />
+              {formatDate(blog.published_at)}
+            </div>
+          </div>
+
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-orange-600 transition-colors line-clamp-2">
+            <Link href={`/blog/${blog.slug}`}>
+              {blog.title}
+            </Link>
+          </h2>
+
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+            {blog.excerpt}
+          </p>
+
+          <div className="flex items-center justify-between">
+            <Link
+              href={`/blog/${blog.slug}`}
+              className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm group-hover:gap-3 transition-all"
+            >
+              Baca Selengkapnya
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            {blog.user && (
+              <div className="flex items-center gap-1 text-xs text-gray-400">
+                <User className="h-3 w-3" />
+                {blog.user.name}
+              </div>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+};
+
+export default function BlogIndex(): JSX.Element {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+  const { data: blogData, error, mutate } = useSWR<PaginatedResponse<Blog>>(
+    ['blogs', { page: currentPage, search: searchQuery, category: selectedCategory }],
+    ([url, params]: [string, BlogParams]) => fetcher(url, params)
+  );
+
+  const { data: categoriesData } = useSWR<Category[]>('categories', categoriesFetcher);
+
+  // Stats data for blog
+  const blogStats = [
+    {
+      icon: BookOpen,
+      label: "Total Artikel",
+      value: blogData?.total ? `${blogData.total}+` : "0",
+      description: "Artikel informatif dan edukatif"
+    },
+    {
+      icon: Users,
+      label: "Pembaca Aktif",
+      value: "5000+",
+      description: "Pembaca setia setiap bulan"
+    },
+    {
+      icon: TrendingUp,
+      label: "Artikel Terbaru",
+      value: blogData?.data ? `${blogData.data.length}` : "0",
+      description: "Update terkini minggu ini"
+    }
+  ];
+
+  // CTA buttons for newsletter subscription
+  const ctaButtons = [
+    {
+      label: 'Berlangganan Newsletter',
+      icon: Bell,
+      variant: 'default' as const,
+      onClick: () => console.log('Subscribe to newsletter')
+    },
+    {
+      label: 'Hubungi Tim Editorial',
+      icon: Mail,
+      variant: 'outline' as const,
+      onClick: () => console.log('Contact editorial team')
+    }
+  ];
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setSelectedCategory(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handlePreviousPage = (): void => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
+
+  const handleNextPage = (): void => {
+    if (blogData) {
+      setCurrentPage(prev => Math.min(prev + 1, blogData.last_page));
+    }
+  };
+
+  const handlePageClick = (page: number): void => {
+    setCurrentPage(page);
+  };
+
+  const getPaginationRange = (): number[] => {
+    if (!blogData) return [];
+
+    const totalPages = blogData.last_page;
+    const current = currentPage;
+    const range = 2; // Show 2 pages before and after current
+
+    let start = Math.max(1, current - range);
+    let end = Math.min(totalPages, current + range);
+
+    // Adjust if we're near the beginning or end
+    if (current <= range) {
+      end = Math.min(totalPages, range * 2 + 1);
+    }
+    if (current > totalPages - range) {
+      start = Math.max(1, totalPages - range * 2);
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  };
+
+  const handleRetry = (): void => {
+    mutate();
+  };
+
+  const isLoading = !blogData && !error;
+
+  return (
+    <div className="min-h-screen flex flex-col">
       <HeaderPages
-        title="Blog & Berita"
-        description="Temukan informasi terkini, artikel menarik, dan update terbaru dari PT Sakti Pangan Perkasa"
+        title="Sakti News"
+        description="Cerita, Inovasi, dan Update Terkini dari PT Sakti Pangan Perkasa"
         backgroundImage="/images/bg-header.png"
         height="md"
-        overlay="gradient"
+        className="py-16"
       />
 
-      <section ref={sectionRef} className="py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          {/* Search and Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-              {/* Search Bar */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <Input
-                  type="text"
-                  placeholder="Cari artikel..."
-                  value={searchTerm}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border-orange-200 focus:border-orange-500 focus:ring-orange-500"
-                />
-              </div>
+      {/* Main Content */}
+      <section 
+        ref={sectionRef}
+        className="py-8 sm:py-10 md:py-14 lg:py-20 bg-gradient-to-br from-orange-50 to-white dark:from-orange-950 dark:to-gray-900"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Error State */}
+          {error && <ErrorState onRetry={handleRetry} />}
 
-              {/* Category Filter */}
-              <div className="flex gap-2 flex-wrap">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category)}
-                    className={`transition-all duration-300 ${
-                      selectedCategory === category
-                        ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                        : 'border-orange-200 text-orange-600 hover:bg-orange-50 hover:border-orange-300'
-                    }`}
-                  >
-                    <Filter className="h-4 w-4 mr-1" />
-                    {category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-
-            {/* Results count */}
-            <div className="mt-4 text-gray-600 text-sm">
-              Menampilkan {filteredPosts.length} artikel
-            </div>
-          </motion.div>
-
-          {/* Featured Posts */}
-          {selectedCategory === "Semua" && (
+          {/* Loading State */}
+          {isLoading && (
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="mb-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="space-y-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-                <TrendingUp className="h-8 w-8 text-orange-500 mr-3" />
-                Artikel Unggulan
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.filter(post => post.featured).map((post, index) => (
-                  <motion.div
-                    key={post.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    className="group cursor-pointer"
-                  >
-                    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-orange-50/30">
-                      <div className="relative h-64 overflow-hidden">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <Badge className="bg-orange-500 hover:bg-orange-600 text-white">
-                            Unggulan
-                          </Badge>
-                        </div>
-                      </div>
-                      
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                          <div className="flex items-center">
-                            <Calendar className="h-4 w-4 mr-1" />
-                            {new Date(post.date).toLocaleDateString('id-ID')}
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1" />
-                            {post.readTime}
-                          </div>
-                        </div>
-
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
-                          {post.title}
-                        </h3>
-
-                        <p className="text-gray-600 mb-4 line-clamp-3">
-                          {post.excerpt}
-                        </p>
-
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center text-sm text-gray-500">
-                            <User className="h-4 w-4 mr-1" />
-                            {post.author}
-                          </div>
-                          
-                          <Button variant="ghost" size="sm" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50">
-                            Baca Selengkapnya
-                            <ChevronRight className="h-4 w-4 ml-1" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 text-orange-600 rounded-full mb-4">
+                  <Loader2 className="h-8 w-8 animate-spin" />
+                </div>
+                <p className="text-gray-600 dark:text-gray-300">Memuat artikel terbaru...</p>
               </div>
+              <BlogSkeleton />
             </motion.div>
           )}
 
-          {/* All Posts */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <BookOpen className="h-8 w-8 text-orange-500 mr-3" />
-              {selectedCategory === "Semua" ? "Semua Artikel" : `Kategori: ${selectedCategory}`}
-            </h2>
-
-            {filteredPosts.length === 0 ? (
-              <div className="text-center py-16">
-                <BookOpen className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500 text-lg">Tidak ada artikel yang ditemukan</p>
+          {/* Content when data is loaded */}
+          {blogData && !error && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              {/* Header */}
+              <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+                <div>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                    Artikel Terbaru
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Menampilkan {blogData.data.length} dari {blogData.total} artikel tersedia
+                  </p>
+                </div>
               </div>
-            ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredPosts.map((post, index) => (
-                  <motion.div
-                    key={post.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index, duration: 0.6 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    className="group cursor-pointer"
+
+              {/* Search and Filter */}
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Cari artikel..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 w-full transition-all duration-300 dark:bg-gray-800 dark:text-white"
+                  />
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Filter className="h-4 w-4 text-gray-500" />
+                  <select
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-w-48 transition-all duration-300 dark:bg-gray-800 dark:text-white"
                   >
-                    <Card className="h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute top-3 right-3">
-                          <Badge variant="outline" className="bg-white/90 text-orange-600 border-orange-200">
-                            {post.category}
-                          </Badge>
-                        </div>
-                      </div>
+                    <option value="">Semua Kategori</option>
+                    {categoriesData?.map((category: Category) => (
+                      <option key={category.id} value={category.slug}>
+                        {category.name} ({category.blogs_count || 0})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                          <div className="flex items-center">
-                            <Calendar className="h-3 w-3 mr-1" />
-                            {new Date(post.date).toLocaleDateString('id-ID')}
-                          </div>
-                          <div className="flex items-center">
-                            <Eye className="h-3 w-3 mr-1" />
-                            {post.views}
-                          </div>
-                          <div className="flex items-center">
-                            <MessageCircle className="h-3 w-3 mr-1" />
-                            {post.comments}
-                          </div>
-                        </div>
-
-                        <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
-                          {post.title}
-                        </h3>
-
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                          {post.excerpt}
-                        </p>
-
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center text-xs text-gray-500">
-                            <User className="h-3 w-3 mr-1" />
-                            {post.author.split(' ').slice(0, 2).join(' ')}
-                          </div>
-                          
-                          <div className="flex items-center gap-2">
-                            <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover:bg-orange-50">
-                              <Share2 className="h-4 w-4 text-gray-400 hover:text-orange-500" />
-                            </Button>
-                            <Button variant="ghost" size="sm" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 text-xs">
-                              Baca
-                              <ChevronRight className="h-3 w-3 ml-1" />
-                            </Button>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+              {/* Blog Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {blogData.data.map((blog: Blog, index: number) => (
+                  <BlogCard key={blog.id} blog={blog} index={index} />
                 ))}
               </div>
-            )}
-          </motion.div>
 
-          {/* Load More Button */}
-          {filteredPosts.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-center mt-12"
-            >
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3">
-                Muat Artikel Lainnya
-                <ChevronRight className="h-4 w-4 ml-2" />
-              </Button>
+              {/* Empty State */}
+              {blogData.data.length === 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-16"
+                >
+                  <div className="text-6xl mb-4">📰</div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Artikel Tidak Ditemukan
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                    Coba ubah kata kunci pencarian atau pilih kategori lain
+                  </p>
+                  <Button
+                    onClick={() => {
+                      setSearchQuery("");
+                      setSelectedCategory("");
+                    }}
+                    className="bg-orange-500 hover:bg-orange-600 text-white"
+                  >
+                    Reset Filter
+                  </Button>
+                </motion.div>
+              )}
+
+              {/* Pagination */}
+              {blogData.last_page > 1 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex justify-center items-center gap-2 flex-wrap"
+                >
+                  <Button
+                    onClick={handlePreviousPage}
+                    disabled={currentPage === 1}
+                    variant="outline"
+                    size="sm"
+                    className="border-orange-300 text-orange-600 hover:bg-orange-50 disabled:opacity-50"
+                  >
+                    <ChevronLeft className="h-4 w-4 mr-1" />
+                    Sebelumnya
+                  </Button>
+
+                  <div className="flex gap-1">
+                    {getPaginationRange().map((page: number) => (
+                      <Button
+                        key={page}
+                        onClick={() => handlePageClick(page)}
+                        variant={page === currentPage ? "default" : "outline"}
+                        size="sm"
+                        className={`min-w-[40px] ${
+                          page === currentPage
+                            ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                            : 'border-orange-300 text-orange-600 hover:bg-orange-50'
+                        }`}
+                      >
+                        {page}
+                      </Button>
+                    ))}
+                  </div>
+
+                  <Button
+                    onClick={handleNextPage}
+                    disabled={currentPage === blogData.last_page}
+                    variant="outline"
+                    size="sm"
+                    className="border-orange-300 text-orange-600 hover:bg-orange-50 disabled:opacity-50"
+                  >
+                    Selanjutnya
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </Button>
+                </motion.div>
+              )}
             </motion.div>
           )}
         </div>
       </section>
+
+      {/* CTA Section - Newsletter Subscription */}
+      {!error && (
+        <CTASection
+          title="Jangan Lewatkan Update Terbaru"
+          description="Berlangganan newsletter kami untuk mendapatkan artikel terbaru, tips kuliner, dan informasi eksklusif langsung di inbox Anda"
+          buttons={ctaButtons}
+          backgroundGradient="from-orange-500 via-orange-600 to-red-500"
+        />
+      )}
     </div>
-  )
+  );
 }

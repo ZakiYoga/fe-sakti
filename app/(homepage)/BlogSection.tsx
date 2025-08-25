@@ -5,10 +5,10 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Clock, 
-  Users, 
-  Heart, 
+import {
+  Clock,
+  Users,
+  Heart,
   Newspaper,
   ChevronLeft,
   ChevronRight,
@@ -16,8 +16,9 @@ import {
   TrendingUp
 } from 'lucide-react'
 import Image from 'next/image'
-import { generateBlogPosts } from './DataBlog'
+import { generateBlogPosts } from '../../DataDummy/DataBlog'
 import { BlogCardProps, BlogPost, BlogSectionProps, LoadingIndicatorProps, NavButtonProps } from '@/types/blog.types'
+import Link from 'next/link'
 
 // Constants
 const LOAD_MORE_COUNT = 6
@@ -231,7 +232,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   const sectionRef = useRef(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  
+
   // Animations
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
@@ -270,7 +271,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
 
     const cardWidth = Math.max(320, containerWidth / 4.2)
     const scrollAmount = cardWidth + 24
-    
+
     scrollRef.current.scrollBy({
       left: direction === 'left' ? -scrollAmount : scrollAmount,
       behavior: 'smooth'
@@ -294,10 +295,10 @@ const BlogSection: React.FC<BlogSectionProps> = ({
       className={`px-4 sm:px-8 lg:px-16 xl:px-20 py-8 lg:py-2 bg-gradient-to-br from-gray-50 to-white ${className}`}
     >
       <div ref={containerRef} className="container mx-auto">
-        
+
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
-          
+
           {/* Title and Description - 1/4 width on large screens */}
           <motion.div
             initial="hidden"
@@ -317,14 +318,20 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                 </Badge>
               </motion.div> */}
 
-              <motion.h2
-                className="text-3xl sm:text-4xl lg:text-6xl text-orange-500 drop-shadow-[4px_3px_0px_rgba(0,0,0,0.6)] font-bebas-neue tracking-widest font-bold"
+              <motion.div
+                className="text-3xl sm:text-4xl lg:text-6xl tracking-widest font-bold"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                {title}
-              </motion.h2>
+                <p className="font-ephesis first-letter:text-3xl font-semibold text-lg sm:text-2xl tracking-wider text-orange-500">
+                  Sakti
+                  <span className="ml-1 text-green-500 dark:text-green-200">News</span>
+                </p>
+                <h2 className="text-orange-500 drop-shadow-[4px_2px_0px_rgba(0,0,0,0.7)] font-bebas-neue ">
+                  {title}
+                </h2>
+              </motion.div>
 
               <motion.p
                 className="text-gray-600 text-base lg:text-lg leading-relaxed"
@@ -342,13 +349,16 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                   transition={{ delay: 0.5, duration: 0.6 }}
                   className="hidden lg:block pt-4"
                 >
-                  <Button
-                    variant="outline"
-                    className="group hover:bg-orange-50 hover:border-orange-300 transition-all duration-300"
-                  >
-                    <span>Lihat Semua Berita</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+                  <Link href="/about" className="w-fit">
+                    <Button
+                      size="lg"
+                      variant="press"
+                      className="w-fit px-4 active:bg-orange-500 active:text-orange-50 bg-transparent border-orange-600 text-orange-500"
+                    >
+                      <Newspaper className="h-4 w-4" />
+                      Lihat Semua Berita
+                    </Button>
+                  </Link>
                 </motion.div>
               )}
             </div>
@@ -356,7 +366,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
 
           {/* Cards Container - 3/4 width on large screens */}
           <div className="lg:w-3/4 flex-1">
-            
+
             {/* Navigation Controls */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

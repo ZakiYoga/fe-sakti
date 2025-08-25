@@ -1,5 +1,29 @@
 import { Product } from "@/types/product.types";
+import { Globe, Scale, Users } from "lucide-react";
 
+// Product Stats
+export const productStats = [
+    {
+        icon: Scale,
+        label: "Praktis untuk Setiap Kebutuhan",
+        description: "Dari dapur rumah hingga skala UMKM, pilih kemasan yang pas untuk Anda. Tersedia dalam ukuran 200g, 500g, 1kg hingga 10kg."
+    },
+    {
+        icon: Users,
+        label: "Andalan Lebih dari 1000+ Pelanggan",
+        description: "Kualitas dan konsistensi produk kami telah menjadi pilihan utama bagi ribuan pengusaha kuliner dan rumah tangga di Indonesia."
+    },
+    {
+        icon: Globe,
+        label: "Jangkauan Distribusi Nasional",
+        description: "Produk kami tersedia di berbagai toko, minimarket, dan menjadi pilihan utama para pelaku UMKM di seluruh Indonesia."
+    },
+    {
+        icon: Globe,
+        label: "Jaminan Kualitas Terbaik",
+        description: "Dibuat dengan bahan baku pilihan, produk kami menjamin hasil masakan yang renyah dan lezat di setiap penggunaan."
+    }
+]
 
 export const sampleProducts: Product[] = [
     {
@@ -47,7 +71,7 @@ export const sampleProducts: Product[] = [
         description: ""
     },
     {
-        id: 6,
+        id: 7,
         name: "PITA Tepung Roti",
         price: 159,
         rating: 4.8,

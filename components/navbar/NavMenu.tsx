@@ -33,7 +33,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="items-center hidden space-x-1 md:flex">
+      <nav className="items-center hidden space-x-1 lg:flex">
         {navItems.map((item) => (
           <Link key={item.id} href={item.href}>
             <Button
@@ -73,11 +73,11 @@ export const NavMenu: React.FC<NavMenuProps> = ({
 
       {/* Mobile Navigation */}
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild className="md:hidden flex items-center justify-center">
+        <SheetTrigger asChild className="lg:hidden flex items-center justify-center">
           <Button 
             variant="ghost" 
             size="icon" 
-            className={`h-9 w-9 transition-all duration-300 hover:scale-105 ${
+            className={`border  backdrop-blur-md h-9 w-9 transition-all duration-300 hover:scale-105 ${
               isScrolled
                 ? 'text-gray-700 dark:text-gray-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:text-orange-400 dark:hover:bg-orange-900/20'
                 : 'text-white/90 hover:text-white hover:bg-white/20 dark:text-gray-200 dark:hover:text-white dark:hover:bg-white/10'

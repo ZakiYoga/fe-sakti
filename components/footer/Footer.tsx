@@ -14,11 +14,12 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = () => {
   const quickLinks = [
-    { name: 'About Us', href: '#' },
-    { name: 'Products', href: '#' },
-    { name: 'Contact', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Career', href: '#' }
+    { name: 'About Us', href: '/about' },
+    { name: 'Products', href: '/product' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Career', href: '/career' },
+    { name: 'FAQ', href: '/faq' },
   ];
 
   const socialLinks = [

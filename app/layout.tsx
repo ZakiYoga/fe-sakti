@@ -3,6 +3,7 @@ import { Bebas_Neue, Poppins, Ephesis } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '@/lib/ThemeProvider'
+import 'leaflet/dist/leaflet.css'
 
 const ephesis = Ephesis({
   weight: '400',

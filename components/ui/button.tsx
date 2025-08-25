@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         press:
-          "border border-gray-300 bg-gray-50 hover:shadow-[4px_4px_0px_var(--color-orange-800)] text-gray-900 transition-all duration-150 ease-in-out hover:shadow-[4px_4px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 active:translate-x-0 active:translate-y-0 active:shadow-none active:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2",
+          "border border-gray-300 bg-gray-50 hover:shadow-[4px_4px_0px_var(--color-orange-900)] text-gray-900 transition-all duration-150 ease-in-out hover:-translate-x-1 hover:-translate-y-1 active:translate-x-0 active:translate-y-0 active:shadow-none active:bg-gray-100 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

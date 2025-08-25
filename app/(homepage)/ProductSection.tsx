@@ -7,27 +7,25 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Star, ShoppingCart, ChevronLeft, ChevronRight, Store } from 'lucide-react'
 import { ProductCardProps, ProductSectionProps } from '@/types/product.types'
-import { sampleProducts } from './DataProduct'
+import { sampleProducts } from '../../DataDummy/DataProduct'
 import Link from 'next/link'
 
 // Product Card Component
 const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
     const cardRef = useRef(null)
-    const isInView = useInView(cardRef, { once: true, margin: "-150px" })
 
     return (
         <motion.div
             ref={cardRef}
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={isInView ? {
+            animate={{
                 opacity: 1,
                 y: 0,
                 scale: 1,
-            } : { opacity: 0, y: 50, scale: 0.9 }}
+            }}
             transition={{
                 duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: [0.25, 0.46, 0.45, 0.94],
             }}
             whileHover={{
                 scale: 1.02,
@@ -36,12 +34,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
             }}
             className="flex-shrink-0 w-90 transition-all duration-300"
         >
-            <Card className="group relative h-full border-0 rounded-lg transition-all duration-300 bg-transparent">
+            <Card className="group relative h-full border-0 shadow-none transition-all bg-transparent dark:bg-transparent mt-8 md:mt-12 duration-300 rounded-none p-0">
                 <div className="relative">
                     <motion.img
                         src={product.image}
                         alt={product.name}
-                        className={`absolute group-hover:rotate-6 -translate-x-1/2 left-1/2 ${product.id == 3 ? "-top-[3.7rem]" : "-top-12"} w-32 h-auto drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)] transition-transform duration-500 z-20`}
+                        className={`absolute rotate-12 group-hover:rotate-0 -translate-x-1/2 left-1/2 -top-16 w-32 h-auto drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)] transition-transform duration-500 z-20`}
                     />
 
                     {/* Badges */}
@@ -60,7 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     </div>
 
                     {/* Discount badge */}
-                    {product.originalPrice && (
+                    {/* {product.originalPrice && (
                         <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -71,13 +69,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                 -{Math.round((1 - product.price / product.originalPrice) * 100)}%
                             </Badge>
                         </motion.div>
-                    )}
+                    )} */}
                 </div>
 
-                <CardContent className="relative mt-10 px-6 pb-4 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
+                <CardContent className="relative mt-10 px-6 pb-4 group-hover:bg-orange-100/50 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
                         {product.isBestSeller && (
@@ -97,7 +95,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                             </Badge>
                         </div>
 
-                        <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-600 drop-shadow-[1px_1px_0px_rgba(0,0,0,0.3)] hover:cursor-pointer transition-colors duration-300">
+                        <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-800 drop-shadow-[1px_1px_0px_rgba(0,0,0,0.3)] hover:cursor-pointer transition-colors duration-300">
                             {product.name}
                         </h3>
 
@@ -112,8 +110,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                         transition={{ delay: 0.6 + i * 0.1, duration: 0.3 }}
                                     >
                                         <Star
-                                            className={`h-4 w-4 ${i < Math.floor(product.rating)
-                                                ? 'text-yellow-400 fill-yellow-400'
+                                            className={`h-6 w-6 ${i < Math.floor(product.rating)
+                                                ? 'text-yellow-600 fill-yellow-300'
                                                 : 'text-gray-300'
                                                 }`}
                                         />
@@ -126,15 +124,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                         </div>
 
                         {/* Add to cart button */}
-                        <motion.div
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white transition-all duration-300">
-                                <ShoppingCart className="h-4 w-4 mr-2" />
-                                Belanja Sekarang
+                        <Link href="#" className="w-full">
+                            <Button
+                                size="lg"
+                                variant="press"
+                                className="w-full px-4 active:text-orange-500 bg-orange-500 border-orange-700 text-orange-50"
+                            >
+                                <ShoppingCart className="mr-2 h-4 w-4" />
+                                Beli Sekarang
                             </Button>
-                        </motion.div>
+                        </Link>
+
                     </motion.div>
                 </CardContent>
             </Card>
@@ -234,7 +234,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
             ref={sectionRef}
             className={`bg-center bg-orange-500 bg-gradient-to-br dark:from-orange-700 dark:to-orange-600 dark:via-orange-800 from-orange-400 via-orange-500 to-orange-600 ${className}`}
         >
-            <div className="container bg-[url('/images/bg.png')] px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 max-w-7xl">
+            <div className="bg-[url('/images/bg.png')] bg:cover md:bg-contain px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 lg:max-w-7xl xl:max-w-max">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -294,7 +294,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                    transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     className="relative"
                 >
                     <div
@@ -349,13 +349,13 @@ const ProductSection: React.FC<ProductSectionProps> = ({
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
-                    className="text-center my-6 sm:my-0"
+                    className="text-center my-6 sm:my-8 sm:mb-0"
                 >
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link href="/about" className="w-fit">
+                    <motion.div>
+                        <Link href="/product" className="w-fit">
                             <Button
                                 variant="press"
-                                className="w-fit text-sm sm:text-base active:text-orange-100 bg-orange-50 border-orange-200 text-gray-800 font-poppins font-normal"
+                                className="w-fit text-sm sm:text-base active:bg-orange-500 active:border-orange-50 active:text-orange-100 bg-orange-50 border-orange-600 text-orange-500 font-poppins font-normal"
                             >
                                 <Store className="mr-2 h-4 w-4" />
                                 {buttonText}

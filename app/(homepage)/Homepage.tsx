@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import AboutSection from './AboutSection'
 import ProductSection from './ProductSection'
-import { sampleProducts } from './DataProduct'
+import { sampleProducts } from '../../DataDummy/DataProduct'
 import SubscribeSection from './SubscribeSection'
 import BlogSection from './BlogSection'
 import FAQSection from '../faq/FaqSection'
@@ -26,11 +26,11 @@ export default function Homepage() {
       <MarqueeBrandProduct />
       {/* <AvailabilitySection /> */}
       <BlogSection
-        title="Sakti News"
+        title="Berita Terbaru"
         subtitle="Dapatkan informasi terbaru dan tips menarik dari blog kami."
         className="my-custom-class"
       />
-      <SubscribeSection />
+      {/* <SubscribeSection /> */}
     </>
   )
 }
