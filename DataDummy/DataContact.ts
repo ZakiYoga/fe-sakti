@@ -26,9 +26,9 @@ export const contactInfoData: ContactInfo[] = [
   {
     icon: MapPin,
     title: "Alamat Kantor",
-    primary: "Jl. Industri Raya No. 123",
-    secondary: "Jababeka, Cikarang Utara",
-    description: "Bekasi, Jawa Barat 17530",
+    primary: "KM9.4, Jl. Sragen - Solo No.8, Wates, Jetis, Kec. Jaten",
+    secondary: "Jl. Solo - sragen km 7.7 Jetis, Gerdu, Jetis, Kec. Jaten",
+    description: "Kabupaten Karanganyar, Jawa Tengah 57731",
     color: "orange"
   },
   {

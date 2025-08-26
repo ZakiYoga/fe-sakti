@@ -24,7 +24,7 @@ export const companyStats = [
     {
         icon: Globe,
         label: "Distribusi Nasional",
-        value: "8+",
+        value: "17+",
         description: "Distribusi ke berbagai kota besar & provinsi di Indonesia"
     }
 ]
@@ -44,14 +44,14 @@ export const companyValues = [
         color: "green"
     },
     {
-        icon: Users, 
+        icon: Users,
         title: "Services",
         description: "Memberikan pelayanan prima dengan responsif, ramah, dan profesional.",
         color: "red"
     },
     {
         icon: Star,
-        title: "Sajian Kualitas Sakti",
+        title: "Sajian Kualitas Tinggi",
         description: "Menghadirkan produk dengan standar mutu terbaik untuk kepuasan pelanggan.",
         color: "yellow"
     }
@@ -62,42 +62,49 @@ export const timeline = [
     {
         year: "2020",
         title: "Pendirian Perusahaan",
-        description: "PT Sakti Pangan Perkasa didirikan dengan visi menjadi produsen pangan terkemuka di Indonesia",
+        description: "PT Sakti Pangan Perkasa resmi berdiri pada 02 Juni 2020 berdasarkan akta pendirian perusahaan.",
         milestone: "Founding"
     },
     {
-        year: "2017",
-        title: "Ekspansi Produk",
-        description: "Meluncurkan lini produk minyak kelapa premium dan memperoleh sertifikasi halal pertama",
+        year: "2020",
+        title: "Rilis Produk Perdana",
+        description: "Meluncurkan produk tepung roti (Breadcrumb) dengan brand Sakti, Laskar, dan Pita.",
         milestone: "Product Launch"
     },
     {
-        year: "2019",
-        title: "Sertifikasi Internasional",
-        description: "Meraih sertifikasi ISO 22000 dan HACCP untuk standar keamanan pangan internasional",
-        milestone: "Certification"
+        year: "2020-2021",
+        title: "Perluasan Area Pemasaran",
+        description: "Memperluas pemasaran dari wilayah Jawa Tengah ke wilayah Jawa, Sumatera, Kalimantan, dan Sulawesi.",
+        milestone: "Market Expansion"
     },
     {
-        year: "2021",
-        title: "Ekspansi Regional",
-        description: "Membuka fasilitas produksi kedua dan memperluas jangkauan distribusi ke seluruh Indonesia",
-        milestone: "Expansion"
+        year: "2023",
+        title: "Sertifikat HAKI Merk Laskar",
+        description: "Merek Laskar resmi mendapatkan perlindungan HAKI untuk mendukung kekuatan brand.",
+        milestone: "Certification"
     },
     {
         year: "2023",
         title: "Era Digital",
-        description: "Meluncurkan platform e-commerce dan sistem manajemen terintegrasi berbasis teknologi",
+        description: "Meluncurkan platform e-commerce dan sistem manajemen berbasis teknologi.",
         milestone: "Digital"
     },
     {
         year: "2024",
-        title: "Sustainable Future",
-        description: "Menginisiasi program keberlanjutan dan persiapan ekspansi ke pasar internasional",
-        milestone: "Sustainability"
-    }
+        title: "Sertifikasi BPOM",
+        description: "Seluruh produk resmi mendapatkan izin edar BPOM RI berlaku 2024–2029.",
+        milestone: "Certification"
+    },
+    {
+        year: "2021 - sekarang",
+        title: "Ekspansi Regional",
+        description: "Meningkatkan kapasitas produksi dan memperluas jaringan distribusi di seluruh Indonesia.",
+        milestone: "Expansion"
+    },
 ]
 
-  export const achievements: Achievement[] = [
+
+export const achievements: Achievement[] = [
     {
         title: "ISO 9001:2015",
         type: "certificate",
@@ -114,26 +121,26 @@ export const timeline = [
         title: "Trusted Product & Brand Award Winner 2025",
         type: "award",
     },
-  ];
+];
 
-    export const missionPoints: MissionPoint[] = [
+export const missionPoints: MissionPoint[] = [
     {
-      title: "Berintegritas, profesional, dan terbuka",
-      description: "Pengelolaan perusahaan dilakukan dengan integritas dan profesionalisme dari seluruh bagian perusahaan serta selalu terbuka terhadap ide dan pemikiran yang diberikan baik dari internal maupun eksternal perusahaan."
+        title: "Berintegritas, profesional, dan terbuka",
+        description: "Pengelolaan perusahaan dilakukan dengan integritas dan profesionalisme dari seluruh bagian perusahaan serta selalu terbuka terhadap ide dan pemikiran yang diberikan baik dari internal maupun eksternal perusahaan."
     },
     {
-      title: "Passion, Patient dan Persistent",
-      description: "Memiliki gairah untuk selalu belajar, berkembang, berkomitmen dan Bertekun dalam prosesnya."
+        title: "Passion, Patient dan Persistent",
+        description: "Memiliki gairah untuk selalu belajar, berkembang, berkomitmen dan Bertekun dalam prosesnya."
     },
     {
-      title: "Kreatif dan inovatif",
-      description: "Mau berpikir secara kreatif sehingga menghasilkan inovasi baru dalam proses pengembangan perusahaan."
+        title: "Kreatif dan inovatif",
+        description: "Mau berpikir secara kreatif sehingga menghasilkan inovasi baru dalam proses pengembangan perusahaan."
     },
     {
-      title: "Efektif dan efisien",
-      description: "Mampu mengedepankan operasi perusahaan yang efektif dan efisien untuk menghasilkan nilai tambah baru bagi perusahaan."
+        title: "Efektif dan efisien",
+        description: "Mampu mengedepankan operasi perusahaan yang efektif dan efisien untuk menghasilkan nilai tambah baru bagi perusahaan."
     }
-  ];
+];
 
 export const tabs: Tab[] = [
     { id: 'story', label: 'Cerita Kami', icon: Heart },

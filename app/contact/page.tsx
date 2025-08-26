@@ -19,7 +19,8 @@ import { MapLocation } from '@/types/map.types'
 import StyledMapWrapper from '@/components/Map/StyledMapWrapper'
 
 // Contact Info Card Component
-// import { ContactInfo } from '@/types/contact.types'
+import { ContactInfo } from '@/types/contact.types'
+import StatsSection from '@/components/StatsSection'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<ContactFormData>({

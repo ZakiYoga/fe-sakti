@@ -336,11 +336,11 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section - Menggunakan komponen yang sudah dipisahkan */}
-      <CTASection
+      {/* <CTASection
         title="Bergabunglah dengan Perjalanan Kami"
         description="Mari bersama-sama membangun masa depan industri pangan Indonesia yang lebih baik dan berkelanjutan"
         buttons={ctaButtons}
-      />
+      /> */}
     </div>
   )
 }
