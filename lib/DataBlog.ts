@@ -52,121 +52,67 @@ export const dummyCategories = [
 
 export const generateDummyBlogs = () => [
   {
-    id: 1,
-    title: "Ayam Katsu Crispy dengan Breadcrumb Special",
-    slug: "ayam-katsu-crispy-dengan-breadcrumb-special",
-    excerpt: "Resep ayam katsu dengan coating breadcrumb yang extra crispy dan bumbu rahasia yang membuatnya semakin lezat. Ikuti langkah-langkah mudah untuk membuat hidangan favorit keluarga ini.",
+    id: 8,
+    title: "Udang Crispy Breadcrumb ala Chef dengan Tepung Roti Sakti Premium",
+    slug: "udang-crispy-breadcrumb-ala-chef-dengan-tepung-roti-sakti-premium",
+    excerpt: "Resep udang crispy dengan lapisan breadcrumb yang sempurna. Tekstur renyah di luar, daging udang yang juicy di dalam. Rahasia chef profesional kini bisa Anda coba di rumah!",
     content: `<div class="prose max-w-none">
-      <h2>Bahan-bahan yang Dibutuhkan</h2>
-      <p>Ayam katsu adalah hidangan yang sangat digemari karena teksturnya yang crispy di luar dan juicy di dalam. Dengan menggunakan Tepung Roti Sakti, Anda bisa mendapatkan hasil yang sempurna setiap kali memasak.</p>
+      <h2>Udang Crispy Premium Restaurant Style</h2>
+      <p>Udang crispy adalah hidangan seafood yang selalu menjadi favorit. Dengan teknik coating yang tepat menggunakan Tepung Roti Sakti Premium, Anda bisa mendapatkan hasil yang tidak kalah dengan restoran mewah.</p>
       
-      <h3>Bahan Utama:</h3>
+      <h3>Bahan-bahan:</h3>
       <ul>
-        <li>500g fillet ayam, potong sesuai selera</li>
-        <li>200g Tepung Roti Sakti</li>
-        <li>2 butir telur, kocok lepas</li>
+        <li>500g udang windu, kupas sisakan ekor</li>
+        <li>200g Tepung Roti Sakti Premium</li>
         <li>100g tepung terigu</li>
+        <li>3 butir telur, kocok lepas</li>
+        <li>200ml susu cair dingin</li>
       </ul>
       
       <h3>Bumbu Marinasi:</h3>
       <ul>
         <li>1 sdt garam</li>
-        <li>1/2 sdt merica bubuk</li>
+        <li>1/2 sdt merica putih bubuk</li>
         <li>1 sdt bawang putih bubuk</li>
-        <li>1 sdt kaldu ayam bubuk</li>
-      </ul>
-      
-      <h2>Cara Membuat</h2>
-      <p>Resep ini telah diuji dan disempurnakan oleh Chef Maria untuk memberikan hasil terbaik. Kunci utamanya adalah pada teknik coating dan suhu minyak yang tepat.</p>
-      
-      <ol>
-        <li>Marinasi ayam dengan bumbu marinasi selama minimal 30 menit</li>
-        <li>Siapkan tiga wadah: tepung terigu, telur kocok, dan Tepung Roti Sakti</li>
-        <li>Celupkan ayam ke tepung terigu, lalu telur, terakhir ke tepung roti</li>
-        <li>Goreng dalam minyak panas hingga golden brown dan crispy</li>
-        <li>Angkat dan tiriskan, sajikan dengan saus favorit Anda</li>
-      </ol>
-      
-      <p><strong>Tips:</strong> Pastikan minyak benar-benar panas sebelum menggoreng untuk hasil yang maksimal crispy.</p>
-    </div>`,
-    featured_image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=600&fit=crop",
-    status: "published",
-    published_at: "2024-08-15T10:00:00.000000Z",
-    views: 1200,
-    meta_title: "Ayam Katsu Crispy dengan Breadcrumb Special - Resep Terbaik",
-    meta_description: "Resep ayam katsu dengan coating breadcrumb yang extra crispy dan bumbu rahasia yang membuatnya semakin lezat.",
-    meta_keywords: "ayam katsu, crispy, breadcrumb, resep, sakti",
-    category_id: 6,
-    user_id: 2,
-    created_at: "2024-08-15T09:00:00.000000Z",
-    updated_at: "2024-08-15T10:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-08-15T09:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 6,
-      name: "Main Course",
-      slug: "main-course",
-      color: "#EF4444",
-      icon: "UtensilsCrossed"
-    },
-    user: {
-      id: 2,
-      name: "Chef Maria",
-      email: "chef.maria@saktipangan.co.id"
-    }
-  },
-  {
-    id: 2,
-    title: "Fish & Chips Homemade ala Restoran",
-    slug: "fish-chips-homemade-ala-restoran",
-    excerpt: "Buat fish & chips crispy seperti di restoran dengan teknik breadcrumb yang tepat dan saus tartar segar. Resep mudah dengan hasil professional.",
-    content: `<div class="prose max-w-none">
-      <h2>Rahasia Fish & Chips Restoran Quality</h2>
-      <p>Fish & chips adalah hidangan klasik yang selalu menjadi favorit. Dengan Tepung Bumbu Sakti, Anda bisa membuat fish & chips yang tidak kalah enak dengan yang dijual di restoran mewah.</p>
-      
-      <h3>Bahan untuk Fish:</h3>
-      <ul>
-        <li>500g ikan dori fillet</li>
-        <li>200g Tepung Bumbu Serbaguna Sakti</li>
-        <li>200ml air es</li>
-        <li>1 butir telur</li>
-      </ul>
-      
-      <h3>Untuk Chips:</h3>
-      <ul>
-        <li>4 buah kentang ukuran besar</li>
-        <li>Garam secukupnya</li>
-        <li>Minyak untuk menggoreng</li>
+        <li>1 sdt kaldu udang bubuk</li>
+        <li>1 sdm air jeruk lemon</li>
       </ul>
       
       <h2>Langkah Pembuatan</h2>
-      <p>Kunci utamanya adalah pada teknik coating dan suhu minyak yang tepat. Pastikan adonan tepung tidak terlalu kental agar hasil coating ringan dan crispy.</p>
+      <p>Kunci sukses udang crispy terletak pada persiapan udang dan teknik triple coating yang menghasilkan lapisan breadcrumb yang tebal dan renyah.</p>
       
       <ol>
-        <li>Potong kentang memanjang, rendam dalam air garam 30 menit</li>
-        <li>Campurkan Tepung Bumbu Sakti dengan air es dan telur hingga smooth</li>
-        <li>Celupkan ikan ke adonan tepung, goreng hingga golden</li>
-        <li>Goreng kentang hingga crispy dan golden</li>
-        <li>Sajikan dengan saus tartar dan lemon</li>
+        <li>Bersihkan udang, buat sayatan tipis di punggung untuk mencegah keriting</li>
+        <li>Marinasi udang dengan bumbu marinasi selama 45 menit</li>
+        <li>Siapkan 3 wadah: tepung terigu, telur + susu, dan Tepung Roti Sakti</li>
+        <li>Celupkan udang: tepung → telur → tepung roti → telur → tepung roti (double coating)</li>
+        <li>Diamkan 10 menit sebelum digoreng</li>
+        <li>Goreng dalam minyak panas 170°C selama 3-4 menit hingga golden</li>
+        <li>Sajikan segera dengan saus cocktail atau thousand island</li>
       </ol>
       
-      <h3>Saus Tartar Homemade</h3>
-      <p>Campurkan mayones, pickle cincang, bawang bombay cincang halus, dan perasan lemon. Aduk rata dan dinginkan sebelum disajikan.</p>
+      <h3>Tips Chef Profesional</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li><strong>Jangan overcook:</strong> Udang matang sangat cepat, jangan terlalu lama menggoreng</li>
+          <li><strong>Suhu konsisten:</strong> Gunakan termometer untuk menjaga suhu minyak</li>
+          <li><strong>Coating tebal:</strong> Double coating menghasilkan tekstur extra crispy</li>
+        </ul>
+      </div>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1485995768424-01c1ccc33f7a?w=800&h=600&fit=crop",
+    featured_image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop",
     status: "published",
-    published_at: "2024-08-10T14:00:00.000000Z",
+    published_at: "2024-08-20T08:00:00.000000Z",
     views: 890,
-    meta_title: "Fish & Chips Homemade ala Restoran - Tips dan Trik",
-    meta_description: "Buat fish & chips crispy seperti di restoran dengan teknik breadcrumb yang tepat dan saus tartar segar.",
-    meta_keywords: "fish and chips, homemade, restoran, crispy, seafood",
+    meta_title: "Udang Crispy Breadcrumb ala Chef dengan Tepung Roti Sakti Premium",
+    meta_description: "Resep udang crispy dengan lapisan breadcrumb yang sempurna. Tekstur renyah di luar, daging udang yang juicy di dalam.",
+    meta_keywords: "udang crispy, breadcrumb, tepung roti sakti, seafood, resep chef",
     category_id: 5,
-    user_id: 3,
-    created_at: "2024-08-10T13:00:00.000000Z",
-    updated_at: "2024-08-10T14:00:00.000000Z",
+    user_id: 2,
+    created_at: "2024-08-20T07:00:00.000000Z",
+    updated_at: "2024-08-20T08:00:00.000000Z",
     approved_by: 1,
-    approved_at: "2024-08-10T13:30:00.000000Z",
+    approved_at: "2024-08-20T07:30:00.000000Z",
     rejection_reason: null,
     category: {
       id: 5,
@@ -176,291 +122,83 @@ export const generateDummyBlogs = () => [
       icon: "Fish"
     },
     user: {
-      id: 3,
-      name: "Chef John",
-      email: "chef.john@saktipangan.co.id"
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
     }
   },
+  
   {
-    id: 3,
-    title: "Chef Maria Bagikan Resep 'Ayam Katsu Crispy' ala Restoran dengan Tepung Roti Sakti",
-    slug: "chef-maria-bagikan-resep-ayam-katsu-crispy-ala-restoran",
-    excerpt: "Ikuti langkah-langkah mudah dari Chef Maria untuk membuat ayam katsu super renyah dan lezat menggunakan produk unggulan kami, Tepung Roti Sakti.",
+    id: 9,
+    title: "Nugget Ayam Homemade Super Crispy dengan Rahasia Tepung Roti Sakti",
+    slug: "nugget-ayam-homemade-super-crispy-dengan-rahasia-tepung-roti-sakti",
+    excerpt: "Buat nugget ayam sendiri di rumah dengan kualitas premium! Resep rahasia untuk nugget yang crispy tahan lama dan aman untuk anak-anak.",
     content: `<div class="prose max-w-none">
-      <h2>Wawancara Eksklusif dengan Chef Maria</h2>
-      <p>Chef Maria, salah satu chef terbaik di Indonesia, membagikan resep rahasia ayam katsu crispy yang telah menjadi signature dish di berbagai restoran. Dengan menggunakan Tepung Roti Sakti, hasil yang didapat selalu konsisten dan memuaskan.</p>
+      <h2>Nugget Ayam Homemade Premium</h2>
+      <p>Nugget ayam buatan sendiri tidak hanya lebih sehat, tetapi juga bisa disesuaikan dengan selera keluarga. Dengan Tepung Roti Sakti, tekstur crispy nugget akan bertahan lama bahkan setelah didinginkan.</p>
       
-      <blockquote class="border-l-4 border-orange-500 pl-4 italic">
-        "Rahasia ayam katsu yang sempurna bukan hanya pada bahan, tapi juga teknik. Tepung Roti Sakti memberikan tekstur yang konsisten dan tahan lama crispy-nya." - Chef Maria
-      </blockquote>
+      <h3>Bahan Nugget:</h3>
+      <ul>
+        <li>1kg dada ayam fillet, potong dadu</li>
+        <li>200g tepung tapioka</li>
+        <li>100ml air es</li>
+        <li>2 butir putih telur</li>
+        <li>1 sdt garam</li>
+        <li>1/2 sdt merica bubuk</li>
+        <li>1 sdt kaldu ayam bubuk</li>
+        <li>1/2 sdt bawang putih bubuk</li>
+      </ul>
       
-      <h3>Tips dari Chef Maria</h3>
+      <h3>Bahan Coating:</h3>
+      <ul>
+        <li>200g Tepung Roti Sakti</li>
+        <li>100g tepung terigu</li>
+        <li>3 butir telur + 100ml susu cair</li>
+      </ul>
+      
+      <h2>Cara Membuat</h2>
+      <p>Proses pembuatan nugget homemade membutuhkan ketelitian, terutama dalam mencampur adonan dan proses pembentukan agar hasil nugget tidak mudah hancur saat digoreng.</p>
+      
       <ol>
-        <li><strong>Marinasi yang Tepat:</strong> Jangan hanya mengandalkan bumbu luar, marinasi ayam minimal 2 jam</li>
-        <li><strong>Teknik Double Coating:</strong> Celupkan ayam dua kali ke dalam tepung roti untuk hasil extra crispy</li>
-        <li><strong>Suhu Minyak:</strong> Pastikan suhu minyak 170-180°C, tidak lebih tidak kurang</li>
-        <li><strong>Waktu Istirahat:</strong> Setelah di-coating, diamkan 15 menit sebelum digoreng</li>
+        <li>Blender kasar dada ayam hingga tekstur seperti daging cincang</li>
+        <li>Campurkan ayam cincang dengan tepung tapioka dan bumbu</li>
+        <li>Tambahkan air es sedikit demi sedikit sambil diaduk</li>
+        <li>Masukkan putih telur, aduk hingga adonan kompak</li>
+        <li>Cetak adonan sesuai bentuk yang diinginkan</li>
+        <li>Kukus selama 15 menit hingga set</li>
+        <li>Dinginkan, lalu lapisi dengan tepung → telur → tepung roti</li>
+        <li>Simpan di freezer atau langsung goreng</li>
       </ol>
       
-      <h2>Variasi Kreasi Chef Maria</h2>
-      <p>Chef Maria juga berbagi beberapa variasi yang bisa dicoba di rumah:</p>
+      <h3>Variasi Rasa</h3>
+      <div class="grid grid-cols-2 gap-4 my-6">
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h4 class="font-bold text-red-800">Nugget Pedas</h4>
+          <p class="text-sm text-red-600">Tambahkan bubuk cabai dan paprika ke dalam tepung roti</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h4 class="font-bold text-green-800">Nugget Keju</h4>
+          <p class="text-sm text-green-600">Campurkan keju parut ke dalam adonan ayam</p>
+        </div>
+      </div>
       
-      <h3>Ayam Katsu Keju</h3>
-      <p>Tambahkan slice keju mozzarella di dalam ayam sebelum di-coating. Hasil yang lumer di dalam, crispy di luar.</p>
-      
-      <h3>Ayam Katsu Pedas</h3>
-      <p>Campurkan bubuk cabai ke dalam tepung roti untuk sensasi pedas yang menggugah selera.</p>
-      
-      <p class="bg-orange-50 p-4 rounded-lg">
-        <strong>Catatan Chef:</strong> Kualitas bahan baku sangat menentukan hasil akhir. Pilih ayam yang segar dan tepung roti berkualitas tinggi seperti Tepung Roti Sakti untuk hasil terbaik.
+      <p class="bg-blue-50 p-4 rounded-lg">
+        <strong>Storage Tips:</strong> Nugget yang sudah di-coating bisa disimpan di freezer hingga 3 bulan. Goreng langsung tanpa dicairkan terlebih dahulu.
       </p>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=600&fit=crop",
+    featured_image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=800&h=600&fit=crop",
     status: "published",
-    published_at: "2024-08-15T16:00:00.000000Z",
-    views: 650,
-    meta_title: "Chef Maria Bagikan Resep Ayam Katsu Crispy dengan Tepung Roti Sakti",
-    meta_description: "Ikuti langkah-langkah mudah dari Chef Maria untuk membuat ayam katsu super renyah dan lezat.",
-    meta_keywords: "chef maria, ayam katsu, tepung roti sakti, resep, crispy",
-    category_id: 2,
-    user_id: 1,
-    created_at: "2024-08-15T15:00:00.000000Z",
-    updated_at: "2024-08-15T16:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-08-15T15:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 2,
-      name: "Resep Sakti",
-      slug: "resep-sakti",
-      color: "#F59E0B",
-      icon: "ChefHat"
-    },
-    user: {
-      id: 1,
-      name: "Tim Editorial",
-      email: "editorial@saktipangan.co.id"
-    }
-  },
-  {
-    id: 4,
-    title: "Sakti Pangan Perkasa Raih Penghargaan 'Perusahaan Pangan Terbaik 2024'",
-    slug: "sakti-pangan-perkasa-raih-penghargaan-perusahaan-pangan-terbaik-2024",
-    excerpt: "PT. Sakti Pangan Perkasa kembali menorehkan prestasi gemilang dengan meraih penghargaan bergengsi atas komitmen kami dalam kualitas dan inovasi produk pangan.",
-    content: `<div class="prose max-w-none">
-      <h2>Penghargaan Bergengsi di Industri Pangan Indonesia</h2>
-      <p>Penghargaan 'Perusahaan Pangan Terbaik 2024' yang diterima oleh PT. Sakti Pangan Perkasa merupakan bukti dari dedikasi perusahaan dalam menghadirkan produk berkualitas tinggi. Penghargaan ini diberikan berdasarkan penilaian ketat terhadap kualitas produk, inovasi, dan kontribusi terhadap industri pangan Indonesia.</p>
-      
-      <h3>Kriteria Penilaian</h3>
-      <ul>
-        <li><strong>Kualitas Produk:</strong> Konsistensi dan standar tinggi dalam setiap produk</li>
-        <li><strong>Inovasi:</strong> Pengembangan produk baru dan penyempurnaan formula</li>
-        <li><strong>Keamanan Pangan:</strong> Sertifikasi HACCP dan ISO 22000</li>
-        <li><strong>Tanggung Jawab Sosial:</strong> Program CSR dan kontribusi kepada masyarakat</li>
-        <li><strong>Sustainabilitas:</strong> Komitmen terhadap lingkungan dan keberlanjutan</li>
-      </ul>
-      
-      <h2>Pernyataan Direktur Utama</h2>
-      <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
-        "Penghargaan ini adalah hasil kerja keras seluruh tim Sakti Pangan Perkasa. Kami berkomitmen untuk terus berinovasi dan memberikan yang terbaik bagi konsumen Indonesia." - Bapak Suharto, Direktur Utama PT. Sakti Pangan Perkasa
-      </blockquote>
-      
-      <h3>Pencapaian 2024</h3>
-      <div class="grid grid-cols-2 gap-4 my-6">
-        <div class="bg-blue-50 p-4 rounded-lg">
-          <h4 class="font-bold text-blue-800">Produksi</h4>
-          <p class="text-2xl font-bold text-blue-600">50.000+ ton</p>
-          <p class="text-sm text-blue-600">Kapasitas produksi tahunan</p>
-        </div>
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h4 class="font-bold text-green-800">Distribusi</h4>
-          <p class="text-2xl font-bold text-green-600">1.500+</p>
-          <p class="text-sm text-green-600">Outlet di seluruh Indonesia</p>
-        </div>
-      </div>
-      
-      <h2>Rencana Pengembangan</h2>
-      <p>Dengan pencapaian ini, PT. Sakti Pangan Perkasa merencanakan ekspansi lebih lanjut dengan:</p>
-      <ol>
-        <li>Pembangunan pabrik baru di Jawa Timur</li>
-        <li>Peluncuran 5 varian produk baru</li>
-        <li>Ekspansi ke pasar Asia Tenggara</li>
-        <li>Program pelatihan untuk UMKM kuliner</li>
-      </ol>
-    </div>`,
-    featured_image: "https://images.unsplash.com/photo-1600880292203-757bb62b2baf?w=800&h=600&fit=crop",
-    status: "published",
-    published_at: "2024-08-12T09:00:00.000000Z",
-    views: 420,
-    meta_title: "Sakti Pangan Perkasa Raih Penghargaan Perusahaan Pangan Terbaik 2024",
-    meta_description: "PT. Sakti Pangan Perkasa kembali menorehkan prestasi gemilang dengan meraih penghargaan bergengsi.",
-    meta_keywords: "sakti pangan, penghargaan, perusahaan terbaik, 2024, prestasi",
-    category_id: 1,
-    user_id: 1,
-    created_at: "2024-08-12T08:00:00.000000Z",
-    updated_at: "2024-08-12T09:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-08-12T08:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 1,
-      name: "Sakti News",
-      slug: "company-news",
-      color: "#3B82F6",
-      icon: "Building"
-    },
-    user: {
-      id: 1,
-      name: "Tim Editorial",
-      email: "editorial@saktipangan.co.id"
-    }
-  },
-  {
-    id: 5,
-    title: "SaktiCareer: Kesempatan Berkarir di Industri Pangan Terkemuka",
-    slug: "sakticareer-kesempatan-berkarir-di-industri-pangan-terkemuka",
-    excerpt: "Kami mengundang talenta terbaik untuk bergabung bersama tim PT. Sakti Pangan Perkasa dan berkembang di lingkungan kerja yang dinamis dan suportif.",
-    content: `<div class="prose max-w-none">
-      <h2>Bergabunglah dengan Tim Terbaik</h2>
-      <p>PT. Sakti Pangan Perkasa terus berkembang dan membutuhkan talenta-talenta terbaik untuk bergabung dalam tim kami. Kami menawarkan kesempatan karir yang menarik dengan benefits kompetitif dan lingkungan kerja yang mendukung pengembangan diri.</p>
-      
-      <h3>Posisi yang Tersedia</h3>
-      <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg my-6">
-        <h4 class="text-xl font-bold mb-4">Management Trainee Program</h4>
-        <ul>
-          <li>Fresh graduate S1 semua jurusan</li>
-          <li>IPK minimal 3.25</li>
-          <li>Usia maksimal 25 tahun</li>
-          <li>Program 1 tahun dengan rotasi divisi</li>
-        </ul>
-      </div>
-      
-      <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg my-6">
-        <h4 class="text-xl font-bold mb-4">Production Manager</h4>
-        <ul>
-          <li>S1 Teknik Industri/Pangan</li>
-          <li>Pengalaman minimal 5 tahun di industri pangan</li>
-          <li>Menguasai sistem manajemen kualitas</li>
-          <li>Leadership yang kuat</li>
-        </ul>
-      </div>
-      
-      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg my-6">
-        <h4 class="text-xl font-bold mb-4">Digital Marketing Specialist</h4>
-        <ul>
-          <li>S1 Marketing/Komunikasi</li>
-          <li>Pengalaman digital marketing 3+ tahun</li>
-          <li>Menguasai Google Ads, Facebook Ads, SEO</li>
-          <li>Portfolio campaign yang terukur</li>
-        </ul>
-      </div>
-      
-      <h2>Benefits & Fasilitas</h2>
-      <div class="grid grid-cols-2 gap-4 my-6">
-        <div class="bg-blue-50 p-4 rounded-lg">
-          <h4 class="font-bold text-blue-800">Kompensasi</h4>
-          <ul class="text-sm text-blue-600">
-            <li>Gaji kompetitif</li>
-            <li>Bonus performance</li>
-            <li>THR</li>
-            <li>Tunjangan transport</li>
-          </ul>
-        </div>
-        <div class="bg-green-50 p-4 rounded-lg">
-          <h4 class="font-bold text-green-800">Kesehatan</h4>
-          <ul class="text-sm text-green-600">
-            <li>BPJS Kesehatan</li>
-            <li>Asuransi kesehatan</li>
-            <li>Medical check-up</li>
-            <li>Poliklinik perusahaan</li>
-          </ul>
-        </div>
-        <div class="bg-purple-50 p-4 rounded-lg">
-          <h4 class="font-bold text-purple-800">Pengembangan</h4>
-          <ul class="text-sm text-purple-600">
-            <li>Training reguler</li>
-            <li>Sertifikasi profesi</li>
-            <li>Program mentoring</li>
-            <li>Career path yang jelas</li>
-          </ul>
-        </div>
-        <div class="bg-orange-50 p-4 rounded-lg">
-          <h4 class="font-bold text-orange-800">Work-Life Balance</h4>
-          <ul class="text-sm text-orange-600">
-            <li>Flexible working hours</li>
-            <li>Cuti tahunan</li>
-            <li>Family gathering</li>
-            <li>Outing karyawan</li>
-          </ul>
-        </div>
-      </div>
-      
-      <h2>Cara Melamar</h2>
-      <p>Kirimkan CV, portfolio, dan surat lamaran ke:</p>
-      <div class="bg-gray-50 p-4 rounded-lg">
-        <p><strong>Email:</strong> career@saktipangan.co.id</p>
-        <p><strong>Subject:</strong> [Posisi] - [Nama Lengkap]</p>
-        <p><strong>Deadline:</strong> 30 September 2024</p>
-      </div>
-      
-    </div>`,
-    featured_image: "https://images.unsplash.com/photo-1521737711867-e3b973753422?w=800&h=600&fit=crop",
-    status: "published",
-    published_at: "2024-08-10T11:00:00.000000Z",
-    views: 310,
-    meta_title: "SaktiCareer: Kesempatan Berkarir di Industri Pangan Terkemuka",
-    meta_description: "Bergabung dengan PT. Sakti Pangan Perkasa dan kembangkan karir Anda di industri pangan.",
-    meta_keywords: "sakti career, karir, lowongan kerja, industri pangan, bergabung",
-    category_id: 4,
-    user_id: 1,
-    created_at: "2024-08-10T10:00:00.000000Z",
-    updated_at: "2024-08-10T11:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-08-10T10:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 4,
-      name: "SaktiCareer",
-      slug: "sakti-career",
-      color: "#8B5CF6",
-      icon: "Users"
-    },
-    user: {
-      id: 1,
-      name: "Tim Editorial",
-      email: "editorial@saktipangan.co.id"
-    }
-  },
-  {
-    id: 6,
-    title: "Tips Membuat 'Fish & Chips Homemade' Selezat Restoran dengan Tepung Bumbu Sakti",
-    slug: "tips-membuat-fish-chips-homemade-selezat-restoran",
-    excerpt: "Ingin membuat hidangan Fish & Chips yang renyah di luar dan lembut di dalam? Temukan rahasianya hanya dengan Tepung Bumbu Serbaguna Sakti!",
-    content: `<div class="prose max-w-none">
-      <h2>Rahasia Fish & Chips Restaurant Quality</h2>
-      <p>Membuat fish & chips yang sempurna membutuhkan teknik khusus. Dengan Tepung Bumbu Serbaguna Sakti, proses menjadi lebih mudah dan hasilnya selalu konsisten.</p>
-      
-      <h3>Tips Sukses dari Chef Profesional</h3>
-      <ol>
-        <li><strong>Pilih Ikan yang Tepat:</strong> Gunakan ikan berdaging tebal seperti dory atau cod</li>
-        <li><strong>Suhu Air Es:</strong> Gunakan air es untuk adonan tepung agar hasil lebih crispy</li>
-        <li><strong>Jangan Over-mix:</strong> Aduk adonan tepung secukupnya saja</li>
-        <li><strong>Double Frying:</strong> Goreng kentang dua kali untuk hasil extra crispy</li>
-      </ol>
-    </div>`,
-    featured_image: "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=800&h=600&fit=crop",
-    status: "published",
-    published_at: "2024-08-08T15:00:00.000000Z",
-    views: 510,
-    meta_title: "Tips Membuat Fish & Chips Homemade Selezat Restoran",
-    meta_description: "Tips dan trik membuat Fish & Chips yang renyah di luar dan lembut di dalam dengan Tepung Bumbu Sakti.",
-    meta_keywords: "fish chips, homemade, tips, tepung bumbu sakti, restoran",
+    published_at: "2024-08-18T10:00:00.000000Z",
+    views: 1450,
+    meta_title: "Nugget Ayam Homemade Super Crispy dengan Tepung Roti Sakti",
+    meta_description: "Buat nugget ayam sendiri di rumah dengan kualitas premium! Resep rahasia untuk nugget yang crispy tahan lama.",
+    meta_keywords: "nugget ayam, homemade, crispy, tepung roti sakti, resep keluarga",
     category_id: 2,
     user_id: 3,
-    created_at: "2024-08-08T14:00:00.000000Z",
-    updated_at: "2024-08-08T15:00:00.000000Z",
+    created_at: "2024-08-18T09:00:00.000000Z",
+    updated_at: "2024-08-18T10:00:00.000000Z",
     approved_by: 1,
-    approved_at: "2024-08-08T14:30:00.000000Z",
+    approved_at: "2024-08-18T09:30:00.000000Z",
     rejection_reason: null,
     category: {
       id: 2,
@@ -471,44 +209,185 @@ export const generateDummyBlogs = () => [
     },
     user: {
       id: 3,
-      name: "Chef John",
-      email: "chef.john@saktipangan.co.id"
+      name: "Admin IT",
+      email: "admin@saktipangan.co.id"
     }
   },
+
   {
-    id: 7,
-    title: "Sakti Pangan Peduli: Kegiatan Bakti Sosial di Panti Asuhan Kasih Ibu",
-    slug: "sakti-pangan-peduli-kegiatan-bakti-sosial-panti-asuhan-kasih-ibu",
-    excerpt: "Sebagai bentuk tanggung jawab sosial, tim PT. Sakti Pangan Perkasa mengadakan kunjungan dan donasi ke Panti Asuhan Kasih Ibu untuk berbagi kebahagiaan bersama anak-anak.",
+    id: 11,
+    title: "Cumi Goreng Tepung Crispy ala Seafood Restaurant Premium",
+    slug: "cumi-goreng-tepung-crispy-ala-seafood-restaurant-premium",
+    excerpt: "Rahasia cumi goreng tepung yang crispy dan tidak alot! Teknik khusus dengan Tepung Bumbu Sakti yang membuat cumi tetap tender dan coating-nya renyah sempurna.",
     content: `<div class="prose max-w-none">
-      <h2>Program CSR Sakti Pangan Peduli</h2>
-      <p>Program CSR Sakti Pangan Peduli merupakan komitmen perusahaan dalam berkontribusi untuk masyarakat. Kali ini, kami mengunjungi Panti Asuhan Kasih Ibu dan memberikan bantuan serta mengadakan kegiatan bersama anak-anak yatim piatu.</p>
+      <h2>Cumi Goreng Tepung Restaurant Quality</h2>
+      <p>Cumi goreng tepung yang sempurna membutuhkan teknik khusus agar tidak alot. Dengan formulasi Tepung Bumbu Serbaguna Sakti yang tepat, hasil cumi akan tetap tender dengan coating yang super crispy.</p>
       
-      <h3>Kegiatan yang Dilakukan</h3>
+      <h3>Bahan Utama:</h3>
       <ul>
-        <li>Donasi sembako dan kebutuhan sehari-hari</li>
-        <li>Workshop memasak sederhana untuk anak-anak</li>
-        <li>Permainan edukatif dan hiburan</li>
-        <li>Pemberian beasiswa pendidikan</li>
+        <li>500g cumi-cumi segar, potong ring atau strip</li>
+        <li>300g Tepung Bumbu Serbaguna Sakti</li>
+        <li>200g tepung terigu</li>
+        <li>2 butir telur</li>
+        <li>200ml air es</li>
+        <li>100ml susu cair</li>
       </ul>
       
-      <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
-        "Kebahagiaan anak-anak adalah motivasi terbesar kami untuk terus berbagi. Program ini akan kami lanjutkan secara berkelanjutan." - Tim CSR Sakti Pangan
-      </blockquote>
+      <h3>Bumbu Marinasi:</h3>
+      <ul>
+        <li>2 sdm air jeruk lemon</li>
+        <li>1 sdt garam</li>
+        <li>1/2 sdt merica putih</li>
+        <li>1 sdt bawang putih bubuk</li>
+        <li>1 sdm kecap asin (optional)</li>
+      </ul>
+      
+      <h2>Teknik Rahasia Anti-Alot</h2>
+      <p>Kunci utama cumi yang tidak alot terletak pada persiapan dan teknik memasak yang tepat. Marinasi dan waktu menggoreng yang pas sangat menentukan tekstur akhir.</p>
+      
+      <ol>
+        <li><strong>Persiapan Cumi:</strong> Bersihkan cumi, buang tulang rawan. Buat sayatan silang tipis untuk mencegah keriting</li>
+        <li><strong>Marinasi:</strong> Rendam cumi dalam campuran air jeruk lemon dan garam selama 30 menit</li>
+        <li><strong>Bilas dan Keringkan:</strong> Bilas cumi, keringkan dengan paper towel</li>
+        <li><strong>Marinasi Kedua:</strong> Lumuri dengan bumbu marinasi, diamkan 15 menit</li>
+        <li><strong>Adonan Tepung:</strong> Campurkan Tepung Bumbu Sakti + terigu + air es hingga kental</li>
+        <li><strong>Coating:</strong> Celupkan cumi ke adonan, pastikan tertutup rata</li>
+        <li><strong>Menggoreng:</strong> Goreng dengan api sedang-tinggi selama 2-3 menit saja</li>
+      </ol>
+      
+      <h3>Tips Profesional Chef</h3>
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <ul>
+          <li><strong>Jangan Overcook:</strong> Cumi matang sangat cepat, maksimal 3 menit</li>
+          <li><strong>Suhu Tepat:</strong> Minyak harus benar-benar panas (180°C)</li>
+          <li><strong>Batch Kecil:</strong> Jangan goreng terlalu banyak sekaligus</li>
+          <li><strong>Marinasi Asam:</strong> Air jeruk lemon membantu melunakkan serat cumi</li>
+        </ul>
+      </div>
+      
+      <h3>Variasi Saus Pendamping</h3>
+      <div class="grid grid-cols-2 gap-4 my-6">
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h4 class="font-bold text-red-800">Saus Asam Manis</h4>
+          <p class="text-sm text-red-600">Campuran saus tomat, gula merah, cuka, dan saus sambal</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h4 class="font-bold text-green-800">Saus Mayo Pedas</h4>
+          <p class="text-sm text-green-600">Mayo + sriracha + perasan lemon + bubuk bawang putih</p>
+        </div>
+      </div>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=800&h=600&fit=crop",
+    featured_image: "/images/products/cummi.png",
     status: "published",
-    published_at: "2024-08-05T13:00:00.000000Z",
-    views: 270,
-    meta_title: "Sakti Pangan Peduli: Kegiatan Bakti Sosial di Panti Asuhan",
-    meta_description: "Tim PT. Sakti Pangan Perkasa mengadakan kegiatan bakti sosial di Panti Asuhan Kasih Ibu.",
-    meta_keywords: "sakti pangan peduli, bakti sosial, panti asuhan, csr, kegiatan sosial",
+    published_at: "2024-08-17T14:00:00.000000Z",
+    views: 720,
+    meta_title: "Cumi Goreng Tepung Crispy ala Seafood Restaurant Premium",
+    meta_description: "Rahasia cumi goreng tepung yang crispy dan tidak alot! Teknik khusus dengan Tepung Bumbu Sakti.",
+    meta_keywords: "cumi goreng tepung, crispy, tidak alot, tepung bumbu sakti, seafood",
+    category_id: 5,
+    user_id: 2,
+    created_at: "2024-08-17T13:00:00.000000Z",
+    updated_at: "2024-08-17T14:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2024-08-17T13:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 5,
+      name: "Seafood",
+      slug: "seafood",
+      color: "#06B6D4",
+      icon: "Fish"
+    },
+    user: {
+      id: 2,
+      name: "Editor",
+      email: "editor@saktipangan.co.id"
+    }
+  },
+
+    {
+    id: 16,
+    title: "Sakti Pangan Annual Meeting & Gathering 2025: Merayakan Pencapaian di Pabrik Baru",
+    slug: "sakti-pangan-annual-meeting-gathering-2025-merayakan-pencapaian-pabrik-baru",
+    excerpt: "PT. Sakti Pangan Perkasa menggelar Annual Meeting & Gathering 2025 di fasilitas pabrik baru. Event dua hari ini menjadi momentum refleksi pencapaian 2024 dan strategi ekspansi 2025.",
+    content: `<div class="prose max-w-none">
+      <h2>Milestone Bersejarah di Fasilitas Pabrik Baru</h2>
+      <p>Annual Meeting & Gathering PT. Sakti Pangan Perkasa tahun 2025 mengambil tempat di kompleks pabrik baru yang berlokasi di Jl. Solo - sragen km 7.7Jetis, Gerdu, Jetis, Kec. Jaten, Kabupaten Karanganyar, Jawa Tengah 57731. Event spektakuler ini dihadiri oleh karyawan, staf, supervisor hingga Direktur PT Sakti Pangan Perkasa.</p>
+      
+      <h3>Highlights Event Hari Pertama (25 Juli 2025)</h3>
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg my-6">
+        <h4 class="text-xl font-bold mb-4">🏢 Grand Opening Pabrik Baru</h4>
+        <ul>
+          <li><strong>08:00-09:00:</strong> Registrasi & Welcome Coffee</li>
+          <li><strong>09:00-10:30:</strong> Ceremonial Ribbon Cutting oleh Direktur Utama</li>
+          <li><strong>13:00-15:00:</strong> Annual Meeting & Performance Review</li>
+          <li><strong>15:30-17:00:</strong> Strategic Planning Session 2025-2027</li>
+        </ul>
+      </div>
+
+      <h2>Pencapaian Luar Biasa 2024</h2>
+      <p>Dalam sambutan pembukaan, Bapak Widi selaku Direktur Utama memaparkan pencapaian gemilang tahun 2024:</p>
+      
+      <div class="bg-orange-50 p-6 rounded-lg my-6">
+        <h4 class="font-bold text-orange-800 mb-4">📊 Key Performance Indicators 2024</h4>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="text-center">
+            <h5 class="text-2xl font-bold text-orange-600">45%</h5>
+            <p class="text-sm text-orange-700">Revenue Growth</p>
+          </div>
+          <div class="text-center">
+            <h5 class="text-2xl font-bold text-orange-600">8</h5>
+            <p class="text-sm text-orange-700">Rebrand Kemasan Produk Sakti 200g, 500g, dan 1kg.</p>
+          </div>
+        </div>
+      </div>
+      
+      <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
+        "Pencapaian 2024 ini adalah bukti kerja keras seluruh tim Sakti Pangan. Pabrik baru ini bukan hanya milestone, tetapi foundation untuk ekspansi yang lebih ambisius di tahun-tahun mendatang." - Bapak Widi, Direktur Utama
+      </blockquote>
+      
+      <h3>Fun Activities Hari Kedua (26 Juli 2025)</h3>
+      <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg my-6">
+        <h4 class="text-xl font-bold mb-4">🎪 Family Gathering & Team Building</h4>
+        <ul>
+          <li><strong>08:00-10:00:</strong> Family Breakfast & Kids Corner</li>
+          <li><strong>10:00-12:00:</strong> Team Building Games & Outbound</li>
+          <li><strong>14:00-16:00:</strong> Cultural Performance & Live Music</li>
+          <li><strong>16:00-17:30:</strong> Door Prize & Closing Ceremony</li>
+        </ul>
+      </div>
+      
+      <h2>Komitmen untuk Masa Depan</h2>
+      <p>Event ditutup dengan komitmen bersama untuk mewujudkan visi "Menjadi perusahaan pangan yang mampu bersaing secara Nasional."</p>
+      
+      <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
+        <h4 class="font-bold mb-3">🎯 Commitments Made:</h4>
+        <ul>
+          <li>✓ Investment Rp 500 miliar untuk ekspansi 2025-2027</li>
+          <li>✓ Employee development budget naik 150%</li>
+          <li>✓ CSR programs expanded ke 20 kota</li>
+          <li>✓ Research collaboration dengan 5 universitas terkemuka</li>
+          <li>✓ Achieve zero waste to landfill by 2026</li>
+        </ul>
+      </div>
+      
+      <p class="text-center font-bold text-lg mt-6 text-orange-600">
+        "Together We Grow, Together We Succeed!" - Sakti Pangan Perkasa 2025
+      </p>
+    </div>`,
+    featured_image: "/images/company/DSCF0032.jpg",
+    status: "published",
+    published_at: "2024-07-27T10:00:00.000000Z",
+    views: 890,
+    meta_title: "Sakti Pangan Annual Meeting & Gathering 2025: Merayakan Pencapaian di Pabrik Baru",
+    meta_description: "PT. Sakti Pangan Perkasa menggelar Annual Meeting & Gathering 2025 di fasilitas pabrik baru yang canggih dengan teknologi Industry 4.0.",
+    meta_keywords: "annual meeting, gathering 2025, pabrik baru, sakti pangan, ekspansi, teknologi",
     category_id: 3,
     user_id: 1,
-    created_at: "2024-08-05T12:00:00.000000Z",
-    updated_at: "2024-08-05T13:00:00.000000Z",
+    created_at: "2024-07-27T09:00:00.000000Z",
+    updated_at: "2024-07-27T10:00:00.000000Z",
     approved_by: 1,
-    approved_at: "2024-08-05T12:30:00.000000Z",
+    approved_at: "2024-07-27T09:30:00.000000Z",
     rejection_reason: null,
     category: {
       id: 3,
@@ -522,7 +401,293 @@ export const generateDummyBlogs = () => [
       name: "Tim Editorial",
       email: "editorial@saktipangan.co.id"
     }
-  }
+  },
+
+  {
+    id: 14,
+    title: "Onion Rings Super Crispy ala American Diner dengan Tepung Roti Sakti",
+    slug: "onion-rings-super-crispy-ala-american-diner-dengan-tepung-roti-sakti",
+    excerpt: "Buat onion rings yang crispy seperti di restoran Amerika! Resep mudah dengan hasil yang menggiurkan menggunakan Tepung Roti Sakti yang memberikan tekstur sempurna.",
+    content: `<div class="prose max-w-none">
+      <h2>American Style Onion Rings</h2>
+      <p>Onion rings adalah appetizer klasik yang selalu menjadi favorit. Dengan teknik yang tepat dan Tepung Roti Sakti, Anda bisa membuat onion rings yang crispy di luar, lembut di dalam, persis seperti di American diner.</p>
+      
+      <h3>Bahan-bahan:</h3>
+      <ul>
+        <li>3 buah bawang bombay besar, potong ring tebal 1cm</li>
+        <li>300g Tepung Roti Sakti</li>
+        <li>150g tepung terigu</li>
+        <li>100g tepung maizena</li>
+        <li>300ml buttermilk (atau susu + 1 sdm cuka)</li>
+        <li>2 butir telur</li>
+      </ul>
+      
+      <h3>Bumbu Dry Mix:</h3>
+      <ul>
+        <li>1 sdt paprika powder</li>
+        <li>1 sdt garlic powder</li>
+        <li>1 sdt onion powder</li>
+        <li>1/2 sdt cayenne pepper</li>
+        <li>1 sdt garam</li>
+        <li>1/2 sdt black pepper</li>
+      </ul>
+      
+      <h2>Langkah Pembuatan</h2>
+      <p>Rahasia onion rings yang sempurna terletak pada persiapan bawang dan teknik double coating yang menghasilkan lapisan crispy yang tebal.</p>
+      
+      <ol>
+        <li><strong>Persiapan Bawang:</strong> Potong bawang bombay, pisahkan ring per ring. Rendam dalam air es 30 menit</li>
+        <li><strong>Setup Station:</strong> Siapkan 3 wadah - dry mix, wet batter, breadcrumb</li>
+        <li><strong>Dry Mix:</strong> Campurkan terigu, maizena, dan semua bumbu</li>
+        <li><strong>Wet Batter:</strong> Kocok telur + buttermilk hingga rata</li>
+        <li><strong>Coating Process:</strong> Ring bawang → dry mix → wet batter → Tepung Roti Sakti</li>
+        <li><strong>Double Coating:</strong> Ulangi wet batter → breadcrumb untuk coating extra thick</li>
+        <li><strong>Rest:</strong> Diamkan 15 menit sebelum digoreng</li>
+        <li><strong>Deep Fry:</strong> Goreng pada suhu 175°C selama 3-4 menit</li>
+      </ol>
+      
+      <h3>Tips untuk Hasil Maksimal</h3>
+      <div class="bg-yellow-50 p-4 rounded-lg">
+        <ul>
+          <li><strong>Pilih Bawang Tepat:</strong> Gunakan bawang bombay yang besar dan manis</li>
+          <li><strong>Suhu Konsisten:</strong> Jaga suhu minyak tetap stabil</li>
+          <li><strong>Jangan Overcrowd:</strong> Goreng sedikit-sedikit agar suhu tidak turun</li>
+          <li><strong>Drain Well:</strong> Tiriskan di rak kawat, bukan paper towel</li>
+        </ul>
+      </div>
+      
+      <h3>Variasi Saus Pendamping</h3>
+      <div class="grid grid-cols-3 gap-4 my-6">
+        <div class="bg-red-50 p-4 rounded-lg">
+          <h4 class="font-bold text-red-800">Ranch Dressing</h4>
+          <p class="text-sm text-red-600">Mayo + sour cream + herbs + garlic powder</p>
+        </div>
+        <div class="bg-orange-50 p-4 rounded-lg">
+          <h4 class="font-bold text-orange-800">Spicy Mayo</h4>
+          <p class="text-sm text-orange-600">Mayo + sriracha + lime juice + paprika</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h4 class="font-bold text-green-800">BBQ Sauce</h4>
+          <p class="text-sm text-green-600">Saus BBQ + honey + apple cider vinegar</p>
+        </div>
+      </div>
+      
+      <h2>Serving Suggestions</h2>
+      <p>Onion rings terbaik disajikan segera setelah digoreng selagi hangat dan crispy. Cocok sebagai:</p>
+      <ul>
+        <li>Appetizer dengan berbagai macam saus</li>
+        <li>Side dish untuk burger dan steak</li>
+        <li>Snack untuk nonton bersama keluarga</li>
+        <li>Topping untuk salad (onion rings croutons)</li>
+      </ul>
+      
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <p class="font-bold">Pro Chef Tip:</p>
+        <p class="text-sm">Untuk event atau party, Anda bisa prepare onion rings hingga tahap coating, lalu freeze. Goreng langsung dari frozen state dengan waktu sedikit lebih lama.</p>
+      </div>
+    </div>`,
+    featured_image: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&h=600&fit=crop",
+    status: "published",
+    published_at: "2024-08-16T16:00:00.000000Z",
+    views: 980,
+    meta_title: "Onion Rings Super Crispy ala American Diner dengan Tepung Roti Sakti",
+    meta_description: "Buat onion rings yang crispy seperti di restoran Amerika! Resep mudah dengan Tepung Roti Sakti.",
+    meta_keywords: "onion rings, crispy, american diner, tepung roti sakti, appetizer",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2024-08-16T15:00:00.000000Z",
+    updated_at: "2024-08-16T16:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2024-08-16T15:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Chef John",
+      email: "chef.john@saktipangan.co.id"
+    }
+  },
+
+  // {
+  //   id: 15,
+  //   title: "Lowongan Kerja: Digital Marketing Manager dan Food Technologist di Sakti Pangan",
+  //   slug: "lowongan-kerja-digital-marketing-manager-dan-food-technologist-sakti-pangan",
+  //   excerpt: "Bergabunglah dengan tim PT. Sakti Pangan Perkasa! Kami membuka kesempatan karir untuk posisi Digital Marketing Manager dan Food Technologist dengan benefit menarik dan lingkungan kerja yang suportif.",
+  //   content: `<div class="prose max-w-none">
+  //     <h2>Kesempatan Karir Terbuka</h2>
+  //     <p>Seiring dengan pertumbuhan perusahaan yang pesat, PT. Sakti Pangan Perkasa membuka kesempatan karir untuk dua posisi strategis yang akan berperan penting dalam pengembangan bisnis ke depan.</p>
+      
+  //     <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg my-6">
+  //       <h3 class="text-2xl font-bold mb-4">🚀 Digital Marketing Manager</h3>
+        
+  //       <h4 class="font-bold mb-2">Job Description:</h4>
+  //       <ul class="mb-4">
+  //         <li>Mengembangkan dan mengimplementasikan strategi digital marketing</li>
+  //         <li>Mengelola social media channels (Instagram, Facebook, TikTok, YouTube)</li>
+  //         <li>Mengoptimalkan SEO dan SEM untuk website perusahaan</li>
+  //         <li>Menganalisis performance marketing campaigns</li>
+  //         <li>Berkolaborasi dengan tim kreatif untuk konten marketing</li>
+  //         <li>Mengelola budget marketing digital dan ROI</li>
+  //       </ul>
+        
+  //       <h4 class="font-bold mb-2">Requirements:</h4>
+  //       <ul class="mb-4">
+  //         <li>S1 Marketing/Komunikasi/Digital Media</li>
+  //         <li>Pengalaman minimal 5 tahun di digital marketing</li>
+  //         <li>Menguasai Google Ads, Facebook Ads Manager, Google Analytics</li>
+  //         <li>Expertise dalam content creation dan copywriting</li>
+  //         <li>Familiar dengan tools seperti Canva, Adobe Creative Suite</li>
+  //         <li>Analytical thinking dan data-driven decision making</li>
+  //         <li>Leadership skills untuk mengelola tim</li>
+  //       </ul>
+        
+  //       <h4 class="font-bold mb-2">What We Offer:</h4>
+  //       <ul>
+  //         <li>💰 Salary range: Rp 15,000,000 - Rp 22,000,000</li>
+  //         <li>📈 Performance bonus hingga 6x gaji</li>
+  //         <li>🏥 Comprehensive health insurance</li>
+  //         <li>📚 Training budget Rp 10,000,000/tahun</li>
+  //         <li>🏖️ Annual company retreat</li>
+  //       </ul>
+  //     </div>
+      
+  //     <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg my-6">
+  //       <h3 class="text-2xl font-bold mb-4">🔬 Food Technologist</h3>
+        
+  //       <h4 class="font-bold mb-2">Job Description:</h4>
+  //       <ul class="mb-4">
+  //         <li>Research & development produk pangan baru</li>
+  //         <li>Melakukan analisis sensori dan uji laboratorium</li>
+  //         <li>Mengoptimalkan formulasi produk existing</li>
+  //         <li>Memastikan compliance terhadap regulasi pangan</li>
+  //         <li>Melakukan product scaling dari lab ke production</li>
+  //         <li>Dokumentasi technical specification dan SOP</li>
+  //       </ul>
+        
+  //       <h4 class="font-bold mb-2">Requirements:</h4>
+  //       <ul class="mb-4">
+  //         <li>S1 Teknologi Pangan/Gizi/Kimia Pangan</li>
+  //         <li>Pengalaman minimal 3 tahun di industri pangan</li>
+  //         <li>Memahami HACCP, GMP, dan sistem keamanan pangan</li>
+  //         <li>Menguasai analytical instruments (HPLC, GC, dll)</li>
+  //         <li>Familiar dengan statistical analysis (SPSS, Minitab)</li>
+  //         <li>Problem solving dan analytical thinking yang kuat</li>
+  //         <li>Mampu bekerja dalam tim multidisiplin</li>
+  //       </ul>
+        
+  //       <h4 class="font-bold mb-2">What We Offer:</h4>
+  //       <ul>
+  //         <li>💰 Salary range: Rp 12,000,000 - Rp 18,000,000</li>
+  //         <li>🎓 Sponsorship untuk S2 atau sertifikasi profesional</li>
+  //         <li>🔬 Akses ke laboratorium R&D tercanggih</li>
+  //         <li>🌍 Kesempatan mengikuti conference internasional</li>
+  //         <li>📊 Research allowance untuk project development</li>
+  //       </ul>
+  //     </div>
+      
+  //     <h2>Benefit Umum Karyawan Sakti Pangan</h2>
+  //     <div class="grid grid-cols-2 gap-4 my-6">
+  //       <div class="bg-orange-50 p-4 rounded-lg">
+  //         <h4 class="font-bold text-orange-800">💼 Karir & Pengembangan</h4>
+  //         <ul class="text-sm text-orange-600">
+  //           <li>Clear career progression path</li>
+  //           <li>Regular performance review</li>
+  //           <li>Internal training program</li>
+  //           <li>Mentorship dari senior manager</li>
+  //         </ul>
+  //       </div>
+  //       <div class="bg-blue-50 p-4 rounded-lg">
+  //         <h4 class="font-bold text-blue-800">🏥 Kesehatan & Kesejahteraan</h4>
+  //         <ul class="text-sm text-blue-600">
+  //           <li>BPJS Kesehatan & Ketenagakerjaan</li>
+  //           <li>Asuransi kesehatan keluarga</li>
+  //           <li>Annual medical check-up</li>
+  //           <li>Mental health support program</li>
+  //         </ul>
+  //       </div>
+  //       <div class="bg-green-50 p-4 rounded-lg">
+  //         <h4 class="font-bold text-green-800">⚖️ Work-Life Balance</h4>
+  //         <ul class="text-sm text-green-600">
+  //           <li>Flexible working hours</li>
+  //           <li>Work from home option</li>
+  //           <li>25 hari cuti per tahun</li>
+  //           <li>Family day & company outing</li>
+  //         </ul>
+  //       </div>
+  //       <div class="bg-purple-50 p-4 rounded-lg">
+  //         <h4 class="font-bold text-purple-800">💡 Fasilitas Kerja</h4>
+  //         <ul class="text-sm text-purple-600">
+  //           <li>MacBook Pro/Gaming laptop</li>
+  //           <li>Smartphone allowance</li>
+  //           <li>Free lunch & snacks</li>
+  //           <li>Modern office di Jakarta Selatan</li>
+  //         </ul>
+  //       </div>
+  //     </div>
+      
+  //     <h2>Proses Seleksi</h2>
+  //     <div class="bg-gray-50 p-6 rounded-lg">
+  //       <ol>
+  //         <li><strong>Application Review (1 minggu):</strong> Review CV dan portfolio</li>
+  //         <li><strong>Phone Screening (30 menit):</strong> Interview awal dengan HR</li>
+  //         <li><strong>Technical Test:</strong> Case study sesuai bidang</li>
+  //         <li><strong>User Interview (1-2 jam):</strong> Interview dengan hiring manager</li>
+  //         <li><strong>Final Interview:</strong> Meet with Director</li>
+  //         <li><strong>Reference Check & Offer:</strong> Proses finalisasi</li>
+  //       </ol>
+  //     </div>
+      
+  //     <h2>Cara Apply</h2>
+  //     <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg">
+  //       <p class="font-bold mb-2">📧 Kirim aplikasi ke: <span class="text-orange-600">jobs@saktipangan.co.id</span></p>
+  //       <p class="font-bold mb-2">📝 Subject: [POSISI] - [NAMA LENGKAP]</p>
+  //       <p class="font-bold mb-2">📋 Lampirkan:</p>
+  //       <ul>
+  //         <li>✓ CV lengkap dengan foto</li>
+  //         <li>✓ Portfolio/work samples</li>
+  //         <li>✓ Cover letter (max 1 halaman)</li>
+  //         <li>✓ Expected salary</li>
+  //       </ul>
+  //       <p class="text-red-600 font-bold mt-4">⏰ Deadline: 30 September 2024</p>
+  //     </div>
+      
+  //     <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
+  //       "Kami mencari individu yang passionate, innovative, dan siap berkontribusi dalam memajukan industri pangan Indonesia. Join us and be part of something bigger!" - HR Team Sakti Pangan
+  //     </blockquote>
+  //   </div>`,
+  //   featured_image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+  //   status: "published",
+  //   published_at: "2024-08-21T14:00:00.000000Z",
+  //   views: 750,
+  //   meta_title: "Lowongan Kerja Digital Marketing Manager dan Food Technologist di Sakti Pangan",
+  //   meta_description: "Bergabung dengan tim Sakti Pangan! Buka kesempatan karir Digital Marketing Manager dan Food Technologist dengan benefit menarik.",
+  //   meta_keywords: "lowongan kerja, digital marketing manager, food technologist, sakti pangan, karir",
+  //   category_id: 4,
+  //   user_id: 1,
+  //   created_at: "2024-08-21T13:00:00.000000Z",
+  //   updated_at: "2024-08-21T14:00:00.000000Z",
+  //   approved_by: 1,
+  //   approved_at: "2024-08-21T13:30:00.000000Z",
+  //   rejection_reason: null,
+  //   category: {
+  //     id: 4,
+  //     name: "SaktiCareer",
+  //     slug: "sakti-career",
+  //     color: "#8B5CF6",
+  //     icon: "Users"
+  //   },
+  //   user: {
+  //     id: 1,
+  //     name: "Tim Editorial",
+  //     email: "editorial@saktipangan.co.id"
+  //   }
+  // }
 ];
 
 // Format response untuk API blogs dengan pagination
