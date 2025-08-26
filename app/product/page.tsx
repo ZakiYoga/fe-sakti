@@ -9,7 +9,12 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import {
-  Star,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import {
   ShoppingCart,
   Eye,
   Heart,
@@ -18,7 +23,8 @@ import {
   List,
   Search,
   Users,
-  Download
+  Download,
+  ChevronDown
 } from 'lucide-react'
 import { productStats, sampleProducts } from '@/DataDummy/DataProduct'
 import { Product } from '@/types/product.types'
@@ -30,7 +36,8 @@ const getCategories = (products: Product[]) => {
   return categories
 }
 
-const sortOptions = ["Terbaru", "Nama A-Z", "Harga Terendah", "Harga Tertinggi", "Rating Tertinggi"]
+// Updated sort options with Premium First as default
+const sortOptions = ["Premium First", "Terbaru", "Nama A-Z"]
 
 const ProductCard = ({ product, index, viewMode }: { product: Product, index: number, viewMode: 'grid' | 'list' }) => {
   const cardRef = useRef(null)
@@ -47,78 +54,122 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
         className="w-full"
       >
         <Card className="group border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300">
-          <CardContent className="p-6">
-            <div className="flex gap-6">
-              <div className="w-32 h-32 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex-shrink-0 relative overflow-hidden">
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
+              {/* Image Section */}
+              <div className="w-full grid place-content-center sm:w-24 md:w-28 lg:w-32 h-48 sm:h-24 md:h-28 lg:h-32 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex-shrink-0 relative overflow-hidden mx-auto sm:mx-0">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  width={100}
+                  height={100}
+                  className="p-2 w-18 group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
 
-              <div className="flex-1">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
+              {/* Content Section */}
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-2">
+                  {/* Product Info */}
+                  <div className="flex-1 min-w-0">
+                    {/* Badges */}
+                    <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-2">
                       <Badge variant="outline" className="text-xs border-orange-200 text-orange-700">
                         {product.category}
                       </Badge>
-                      {product.isNew && <Badge className="text-xs bg-green-500">Baru</Badge>}
-                      {product.isBestSeller && <Badge className="text-xs bg-orange-500">Terlaris</Badge>}
+                      {product.isNew && (
+                        <Badge className="text-xs bg-green-500">Baru</Badge>
+                      )}
+                      {product.isBestSeller && (
+                        <Badge className="text-xs bg-orange-500">Terlaris</Badge>
+                      )}
                     </div>
 
-                    <h3 className="font-bold text-xl text-gray-900 dark:text-white group-hover:text-orange-600 transition-colors mb-2">
+                    {/* Product Name */}
+                    <h3 className="font-bold text-lg sm:text-xl text-gray-900 dark:text-white group-hover:text-orange-600 transition-colors mb-2 line-clamp-2">
                       {product.name}
                     </h3>
 
+                    {/* Description */}
                     {product.description && (
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2 sm:line-clamp-3">
                         {product.description}
                       </p>
                     )}
                   </div>
 
-                  <div className="text-right">
-                    <div className="flex items-center gap-1 mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-4 w-4 ${i < Math.floor(product.rating)
-                              ? 'text-yellow-400 fill-yellow-400'
-                              : 'text-gray-300'
-                            }`}
-                        />
-                      ))}
-                      <span className="text-sm text-gray-600 dark:text-gray-300 ml-1">
-                        ({product.reviews})
-                      </span>
-                    </div>
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-2 sm:items-start sm:justify-end w-full sm:w-auto">
+                    {/* View Button - Hidden on mobile to save space */}
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="hidden sm:flex border-orange-300 text-orange-600 hover:bg-orange-50"
+                    >
+                      <Eye className="h-4 w-4" />
+                    </Button>
 
-                    <div className="mb-4">
-                      {product.originalPrice && (
-                        <span className="text-sm text-gray-400 line-through mr-2">
-                          Rp {product.originalPrice.toLocaleString('id-ID')}
-                        </span>
-                      )}
-                      <span className="text-2xl font-bold text-orange-600">
-                        Rp {product.price.toLocaleString('id-ID')}
-                      </span>
-                    </div>
-
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white flex-1"
-                      >
-                        <ShoppingCart className="h-4 w-4 mr-2" />
-                        Beli Sekarang
-                      </Button>
-                    </div>
+                    {/* Buy Button */}
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          size="sm"
+                          className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
+                        >
+                          <ShoppingCart className="h-4 w-4 mr-1 sm:mr-2" />
+                          <span className="hidden xs:inline">Beli Sekarang</span>
+                          <span className="inline xs:hidden">Beli</span>
+                          <ChevronDown className="h-4 w-4 ml-1 sm:ml-2" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-48">
+                        <DropdownMenuItem
+                          className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                          onClick={() => window.open('https://tokopedia.com', '_blank')}
+                        >
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src={"/images/tokopedia.png"}
+                              alt='tokopedia-icon'
+                              height={100}
+                              width={100}
+                              className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                            />
+                            <span>Tokopedia</span>
+                          </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                          onClick={() => window.open('https://shopee.co.id', '_blank')}
+                        >
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src={"/images/shopee.png"}
+                              alt='shopee-icon'
+                              height={100}
+                              width={100}
+                              className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                            />
+                            <span>Shopee</span>
+                          </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                          onClick={() => window.open('https://shop.tiktok.com', '_blank')}
+                        >
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src={"/images/tiktokshop.png"}
+                              alt='tiktokshop-icon'
+                              height={100}
+                              width={100}
+                              className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                            />
+                            <span>TikTok Shop</span>
+                          </div>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </div>
                 </div>
               </div>
@@ -140,12 +191,13 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
     >
       <Card className="group h-full border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
         <div className="relative">
-          <div className="aspect-square bg-gradient-to-br from-orange-100 to-orange-200 relative overflow-hidden">
+          <div className="aspect-square grid place-content-center bg-gradient-to-br from-orange-100 to-orange-200 relative overflow-hidden">
             <Image
               src={product.image}
               alt={product.name}
-              fill
-              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              width={200}
+              height={200}
+              className="p-4 md:p-6 group-hover:scale-110 transition-transform duration-500"
             />
           </div>
 
@@ -154,24 +206,16 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
             {product.isBestSeller && <Badge className="text-xs bg-orange-500">Terlaris</Badge>}
           </div>
 
-          {product.originalPrice && (
-            <div className="absolute top-3 right-3">
-              <Badge variant="destructive" className="text-xs bg-red-500">
-                -{Math.round((1 - product.price / product.originalPrice) * 100)}%
-              </Badge>
-            </div>
-          )}
-
-          <Button
+          {/* <Button
             size="sm"
             variant="outline"
             className="absolute bottom-3 right-3 bg-white/90 border-orange-300 text-orange-600 hover:bg-orange-50 opacity-0 group-hover:opacity-100 transition-opacity"
           >
             <Heart className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </div>
 
-        <CardContent className="p-6">
+        <CardContent className="p-4 md:p-6">
           <Badge variant="outline" className="text-xs border-orange-200 text-orange-700 mb-2">
             {product.category}
           </Badge>
@@ -180,49 +224,75 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
             {product.name}
           </h3>
 
-          {product.description && (
+          {/* {product.description && (
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">
               {product.description}
             </p>
-          )}
-
-          <div className="flex items-center gap-1 mb-3">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`h-4 w-4 ${i < Math.floor(product.rating)
-                    ? 'text-yellow-400 fill-yellow-400'
-                    : 'text-gray-300'
-                  }`}
-              />
-            ))}
-            <span className="text-sm text-gray-600 dark:text-gray-300 ml-1">
-              {product.rating} ({product.reviews})
-            </span>
-          </div>
-
-          <div className="mb-4">
-            {product.originalPrice && (
-              <span className="text-sm text-gray-400 line-through block">
-                Rp {product.originalPrice.toLocaleString('id-ID')}
-              </span>
-            )}
-            <span className="text-xl font-bold text-orange-600">
-              Rp {product.price.toLocaleString('id-ID')}
-            </span>
-          </div>
+          )} */}
 
           <div className="flex gap-2">
             <Button size="sm" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
               <Eye className="h-4 w-4" />
             </Button>
-            <Button
-              size="sm"
-              className="bg-orange-500 hover:bg-orange-600 text-white flex-1"
-            >
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Beli
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  size="sm"
+                  className="bg-orange-500 hover:bg-orange-600 text-white flex-1"
+                >
+                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  Beli
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-40">
+                <DropdownMenuItem
+                  className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                  onClick={() => window.open('https://tokopedia.com', '_blank')}
+                >
+                  <div className="flex items-center gap-1">
+                    <Image
+                      src={"/images/tokopedia.png"}
+                      alt='tokopedia-icon'
+                      height={100}
+                      width={100}
+                      className="h-6 w-6"
+                    />
+                    Tokopedia
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                  onClick={() => window.open('https://shopee.co.id', '_blank')}
+                >
+                  <div className="flex items-center gap-1">
+                    <Image
+                      src={"/images/shopee.png"}
+                      alt='shopee-icon'
+                      height={100}
+                      width={100}
+                      className="h-6 w-6"
+                    />
+                    Shopee
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                  onClick={() => window.open('https://shop.tiktok.com', '_blank')}
+                >
+                  <div className="flex items-center gap-1">
+                    <Image
+                      src={"/images/tiktokshop.png"}
+                      alt='tiktokshop-icon'
+                      height={100}
+                      width={100}
+                      className="h-6 w-6"
+                    />
+                    TikTok Shop
+                  </div>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </CardContent>
       </Card>
@@ -232,7 +302,8 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
 
 export default function ProductPage() {
   const [selectedCategory, setSelectedCategory] = useState("Semua")
-  const [sortBy, setSortBy] = useState("Terbaru")
+  // Changed default sortBy to "Premium First"
+  const [sortBy, setSortBy] = useState("Premium First")
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [searchQuery, setSearchQuery] = useState("")
 
@@ -248,14 +319,18 @@ export default function ProductPage() {
     return matchesCategory && matchesSearch
   }).sort((a, b) => {
     switch (sortBy) {
+      case "Premium First":
+        // Sort by premium first, then by best seller, then by new products
+        const aPriority = (a.isPremium ? 3 : 0) + (a.isBestSeller ? 2 : 0) + (a.isNew ? 1 : 0)
+        const bPriority = (b.isPremium ? 3 : 0) + (b.isBestSeller ? 2 : 0) + (b.isNew ? 1 : 0)
+        return bPriority - aPriority
       case "Nama A-Z":
         return a.name.localeCompare(b.name)
-      case "Harga Terendah":
-        return a.price - b.price
-      case "Harga Tertinggi":
-        return b.price - a.price
-      case "Rating Tertinggi":
-        return b.rating - a.rating
+      case "Terbaru":
+        // Assuming products have a createdAt or similar field, or prioritize isNew flag
+        if (a.isNew && !b.isNew) return -1
+        if (!a.isNew && b.isNew) return 1
+        return 0
       default:
         return 0
     }
@@ -336,8 +411,8 @@ export default function ProductPage() {
                     size="lg"
                     onClick={() => setViewMode('grid')}
                     className={`transition-all duration-300 ${viewMode === 'grid'
-                        ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                        : 'border-orange-300 text-orange-600 hover:bg-orange-50'
+                      ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                      : 'border-orange-300 text-orange-600 hover:bg-orange-50'
                       }`}
                   >
                     <Grid3X3 className="h-8 w-4" />
@@ -347,8 +422,8 @@ export default function ProductPage() {
                     size="lg"
                     onClick={() => setViewMode('list')}
                     className={`transition-all duration-300 ${viewMode === 'list'
-                        ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                        : 'border-orange-300 text-orange-600 hover:bg-orange-50'
+                      ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                      : 'border-orange-300 text-orange-600 hover:bg-orange-50'
                       }`}
                   >
                     <List className="h-4 w-4" />
@@ -367,14 +442,14 @@ export default function ProductPage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category)}
                     className={`transition-all duration-300 ${selectedCategory === category
-                        ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg scale-105'
-                        : 'bg-white dark:bg-gray-800 hover:bg-orange-50 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-gray-300 hover:border-orange-300'
+                      ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white dark:bg-gray-800 hover:bg-orange-50 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-gray-300 hover:border-orange-300'
                       }`}
                   >
                     {category}
                     <span className={`ml-2 text-xs px-2 py-0.5 rounded-full ${selectedCategory === category
-                        ? 'bg-white/20 text-white'
-                        : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
                       }`}>
                       {getCategoryCount(category)}
                     </span>
@@ -399,8 +474,8 @@ export default function ProductPage() {
 
           {/* Products Grid/List */}
           <div className={`${viewMode === 'grid'
-              ? 'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-              : 'space-y-4'
+            ? 'grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6'
+            : 'space-y-4'
             }`}>
             {filteredProducts.map((product, index) => (
               <ProductCard
@@ -437,11 +512,11 @@ export default function ProductPage() {
       </section>
 
       {/* CTA Section */}
-      <CTASection
+      {/* <CTASection
         title="Tertarik Menjadi Distributor?"
         description="Bergabunglah dengan jaringan distribusi kami dan raih peluang bisnis yang menguntungkan bersama produk berkualitas tinggi"
         buttons={ctaButtons}
-      />
+      /> */}
     </div>
   )
 }

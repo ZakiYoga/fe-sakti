@@ -99,7 +99,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
   const formattedDate = formatDate(blog.published_at)
   
   // Default image if no featured image
-  const imageUrl = blog.featured_image || '/images/blog-placeholder.jpg'
+  const imageUrl = blog.featured_image 
 
   return (
     <motion.div
@@ -121,7 +121,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
           {/* Image Container */}
           <div className="relative overflow-hidden aspect-[16/10]">
             <Image
-              src={imageUrl}
+              src={imageUrl ?? "/images/image-not-found.png"}
               alt={blog.title}
               width={400}
               height={250}
@@ -129,7 +129,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
               loading="lazy"
               onError={(e) => {
                 const target = e.target as HTMLImageElement
-                target.src = '/images/blog-placeholder.jpg'
+                target.src = '/images/image-not-found.png'
               }}
             />
 

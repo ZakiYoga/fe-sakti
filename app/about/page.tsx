@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import { achievements, companyStats, companyValues, missionPoints, tabs, timeline } from '@/DataDummy/DataAbout'
 import { Achievement, CompanyValue, MissionPoint, Tab, TimelineItem } from '@/types/about.types'
+import Image from 'next/image'
 
 // Values Card Component
 const ValueCard = ({ value, index }: { value: CompanyValue, index: number }) => {
@@ -65,20 +66,19 @@ const TimelineItemComponent = ({ item, index, isLast }: { item: TimelineItem, in
     >
       {/* Timeline Line */}
       {!isLast && (
-        <div className="absolute left-[20%] sm:left-[15%] md:left-1/2 top-16 sm:top-24 w-0.5 h-[calc(100%-40px)] sm:h-32 bg-orange-200 transform -translate-x-1/2 z-0" />
+        <div className="z-0 absolute left-[8%] sm:left-[15%] md:left-1/2 top-16 sm:top-24 w-0.5 h-[calc(100%-40px)] sm:h-32 bg-orange-200 transform -translate-x-1/2" />
       )}
 
       {/* Timeline Dot */}
-      <div className="absolute left-[20%] sm:left-[15%] md:left-1/2 top-6 sm:top-8 w-3 h-3 sm:w-4 sm:h-4 bg-orange-500 rounded-full transform -translate-x-1/2 z-10 border-2 sm:border-4 border-white shadow-lg" />
+      <div className="absolute left-[8%] sm:left-[15%] md:left-1/2 top-6 sm:top-8 w-3 h-3 sm:w-4 sm:h-4 bg-orange-500 rounded-full transform -translate-x-1/2 border-2 sm:border-4 border-white shadow-lg" />
 
       {/* Content */}
       <div className={`w-full`}>
-        <div className={`flex md:px-6 lg:px-24 ${
-          index % 2 === 0 
-            ? 'justify-end sm:justify-center md:justify-end' 
-            : 'justify-end sm:justify-center md:justify-start'
-        }`}>
-          <Card className="w-full max-w-xs sm:max-w-sm lg:max-w-96 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl hover:border-orange-500 dark:hover:border-orange-900 border transition-all duration-300 group">
+        <div className={`flex pl-12 md:px-6 lg:px-24 ${index % 2 === 0
+          ? 'justify-center md:justify-end'
+          : 'justify-center md:justify-start'
+          }`}>
+          <Card className="w-full max-w-xs sm:max-w-[22rem] lg:max-w-96 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl hover:border-orange-500 dark:hover:border-orange-900 border transition-all duration-300 group">
             <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3">
                 <Badge className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm">
@@ -144,13 +144,27 @@ export default function AboutPage() {
       {/* Company Story & Mission */}
       <section className="pt-6 sm:pt-8 lg:pt-16 bg-gradient-to-tr from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-y-8 gap-x-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-y-8 gap-x-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="flex flex-col gap-6"
             >
-              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
+
+              {/* IMAGES */}
+              <div className="rounded-xl overflow-hidden group cursor-pointer">
+                <Image
+                  src="/images/company/company.png"
+                  width={400}
+                  height={400}
+                  alt="Foto pabrik perusahaan"
+                  className="w-full h-40 sm:h-48 md:h-60 lg:h-72 object-cover transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+                />
+              </div>
+
+              {/* VIDEO */}
+              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
                 <div className="text-center">
                   <Play className="h-20 w-20 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-orange-700 font-semibold">Video Profil Perusahaan</p>

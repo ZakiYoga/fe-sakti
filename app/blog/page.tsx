@@ -7,18 +7,26 @@ import useSWR from 'swr';
 import { Blog, BlogParams, Category, PaginatedResponse } from '@/types/blog.types';
 import Image from 'next/image';
 import HeaderPages from '@/components/HeaderPages';
-import StatsSection from '@/components/StatsSection';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Search, 
-  Filter, 
-  Calendar, 
-  User, 
-  ArrowRight, 
-  ChevronLeft, 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Search,
+  Filter,
+  Calendar,
+  User,
+  ArrowRight,
+  ChevronLeft,
   ChevronRight,
   BookOpen,
   Users,
@@ -27,7 +35,9 @@ import {
   Bell,
   AlertTriangle,
   RefreshCw,
-  Loader2
+  Loader2,
+  CheckCircle,
+  X
 } from 'lucide-react';
 
 // Fetcher function with proper typing
@@ -39,6 +49,152 @@ const fetcher = async (url: string, params: BlogParams): Promise<PaginatedRespon
 const categoriesFetcher = async (): Promise<Category[]> => {
   const response = await blogApi.getCategories();
   return extractApiData(response);
+};
+
+const NewsletterModal = ({
+  isOpen,
+  onClose
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Here you would make the actual API call
+      // await newsletterApi.subscribe({ email, name });
+
+      setIsSuccess(true);
+    } catch (err) {
+      setError('Gagal mendaftarkan email. Silakan coba lagi.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const resetForm = () => {
+    setEmail('');
+    setIsSuccess(false);
+    setError('');
+    setIsLoading(false);
+  };
+
+  const handleClose = () => {
+    resetForm();
+    onClose();
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={(open) => {
+      if (!open) handleClose();
+    }}>      <DialogContent className="sm:max-w-md">
+        {!isSuccess ? (
+          <>
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                <Bell className="h-5 w-5 text-orange-500" />
+                Berlangganan Newsletter
+              </DialogTitle>
+              <DialogDescription className="text-gray-600 dark:text-gray-300">
+                Dapatkan artikel terbaru, tips kuliner, dan informasi eksklusif langsung di inbox Anda
+              </DialogDescription>
+            </DialogHeader>
+
+            <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Email Address
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="contoh@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={isLoading}
+                  className="focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+
+              {error && (
+                <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+                  <AlertTriangle className="h-4 w-4" />
+                  {error}
+                </div>
+              )}
+
+              <div className="flex gap-3 pt-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleClose}
+                  disabled={isLoading}
+                  className="flex-1"
+                >
+                  Batal
+                </Button>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Mendaftar...
+                    </>
+                  ) : (
+                    <>
+                      <Mail className="mr-2 h-4 w-4" />
+                      Berlangganan
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
+
+            <div className="mt-4 text-xs text-gray-500 dark:text-gray-400 text-center">
+              Dengan mendaftar, Anda menyetujui untuk menerima email dari kami dan dapat berhenti berlangganan kapan saja.
+            </div>
+          </>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center py-6"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4">
+              <CheckCircle className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Berhasil Berlangganan!
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Terima kasih telah berlangganan newsletter kami. Kami akan mengirimkan artikel terbaru dan informasi menarik ke email Anda.
+            </p>
+            <Button
+              onClick={handleClose}
+              className="bg-orange-500 hover:bg-orange-600 text-white"
+            >
+              Tutup
+            </Button>
+          </motion.div>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
 };
 
 // Loading Skeleton Component
@@ -118,7 +274,7 @@ const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
       whileHover={{ scale: 1.02, y: -5 }}
       className="h-full"
     >
-      <Card className="group h-full border-0 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <Card className="group h-full border border-transparent hover:border-orange-300 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
         {blog.featured_image && (
           <div className="aspect-video relative overflow-hidden">
             <Image
@@ -178,7 +334,8 @@ export default function BlogIndex(): JSX.Element {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
-  
+  const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState<boolean>(false);
+
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -217,13 +374,7 @@ export default function BlogIndex(): JSX.Element {
       label: 'Berlangganan Newsletter',
       icon: Bell,
       variant: 'default' as const,
-      onClick: () => console.log('Subscribe to newsletter')
-    },
-    {
-      label: 'Hubungi Tim Editorial',
-      icon: Mail,
-      variant: 'outline' as const,
-      onClick: () => console.log('Contact editorial team')
+      onClick: () => setIsNewsletterModalOpen(true)
     }
   ];
 
@@ -289,11 +440,11 @@ export default function BlogIndex(): JSX.Element {
       />
 
       {/* Main Content */}
-      <section 
+      <section
         ref={sectionRef}
         className="py-8 sm:py-10 md:py-14 lg:py-20 bg-gradient-to-br from-orange-50 to-white dark:from-orange-950 dark:to-gray-900"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Error State */}
           {error && <ErrorState onRetry={handleRetry} />}
 
@@ -325,7 +476,7 @@ export default function BlogIndex(): JSX.Element {
               {/* Header */}
               <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
                 <div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                     Artikel Terbaru
                   </h2>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -423,11 +574,10 @@ export default function BlogIndex(): JSX.Element {
                         onClick={() => handlePageClick(page)}
                         variant={page === currentPage ? "default" : "outline"}
                         size="sm"
-                        className={`min-w-[40px] ${
-                          page === currentPage
-                            ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                            : 'border-orange-300 text-orange-600 hover:bg-orange-50'
-                        }`}
+                        className={`min-w-[40px] ${page === currentPage
+                          ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                          : 'border-orange-300 text-orange-600 hover:bg-orange-50'
+                          }`}
                       >
                         {page}
                       </Button>
@@ -457,9 +607,14 @@ export default function BlogIndex(): JSX.Element {
           title="Jangan Lewatkan Update Terbaru"
           description="Berlangganan newsletter kami untuk mendapatkan artikel terbaru, tips kuliner, dan informasi eksklusif langsung di inbox Anda"
           buttons={ctaButtons}
-          backgroundGradient="from-orange-500 via-orange-600 to-red-500"
         />
       )}
+
+      {/* Newsletter Modal */}
+      <NewsletterModal
+        isOpen={isNewsletterModalOpen}
+        onClose={() => setIsNewsletterModalOpen(false)}
+      />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Star, ShoppingCart, ChevronLeft, ChevronRight, Store } from 'lucide-react'
+import { ShoppingCart, ChevronLeft, ChevronRight, Store } from 'lucide-react'
 import { ProductCardProps, ProductSectionProps } from '@/types/product.types'
 import { sampleProducts } from '../../DataDummy/DataProduct'
 import Link from 'next/link'
@@ -32,14 +32,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                 y: -5,
                 transition: { duration: 0.3 }
             }}
-            className="flex-shrink-0 w-90 transition-all duration-300"
+            className="flex-shrink-0 lg:w-90 transition-all duration-300"
         >
             <Card className="group relative h-full border-0 shadow-none transition-all bg-transparent dark:bg-transparent mt-8 md:mt-12 duration-300 rounded-none p-0">
                 <div className="relative">
                     <motion.img
                         src={product.image}
                         alt={product.name}
-                        className={`absolute rotate-12 group-hover:rotate-0 -translate-x-1/2 left-1/2 -top-16 w-32 h-auto drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)] transition-transform duration-500 z-20`}
+                        className={`absolute rotate-12 group-hover:rotate-0 -translate-x-1/2 left-1/2 -top-16 w-32 h-auto drop-shadow-[3px_3px_0_rgba(255,255,255,0.8)] transition-transform duration-500 z-10`}
                     />
 
                     {/* Badges */}
@@ -72,56 +72,39 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     )} */}
                 </div>
 
-                <CardContent className="relative mt-10 px-6 pb-4 group-hover:bg-orange-100/50 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
+                <CardContent className="relative w-full mt-10 px-6 pb-4 group-hover:bg-orange-100/50 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
+                        className="flex flex-col w-full"
                     >
-                        {product.isBestSeller && (
+                        <div className="flex w-full md:justify-between flex-wrap">
                             <motion.div
-                                initial={{ scale: 0, rotate: 180 }}
-                                animate={{ scale: 1, rotate: 0 }}
+                                initial={{ scale: 0, left: 180 }}
+                                animate={{ scale: 1, left: 0 }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
-                            >
-                                <Badge className="absolute top-2 right-2 bg-orange-500 hover:bg-orange-600 text-white text-xs">
-                                    Best Seller
+                                >
+                                <Badge variant="outline" className="text-xs px-2 py-1 bg-green-700 text-white mb-2">
+                                    {product.category}
                                 </Badge>
                             </motion.div>
-                        )}
-                        <div className="">
-                            <Badge variant="outline" className="text-xs px-2 py-1 bg-green-700 text-white mb-2">
-                                {product.category}
-                            </Badge>
+                                {product.isBestSeller && (
+                                    <motion.div
+                                        initial={{ scale: 0, left: 180 }}
+                                        animate={{ scale: 1, left: 0 }}
+                                        transition={{ delay: 0.4, duration: 0.5 }}
+                                    >
+                                <Badge variant="outline" className="text-xs px-2 py-1 bg-orange-500 text-white mb-2">
+                                            Best Seller
+                                        </Badge>
+                                    </motion.div>
+                                )}
                         </div>
 
                         <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-800 drop-shadow-[1px_1px_0px_rgba(0,0,0,0.3)] hover:cursor-pointer transition-colors duration-300">
                             {product.name}
                         </h3>
-
-                        {/* Rating */}
-                        <div className="flex items-center gap-1 mb-3">
-                            <div className="flex">
-                                {[...Array(5)].map((_, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, rotate: -180 }}
-                                        animate={{ opacity: 1, rotate: 0 }}
-                                        transition={{ delay: 0.6 + i * 0.1, duration: 0.3 }}
-                                    >
-                                        <Star
-                                            className={`h-6 w-6 ${i < Math.floor(product.rating)
-                                                ? 'text-yellow-600 fill-yellow-300'
-                                                : 'text-gray-300'
-                                                }`}
-                                        />
-                                    </motion.div>
-                                ))}
-                            </div>
-                            <span className="text-sm text-gray-600 ml-1">
-                                {product.rating} ({product.reviews})
-                            </span>
-                        </div>
 
                         {/* Add to cart button */}
                         <Link href="#" className="w-full">
@@ -234,7 +217,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
             ref={sectionRef}
             className={`bg-center bg-orange-500 bg-gradient-to-br dark:from-orange-700 dark:to-orange-600 dark:via-orange-800 from-orange-400 via-orange-500 to-orange-600 ${className}`}
         >
-            <div className="bg-[url('/images/bg.png')] bg:cover md:bg-contain px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 lg:max-w-7xl xl:max-w-max">
+            <div className="bg-[url('/images/bg.png')] bg:cover md:bg-contain px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 lg:max-w-6xl xl:max-w-max">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -305,8 +288,8 @@ const ProductSection: React.FC<ProductSectionProps> = ({
                             WebkitOverflowScrolling: 'touch',
                             scrollbarWidth: 'none',
                             msOverflowStyle: 'none',
-                            paddingLeft: 'calc(50% - 160px)',
-                            paddingRight: 'calc(50% - 160px)',
+                            paddingLeft: 'calc(50% - 120px)',
+                            paddingRight: 'calc(50% - 120px)',
                         }}
                     >
                         {extendedProducts.map((product, index) => (

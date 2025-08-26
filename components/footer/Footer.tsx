@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, FacebookIcon } from 'lucide-react';
 import { Logo } from '../navbar/Logo';
 import Link from 'next/link';
 
@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#' },
+    { name: 'Facebook', icon: FacebookIcon, href: '#' },
     { name: 'Twitter', icon: Twitter, href: '#' },
     { name: 'Instagram', icon: Instagram, href: '#' },
     { name: 'LinkedIn', icon: Linkedin, href: '#' },

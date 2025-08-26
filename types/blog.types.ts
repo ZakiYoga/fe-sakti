@@ -190,3 +190,75 @@ export interface BlogFormData {
   meta_keywords?: string;
   tags?: string[];
 }
+
+export interface SEOMeta {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+  siteName?: string;
+}
+
+// Social share interface
+export interface ShareConfig {
+  facebook: boolean;
+  twitter: boolean;
+  linkedin: boolean;
+  whatsapp: boolean;
+  copyLink: boolean;
+}
+
+// Blog detail page props
+export interface BlogDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+// Enhanced Blog interface with additional computed fields
+export interface EnhancedBlog extends Blog {
+  reading_time?: number;
+  word_count?: number;
+  share_urls?: {
+    facebook: string;
+    twitter: string;
+    linkedin: string;
+    whatsapp: string;
+  };
+  seo_data?: SEOMeta;
+  is_bookmarked?: boolean;
+}
+
+// Blog interaction interface
+export interface BlogInteraction {
+  blog_id: number;
+  type: 'view' | 'like' | 'bookmark' | 'share';
+  user_id?: number;
+  session_id?: string;
+  created_at: string;
+}
+
+// Blog analytics interface
+export interface BlogAnalytics {
+  daily_views: { date: string; views: number }[];
+  total_views: number;
+  unique_visitors: number;
+  avg_reading_time: number;
+  bounce_rate: number;
+  most_shared_platform: string;
+}
+
+// Comment interface (if you plan to add comments)
+export interface BlogComment {
+  id: number;
+  blog_id: number;
+  user_name: string;
+  user_email: string;
+  content: string;
+  status: 'pending' | 'approved' | 'spam';
+  created_at: string;
+  updated_at: string;
+  replies?: BlogComment[];
+}

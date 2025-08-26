@@ -68,13 +68,6 @@ const StyledMapComponent: React.FC<MapProps> = ({
 
   // Menentukan tile layer berdasarkan style
   const getTileConfig = (): TileConfig => {
-    if (style === 'custom' && customTileUrl) {
-      return {
-        url: customTileUrl,
-        attribution: customAttribution || '© Custom Map Provider',
-        name: 'Custom Map'
-      };
-    }
     
     const selectedStyle = mapStyles[style] || mapStyles.default;
     return {
@@ -135,7 +128,7 @@ const StyledMapComponent: React.FC<MapProps> = ({
           >
             {marker.popup && (
               <Popup>
-                <div className={`p-2 ${style === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+                <div className={`${style === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
                   {marker.title && (
                     <h3 className="font-semibold mb-1">{marker.title}</h3>
                   )}

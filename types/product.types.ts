@@ -1,14 +1,11 @@
 export interface Product {
   id: number
   name: string
-  price: number
-  originalPrice?: number
-  rating: number
-  reviews: number
   category: string
   image: string
   isNew?: boolean
   isBestSeller?: boolean
+  isPremium?: boolean
   description: string
 }
 
@@ -24,3 +21,5 @@ export interface ProductSectionProps {
   products: Product[]
   className?: string
 }
+
+
