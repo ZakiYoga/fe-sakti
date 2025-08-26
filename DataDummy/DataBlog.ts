@@ -387,7 +387,7 @@ export const generateDummyBlogs = (): Blog[] => [
 ];
 
 // Generate paginated dummy data that matches API response structure
-export const generateDummyPaginatedBlogs = (page: number = 1, perPage: number = 12): PaginatedResponse<Blog> => {
+const generateDummyPaginatedBlogs = (page: number = 1, perPage: number = 12): PaginatedResponse<Blog> => {
   const allBlogs = generateDummyBlogs();
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
@@ -502,3 +502,5 @@ export const generateFilteredDummyPaginatedBlogs = (
     total: filteredBlogs.length
   };
 };
+
+export { generateDummyBlogs as generateBlogPosts };

@@ -13,15 +13,15 @@ import {
   Mail,
   Clock,
 } from 'lucide-react'
-import { ContactFormData, ContactPageProps } from '@/types/contact.types'
+import { ContactFormData } from '@/types/contact.types'
 import { companyContactData, contactInfoData } from '@/DataDummy/DataContact'
 import { MapLocation } from '@/types/map.types'
 import StyledMapWrapper from '@/components/Map/StyledMapWrapper'
 
 // Contact Info Card Component
-import { ContactInfo } from '@/types/contact.types'
+// import { ContactInfo } from '@/types/contact.types'
 
-const ContactPage: React.FC<ContactPageProps> = ({ className }) => {
+const ContactPage = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -114,7 +114,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ className }) => {
   ]
 
   return (
-    <div className={`min-h-screen flex flex-col ${className || ''}`}>
+    <div className={`min-h-screen flex flex-col`}>
       <HeaderPages
         title="Hubungi Kami"
         description="Kami siap membantu Anda. Hubungi tim profesional kami untuk informasi lebih lanjut tentang produk dan layanan"
