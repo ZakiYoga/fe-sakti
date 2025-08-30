@@ -213,7 +213,7 @@ export default function HeroSection(): JSX.Element {
 
             {/* Main heading */}
             <motion.h1
-              className="text-4xl leading-tight tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl font-bebas-neue drop-shadow-[4px_3px_0px_rgba(0,0,0,0.3)]"
+              className="text-4xl leading-tight tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl font-bebas-neue drop-shadow-[3px_2px_0px_rgba(0,0,0,0.3)] sm:drop-shadow-[4px_3px_0px_rgba(0,0,0,0.3)]"
               variants={itemVariants}
             >
               Kriuknya Sakti,{" "}
@@ -222,7 +222,6 @@ export default function HeroSection(): JSX.Element {
                   WebkitTextStroke: "2px white",
                   WebkitTextFillColor: "transparent",
                 }}
-                className="drop-shadow-[2px_2px_0px_rgba(255,255,255,0.3)]"
               >
                 Renyahnya Pasti!
               </span>

@@ -314,63 +314,6 @@ export const generateDummyBlogs = () => [
       <h2>Milestone Bersejarah di Fasilitas Pabrik Baru</h2>
       <p>Annual Meeting & Gathering PT. Sakti Pangan Perkasa tahun 2025 mengambil tempat di kompleks pabrik baru yang berlokasi di Jl. Solo - sragen km 7.7Jetis, Gerdu, Jetis, Kec. Jaten, Kabupaten Karanganyar, Jawa Tengah 57731. Event spektakuler ini dihadiri oleh karyawan, staf, supervisor hingga Direktur PT Sakti Pangan Perkasa.</p>
       
-      <h3>Highlights Event Hari Pertama (25 Juli 2025)</h3>
-      <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg my-6">
-        <h4 class="text-xl font-bold mb-4">🏢 Grand Opening Pabrik Baru</h4>
-        <ul>
-          <li><strong>08:00-09:00:</strong> Registrasi & Welcome Coffee</li>
-          <li><strong>09:00-10:30:</strong> Ceremonial Ribbon Cutting oleh Direktur Utama</li>
-          <li><strong>13:00-15:00:</strong> Annual Meeting & Performance Review</li>
-          <li><strong>15:30-17:00:</strong> Strategic Planning Session 2025-2027</li>
-        </ul>
-      </div>
-
-      <h2>Pencapaian Luar Biasa 2024</h2>
-      <p>Dalam sambutan pembukaan, Bapak Widi selaku Direktur Utama memaparkan pencapaian gemilang tahun 2024:</p>
-      
-      <div class="bg-orange-50 p-6 rounded-lg my-6">
-        <h4 class="font-bold text-orange-800 mb-4">📊 Key Performance Indicators 2024</h4>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="text-center">
-            <h5 class="text-2xl font-bold text-orange-600">45%</h5>
-            <p class="text-sm text-orange-700">Revenue Growth</p>
-          </div>
-          <div class="text-center">
-            <h5 class="text-2xl font-bold text-orange-600">8</h5>
-            <p class="text-sm text-orange-700">Rebrand Kemasan Produk Sakti 200g, 500g, dan 1kg.</p>
-          </div>
-        </div>
-      </div>
-      
-      <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
-        "Pencapaian 2024 ini adalah bukti kerja keras seluruh tim Sakti Pangan. Pabrik baru ini bukan hanya milestone, tetapi foundation untuk ekspansi yang lebih ambisius di tahun-tahun mendatang." - Bapak Widi, Direktur Utama
-      </blockquote>
-      
-      <h3>Fun Activities Hari Kedua (26 Juli 2025)</h3>
-      <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg my-6">
-        <h4 class="text-xl font-bold mb-4">🎪 Family Gathering & Team Building</h4>
-        <ul>
-          <li><strong>08:00-10:00:</strong> Family Breakfast & Kids Corner</li>
-          <li><strong>10:00-12:00:</strong> Team Building Games & Outbound</li>
-          <li><strong>14:00-16:00:</strong> Cultural Performance & Live Music</li>
-          <li><strong>16:00-17:30:</strong> Door Prize & Closing Ceremony</li>
-        </ul>
-      </div>
-      
-      <h2>Komitmen untuk Masa Depan</h2>
-      <p>Event ditutup dengan komitmen bersama untuk mewujudkan visi "Menjadi perusahaan pangan yang mampu bersaing secara Nasional."</p>
-      
-      <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
-        <h4 class="font-bold mb-3">🎯 Commitments Made:</h4>
-        <ul>
-          <li>✓ Investment Rp 500 miliar untuk ekspansi 2025-2027</li>
-          <li>✓ Employee development budget naik 150%</li>
-          <li>✓ CSR programs expanded ke 20 kota</li>
-          <li>✓ Research collaboration dengan 5 universitas terkemuka</li>
-          <li>✓ Achieve zero waste to landfill by 2026</li>
-        </ul>
-      </div>
-      
       <p class="text-center font-bold text-lg mt-6 text-orange-600">
         "Together We Grow, Together We Succeed!" - Sakti Pangan Perkasa 2025
       </p>
@@ -509,8 +452,8 @@ export const generateDummyBlogs = () => [
     },
     user: {
       id: 3,
-      name: "Chef John",
-      email: "chef.john@saktipangan.co.id"
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
     }
   },
 

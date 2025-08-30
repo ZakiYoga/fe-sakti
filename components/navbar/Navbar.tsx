@@ -121,12 +121,12 @@ const Navbar: React.FC<NavbarProps> = ({
 
                     {/* Right Section */}
                     <div className="flex items-center space-x-3">
-                        <LanguageSwitcher
+                        {/* <LanguageSwitcher
                             currentLanguage={currentLanguage}
                             availableLanguages={availableLanguages}
                             onLanguageChange={handleLanguageChange}
                             isScrolled={isScrolled}
-                        />
+                        /> */}
 
                         {/* Theme Switcher */}
                         <DropdownMenu>

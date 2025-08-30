@@ -5,14 +5,49 @@ import { motion, useInView } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ShoppingCart, ChevronLeft, ChevronRight, Store } from 'lucide-react'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { ShoppingCart, ChevronLeft, ChevronRight, Store, ChevronDown } from 'lucide-react'
 import { ProductCardProps, ProductSectionProps } from '@/types/product.types'
 import { sampleProducts } from '../../DataDummy/DataProduct'
 import Link from 'next/link'
+import Image from 'next/image'
+
+// E-commerce platforms data
+const ecommercePlatforms = [
+    {
+        name: 'TikTok Shop',
+        url: 'https://shop.tiktok.com/',
+        imgSrc: '',
+        color: 'bg-black hover:bg-gray-800'
+    },
+    {
+        name: 'Tokopedia',
+        url: 'https://tokopedia.com/',
+        imgSrc: '',
+        color: 'bg-green-500 hover:bg-green-600'
+    },
+    {
+        name: 'Shopee',
+        url: 'https://shopee.co.id/',
+        imgSrc: '',
+        color: 'bg-orange-600 hover:bg-orange-700'
+    }
+]
 
 // Product Card Component
 const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
     const cardRef = useRef(null)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+    const handleEcommerceClick = (url: string) => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+        setIsDropdownOpen(false)
+    }
 
     return (
         <motion.div
@@ -44,35 +79,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
 
                     {/* Badges */}
                     <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
-                        {/* {product.isNew && (
-                            <motion.div
-                                initial={{ scale: 0, rotate: -180 }}
-                                animate={{ scale: 1, rotate: 0 }}
-                                transition={{ delay: 0.3, duration: 0.5 }}
-                            >
-                                <Badge className="bg-green-600 hover:bg-green-600/90 text-white text-xs">
-                                    Kemasan Baru
-                                </Badge>
-                            </motion.div>
-                        )} */}
+                        {/* Badge content - commented out in original */}
                     </div>
 
                     {/* Discount badge */}
-                    {/* {product.originalPrice && (
-                        <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.5, duration: 0.3 }}
-                            className="absolute top-3 right-3 z-10"
-                        >
-                            <Badge variant="destructive" className="bg-red-500 hover:bg-red-600 text-xs">
-                                -{Math.round((1 - product.price / product.originalPrice) * 100)}%
-                            </Badge>
-                        </motion.div>
-                    )} */}
+                    {/* Discount badge content - commented out in original */}
                 </div>
 
-                <CardContent className="relative w-full mt-10 px-6 pb-4 group-hover:bg-orange-100/50 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
+                <CardContent className="relative min-w-1/3 sm:min-w-[300px] mt-10 px-6 pb-4 group-hover:bg-orange-100/50 bg-white/50 backdrop-blur-md rounded-t-2xl pt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -84,39 +98,89 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                 initial={{ scale: 0, left: 180 }}
                                 animate={{ scale: 1, left: 0 }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
-                                >
+                            >
                                 <Badge variant="outline" className="text-xs px-2 py-1 bg-green-700 text-white mb-2">
                                     {product.category}
                                 </Badge>
                             </motion.div>
-                                {product.isBestSeller && (
-                                    <motion.div
-                                        initial={{ scale: 0, left: 180 }}
-                                        animate={{ scale: 1, left: 0 }}
-                                        transition={{ delay: 0.4, duration: 0.5 }}
-                                    >
-                                <Badge variant="outline" className="text-xs px-2 py-1 bg-orange-500 text-white mb-2">
-                                            Best Seller
-                                        </Badge>
-                                    </motion.div>
-                                )}
+                            {product.isBestSeller && (
+                                <motion.div
+                                    initial={{ scale: 0, left: 180 }}
+                                    animate={{ scale: 1, left: 0 }}
+                                    transition={{ delay: 0.4, duration: 0.5 }}
+                                >
+                                    <Badge variant="outline" className="text-xs px-2 py-1 bg-orange-500 text-white mb-2">
+                                        Best Seller
+                                    </Badge>
+                                </motion.div>
+                            )}
                         </div>
 
                         <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-orange-800 drop-shadow-[1px_1px_0px_rgba(0,0,0,0.3)] hover:cursor-pointer transition-colors duration-300">
                             {product.name}
                         </h3>
 
-                        {/* Add to cart button */}
-                        <Link href="#" className="w-full">
-                            <Button
-                                size="lg"
-                                variant="press"
-                                className="w-full px-4 active:text-orange-500 bg-orange-500 border-orange-700 text-orange-50"
-                            >
-                                <ShoppingCart className="mr-2 h-4 w-4" />
-                                Beli Sekarang
-                            </Button>
-                        </Link>
+                        {/* Dropdown Buy Button */}
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    size="sm"
+                                    className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
+                                >
+                                    <ShoppingCart className="h-4 w-4 mr-1 sm:mr-2" />
+                                    <span className="hidden xs:inline">Beli Sekarang</span>
+                                    <span className="inline xs:hidden">Beli</span>
+                                    <ChevronDown className="h-4 w-4 ml-1 sm:ml-2" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-48">
+                                <DropdownMenuItem
+                                    className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                                    onClick={() => window.open('https://tokopedia.com', '_blank')}
+                                >
+                                    <div className="flex items-center gap-2">
+                                        <Image
+                                            src={"/images/tokopedia.png"}
+                                            alt='tokopedia-icon'
+                                            height={100}
+                                            width={100}
+                                            className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                                        />
+                                        <span>Tokopedia</span>
+                                    </div>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                    className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                                    onClick={() => window.open('https://shopee.co.id', '_blank')}
+                                >
+                                    <div className="flex items-center gap-2">
+                                        <Image
+                                            src={"/images/shopee.png"}
+                                            alt='shopee-icon'
+                                            height={100}
+                                            width={100}
+                                            className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                                        />
+                                        <span>Shopee</span>
+                                    </div>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                    className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
+                                    onClick={() => window.open('https://shop.tiktok.com', '_blank')}
+                                >
+                                    <div className="flex items-center gap-2">
+                                        <Image
+                                            src={"/images/tiktokshop.png"}
+                                            alt='tiktokshop-icon'
+                                            height={100}
+                                            width={100}
+                                            className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0"
+                                        />
+                                        <span>TikTok Shop</span>
+                                    </div>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
 
                     </motion.div>
                 </CardContent>

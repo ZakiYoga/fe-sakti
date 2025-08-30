@@ -84,7 +84,7 @@ export const sampleProducts: Product[] = [
     },
     {
         id: 8,
-        name: "FryFest 10kg",
+        name: "FryFest",
         category: "Zak 10kg",
         image: "/images/products/FryFest10kg.png",
         description: ""

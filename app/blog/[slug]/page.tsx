@@ -249,8 +249,8 @@ const BlogDetailPage = () => {
     <div className="min-h-screen flex flex-col">
       {/* Header with consistent styling */}
       <HeaderPages
-        title={blog.title}
-        description={blog.excerpt || "Baca artikel lengkapnya di bawah ini"}
+        title="Sakti News"
+        description={blog.title}
         backgroundImage="/images/bg-header.png"
         height="md"
         className="py-16"
