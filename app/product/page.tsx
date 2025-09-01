@@ -125,7 +125,7 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
                       <DropdownMenuContent align="end" className="w-48">
                         <DropdownMenuItem
                           className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                          onClick={() => window.open('https://tokopedia.com', '_blank')}
+                          onClick={() => window.open('https://www.tokopedia.com/sakti-pangan-perkasa', '_blank')}
                         >
                           <div className="flex items-center gap-2">
                             <Image

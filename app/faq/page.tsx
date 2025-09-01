@@ -57,7 +57,7 @@ const faqData: FAQ[] = [
     id: 2,
     category: "Produk",
     question: "Apa saja produk unggulan yang diproduksi?",
-    answer: "Kami memproduksi berbagai produk pangan berkualitas tinggi termasuk minyak kelapa premium, produk olahan kelapa, dan berbagai produk pangan lainnya yang telah tersertifikasi halal dan BPOM.",
+    answer: "Kami memproduksi berbagai tepung roti yang berkualitas tinggi, diantaranya : Sakti, Laskar, Pita, AkStar, 7Daun, FryFest semua produk kami telah tersertifikasi halal dan BPOM.",
     icon: Package,
     isPopular: true
   },
@@ -65,7 +65,7 @@ const faqData: FAQ[] = [
     id: 3,
     category: "Kualitas",
     question: "Sertifikasi apa saja yang dimiliki perusahaan?",
-    answer: "Kami memiliki berbagai sertifikasi internasional termasuk ISO 9001:2015, Sertifikasi Halal MUI, Sertifikasi BPOM, dan ISO 22000 untuk standar keamanan pangan internasional.",
+    answer: "Kami memiliki berbagai sertifikasi diantaranya termasuk ISO 9001:2015, Sertifikasi Halal MUI, Sertifikasi BPOM.",
     icon: Award,
     isPopular: false
   },
@@ -73,23 +73,15 @@ const faqData: FAQ[] = [
     id: 4,
     category: "Produksi",
     question: "Di mana lokasi fasilitas produksi?",
-    answer: "Kami memiliki 3 fasilitas produksi yang berlokasi strategis di Indonesia, dengan fasilitas utama di kawasan Jababeka, Cikarang, Jawa Barat.",
+    answer: "KM9.4, Jl. Sragen - Solo No.8, Wates, Jetis, Kec. Jaten, Kabupaten Karanganyar, Jawa Tengah 57731",
     icon: Factory,
     isPopular: false
   },
   {
     id: 5,
-    category: "Kemitraan",
-    question: "Bagaimana cara menjadi mitra bisnis?",
-    answer: "Anda dapat menghubungi tim business development kami melalui email atau telepon. Kami terbuka untuk berbagai bentuk kemitraan strategis yang saling menguntungkan.",
-    icon: Users,
-    isPopular: true
-  },
-  {
-    id: 6,
     category: "Kontak",
     question: "Bagaimana cara menghubungi customer service?",
-    answer: "Tim customer service kami dapat dihubungi melalui telepon (021) 8934-5678 pada jam kerja atau email info@saktipangan.co.id dengan response time maksimal 24 jam.",
+    answer: "Tim customer service kami dapat dihubungi melalui telepon (0271) 821919 pada jam kerja atau email official@saktipangan.co.id dengan response time maksimal 24 jam.",
     icon: Phone,
     isPopular: false
   }
@@ -102,7 +94,6 @@ const categories: string[] = [
   "Produk", 
   "Kualitas", 
   "Produksi", 
-  "Kemitraan",
   "Kontak"
 ]
 

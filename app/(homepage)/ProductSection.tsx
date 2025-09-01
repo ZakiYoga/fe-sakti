@@ -27,7 +27,7 @@ const ecommercePlatforms = [
     },
     {
         name: 'Tokopedia',
-        url: 'https://tokopedia.com/',
+        url: 'https://www.tokopedia.com/sakti-pangan-perkasa',
         imgSrc: '',
         color: 'bg-green-500 hover:bg-green-600'
     },

@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = () => {
     { name: 'Products', href: '/product' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Career', href: '/career' },
+    // { name: 'Career', href: '/career' },
     { name: 'FAQ', href: '/faq' },
   ];
 
