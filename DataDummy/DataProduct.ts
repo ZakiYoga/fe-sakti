@@ -34,7 +34,6 @@ export const sampleProducts: Product[] = [
         isBestSeller: true,
         isNew: true,
         description: ""
-
     },
     {
         id: 2,

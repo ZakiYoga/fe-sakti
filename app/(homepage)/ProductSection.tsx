@@ -21,7 +21,7 @@ import Image from 'next/image'
 const ecommercePlatforms = [
     {
         name: 'TikTok Shop',
-        url: 'https://shop.tiktok.com/',
+        url: 'https://vt.tiktok.com/ZSAbApqPT/?page=Mall',
         imgSrc: '',
         color: 'bg-black hover:bg-gray-800'
     },
@@ -33,7 +33,7 @@ const ecommercePlatforms = [
     },
     {
         name: 'Shopee',
-        url: 'https://shopee.co.id/',
+        url: 'https://shopee.co.id/shop/1613453160',
         imgSrc: '',
         color: 'bg-orange-600 hover:bg-orange-700'
     }
@@ -136,7 +136,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                             <DropdownMenuContent align="end" className="w-48">
                                 <DropdownMenuItem
                                     className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                                    onClick={() => window.open('https://tokopedia.com', '_blank')}
+                                    onClick={() => window.open('https://tk.tokopedia.com/ZSAgTNhFW/', '_blank')}
                                 >
                                     <div className="flex items-center gap-2">
                                         <Image
@@ -151,7 +151,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                     className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                                    onClick={() => window.open('https://shopee.co.id', '_blank')}
+                                    onClick={() => window.open('https://shopee.co.id/shop/1613453160', '_blank')}
                                 >
                                     <div className="flex items-center gap-2">
                                         <Image
@@ -166,7 +166,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                     className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                                    onClick={() => window.open('https://shop.tiktok.com', '_blank')}
+                                    onClick={() => window.open('https://vt.tiktok.com/ZSAbApqPT/?page=Mall', '_blank')}
                                 >
                                     <div className="flex items-center gap-2">
                                         <Image

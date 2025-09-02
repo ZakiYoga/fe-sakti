@@ -140,7 +140,7 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
                         </DropdownMenuItem>
                         <DropdownMenuItem
                           className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                          onClick={() => window.open('https://shopee.co.id', '_blank')}
+                          onClick={() => window.open('https://shopee.co.id/shop/1613453160', '_blank')}
                         >
                           <div className="flex items-center gap-2">
                             <Image
@@ -155,7 +155,7 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
                         </DropdownMenuItem>
                         <DropdownMenuItem
                           className="cursor-pointer hover:bg-orange-50 focus:bg-orange-50"
-                          onClick={() => window.open('https://shop.tiktok.com', '_blank')}
+                          onClick={() => window.open('https://vt.tiktok.com/ZSAbApqPT/?page=Mall', '_blank')}
                         >
                           <div className="flex items-center gap-2">
                             <Image
