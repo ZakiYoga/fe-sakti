@@ -101,13 +101,13 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2 sm:items-start sm:justify-end w-full sm:w-auto">
                     {/* View Button - Hidden on mobile to save space */}
-                    <Button
+                    {/* <Button
                       size="sm"
                       variant="outline"
                       className="hidden sm:flex border-orange-300 text-orange-600 hover:bg-orange-50"
                     >
                       <Eye className="h-4 w-4" />
-                    </Button>
+                    </Button> */}
 
                     {/* Buy Button */}
                     <DropdownMenu>
@@ -231,9 +231,9 @@ const ProductCard = ({ product, index, viewMode }: { product: Product, index: nu
           )} */}
 
           <div className="flex gap-2">
-            <Button size="sm" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
-              <Eye className="h-4 w-4" />
-            </Button>
+            {/* <Button size="sm" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+               <Eye className="h-4 w-4" />
+            </Button> */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
