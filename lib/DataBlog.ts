@@ -318,7 +318,7 @@ export const generateDummyBlogs = () => [
         "Together We Grow, Together We Succeed!" - Sakti Pangan Perkasa 2025
       </p>
     </div>`,
-    featured_image: "/images/company/DSCF0032.jpg",
+    featured_image: "/images/company/DSCF0032.png",
     status: "published",
     published_at: "2024-07-27T10:00:00.000000Z",
     views: 890,

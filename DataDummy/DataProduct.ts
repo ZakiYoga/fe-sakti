@@ -53,46 +53,46 @@ export const sampleProducts: Product[] = [
         isNew: true,
         description: "Ergonomic aluminum laptop stand for better posture"
     },
-    {
-        id: 4,
-        name: "Laskar 10kg",
-        category: "Zak 10kg",
-        image: "/images/products/Laskar10kg.png",
-        description: ""
-    },
-    {
-        id: 5,
-        name: "Ak Star 10kg",
-        category: "Zak 10kg",
-        image: "/images/products/Akstar.png",
-        description: "High-precision wireless gaming mouse with RGB lighting"
-    },
-    {
-        id: 6,
-        name: "Agni 10kg",
-        category: "Zak 10kg",
-        image: "/images/products/Agni10kg.png",
-        description: ""
-    },
-    {
-        id: 7,
-        name: "PITA 10kg",
-        category: "Zak 10kg",
-        image: "/images/products/Pita10kg.png",
-        description: ""
-    },
-    {
-        id: 8,
-        name: "FryFest",
-        category: "Zak 10kg",
-        image: "/images/products/FryFest10kg.png",
-        description: ""
-    },
-    {
-        id: 9,
-        name: "7Daun",
-        category: "Zak 10kg",
-        image: "/images/products/7DaunBaru.png",
-        description: ""
-    },
+    // {
+    //     id: 4,
+    //     name: "Laskar 10kg",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/Laskar10kg.png",
+    //     description: ""
+    // },
+    // {
+    //     id: 5,
+    //     name: "Ak Star 10kg",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/Akstar.png",
+    //     description: "High-precision wireless gaming mouse with RGB lighting"
+    // },
+    // {
+    //     id: 6,
+    //     name: "Agni 10kg",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/Agni10kg.png",
+    //     description: ""
+    // },
+    // {
+    //     id: 7,
+    //     name: "PITA 10kg",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/Pita10kg.png",
+    //     description: ""
+    // },
+    // {
+    //     id: 8,
+    //     name: "FryFest",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/FryFest10kg.png",
+    //     description: ""
+    // },
+    // {
+    //     id: 9,
+    //     name: "7Daun",
+    //     category: "Zak 10kg",
+    //     image: "/images/products/7DaunBaru.png",
+    //     description: ""
+    // },
 ]
