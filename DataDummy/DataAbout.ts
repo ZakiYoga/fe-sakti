@@ -62,46 +62,40 @@ export const timeline = [
     {
         year: "2020",
         title: "Pendirian Perusahaan",
-        description: "PT Sakti Pangan Perkasa resmi berdiri pada 02 Juni 2020 berdasarkan akta pendirian perusahaan.",
-        milestone: "Founding"
+        description: "PT Sakti Pangan Perkasa didirikan secara resmi pada tahun 2020, menandai awal komitmen kami dalam menyediakan produk pangan berkualitas.",
+        milestone: "Pendirian"
     },
     {
-        year: "2020",
-        title: "Rilis Produk Perdana",
-        description: "Meluncurkan produk tepung roti (Breadcrumb) dengan brand Sakti, Laskar, dan Pita.",
-        milestone: "Product Launch"
+        year: "2021",
+        title: "Peluncuran Produk Perdana",
+        description: "Kami meluncurkan produk pertama kami, tepung roti (breadcrumb), dengan merek andalan seperti Sakti, Laskar, dan Pita, yang menjadi fondasi produk kami.",
+        milestone: "Rilis Produk"
     },
     {
-        year: "2020-2021",
-        title: "Perluasan Area Pemasaran",
-        description: "Memperluas pemasaran dari wilayah Jawa Tengah ke wilayah Jawa, Sumatera, Kalimantan, dan Sulawesi.",
-        milestone: "Market Expansion"
-    },
-    {
-        year: "2023",
-        title: "Sertifikat HAKI Merk Laskar",
-        description: "Merek Laskar resmi mendapatkan perlindungan HAKI untuk mendukung kekuatan brand.",
-        milestone: "Certification"
+        year: "2022",
+        title: "Ekspansi Area Pemasaran",
+        description: "Memperluas jangkauan distribusi, produk kami berhasil menjangkau pasar di wilayah Jawa, Sumatera, Kalimantan, dan Sulawesi, membuka babak baru dalam ekspansi regional.",
+        milestone: "Ekspansi"
     },
     {
         year: "2023",
-        title: "Era Digital",
-        description: "Meluncurkan platform e-commerce dan sistem manajemen berbasis teknologi.",
-        milestone: "Digital"
+        title: "Peningkatan Operasional",
+        description: "Fokus pada peningkatan operasional, kami melakukan berbagai improvisasi untuk meningkatkan kapasitas produksi dan memastikan kualitas produk tetap terjaga.",
+        milestone: "Peningkatan Kualitas"
     },
     {
         year: "2024",
-        title: "Sertifikasi BPOM",
-        description: "Seluruh produk resmi mendapatkan izin edar BPOM RI berlaku 2024–2029.",
-        milestone: "Certification"
+        title: "Penguatan Jaringan Distribusi",
+        description: "Kami mempertajam strategi distribusi untuk memperluas jangkauan dan ketersediaan produk di seluruh Indonesia, memastikan produk kami mudah diakses oleh konsumen.",
+        milestone: "Jaringan Distribusi"
     },
     {
-        year: "2021 - sekarang",
-        title: "Ekspansi Regional",
-        description: "Meningkatkan kapasitas produksi dan memperluas jaringan distribusi di seluruh Indonesia.",
-        milestone: "Expansion"
+        year: "2025",
+        title: "Peningkatan Kapasitas Produksi",
+        description: "Sebagai langkah strategis, kami mulai membangun fasilitas produksi baru untuk memenuhi permintaan pasar yang terus meningkat dan mendukung pertumbuhan jangka panjang.",
+        milestone: "Kapasitas Produksi"
     },
-]
+];
 
 
 export const achievements: Achievement[] = [

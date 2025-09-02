@@ -117,7 +117,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
       style={{ width: cardWidth }}
     >
       <Link href={`/blog/${blog.slug}`}>
-        <Card className="group overflow-hidden border border-gray-100 bg-white hover:border-orange-200 transition-all duration-500 shadow-sm hover:shadow-xl rounded-xl">
+        <Card className="group overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-orange-200 dark:hover:border-orange-700 transition-all duration-500 shadow-sm hover:shadow-xl dark:shadow-gray-900/20 dark:hover:shadow-orange-500/10 rounded-xl">
           {/* Image Container */}
           <div className="relative overflow-hidden aspect-[16/10]">
             <Image
@@ -140,7 +140,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
             {blog.category && (
               <div className="absolute top-3 left-3">
                 <Badge 
-                  className="bg-white/90 text-gray-700 hover:bg-white font-medium text-xs px-3 py-1"
+                  className="bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 hover:bg-white dark:hover:bg-gray-800 font-medium text-xs px-3 py-1"
                 >
                   {blog.category.name}
                 </Badge>
@@ -149,7 +149,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
 
             {/* Views count on hover */}
             <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="flex items-center gap-1 bg-white/90 text-gray-700 text-xs px-2 py-1 rounded-full">
+              <div className="flex items-center gap-1 bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 text-xs px-2 py-1 rounded-full">
                 <Eye className="h-3 w-3" />
                 {/* <span>{blog.views || 0}</span> */}
               </div>
@@ -160,34 +160,34 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, index, containerWidth }) => {
           <CardContent className="p-5">
             <div className="space-y-3">
               {/* Title */}
-              <h3 className="font-bold text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors duration-300 text-lg leading-snug">
+              <h3 className="font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300 text-lg leading-snug">
                 {blog.title}
               </h3>
 
               {/* Description/Excerpt */}
-              <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 leading-relaxed">
                 {blog.excerpt || 'Baca artikel lengkap untuk mengetahui lebih lanjut...'}
               </p>
 
               {/* Meta Info */}
-              <div className="flex items-center justify-between pt-2 border-t border-gray-50">
+              <div className="flex items-center justify-between pt-2 border-t border-gray-50 dark:border-gray-800">
                 <div className="flex items-center gap-2">
                   {/* Author info */}
-                  <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
-                    <Users className="h-4 w-4 text-orange-600" />
+                  <div className="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                    <Users className="h-4 w-4 text-orange-600 dark:text-orange-400" />
                   </div>
                   <div className="text-xs">
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-gray-900 dark:text-white">
                       {blog.user?.name || 'Admin'}
                     </p>
-                    <div className="flex items-center gap-1 text-gray-500">
+                    <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
                       <Calendar className="h-3 w-3" />
                       <span>{formattedDate}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs text-gray-500">
+                <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-1">
                     <Clock className="h-3 w-3" />
                     <span>{readTime}m</span>
@@ -216,8 +216,8 @@ const LoadingIndicator: React.FC<{ className?: string }> = ({ className = "" }) 
     className={`flex-none w-80 h-96 flex items-center justify-center ${className}`}
   >
     <div className="text-center">
-      <Loader2 className="w-8 h-8 text-orange-500 animate-spin mx-auto mb-3" />
-      <p className="text-gray-600 text-sm">Memuat Berita lainnya...</p>
+      <Loader2 className="w-8 h-8 text-orange-500 dark:text-orange-400 animate-spin mx-auto mb-3" />
+      <p className="text-gray-600 dark:text-gray-300 text-sm">Memuat Berita lainnya...</p>
     </div>
   </motion.div>
 )
@@ -230,19 +230,19 @@ const ErrorState: React.FC<{ onRetry: () => void }> = ({ onRetry }) => (
     className="flex-none w-80 h-96 flex items-center justify-center"
   >
     <div className="text-center">
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full mb-4">
         <AlertTriangle className="h-8 w-8" />
       </div>
-      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
         Gagal Memuat Berita
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
         Terjadi kesalahan saat mengambil data
       </p>
       <Button
         onClick={onRetry}
         size="sm"
-        className="bg-orange-500 hover:bg-orange-600 text-white"
+        className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white"
       >
         <RefreshCw className="h-4 w-4 mr-2" />
         Coba Lagi
@@ -258,12 +258,12 @@ const NavButton: React.FC<NavButtonProps> = ({ direction, onClick, disabled = fa
     size="sm"
     onClick={onClick}
     disabled={disabled}
-    className="h-10 w-10 rounded-md bg-white shadow-md hover:shadow-lg border-gray-200 hover:border-orange-300 transition-all duration-300 disabled:opacity-50"
+    className="h-10 w-10 rounded-md bg-white dark:bg-gray-800 shadow-md hover:shadow-lg border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 disabled:opacity-50"
   >
     {direction === 'left' ? (
-      <ChevronLeft className="h-4 w-4" />
+      <ChevronLeft className="h-4 w-4 text-gray-600 dark:text-gray-300" />
     ) : (
-      <ChevronRight className="h-4 w-4" />
+      <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-300" />
     )}
   </Button>
 )
@@ -276,23 +276,23 @@ const BlogSkeleton: React.FC<{ containerWidth: number }> = ({ containerWidth }) 
     <div className="flex gap-6">
       {Array.from({ length: 4 }).map((_, index) => (
         <div key={index} className="flex-none animate-pulse" style={{ width: cardWidth }}>
-          <Card className="overflow-hidden border border-gray-100 bg-white rounded-xl">
-            <div className="aspect-[16/10] bg-gray-200" />
+          <Card className="overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 rounded-xl">
+            <div className="aspect-[16/10] bg-gray-200 dark:bg-gray-700" />
             <CardContent className="p-5 space-y-3">
-              <div className="h-4 bg-gray-200 rounded w-3/4" />
+              <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4" />
               <div className="space-y-2">
-                <div className="h-3 bg-gray-200 rounded" />
-                <div className="h-3 bg-gray-200 rounded w-2/3" />
+                <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded" />
+                <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3" />
               </div>
               <div className="flex justify-between items-center pt-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-gray-200 rounded-full" />
+                  <div className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full" />
                   <div className="space-y-1">
-                    <div className="h-3 bg-gray-200 rounded w-16" />
-                    <div className="h-3 bg-gray-200 rounded w-20" />
+                    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-16" />
+                    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-20" />
                   </div>
                 </div>
-                <div className="h-3 bg-gray-200 rounded w-12" />
+                <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-12" />
               </div>
             </CardContent>
           </Card>
@@ -379,7 +379,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   return (
     <section
       ref={sectionRef}
-      className={`px-4 sm:px-8 lg:px-16 xl:px-20 py-8 lg:py-2 bg-gradient-to-br from-gray-50 to-white ${className}`}
+      className={`px-4 sm:px-8 lg:px-16 xl:px-20 py-8 lg:py-2 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 ${className}`}
     >
       <div ref={containerRef} className="container mx-auto">
         {/* Header Section */}
@@ -399,17 +399,17 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                <p className="font-ephesis first-letter:text-3xl font-semibold text-lg sm:text-2xl tracking-wider text-orange-500">
+                <p className="font-ephesis mb-2 first-letter:text-3xl font-semibold text-lg sm:text-2xl tracking-wider text-orange-500 dark:text-orange-400">
                   Sakti
-                  <span className="ml-1 text-green-500 dark:text-green-200">News</span>
+                  <span className="ml-2 text-green-500 dark:text-green-400">News</span>
                 </p>
-                <h2 className="text-orange-500 drop-shadow-[4px_2px_0px_rgba(0,0,0,0.7)] font-bebas-neue">
+                <h2 className="text-orange-500 dark:text-orange-400 drop-shadow-[4px_2px_0px_rgba(0,0,0,0.7)] dark:drop-shadow-[2px_2px_0px_rgba(255,165,0,0.3)] font-bebas-neue">
                   {title}
                 </h2>
               </motion.div>
 
               <motion.p
-                className="text-gray-600 text-base lg:text-lg leading-relaxed"
+                className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -428,7 +428,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                     <Button
                       size="lg"
                       variant="press"
-                      className="w-fit px-4 active:bg-orange-500 active:text-orange-50 bg-transparent border-orange-600 text-orange-500"
+                      className="w-fit px-4 active:bg-orange-500 active:text-orange-50 bg-transparent border-orange-600 dark:border-orange-500 text-orange-500 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/20"
                     >
                       <Newspaper className="h-4 w-4" />
                       Lihat Semua Berita
@@ -449,8 +449,8 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="flex justify-between items-center my-4"
               >
-                <div className="text-sm text-gray-500">
-                  <span className="font-medium text-gray-900">{blogData.total}</span> Berita tersedia
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="font-medium text-gray-900 dark:text-white">{blogData.total}</span> Berita tersedia
                 </div>
                 <div className="flex gap-2">
                   <NavButton direction="left" onClick={() => scroll('left')} />
@@ -515,15 +515,15 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                     className="flex-none w-full text-center py-16"
                   >
                     <div className="text-6xl mb-4">📰</div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                       Belum Ada Berita
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
                       Berita terbaru sedang dalam proses. Silakan kembali lagi nanti.
                     </p>
                     <Button
                       onClick={handleRetry}
-                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                      className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white"
                     >
                       <RefreshCw className="h-4 w-4 mr-2" />
                       Muat Ulang
@@ -542,7 +542,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                 className="flex justify-center mt-8 lg:hidden"
               >
                 <Link href="/blog">
-                  <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 dark:from-orange-600 dark:to-orange-700 dark:hover:from-orange-700 dark:hover:to-orange-800 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl dark:shadow-orange-500/20 transition-all duration-300">
                     <Newspaper className="mr-2 h-4 w-4" />
                     Lihat Semua Berita
                   </Button>

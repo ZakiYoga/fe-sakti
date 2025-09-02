@@ -25,8 +25,8 @@ const MarqueeBrandProduct: React.FC = () => {
     const duplicatedLogos = [...logos, ...logos];
 
     return (
-        <div className="w-full bg-background border-y-2 border-orange-600 pt-4 pb-3">
-            <div className="overflow-hidden  whitespace-nowrap">
+        <div className="w-full bg-background dark:bg-accent border-y-2 border-orange-600 pt-4 pb-3">
+            <div className="overflow-hidden whitespace-nowrap">
                 <motion.div
                     className="inline-flex items-center"
                     animate={{

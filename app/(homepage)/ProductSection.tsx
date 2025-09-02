@@ -279,9 +279,9 @@ const ProductSection: React.FC<ProductSectionProps> = ({
     return (
         <section
             ref={sectionRef}
-            className={`bg-center bg-orange-500 bg-gradient-to-br dark:from-orange-700 dark:to-orange-600 dark:via-orange-800 from-orange-400 via-orange-500 to-orange-600 ${className}`}
+            className={`bg-center bg-orange-500 bg-gradient-to-b from-primary via-orange-400 to-orange-500 ${className}`}
         >
-            <div className="bg-[url('/images/bg.png')] bg:cover md:bg-contain px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 lg:max-w-6xl xl:max-w-max">
+            <div className="bg-[url('/images/bg.png')] bg-cover px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 max-w-max">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

@@ -145,34 +145,72 @@ export default function AboutPage() {
       <section className="pt-6 sm:pt-8 lg:pt-16 bg-gradient-to-tr from-orange-50 to-white dark:from-orange-950 dark:to-gray-900">
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-y-8 gap-x-16">
+
+            {/* Professional Image Gallery */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-6"
+              className="space-y-4"
             >
-
-              {/* IMAGES */}
-              <div className="rounded-xl overflow-hidden group cursor-pointer">
+              {/* Main Image - Factory/Company Building */}
+              <div className="rounded-xl overflow-hidden shadow-lg group cursor-pointer">
                 <Image
-                  src="/images/company/company.png"
-                  width={400}
-                  height={400}
-                  alt="Foto pabrik perusahaan"
-                  className="w-full h-40 sm:h-48 md:h-60 lg:h-72 object-cover transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+                  src="/images/company/company.jpg"
+                  width={600}
+                  height={350}
+                  alt="Eksterior pabrik PT Sakti Pangan Perkasa"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110"
                 />
               </div>
 
-              {/* VIDEO */}
-              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                <div className="text-center">
-                  <Play className="h-20 w-20 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <p className="text-orange-700 font-semibold">Video Profil Perusahaan</p>
+              {/* Grid Layout with Portrait and Landscape Mix */}
+              <div className="grid grid-cols-3 gap-4 h-auto">
+                {/* Portrait Image - Left Side (Spans 2 rows) */}
+                <div className="col-span-1 row-span-2">
+                  <div className="rounded-xl overflow-hidden shadow-md group cursor-pointer h-full relative">
+                    <Image
+                      src="/images/company/production-line.jpg"
+                      width={300}
+                      height={400}
+                      alt="Lini produksi tepung roti modern"
+                      className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-orange-300/60 to-transparent" />
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Top Right Image */}
+                <div className="col-span-2">
+                  <div className="rounded-xl overflow-hidden shadow-md group cursor-pointer relative">
+                    <Image
+                      src="/images/company/loading-bb.jpg"
+                      width={400}
+                      height={200}
+                      alt="Proses loading bahan baku"
+                      className="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-orange-300/60 to-transparent" />
+                  </div>
+                </div>
+
+                {/* Bottom Right Image */}
+                <div className="col-span-2">
+                  <div className="relative rounded-xl overflow-hidden shadow-md group cursor-pointer">
+                    <Image
+                      src="/images/company/loading-bb2.jpg"
+                      width={400}
+                      height={200}
+                      alt="Aktivitas loading bahan baku di gudang"
+                      className="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-orange-300/60 to-transparent" />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
+            {/* Company Vision & Mission Content */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -185,7 +223,7 @@ export default function AboutPage() {
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white  mb-3">Visi Kami</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Visi Kami</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Menjadi Perusahaan Pengelolaan Makanan yang mampu bersaing secara nasional dengan
                     selalu melakukan inovasi sehingga dapat memberikan nilai tambah bagi seluruh shareholder dan stakeholder

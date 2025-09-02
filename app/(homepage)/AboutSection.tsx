@@ -82,7 +82,7 @@ export default function AboutSection({
   return (
     <div
       ref={containerRef}
-      className={`relative flex items-start justify-center w-full min-h-screen bg-center bg-no-repeat overflow-hidden bg-gradient-to-tr dark:from-orange-700 dark:to-orange-900 dark:via-orange-800 from-orange-400 via-orange-500 to-orange-600 ${className}`}
+      className={`relative flex items-start justify-center w-full min-h-screen bg-center bg-no-repeat overflow-hidden bg-[#EA5B0C] ${className}`}
     >
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"
@@ -189,9 +189,9 @@ export default function AboutSection({
             custom={0}
             variants={textVariants}
           >
-            <p className="font-ephesis first-letter:text-3xl font-semibold text-lg sm:text-2xl tracking-wider text-orange-500">
+            <p className="font-ephesis mb-2 first-letter:text-3xl font-semibold text-lg sm:text-2xl tracking-wider text-orange-500">
               {subtitle} &nbsp;
-              <span className="text-green-500 dark:text-green-200">Sakti</span>
+              <span className="text-green-500">Sakti</span>
             </p>
             <h1 className='font-bebas-neue tracking-wider text-3xl sm:text-4xl lg:text-5xl drop-shadow-lg text-gray-700 dark:text-gray-200'>
               {title}
