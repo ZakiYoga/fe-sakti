@@ -184,7 +184,7 @@ export default function AboutPage() {
                 <div className="col-span-2">
                   <div className="rounded-xl overflow-hidden shadow-md group cursor-pointer relative">
                     <Image
-                      src="/images/company/loadingbb.jpg"
+                      src="/images/company/loadinggbb.jpg"
                       width={400}
                       height={200}
                       alt="Proses loading bahan baku"
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 <div className="col-span-2">
                   <div className="relative rounded-xl overflow-hidden shadow-md group cursor-pointer">
                     <Image
-                      src="/images/company/loadingbb2.jpg"
+                      src="/images/company/loadinggbb2.jpg"
                       width={400}
                       height={200}
                       alt="Aktivitas loading bahan baku di gudang"
