@@ -82,10 +82,10 @@ export default function AboutSection({
   return (
     <div
       ref={containerRef}
-      className={`relative flex items-start justify-center w-full min-h-screen bg-center bg-no-repeat overflow-hidden bg-[#EA5B0C] ${className}`}
+      className={`relative -mt-4 lg:-mt-8 flex items-start justify-center w-full bg-center bg-no-repeat overflow-hidden bg-primary bg-gradient-to-t from-[#EA5B0C] via-orange-500 to-orange-600 dark:from-[#a53e07] dark:via-orange-700 dark:to-orange-800 ${className}`}
     >
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"
+        className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

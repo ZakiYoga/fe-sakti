@@ -279,7 +279,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
     return (
         <section
             ref={sectionRef}
-            className={`bg-center bg-orange-500 bg-gradient-to-b from-primary via-orange-400 to-orange-500 ${className}`}
+            className={`bg-center bg-primary bg-gradient-to-t from-[#EA5B0C] via-orange-500 to-orange-600 dark:from-[#a53e07] dark:via-orange-700 dark:to-orange-800 ${className}`}
         >
             <div className="bg-[url('/images/bg.png')] bg-cover px-4 pb-6 sm:px-12 lg:px-16 xl:px-20 md:py-8 max-w-max">
                 {/* Header */}

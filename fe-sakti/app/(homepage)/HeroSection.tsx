@@ -171,11 +171,11 @@ export default function HeroSection(): JSX.Element {
   };
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-gradient-to-tl from-[#EA5B0C] to-[#EA5B0C]">
-      <div className="relative pt-16 flex items-start justify-center bg-bottom bg-[url('/images/hero/bg-mobile.png')] md:bg-[url('/images/hero/tab.png')] lg:bg-[url('/images/hero/dekstop.png')] bg-cover bg-top lg:bg-center bg-no-repeat">
+    <div className="w-full min-h-screen overflow-hidden bg-primary bg-gradient-to-t from-[#EA5B0C] via-orange-500 to-orange-600 dark:from-[#a53e07] dark:via-orange-700 dark:to-orange-800">
+      <div className="relative pt-16 flex items-start justify-center bg-bottom bg-[url('/images/hero/bg-heroMobile.png')] lg:bg-[url('/images/hero/bg-heroDekstop.png')] bg-cover bg-top lg:bg-center bg-no-repeat">
         {/* Background gradient overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t sm:from-black to-transparent"
+          className="absolute inset-0 bg-gradient-to-t to-transparent"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -432,7 +432,7 @@ export default function HeroSection(): JSX.Element {
 
         {/* Decorative elements scrool down */}
         <motion.div
-          className="hidden md:block absolute -translate-x-1/2 bottom-12 left-1/2"
+          className="hidden md:block absolute -translate-x-1/2 bottom-16 left-1/2"
           animate={{
             y: [0, 10, 0],
           }}

@@ -1,0 +1,22 @@
+services:
+  nextjs:
+    build:
+      context: ./fe-sakti
+      dockerfile: Dockerfile
+    container_name: fe-sakti-app
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+
+  nginx:
+    image: nginx:alpine
+    container_name: fe-sakti-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - nextjs
