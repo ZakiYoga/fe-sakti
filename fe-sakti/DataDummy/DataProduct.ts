@@ -64,7 +64,7 @@ export const sampleProducts: Product[] = [
         id: 5,
         name: "Ak Star 10kg",
         category: "Zak 10kg",
-        image: "/images/products/AKSTARVector.png",
+        image: "/images/products/AKSTARBaru.png",
         description: "High-precision wireless gaming mouse with RGB lighting"
     },
     {
