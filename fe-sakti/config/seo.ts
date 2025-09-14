@@ -1,7 +1,7 @@
 export const siteConfig = {
   title: 'PT Sakti Pangan Perkasa',
   description: 'PT Sakti Pangan Perkasa adalah perusahaan yang berdedikasi untuk menyediakan produk berkualitas tinggi bagi industri kuliner di Indonesia. Sejak berdiri, kami fokus pada produksi tepung roti atau breadcrumbs yang menjadi bahan baku penting dalam berbagai hidangan.',
-  url: 'https://www.saktipangan.co.id/',
+  url: 'https://www.saktipangan.co.id',
   ogImage: 'https://www.saktipangan.co.id/favicon.ico',
   author: 'Sakti Food',
   keywords: [
