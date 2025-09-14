@@ -32,6 +32,7 @@ export const sampleProducts: Product[] = [
         category: "Premium Products",
         image: "/images/products/Sakti200gr.png",
         isBestSeller: true,
+        href: "/sakti200g",
         isNew: true,
         description: ""
     },
@@ -40,6 +41,7 @@ export const sampleProducts: Product[] = [
         name: "Sakti 500g",
         category: "Premium Products",
         image: "/images/products/Sakti500gr.png",
+        href: "/sakti500g",
         isBestSeller: true,
         isNew: true,
         description: ""
@@ -49,6 +51,7 @@ export const sampleProducts: Product[] = [
         name: "Sakti 1kg",
         category: "Premium Products",
         image: "/images/products/Sakti1kg.png",
+        href: "/sakti1kg",
         isBestSeller: true,
         isNew: true,
         description: "Ergonomic aluminum laptop stand for better posture"
@@ -58,6 +61,7 @@ export const sampleProducts: Product[] = [
         name: "Laskar 10kg",
         category: "Zak 10kg",
         image: "/images/products/Laskar10kg.png",
+        href: "/laskar",
         description: ""
     },
     {
@@ -65,6 +69,7 @@ export const sampleProducts: Product[] = [
         name: "Ak Star 10kg",
         category: "Zak 10kg",
         image: "/images/products/AKSTARBaru.png",
+        href: "/akstar",
         description: "High-precision wireless gaming mouse with RGB lighting"
     },
     {
@@ -72,6 +77,7 @@ export const sampleProducts: Product[] = [
         name: "Agni 10kg",
         category: "Zak 10kg",
         image: "/images/products/AGNIVector.png",
+        href: "/agni",
         description: ""
     },
     {
@@ -79,6 +85,7 @@ export const sampleProducts: Product[] = [
         name: "PITA 10kg",
         category: "Zak 10kg",
         image: "/images/products/Pita10kg.png",
+        href: "/pita",
         description: ""
     },
     {
@@ -86,6 +93,7 @@ export const sampleProducts: Product[] = [
         name: "FryFest",
         category: "Zak 10kg",
         image: "/images/products/FRYFESTVector.png",
+        href: "/fryfest",
         description: ""
     },
     {
@@ -93,6 +101,7 @@ export const sampleProducts: Product[] = [
         name: "7Daun",
         category: "Zak 10kg",
         image: "/images/products/7DAUNVector.png",
+        href: "/7daun",
         description: ""
     },
 ]

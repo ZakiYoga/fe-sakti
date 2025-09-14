@@ -173,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         </DropdownMenu>
 
                         {/* Mobile menu */}
-                        <div className="md:hidden">
+                        <div className="flex lg:hidden">
                             <NavMenu
                                 navItems={updatedNavItems}
                                 isDark={shouldUseDarkStyling}
