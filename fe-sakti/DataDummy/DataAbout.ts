@@ -24,7 +24,7 @@ export const companyStats = [
     {
         icon: Globe,
         label: "Distribusi Nasional",
-        value: "17+",
+        value: "70+",
         description: "Distribusi ke berbagai kota besar & provinsi di Indonesia"
     }
 ]
