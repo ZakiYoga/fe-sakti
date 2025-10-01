@@ -100,7 +100,7 @@ export const generateDummyBlogs = () => [
         </ul>
       </div>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop",
+    featured_image: "/images/blog/udang-krispi.png",
     status: "published",
     published_at: "2024-08-20T08:00:00.000000Z",
     views: 890,
@@ -186,7 +186,7 @@ export const generateDummyBlogs = () => [
         <strong>Storage Tips:</strong> Nugget yang sudah di-coating bisa disimpan di freezer hingga 3 bulan. Goreng langsung tanpa dicairkan terlebih dahulu.
       </p>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=800&h=600&fit=crop",
+    featured_image: "/images/blog/nugget-ayam.jpg",
     status: "published",
     published_at: "2024-08-18T10:00:00.000000Z",
     views: 1450,
@@ -277,7 +277,7 @@ export const generateDummyBlogs = () => [
         </div>
       </div>
     </div>`,
-    featured_image: "/images/products/cummi.png",
+    featured_image: "/images/blog/cummi.png",
     status: "published",
     published_at: "2024-08-17T14:00:00.000000Z",
     views: 720,
@@ -318,7 +318,7 @@ export const generateDummyBlogs = () => [
         "Together We Grow, Together We Succeed!" - Sakti Pangan Perkasa 2025
       </p>
     </div>`,
-    featured_image: "/images/company/DSCF0032.png",
+    featured_image: "/images/blog/meeting.png",
     status: "published",
     published_at: "2024-07-27T10:00:00.000000Z",
     views: 890,
@@ -429,7 +429,7 @@ export const generateDummyBlogs = () => [
         <p class="text-sm">Untuk event atau party, Anda bisa prepare onion rings hingga tahap coating, lalu freeze. Goreng langsung dari frozen state dengan waktu sedikit lebih lama.</p>
       </div>
     </div>`,
-    featured_image: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&h=600&fit=crop",
+    featured_image: "/images/blog/onion-ring.jpg",
     status: "published",
     published_at: "2024-08-16T16:00:00.000000Z",
     views: 980,
@@ -457,10 +457,497 @@ export const generateDummyBlogs = () => [
     }
   },
 
+  {
+  id: 160,
+  title: "Roti Goreng Empuk dan Lembut Isi Cokelat dengan Tepung Roti Sakti",
+  slug: "roti-goreng-empuk-dan-lembut-isi-cokelat-dengan-tepung-roti-sakti",
+  excerpt: "Nikmati roti goreng empuk dengan isian cokelat lumer yang cocok untuk camilan sore. Resep praktis dengan Tepung Roti Sakti yang menghasilkan tekstur lembut dan golden brown sempurna.",
+  content: `<div class="prose max-w-none">
+    <h2>Roti Goreng Isi Cokelat</h2>
+    <p>Roti goreng adalah jajanan klasik yang selalu jadi favorit keluarga. Dengan Tepung Roti Sakti, hasilnya akan lebih empuk, bertekstur lembut, dan tetap lezat meskipun sudah dingin.</p>
+    
+    <h3>Bahan-bahan:</h3>
+    <ul>
+      <li>500g Tepung Roti Sakti</li>
+      <li>50g gula pasir</li>
+      <li>10g ragi instan</li>
+      <li>250ml susu hangat</li>
+      <li>50g margarin atau butter</li>
+      <li>1 butir telur</li>
+      <li>1/2 sdt garam</li>
+      <li>Isian sesuai selera (cokelat, keju, selai, kacang hijau)</li>
+    </ul>
+    
+    <h2>Langkah Pembuatan</h2>
+    <ol>
+      <li><strong>Aktifkan Ragi:</strong> Campurkan ragi + sedikit gula ke dalam susu hangat. Diamkan 10 menit hingga berbusa.</li>
+      <li><strong>Uleni Adonan:</strong> Campur tepung, gula, telur, garam, margarin, lalu tambahkan larutan ragi. Uleni hingga kalis elastis (10–15 menit).</li>
+      <li><strong>Proofing Pertama:</strong> Diamkan adonan 1 jam dalam wadah tertutup hingga mengembang 2x lipat.</li>
+      <li><strong>Bentuk Roti:</strong> Kempiskan adonan, bagi menjadi 12–15 bagian. Pipihkan, isi dengan cokelat, bulatkan kembali.</li>
+      <li><strong>Proofing Kedua:</strong> Diamkan 30 menit hingga roti mengembang lagi.</li>
+      <li><strong>Goreng:</strong> Panaskan minyak dengan api sedang. Goreng roti hingga golden brown, balik sekali saja agar tidak menyerap minyak berlebih.</li>
+    </ol>
+    
+    <h3>Tips untuk Hasil Maksimal</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Suhu Minyak Stabil:</strong> Gunakan api sedang, jangan terlalu panas agar dalamnya matang sempurna.</li>
+        <li><strong>Isian Tidak Bocor:</strong> Tutup rapat adonan agar cokelat tidak keluar saat digoreng.</li>
+        <li><strong>Tiriskan Benar:</strong> Gunakan rak kawat supaya roti tetap crispy di luar dan lembut di dalam.</li>
+      </ul>
+    </div>
+    
+    <h3>Variasi Isian</h3>
+    <div class="grid grid-cols-3 gap-4 my-6">
+      <div class="bg-brown-50 p-4 rounded-lg">
+        <h4 class="font-bold text-brown-800">Cokelat Lumer</h4>
+        <p class="text-sm text-brown-600">Cokelat batangan atau meses untuk rasa manis klasik</p>
+      </div>
+      <div class="bg-yellow-50 p-4 rounded-lg">
+        <h4 class="font-bold text-yellow-800">Keju</h4>
+        <p class="text-sm text-yellow-600">Keju cheddar parut atau mozarella untuk gurih legit</p>
+      </div>
+      <div class="bg-green-50 p-4 rounded-lg">
+        <h4 class="font-bold text-green-800">Kacang Hijau</h4>
+        <p class="text-sm text-green-600">Isian manis kacang hijau halus khas roti tradisional</p>
+      </div>
+    </div>
+    
+    <h2>Serving Suggestions</h2>
+    <p>Roti goreng nikmat disajikan hangat dengan taburan gula halus atau madu. Cocok sebagai:</p>
+    <ul>
+      <li>Camilan sore bersama teh hangat</li>
+      <li>Bekal anak sekolah</li>
+      <li>Snack untuk arisan atau kumpul keluarga</li>
+    </ul>
+    
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Pro Chef Tip:</p>
+      <p class="text-sm">Untuk stok, goreng roti hingga setengah matang, tiriskan, lalu simpan di freezer. Saat akan disajikan, goreng ulang hingga golden brown sempurna.</p>
+    </div>
+    </div>`,
+    featured_image: "/images/blog/roti-coklat.png",
+    status: "published",
+    published_at: "2025-09-24T16:00:00.000000Z",
+    views: 1250,
+    meta_title: "Roti Goreng Empuk dan Lembut Isi Cokelat dengan Tepung Roti Sakti",
+    meta_description: "Resep roti goreng empuk isi cokelat lumer dengan Tepung Roti Sakti. Cocok untuk camilan keluarga.",
+    meta_keywords: "roti goreng, resep roti, cokelat, camilan manis, tepung roti sakti",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-09-24T15:00:00.000000Z",
+    updated_at: "2025-09-24T16:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-09-24T15:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
+  
+  {
+  id: 17,
+  title: "Risol Mayo Lumer Isi Sosis dan Telur dengan Tepung Roti Sakti",
+  slug: "risol-mayo-lumer-isi-sosis-dan-telur-dengan-tepung-roti-sakti",
+  excerpt: "Risol mayo favorit banyak orang! Kulit tipis, isi sosis dan telur rebus, dengan campuran mayo creamy. Praktis dibuat dan hasilnya renyah berkat Tepung Roti Sakti.",
+  content: `<div class="prose max-w-none">
+    <h2>Risol Mayo</h2>
+    <p>Risol mayo adalah camilan kekinian yang selalu bikin nagih. Kulitnya lembut, isiannya creamy dengan perpaduan sosis, telur, keju, dan mayo manis gurih.</p>
+    
+    <h3>Bahan Kulit:</h3>
+    <ul>
+      <li>250 gr tepung terigu</li>
+      <li>1 bungkus susu bubuk putih</li>
+      <li>1 sdm minyak goreng</li>
+      <li>2 sdm tepung sagu / tapioka</li>
+      <li>1 butir telur</li>
+      <li>½ sdt garam</li>
+      <li>500 ml air</li>
+    </ul>
+    
+    <h3>Bahan Isian:</h3>
+    <ul>
+      <li>4 buah sosis, iris tipis</li>
+      <li>3 butir telur rebus, potong-potong</li>
+    </ul>
+    
+    <h3>Bahan Campuran Mayones:</h3>
+    <ul>
+      <li>180 gr mayones</li>
+      <li>35 gr keju cheddar parut</li>
+      <li>1 saset susu kental manis</li>
+    </ul>
+    
+    <h2>Cara Membuat</h2>
+    <ol>
+      <li><strong>Buat Kulit:</strong> Campur semua bahan kulit, aduk dengan whisk hingga halus tanpa gumpal. Ambil satu sendok sayur adonan, dadar tipis di teflon. Ulangi hingga adonan habis, sisakan sedikit untuk bahan pencelup.</li>
+      <li><strong>Buat Isian:</strong> Campur mayones, keju parut, dan kental manis hingga rata.</li>
+      <li><strong>Isi Risol:</strong> Ambil selembar kulit, oleskan campuran mayo, beri irisan sosis + potongan telur rebus, lalu beri mayo lagi.</li>
+      <li><strong>Lipat:</strong> Lipat kulit seperti amplop atau sesuai selera.</li>
+      <li><strong>Coating:</strong> Celupkan risol ke sisa adonan kulit, lalu gulingkan di Tepung Roti Sakti.</li>
+      <li><strong>Goreng:</strong> Panaskan minyak, goreng risol hingga golden brown. Angkat dan tiriskan.</li>
+    </ol>
+    
+    <h3>Tips Anti Gagal</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Pakai Adonan Kulit sebagai Pencelup:</strong> Lebih wangi dibanding telur, tidak amis meski risol dingin.</li>
+        <li><strong>Suhu Minyak Stabil:</strong> Gunakan api sedang agar matang merata.</li>
+        <li><strong>Tiriskan Benar:</strong> Letakkan di rak kawat supaya tetap renyah.</li>
+      </ul>
+    </div>
+    
+    <h2>Serving Suggestions</h2>
+    <p>Risol mayo paling enak dimakan hangat dengan cocolan saus sambal atau mayonnaise tambahan. Cocok untuk:</p>
+    <ul>
+      <li>Camilan sore</li>
+      <li>Bekal sekolah</li>
+      <li>Ide jualan rumahan</li>
+    </ul>
+    
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Pro Chef Tip:</p>
+      <p class="text-sm">Bisa disimpan dalam freezer setelah dibalut tepung roti. Goreng langsung saat akan disajikan tanpa perlu dicairkan.</p>
+    </div>
+    </div>`,
+    featured_image: "/images/blog/risol.png",
+    status: "published",
+    published_at: "2025-09-29T16:30:00.000000Z",
+    views: 980,
+    meta_title: "Risol Mayo Lumer Isi Sosis dan Telur dengan Tepung Roti Sakti",
+    meta_description: "Resep risol mayo creamy isi sosis dan telur rebus, dibalut Tepung Roti Sakti agar renyah sempurna.",
+    meta_keywords: "risol mayo, risoles, resep camilan, sosis, telur, tepung roti sakti",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-09-29T15:30:00.000000Z",
+    updated_at: "2025-09-29T16:30:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-09-29T15:45:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
+
+  {
+    id: 18,
+    title: "Risol Ragout Ayam Sayur Creamy dengan Tepung Roti Sakti",
+    slug: "risol-ragout-ayam-sayur-creamy-dengan-tepung-roti-sakti",
+    excerpt: "Risol klasik dengan isian ragout ayam dan sayuran creamy, dibalut kulit lembut dan tepung roti renyah. Camilan legendaris yang selalu disukai semua usia.",
+    content: `<div class="prose max-w-none">
+      <h2>Risol Ragout Ayam Sayur</h2>
+      <p>Risol ragout adalah jajanan tradisional yang populer sejak dulu. Isinya berupa ragout ayam dan sayuran yang creamy, dibungkus kulit tipis lalu digoreng hingga renyah.</p>
+      
+      <h3>Bahan Kulit:</h3>
+      <ul>
+        <li>250 gr tepung terigu</li>
+        <li>1 butir telur</li>
+        <li>½ sdt garam</li>
+        <li>2 sdm minyak goreng</li>
+        <li>500 ml air</li>
+      </ul>
+      
+      <h3>Bahan Isian Ragout:</h3>
+      <ul>
+        <li>200 gr daging ayam rebus, suwir halus</li>
+        <li>2 wortel kecil, potong dadu kecil</li>
+        <li>100 gr buncis, iris tipis</li>
+        <li>3 siung bawang putih, cincang</li>
+        <li>½ buah bawang bombay, cincang halus</li>
+        <li>2 sdm margarin</li>
+        <li>3 sdm tepung terigu</li>
+        <li>300 ml susu cair</li>
+        <li>½ sdt pala bubuk</li>
+        <li>½ sdt merica bubuk</li>
+        <li>½ sdt garam</li>
+        <li>1 sdt kaldu bubuk</li>
+      </ul>
+      
+      <h3>Bahan Pelapis:</h3>
+      <ul>
+        <li>Sisa adonan kulit untuk pencelup</li>
+        <li>Tepung Roti Sakti secukupnya</li>
+      </ul>
+      
+      <h2>Cara Membuat</h2>
+      <ol>
+        <li><strong>Kulit Risol:</strong> Campur semua bahan kulit, aduk hingga rata dan tidak menggumpal. Dadar tipis di teflon hingga adonan habis. Sisakan sedikit untuk pencelup.</li>
+        <li><strong>Buat Ragout:</strong> Tumis bawang putih dan bawang bombay hingga harum. Masukkan wortel + buncis, aduk rata. Tambahkan ayam suwir.</li>
+        <li><strong>Saus Creamy:</strong> Masukkan margarin dan tepung terigu, aduk rata. Tuang susu cair sedikit demi sedikit sambil diaduk hingga kental. Bumbui dengan pala, merica, garam, kaldu. Dinginkan.</li>
+        <li><strong>Isi Risol:</strong> Ambil kulit risol, beri 1–2 sdm ragout. Lipat amplop atau gulung sesuai selera.</li>
+        <li><strong>Coating:</strong> Celupkan risol ke sisa adonan kulit, lalu gulingkan di Tepung Roti Sakti.</li>
+        <li><strong>Goreng:</strong> Panaskan minyak, goreng risol dengan api sedang hingga golden brown.</li>
+      </ol>
+      
+      <h3>Tips Anti Gagal</h3>
+      <div class="bg-yellow-50 p-4 rounded-lg">
+        <ul>
+          <li><strong>Ragout Harus Dingin:</strong> Isian ragout jangan masih panas agar kulit tidak mudah robek.</li>
+          <li><strong>Kulit Tipis Merata:</strong> Gunakan teflon anti lengket agar hasil kulit mulus.</li>
+          <li><strong>Minyak Cukup Banyak:</strong> Gunakan metode deep fry supaya risol matang merata dan renyah.</li>
+        </ul>
+      </div>
+      
+      <h2>Serving Suggestions</h2>
+      <p>Risol ragout nikmat disajikan hangat dengan saus sambal atau cabai rawit segar. Cocok untuk:</p>
+      <ul>
+        <li>Camilan sore</li>
+        <li>Hidangan arisan atau hajatan</li>
+        <li>Ide jualan legendaris</li>
+      </ul>
+      
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <p class="font-bold">Pro Chef Tip:</p>
+        <p class="text-sm">Untuk stok, risol bisa dibekukan setelah dibalut tepung roti. Goreng langsung dari frozen agar tetap renyah dan tidak menyerap minyak.</p>
+      </div>
+    </div>`,
+    featured_image: "/images/blog/risol2.png",
+    status: "published",
+    published_at: "2025-09-26T17:00:00.000000Z",
+    views: 1120,
+    meta_title: "Risol Ragout Ayam Sayur Creamy dengan Tepung Roti Sakti",
+    meta_description: "Resep risol ragout ayam sayur creamy yang klasik, dibalut kulit tipis dan Tepung Roti Sakti agar renyah sempurna.",
+    meta_keywords: "risol ragout, resep risoles, camilan tradisional, ayam sayur, tepung roti sakti",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-09-26T16:00:00.000000Z",
+    updated_at: "2025-09-26T17:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-09-26T16:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
+
+  {
+  id: 19,
+  title: "Udang Keju Mozarella Renyah dengan Tepung Roti Sakti",
+  slug: "udang-keju-mozarella-renyah-dengan-tepung-roti-sakti",
+  excerpt: "Perpaduan ayam, udang segar, dan keju mozarella lumer yang dibalut tepung roti Sakti. Renyah di luar, juicy di dalam. Camilan premium yang bikin nagih!",
+  content: `<div class="prose max-w-none">
+    <h2>Udang Keju Mozarella</h2>
+    <p>Resep camilan spesial berbahan dasar ayam dan udang yang dipadukan dengan keju mozarella lumer. Renyah di luar, lembut dan gurih di dalam. Cocok untuk camilan keluarga atau ide jualan kekinian.</p>
+    
+    <h3>Bahan-bahan (±14 buah):</h3>
+    <ul>
+      <li>250 gr ayam filet</li>
+      <li>250 gr udang, buang kepala & kulit</li>
+      <li>4 sdm tepung terigu</li>
+      <li>Keju mozarella / quick melt secukupnya</li>
+      <li>Tepung Roti Sakti secukupnya</li>
+      <li>2 siung bawang putih, cincang halus</li>
+      <li>1 butir telur</li>
+      <li>Keju parut (opsional)</li>
+      <li>Saus tiram secukupnya</li>
+      <li>Kaldu bubuk secukupnya</li>
+      <li>Lada bubuk secukupnya</li>
+    </ul>
+    
+    <h3>Cara Membuat:</h3>
+    <ol>
+      <li>Bersihkan ayam, kepala, dan kulit udang.</li>
+      <li>Potong kecil ayam filet, lalu blender bersama udang hingga halus.</li>
+      <li>Pindahkan ke wadah, tambahkan kaldu bubuk, lada, dan saus tiram secukupnya. Aduk rata.</li>
+      <li>Masukkan 1 butir telur dan keju parut (opsional), aduk rata.</li>
+      <li>Tambahkan 4 sdm tepung terigu, aduk hingga adonan kalis.</li>
+      <li>Potong memanjang keju mozarella / quick melt.</li>
+      <li>Olesi tangan dengan minyak goreng, ambil adonan secukupnya, pipihkan, beri isian keju, lalu bulatkan hingga tertutup rapat.</li>
+      <li>Balur adonan dengan Tepung Roti Sakti hingga rata.</li>
+      <li>Goreng dengan api kecil hingga kuning keemasan.</li>
+      <li>Angkat, tiriskan, dan sajikan hangat. Udang keju siap dinikmati! 😍</li>
+    </ol>
+    
+    <h3>Tips Anti Gagal:</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Gunakan api kecil:</strong> Agar keju meleleh sempurna tanpa membuat kulit gosong.</li>
+        <li><strong>Baluran merata:</strong> Pastikan tepung roti menempel sempurna agar hasilnya renyah.</li>
+        <li><strong>Bisa frozen:</strong> Simpan adonan yang sudah dibalur tepung roti dalam freezer, goreng langsung saat akan disajikan.</li>
+      </ul>
+    </div>
+    
+    <h2>Serving Suggestions</h2>
+    <p>Nikmati Udang Keju Mozarella dengan saus sambal, mayonaise, atau saus keju tambahan. Cocok untuk:</p>
+    <ul>
+      <li>Camilan keluarga</li>
+      <li>Bekal anak sekolah</li>
+      <li>Menu jualan premium</li>
+    </ul>
+    
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Pro Chef Tip:</p>
+      <p class="text-sm">Untuk hasil lebih creamy, campurkan sedikit keju quick melt ke dalam adonan sebelum dibentuk.</p>
+    </div>
+    </div>`,
+    featured_image: "/images/blog/udang-keju.png",
+    status: "published",
+    published_at: "2025-09-24T18:00:00.000000Z",
+    views: 980,
+    meta_title: "Resep Udang Keju Mozarella Renyah dengan Tepung Roti Sakti",
+    meta_description: "Resep udang keju mozarella crispy: ayam + udang dibalut adonan gurih dengan isian keju lumer, renyah berkat Tepung Roti Sakti.",
+    meta_keywords: "udang keju, resep udang crispy, camilan premium, mozzarella, tepung roti sakti",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-09-24T17:00:00.000000Z",
+    updated_at: "2025-09-24T18:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-09-24T17:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
+
+  {
+  id: 20,
+  title: "Chicken Katsu Saus BBQ Renyah dengan Tepung Roti Sakti",
+  slug: "chicken-katsu-saus-bbq-renyah-dengan-tepung-roti-sakti",
+  excerpt: "Chicken katsu crispy di luar, juicy di dalam, disajikan dengan saus BBQ spesial. Rahasia kerenyahannya? Tepung Roti Sakti!",
+  content: `<div class="prose max-w-none">
+    <h2>Chicken Katsu Saus BBQ</h2>
+    <p>Chicken katsu adalah ayam goreng tepung ala Jepang yang digemari banyak orang. Dengan balutan <strong>Tepung Roti Sakti</strong>, hasilnya super crispy, gurih, dan renyah lebih lama!</p>
+    
+    <h3>Bahan-bahan:</h3>
+    <ul>
+      <li>500 gr dada ayam</li>
+    </ul>
+    
+    <h3>Bumbu Marinasi:</h3>
+    <ul>
+      <li>3 siung bawang putih, tumbuk</li>
+      <li>1/4 sdt lada bubuk</li>
+      <li>1/2 sdt garam</li>
+      <li>1 buah jeruk nipis</li>
+    </ul>
+    
+    <h3>Bahan Perekat:</h3>
+    <ul>
+      <li>Tepung terigu secukupnya</li>
+      <li>1 butir telur</li>
+      <li>2 sdm susu cair</li>
+      <li>1/4 sdt lada</li>
+      <li>1/2 sdt garam</li>
+      <li><strong>Tepung Roti Sakti</strong> secukupnya</li>
+    </ul>
+    
+    <h3>Bahan Saus Katsu:</h3>
+    <ul>
+      <li>1/2 buah bawang bombay, iris tipis</li>
+      <li>2 siung bawang putih, cincang halus</li>
+      <li>Margarin secukupnya</li>
+      <li>Saus barbeque secukupnya</li>
+      <li>1 sdm saus tiram</li>
+      <li>1/2 sdm kecap manis</li>
+      <li>1 sdm saus sambal / tomat</li>
+    </ul>
+    
+    <h2>Cara Membuat</h2>
+    <ol>
+      <li>Iris dada ayam jadi 2 bagian, marinasi dengan bawang putih, lada, garam, dan jeruk nipis. Diamkan 5 menit.</li>
+      <li>Pukul-pukul ayam hingga melebar dan ketebalannya rata.</li>
+      <li>Baluri ayam dengan tepung terigu tipis-tipis.</li>
+      <li>Siapkan adonan telur (telur + susu cair + lada + garam). Celupkan ayam ke adonan ini.</li>
+      <li>Baluri dengan <strong>Tepung Roti Sakti</strong> hingga tertutup rata. Tekan sedikit supaya menempel sempurna.</li>
+      <li>Goreng dengan api kecil hingga kuning keemasan dan matang sempurna.</li>
+      <li>Untuk saus: Panaskan margarin, tumis bawang putih & bawang bombay hingga harum. Masukkan saus barbeque, saus tiram, kecap manis, dan saus sambal/tomat. Aduk rata hingga mendidih.</li>
+      <li>Sajikan chicken katsu dengan siraman saus BBQ. Untuk ide jualan, bisa tambahkan kentang goreng.</li>
+    </ol>
+    
+    <h3>Tips Rahasia Renyah</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Pakai Tepung Roti Sakti:</strong> Bikin katsu lebih renyah, warnanya cantik golden brown, dan tetap crispy meski sudah agak dingin.</li>
+        <li><strong>Minyak harus cukup banyak:</strong> Supaya ayam matang merata dan crunchy.</li>
+        <li><strong>Jangan sering dibolak-balik:</strong> Biarkan satu sisi matang dulu baru dibalik.</li>
+      </ul>
+    </div>
+    
+    <h2>Serving Suggestions</h2>
+    <p>Chicken katsu saus BBQ cocok disajikan dengan:</p>
+    <ul>
+      <li>Nasi hangat</li>
+      <li>Kentang goreng</li>
+      <li>Sayuran rebus atau salad segar</li>
+    </ul>
+    
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Pro Chef Tip:</p>
+      <p class="text-sm">Agar lebih menarik untuk ide jualan, sajikan chicken katsu dalam bento box lengkap dengan nasi, salad, dan kentang goreng.</p>
+    </div>
+    </div>`,
+    featured_image: "/images/blog/ayam-katsu.png",
+    status: "published",
+    published_at: "2025-09-24T19:00:00.000000Z",
+    views: 980,
+    meta_title: "Resep Chicken Katsu Saus BBQ Renyah dengan Tepung Roti Sakti",
+    meta_description: "Resep chicken katsu crispy ala Jepang dengan balutan Tepung Roti Sakti. Dilengkapi saus BBQ gurih manis pedas yang bikin nagih!",
+    meta_keywords: "chicken katsu, resep katsu, ayam crispy, saus bbq, tepung roti sakti",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-09-24T18:00:00.000000Z",
+    updated_at: "2025-09-24T19:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-09-24T18:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  }
+
+
+
+
+
   // {
   //   id: 15,
-  //   title: "Lowongan Kerja: Digital Marketing Manager dan Food Technologist di Sakti Pangan",
-  //   slug: "lowongan-kerja-digital-marketing-manager-dan-food-technologist-sakti-pangan",
+  //   title: "Lowongan Kerja: Operator Produksi di Sakti Pangan",
+  //   slug: "lowongan-kerja-operator-produksi-sakti-pangan",
   //   excerpt: "Bergabunglah dengan tim PT. Sakti Pangan Perkasa! Kami membuka kesempatan karir untuk posisi Digital Marketing Manager dan Food Technologist dengan benefit menarik dan lingkungan kerja yang suportif.",
   //   content: `<div class="prose max-w-none">
   //     <h2>Kesempatan Karir Terbuka</h2>

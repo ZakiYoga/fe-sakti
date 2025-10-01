@@ -1,5 +1,5 @@
 "use client";
-import { JSX, useState, useRef } from 'react';
+import { JSX, useState, useRef, useMemo } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { blogApi, extractApiData } from '../../lib/api';
@@ -277,10 +277,9 @@ const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
       <Card className="group h-full border border-transparent hover:border-orange-300 bg-orange-50 dark:bg-gray-900/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
         {blog.featured_image && (
           <div className="aspect-video relative overflow-hidden">
-            <Image
+            <img
               src={blog.featured_image}
               alt={blog.title}
-              fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
             />
           </div>
@@ -346,27 +345,35 @@ export default function BlogIndex(): JSX.Element {
 
   const { data: categoriesData } = useSWR<Category[]>('categories', categoriesFetcher);
 
+  const sortedBlogs = useMemo(() => {
+    if (!blogData?.data) return [];
+
+    return [...blogData.data].sort((a, b) =>
+      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+    );
+  }, [blogData]);
+
   // Stats data for blog
-  const blogStats = [
-    {
-      icon: BookOpen,
-      label: "Total Artikel",
-      value: blogData?.total ? `${blogData.total}+` : "0",
-      description: "Artikel informatif dan edukatif"
-    },
-    {
-      icon: Users,
-      label: "Pembaca Aktif",
-      value: "5000+",
-      description: "Pembaca setia setiap bulan"
-    },
-    {
-      icon: TrendingUp,
-      label: "Artikel Terbaru",
-      value: blogData?.data ? `${blogData.data.length}` : "0",
-      description: "Update terkini minggu ini"
-    }
-  ];
+  // const blogStats = [
+  //   {
+  //     icon: BookOpen,
+  //     label: "Total Artikel",
+  //     value: blogData?.total ? `${blogData.total}+` : "0",
+  //     description: "Artikel informatif dan edukatif"
+  //   },
+  //   {
+  //     icon: Users,
+  //     label: "Pembaca Aktif",
+  //     value: "5000+",
+  //     description: "Pembaca setia setiap bulan"
+  //   },
+  //   {
+  //     icon: TrendingUp,
+  //     label: "Artikel Terbaru",
+  //     value: blogData?.data ? `${blogData.data.length}` : "0",
+  //     description: "Update terkini minggu ini"
+  //   }
+  // ];
 
   // CTA buttons for newsletter subscription
   const ctaButtons = [
@@ -517,7 +524,7 @@ export default function BlogIndex(): JSX.Element {
 
               {/* Blog Grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {blogData.data.map((blog: Blog, index: number) => (
+                {sortedBlogs.map((blog: Blog, index: number) => (
                   <BlogCard key={blog.id} blog={blog} index={index} />
                 ))}
               </div>
