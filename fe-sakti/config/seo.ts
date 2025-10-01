@@ -1,6 +1,9 @@
-export const siteConfig = {
+// config/seo.ts
+import { DefaultSeoProps } from "next-seo";
+
+export const seoConfig = {
   title: 'PT Sakti Pangan Perkasa',
-  description: 'PT Sakti Pangan Perkasa adalah perusahaan yang berdedikasi untuk menyediakan produk berkualitas tinggi bagi industri kuliner di Indonesia. Sejak berdiri, kami fokus pada produksi tepung roti atau breadcrumbs yang menjadi bahan baku penting dalam berbagai hidangan.',
+  description: 'PT Sakti Pangan Perkasa adalah perusahaan yang berdedikasi ...',
   url: 'https://www.saktipangan.co.id',
   ogImage: 'https://www.saktipangan.co.id/favicon.ico',
   author: 'Sakti Food',
@@ -9,72 +12,56 @@ export const siteConfig = {
     "sakti pangan perkasa",
     "saktipangan",
     "saktifood",
-    "sakti",
-    "laskar",
-    "pita",
-    "agni",
-    "akstar",
-    "7daun",
-    "fryfest",
-    "manufaktur makanan",
     "tepung roti",
     "tepung roti",
     "tepung roti",
-    "breadcrumb",
-    "breadcrumb",
-    "breadcrumb",
     "tepung panir",
     "tepung panir",
     "tepung panir",
-    "risol",
+    "breadcrumb",
+    "breadcrumb",
+    "breadcrumb",
     "industri pangan Indonesia",
-    "industri tepung roti Indonesia",
-    "krispi",
-    "kriuk",
-    "renyah",
-    "karanganyar",
-    "jawa tengah"
   ],
   social: {
     instagram: '@sakt1_id',
     tiktok: '@saktitepungroti',
-    tokopedia: 'Sakti Pangan Perkasa',
-    shopee: 'sakti pangan official',
     linkedin: 'PT Sakti Pangan Perkasa',
   },
-  navigation: [
+};
+
+// Ini khusus untuk next-seo
+export const defaultSEO: DefaultSeoProps = {
+  title: seoConfig.title,
+  description: seoConfig.description,
+  canonical: seoConfig.url,
+  openGraph: {
+    url: seoConfig.url,
+    title: seoConfig.title,
+    description: seoConfig.description,
+    images: [
+      {
+        url: seoConfig.ogImage,
+        width: 800,
+        height: 600,
+        alt: seoConfig.title,
+      },
+    ],
+    site_name: seoConfig.title,
+  },
+  twitter: {
+    handle: seoConfig.social.instagram,
+    site: seoConfig.social.instagram,
+    cardType: "summary_large_image",
+  },
+  additionalMetaTags: [
     {
-      name: 'Sakti Food - Homepage',
-      href: '/',
+      name: "keywords",
+      content: seoConfig.keywords.join(", "),
     },
     {
-      name: 'Tentang Kami',
-      href: '/about',
-    },
-    {
-      name: 'Sakti Food - product',
-      href: '/product',
-      children: [
-        { name: 'sakti', href: '/product/sakti' },
-        { name: 'laskar', href: '/product/laskar' },
-        { name: 'agni', href: '/product/agni' },
-        { name: 'akstar', href: '/product/akstar' },
-        { name: 'pita', href: '/product/pita' },
-        { name: '7daun', href: '/product/7daun' },
-        { name: 'fryfest', href: '/product/fryfest' },
-      ],
-    },
-    {
-      name: 'Blog',
-      href: '/blog',
-    },
-    {
-      name: 'Kontak',
-      href: '/contact',
-    },
-    {
-      name: 'FAQ',
-      href: '/faq',
+      name: "author",
+      content: seoConfig.author,
     },
   ],
 };

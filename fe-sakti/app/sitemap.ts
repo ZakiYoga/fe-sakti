@@ -1,9 +1,16 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/seo';
+import { defaultSEO } from '@/config/seo';
 import { sampleProducts as products } from '@/DataDummy';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = siteConfig.url;
-  
+  function joinUrl(...parts: string[]) {
+    return parts
+      .map((part) => part.replace(/^\/+|\/+$/g, '')) // hapus leading & trailing slash
+      .filter(Boolean)
+      .join('/');
+  }
+
+  const baseUrl = defaultSEO.openGraph?.url ?? "https://www.saktipangan.co.id";
+
   // Static pages
   const routes = [
     '',
@@ -21,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Dynamic product pages
   const productRoutes = products.map((product) => ({
-    url: `${baseUrl}/produk/${product.href}`,
+    url: `${baseUrl}/${joinUrl('produk', product.href ?? "")}`,
     priority: 0.7,
   }));
 

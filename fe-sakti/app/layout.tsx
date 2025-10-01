@@ -3,10 +3,12 @@ import './globals.css'
 import { Bebas_Neue, Poppins, Ephesis } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
+import { DefaultSeo } from "next-seo";
 import { siteConfig } from "@/config/site";
 import { companyInfo } from "@/config/company";
 import { ThemeProvider } from '@/lib/ThemeProvider'
 import 'leaflet/dist/leaflet.css'
+import { defaultSEO } from "@/config/seo";
 
 const ephesis = Ephesis({
   weight: '400',
@@ -50,8 +52,10 @@ export const metadata: Metadata = {
     "manufaktur makanan",
     "tepung roti",
     "tepung roti",
+    "tepung panir",
     "breadcrumb",
     "risol",
+    "renyah",
     "industri pangan Indonesia",
     "industri tepung roti Indonesia",
     "krispi",

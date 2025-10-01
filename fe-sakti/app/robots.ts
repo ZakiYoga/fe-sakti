@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/seo';
+import { defaultSEO } from '@/config/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/', '/private/'],
     },
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: `${defaultSEO.openGraph?.url}/sitemap.xml`,
   };
 }
