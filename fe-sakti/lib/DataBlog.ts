@@ -127,7 +127,7 @@ export const generateDummyBlogs = () => [
       email: "editor@saktipangan.co.id"
     }
   },
-  
+
   {
     id: 9,
     title: "Nugget Ayam Homemade Super Crispy dengan Rahasia Tepung Roti Sakti",
@@ -305,7 +305,7 @@ export const generateDummyBlogs = () => [
     }
   },
 
-    {
+  {
     id: 16,
     title: "Sakti Pangan Annual Meeting & Gathering 2025: Merayakan Pencapaian di Pabrik Baru",
     slug: "sakti-pangan-annual-meeting-gathering-2025-merayakan-pencapaian-pabrik-baru",
@@ -458,11 +458,11 @@ export const generateDummyBlogs = () => [
   },
 
   {
-  id: 160,
-  title: "Roti Goreng Empuk dan Lembut Isi Cokelat dengan Tepung Roti Sakti",
-  slug: "roti-goreng-empuk-dan-lembut-isi-cokelat-dengan-tepung-roti-sakti",
-  excerpt: "Nikmati roti goreng empuk dengan isian cokelat lumer yang cocok untuk camilan sore. Resep praktis dengan Tepung Roti Sakti yang menghasilkan tekstur lembut dan golden brown sempurna.",
-  content: `<div class="prose max-w-none">
+    id: 160,
+    title: "Roti Goreng Empuk dan Lembut Isi Cokelat dengan Tepung Roti Sakti",
+    slug: "roti-goreng-empuk-dan-lembut-isi-cokelat-dengan-tepung-roti-sakti",
+    excerpt: "Nikmati roti goreng empuk dengan isian cokelat lumer yang cocok untuk camilan sore. Resep praktis dengan Tepung Roti Sakti yang menghasilkan tekstur lembut dan golden brown sempurna.",
+    content: `<div class="prose max-w-none">
     <h2>Roti Goreng Isi Cokelat</h2>
     <p>Roti goreng adalah jajanan klasik yang selalu jadi favorit keluarga. Dengan Tepung Roti Sakti, hasilnya akan lebih empuk, bertekstur lembut, dan tetap lezat meskipun sudah dingin.</p>
     
@@ -553,13 +553,13 @@ export const generateDummyBlogs = () => [
       email: "admin@saktipangan.co.id"
     }
   },
-  
+
   {
-  id: 17,
-  title: "Risol Mayo Lumer Isi Sosis dan Telur dengan Tepung Roti Sakti",
-  slug: "risol-mayo-lumer-isi-sosis-dan-telur-dengan-tepung-roti-sakti",
-  excerpt: "Risol mayo favorit banyak orang! Kulit tipis, isi sosis dan telur rebus, dengan campuran mayo creamy. Praktis dibuat dan hasilnya renyah berkat Tepung Roti Sakti.",
-  content: `<div class="prose max-w-none">
+    id: 17,
+    title: "Risol Mayo Lumer Isi Sosis dan Telur dengan Tepung Roti Sakti",
+    slug: "risol-mayo-lumer-isi-sosis-dan-telur-dengan-tepung-roti-sakti",
+    excerpt: "Risol mayo favorit banyak orang! Kulit tipis, isi sosis dan telur rebus, dengan campuran mayo creamy. Praktis dibuat dan hasilnya renyah berkat Tepung Roti Sakti.",
+    content: `<div class="prose max-w-none">
     <h2>Risol Mayo</h2>
     <p>Risol mayo adalah camilan kekinian yang selalu bikin nagih. Kulitnya lembut, isiannya creamy dengan perpaduan sosis, telur, keju, dan mayo manis gurih.</p>
     
@@ -748,11 +748,11 @@ export const generateDummyBlogs = () => [
   },
 
   {
-  id: 19,
-  title: "Udang Keju Mozarella Renyah dengan Tepung Roti Sakti",
-  slug: "udang-keju-mozarella-renyah-dengan-tepung-roti-sakti",
-  excerpt: "Perpaduan ayam, udang segar, dan keju mozarella lumer yang dibalut tepung roti Sakti. Renyah di luar, juicy di dalam. Camilan premium yang bikin nagih!",
-  content: `<div class="prose max-w-none">
+    id: 19,
+    title: "Udang Keju Mozarella Renyah dengan Tepung Roti Sakti",
+    slug: "udang-keju-mozarella-renyah-dengan-tepung-roti-sakti",
+    excerpt: "Perpaduan ayam, udang segar, dan keju mozarella lumer yang dibalut tepung roti Sakti. Renyah di luar, juicy di dalam. Camilan premium yang bikin nagih!",
+    content: `<div class="prose max-w-none">
     <h2>Udang Keju Mozarella</h2>
     <p>Resep camilan spesial berbahan dasar ayam dan udang yang dipadukan dengan keju mozarella lumer. Renyah di luar, lembut dan gurih di dalam. Cocok untuk camilan keluarga atau ide jualan kekinian.</p>
     
@@ -836,11 +836,11 @@ export const generateDummyBlogs = () => [
   },
 
   {
-  id: 20,
-  title: "Chicken Katsu Saus BBQ Renyah dengan Tepung Roti Sakti",
-  slug: "chicken-katsu-saus-bbq-renyah-dengan-tepung-roti-sakti",
-  excerpt: "Chicken katsu crispy di luar, juicy di dalam, disajikan dengan saus BBQ spesial. Rahasia kerenyahannya? Tepung Roti Sakti!",
-  content: `<div class="prose max-w-none">
+    id: 20,
+    title: "Chicken Katsu Saus BBQ Renyah dengan Tepung Roti Sakti",
+    slug: "chicken-katsu-saus-bbq-renyah-dengan-tepung-roti-sakti",
+    excerpt: "Chicken katsu crispy di luar, juicy di dalam, disajikan dengan saus BBQ spesial. Rahasia kerenyahannya? Tepung Roti Sakti!",
+    content: `<div class="prose max-w-none">
     <h2>Chicken Katsu Saus BBQ</h2>
     <p>Chicken katsu adalah ayam goreng tepung ala Jepang yang digemari banyak orang. Dengan balutan <strong>Tepung Roti Sakti</strong>, hasilnya super crispy, gurih, dan renyah lebih lama!</p>
     
@@ -938,10 +938,213 @@ export const generateDummyBlogs = () => [
       name: "Admin",
       email: "admin@saktipangan.co.id"
     }
-  }
+  },
 
+  {
+    id: 22,
+    title: "Pompompurin Udang Keju Extra Krispi dengan Tepung Roti Sakti",
+    slug: "pompompurin-udang-keju-extra-krispi-dengan-tepung-roti-sakti",
+    excerpt: "Kreasikan udang keju lucu berbentuk Pompompurin yang bikin anak makin semangat makan! Rahasianya? Gunakan Tepung Roti Sakti Premium untuk hasil crispy sempurna dan gurih maksimal.",
+    content: `<div class="prose max-w-none">
+    <h2>Pompompurin Udang Keju</h2>
+    <p>Bikin waktu makan anak makin seru dengan kreasi <strong>Pompompurin Udang Keju</strong>! Bentuknya lucu, rasanya gurih, dan pastinya <strong>extra krispi</strong> karena pakai <strong>Tepung Roti Sakti Premium</strong>.</p>
 
+    <h3>Bahan-bahan:</h3>
+    <ul>
+      <li>80 gram udang kupas, cincang</li>
+      <li>125 gram daging paha ayam, giling</li>
+      <li>1/2 butir telur</li>
+      <li>2 siung bawang putih, cincang</li>
+      <li>1 helai daun bawang, iris halus</li>
+      <li>2 sdm tepung tapioka</li>
+      <li>1 sdm tepung terigu</li>
+      <li>1 sdm saus tiram</li>
+      <li>1/2 sdm minyak wijen</li>
+      <li>1/4 sdt garam</li>
+      <li>1/4 sdt merica bubuk</li>
+    </ul>
 
+    <h3>Baluran:</h3>
+    <ul>
+      <li>100 gram <strong>Tepung Roti Sakti Premium</strong></li>
+      <li>1 butir telur, kocok lepas</li>
+      <li>Tepung terigu secukupnya</li>
+    </ul>
+
+    <h3>Isian:</h3>
+    <ul>
+      <li>Keju mozzarella</li>
+    </ul>
+
+    <h3>Pelengkap:</h3>
+    <ul>
+      <li>Kol iris halus</li>
+      <li>Wortel parut</li>
+      <li>Mayones</li>
+      <li>Wijen sangrai</li>
+    </ul>
+
+    <h2>Cara Membuat</h2>
+    <ol>
+      <li>Campurkan semua bahan utama hingga rata.</li>
+      <li>Ambil sedikit adonan, pipihkan, beri isian keju mozzarella, lalu bentuk menyerupai karakter <strong>Pompompurin</strong>.</li>
+      <li>Gulingkan ke tepung terigu, celupkan ke telur, lalu baluri dengan <strong>Tepung Roti Sakti Premium</strong> hingga rata.</li>
+      <li>Ulangi hingga adonan habis, lalu goreng di minyak panas hingga keemasan dan matang merata.</li>
+    </ol>
+
+    <h3>Tips Extra Krispi</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Pakai Tepung Roti Sakti Premium:</strong> Butirannya halus dan seragam, hasil gorengan renyah merata.</li>
+        <li><strong>Gunakan minyak panas merata:</strong> Agar hasilnya golden brown sempurna.</li>
+        <li><strong>Jangan terlalu sering dibalik:</strong> Supaya tidak menyerap minyak berlebih.</li>
+      </ul>
+    </div>
+
+    <h2>Serving Suggestions</h2>
+    <p>Sajikan dengan:</p>
+    <ul>
+      <li>Irisan kol dan wortel</li>
+      <li>Mayones atau saus favorit</li>
+      <li>Taburan wijen sangrai</li>
+    </ul>
+
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Mom's Favorite Tip:</p>
+      <p class="text-sm">Gunakan cetakan karakter lucu agar anak makin semangat makan! Dan jangan lupa, selalu pilih <strong>Tepung Roti Sakti Premium</strong> untuk hasil crispy tahan lama.</p>
+    </div>
+
+    <p>Yuk Moms, cobain juga kreasi lucu ini di rumah dan bagikan hasilnya di Instagram. Jangan lupa tag <a href="https://www.instagram.com/sakt1_id" target="_blank">@sakt1_id</a> ya! 🧡</p>
+  </div>`,
+    featured_image: "/images/blog/pompompurin-udang-keju.png",
+    status: "published",
+    published_at: "2025-10-07T19:00:00.000000Z",
+    views: 0,
+    meta_title: "Resep Pompompurin Udang Keju Extra Krispi dengan Tepung Roti Sakti",
+    meta_description: "Resep Pompompurin Udang Keju yang lucu dan gurih untuk anak-anak. Rahasianya? Gunakan Tepung Roti Sakti Premium agar hasilnya extra crispy dan lezat!",
+    meta_keywords: "pompompurin, udang keju, resep anak, tepung roti sakti, masakan lucu, crispy",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-10-07T18:00:00.000000Z",
+    updated_at: "2025-10-07T19:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-10-07T18:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
+
+  {
+    id: 23,
+    title: "Crispy Pumpkin Bread dengan Tepung Roti Sakt1",
+    slug: "crispy-pumpkin-bread-dengan-tepung-roti-sakt1",
+    excerpt: "Coba resep roti labu kuning unik dengan lapisan luar super crispy dari Tepung Roti Sakt1 Premium! Lembut di dalam, renyah di luar, dan tampil cantik seperti labu sungguhan.",
+    content: `<div class="prose max-w-none">
+    <h2>Crispy Pumpkin Bread</h2>
+    <p><strong>Crispy Pumpkin Bread</strong> adalah roti labu kuning lembut dengan lapisan luar yang crispy karena dibaluri <strong>Tepung Roti Sakt1 Premium</strong>. Selain tampil cantik seperti labu, rasanya juga gurih, ringan, dan bikin ketagihan!</p>
+
+    <h3>Kenapa Pilih Tepung Roti Sakt1?</h3>
+    <ul>
+      <li>✔️ Kualitas premium</li>
+      <li>✔️ Warna cerah dan bersih</li>
+      <li>✔️ Butiran seragam</li>
+      <li>✔️ Hasil gorengan lebih crispy</li>
+      <li>✔️ Kering, ringan, dan bulky</li>
+      <li>✔️ Tidak mudah gosong</li>
+      <li>✔️ Tidak berminyak</li>
+      <li>✔️ Menempel maksimal dan tidak mudah rontok</li>
+    </ul>
+
+    <p>Yuk ikutan challenge-nya dan cobain kreasi roti labu crispy yang cantik ini! 🥰🙏😍</p>
+
+    <h3>Bahan-bahan:</h3>
+    <ul>
+      <li>300 gr tepung terigu protein tinggi</li>
+      <li>50 gr gula</li>
+      <li>30 gr susu bubuk</li>
+      <li>4 gr garam</li>
+      <li>120 gr labu kuning kukus, haluskan</li>
+      <li>2 sdt ragi</li>
+      <li>100 ml susu cair</li>
+      <li>30 gr margarin</li>
+      <li><strong>Tepung Roti Sakt1</strong> secukupnya untuk baluran</li>
+    </ul>
+
+    <h2>Cara Membuat</h2>
+    <ol>
+      <li>Aduk rata semua bahan kecuali garam dan margarin.</li>
+      <li>Masukkan garam dan margarin, lalu uleni hingga kalis elastis.</li>
+      <li>Bagi adonan menjadi 8 bagian (masing-masing sekitar 80 gr).</li>
+      <li>Isi setiap bagian dengan keju mozzarella, tutup rapat.</li>
+      <li>Ikat menggunakan benang untuk membentuk motif labu.</li>
+      <li>Tutup dan diamkan hingga mengembang ±1 jam.</li>
+      <li>Setelah mengembang, oles permukaan dengan kuning telur lalu baluri dengan <strong>Tepung Roti Sakt1</strong>.</li>
+      <li>Goreng dengan api kecil hingga matang dan berwarna keemasan.</li>
+      <li>Buka benangnya, hias dengan batang kayu manis dan daun di atasnya.</li>
+    </ol>
+
+    <h3>Tips Keemasan & Crispy Maksimal</h3>
+    <div class="bg-yellow-50 p-4 rounded-lg">
+      <ul>
+        <li><strong>Gunakan Tepung Roti Sakt1:</strong> Supaya hasil crispy-nya ringan dan tidak berminyak.</li>
+        <li><strong>Pastikan minyak cukup panas:</strong> Agar bagian luar cepat kering tanpa menyerap minyak berlebih.</li>
+        <li><strong>Gunakan api kecil stabil:</strong> Supaya bagian dalam matang sempurna.</li>
+      </ul>
+    </div>
+
+    <h2>Serving Suggestions</h2>
+    <p>Sajikan Crispy Pumpkin Bread dengan:</p>
+    <ul>
+      <li>Taburan gula halus atau madu</li>
+      <li>Secangkir teh hangat</li>
+      <li>Atau sebagai camilan sore istimewa bersama keluarga</li>
+    </ul>
+
+    <div class="bg-blue-50 p-4 rounded-lg">
+      <p class="font-bold">Fun Baking Tip:</p>
+      <p class="text-sm">Untuk tampilan yang lebih menarik, tambahkan batang kayu manis di bagian atas roti setelah digoreng sebagai “tangkai” labu. Lucu banget untuk ide hampers atau jualan!</p>
+    </div>
+
+    <p>Jangan lupa, selalu gunakan <strong>Tepung Roti Sakt1 Premium</strong> untuk hasil crispy sempurna.  
+    Follow juga Instagram kami di <a href="https://www.instagram.com/sakt1_id" target="_blank">@sakt1_id</a> untuk ikut challenge dan lihat kreasi lainnya! 🧡</p>
+  </div>`,
+    featured_image: "/images/blog/crispy-pumpkin.png",
+    status: "published",
+    published_at: "2025-10-07T20:00:00.000000Z",
+    views: 0,
+    meta_title: "Resep Crispy Pumpkin Bread dengan Tepung Roti Sakt1",
+    meta_description: "Roti labu kuning lembut dengan lapisan luar crispy dari Tepung Roti Sakt1 Premium. Gurih, ringan, dan cantik — cocok untuk ide jualan atau challenge baking!",
+    meta_keywords: "pumpkin bread, roti labu, tepung roti sakt1, resep roti, roti crispy, ide jualan",
+    category_id: 2,
+    user_id: 3,
+    created_at: "2025-10-07T19:00:00.000000Z",
+    updated_at: "2025-10-07T20:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-10-07T19:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 2,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F59E0B",
+      icon: "ChefHat"
+    },
+    user: {
+      id: 3,
+      name: "Admin",
+      email: "admin@saktipangan.co.id"
+    }
+  },
 
 
   // {
@@ -952,10 +1155,10 @@ export const generateDummyBlogs = () => [
   //   content: `<div class="prose max-w-none">
   //     <h2>Kesempatan Karir Terbuka</h2>
   //     <p>Seiring dengan pertumbuhan perusahaan yang pesat, PT. Sakti Pangan Perkasa membuka kesempatan karir untuk dua posisi strategis yang akan berperan penting dalam pengembangan bisnis ke depan.</p>
-      
+
   //     <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg my-6">
   //       <h3 class="text-2xl font-bold mb-4">🚀 Digital Marketing Manager</h3>
-        
+
   //       <h4 class="font-bold mb-2">Job Description:</h4>
   //       <ul class="mb-4">
   //         <li>Mengembangkan dan mengimplementasikan strategi digital marketing</li>
@@ -965,7 +1168,7 @@ export const generateDummyBlogs = () => [
   //         <li>Berkolaborasi dengan tim kreatif untuk konten marketing</li>
   //         <li>Mengelola budget marketing digital dan ROI</li>
   //       </ul>
-        
+
   //       <h4 class="font-bold mb-2">Requirements:</h4>
   //       <ul class="mb-4">
   //         <li>S1 Marketing/Komunikasi/Digital Media</li>
@@ -976,7 +1179,7 @@ export const generateDummyBlogs = () => [
   //         <li>Analytical thinking dan data-driven decision making</li>
   //         <li>Leadership skills untuk mengelola tim</li>
   //       </ul>
-        
+
   //       <h4 class="font-bold mb-2">What We Offer:</h4>
   //       <ul>
   //         <li>💰 Salary range: Rp 15,000,000 - Rp 22,000,000</li>
@@ -986,10 +1189,10 @@ export const generateDummyBlogs = () => [
   //         <li>🏖️ Annual company retreat</li>
   //       </ul>
   //     </div>
-      
+
   //     <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg my-6">
   //       <h3 class="text-2xl font-bold mb-4">🔬 Food Technologist</h3>
-        
+
   //       <h4 class="font-bold mb-2">Job Description:</h4>
   //       <ul class="mb-4">
   //         <li>Research & development produk pangan baru</li>
@@ -999,7 +1202,7 @@ export const generateDummyBlogs = () => [
   //         <li>Melakukan product scaling dari lab ke production</li>
   //         <li>Dokumentasi technical specification dan SOP</li>
   //       </ul>
-        
+
   //       <h4 class="font-bold mb-2">Requirements:</h4>
   //       <ul class="mb-4">
   //         <li>S1 Teknologi Pangan/Gizi/Kimia Pangan</li>
@@ -1010,7 +1213,7 @@ export const generateDummyBlogs = () => [
   //         <li>Problem solving dan analytical thinking yang kuat</li>
   //         <li>Mampu bekerja dalam tim multidisiplin</li>
   //       </ul>
-        
+
   //       <h4 class="font-bold mb-2">What We Offer:</h4>
   //       <ul>
   //         <li>💰 Salary range: Rp 12,000,000 - Rp 18,000,000</li>
@@ -1020,7 +1223,7 @@ export const generateDummyBlogs = () => [
   //         <li>📊 Research allowance untuk project development</li>
   //       </ul>
   //     </div>
-      
+
   //     <h2>Benefit Umum Karyawan Sakti Pangan</h2>
   //     <div class="grid grid-cols-2 gap-4 my-6">
   //       <div class="bg-orange-50 p-4 rounded-lg">
@@ -1060,7 +1263,7 @@ export const generateDummyBlogs = () => [
   //         </ul>
   //       </div>
   //     </div>
-      
+
   //     <h2>Proses Seleksi</h2>
   //     <div class="bg-gray-50 p-6 rounded-lg">
   //       <ol>
@@ -1072,7 +1275,7 @@ export const generateDummyBlogs = () => [
   //         <li><strong>Reference Check & Offer:</strong> Proses finalisasi</li>
   //       </ol>
   //     </div>
-      
+
   //     <h2>Cara Apply</h2>
   //     <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg">
   //       <p class="font-bold mb-2">📧 Kirim aplikasi ke: <span class="text-orange-600">jobs@saktipangan.co.id</span></p>
@@ -1086,7 +1289,7 @@ export const generateDummyBlogs = () => [
   //       </ul>
   //       <p class="text-red-600 font-bold mt-4">⏰ Deadline: 30 September 2024</p>
   //     </div>
-      
+
   //     <blockquote class="border-l-4 border-orange-500 pl-4 italic bg-orange-50 p-4 rounded">
   //       "Kami mencari individu yang passionate, innovative, dan siap berkontribusi dalam memajukan industri pangan Indonesia. Join us and be part of something bigger!" - HR Team Sakti Pangan
   //     </blockquote>
@@ -1127,7 +1330,7 @@ export const generateDummyBlogResponse = (params: any = {}) => {
 
   // Filter berdasarkan category
   if (params.category) {
-    filteredBlogs = allBlogs.filter(blog => 
+    filteredBlogs = allBlogs.filter(blog =>
       blog.category.slug === params.category
     );
   }
@@ -1135,7 +1338,7 @@ export const generateDummyBlogResponse = (params: any = {}) => {
   // Filter berdasarkan search
   if (params.search) {
     const searchTerm = params.search.toLowerCase();
-    filteredBlogs = allBlogs.filter(blog => 
+    filteredBlogs = allBlogs.filter(blog =>
       blog.title.toLowerCase().includes(searchTerm) ||
       blog.excerpt.toLowerCase().includes(searchTerm)
     );
