@@ -1384,243 +1384,6 @@ export const generateDummyBlogs = () => [
   },
 
   {
-    id: 16,
-    title: "Roti Goreng Pasta Spesial Tahun Baru 2025",
-    slug: "roti-goreng-pasta-spesial-tahun-baru-2025",
-    excerpt: "Kreasi Roti Goreng Pasta yang lembut di dalam dan renyah di luar. Menu spesial tahun baru yang disukai anak-anak, menggunakan Tepung Roti Sakti dengan tekstur halus dan tidak mudah menggumpal.",
-    content: `<div class="prose max-w-none">
-    <h2>Roti Goreng Pasta Spesial Tahun Baru</h2>
-    <p>Yeay.. Happy New Year 2025 🎉😇</p>
-    <p>Untuk menyambut tahun baru, kami membuat hidangan spesial yang pasti disukai anak-anak dan cepat habis di meja makan — <strong>Roti Goreng Pasta</strong> 🤩.</p>
-    <p>Aku senang banget membuat kreasi masakan dari <strong>Tepung Roti Sakti</strong> ini, karena tepung rotinya tidak gampang menggumpal seperti tepung roti lain. Teksturnya halus dan mudah dikreasikan untuk berbagai ide masakan.</p>
-
-    <h3>Tentang Tepung Roti Sakti</h3>
-    <p><strong>SAKTI Tepung Roti</strong> adalah tepung panir kasar yang terbuat dari roti tawar pilihan, dihaluskan dan dikeringkan dengan oven. Sangat cocok untuk aneka hidangan gorengan seperti katsu, tempura, risoles, pisang goreng, roti goreng, nugget, dan lainnya.</p>
-    <p>Teksturnya halus dan mudah menempel. Untuk resep kali ini, kami membentuk roti goreng menyerupai panda — lucu dan auto rebutan! 🥰</p>
-
-    <h3>❤️ Roti Goreng Pasta</h3>
-
-    <h4>Bahan-bahan:</h4>
-    <ul>
-      <li>6 lembar roti tawar</li>
-      <li>150 gr pasta spaghetti</li>
-      <li>3 sdm abon ikan</li>
-      <li>Sejumput oregano kering</li>
-      <li>Sejumput garam</li>
-      <li>2 sdm saus pasta</li>
-      <li>1 sdt saus tiram</li>
-      <li>1 butir telur</li>
-      <li>200 gr Tepung Roti Sakti</li>
-      <li>½ buah bawang bombay, iris</li>
-      <li>½ buah wortel, parut</li>
-      <li>1–2 siung bawang putih, iris</li>
-      <li>1–2 sdm margarin</li>
-    </ul>
-
-    <h4>Cara Membuat:</h4>
-    <ol>
-      <li>Patahkan dan bagi 3 bagian pasta, kemudian rebus hingga matang. Sisihkan.</li>
-      <li>Lelehkan margarin di wajan, tumis bawang bombay dan bawang putih hingga sedikit layu.</li>
-      <li>Masukkan pasta, wortel, saus pasta, oregano, garam, dan saus tiram. Aduk rata.</li>
-      <li>Gilas roti tawar, taruh pasta di atas roti, lalu tutup dengan roti lain. Cetak membentuk panda menggunakan wadah bulat.</li>
-      <li>Kocok lepas telur, celupkan roti ke dalam telur, lalu gulingkan di <strong>Tepung Roti Sakti</strong>.</li>
-      <li>Goreng hingga kecokelatan dan renyah sempurna.</li>
-      <li>Roti Goreng Pasta siap disajikan sebagai hidangan spesial tahun baru 🤗</li>
-    </ol>
-  </div>`,
-    featured_image: "/images/blog/roti-goreng-pasta.png",
-    status: "published",
-    published_at: "2025-01-19T08:00:00.000000Z",
-    views: 0,
-    meta_title: "Roti Goreng Pasta Spesial Tahun Baru 2025",
-    meta_description: "Kreasi Roti Goreng Pasta lembut dan renyah menggunakan Tepung Roti Sakti. Menu favorit anak-anak untuk menyambut tahun baru 2025.",
-    meta_keywords: "roti goreng, pasta, tepung roti sakti, resep anak, resep tahun baru, kreasi masakan",
-    category_id: 6,
-    user_id: 2,
-    created_at: "2025-01-19T07:00:00.000000Z",
-    updated_at: "2025-01-19T08:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2025-01-19T07:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 6,
-      name: "Resep Sakti",
-      slug: "resep-sakti",
-      color: "#F97316",
-      icon: "Utensils"
-    },
-    user: {
-      id: 2,
-      name: "Tim Editor Sakti",
-      email: "editor@saktipangan.co.id"
-    }
-  },
-
-  {
-    id: 17,
-    title: "Tahu Fantasy Dumpling Crispy ala Sakti",
-    slug: "tahu-fantasy-dumpling-crispy-ala-sakti",
-    excerpt: "Kreasi Tahu Fantasy Dumpling yang crispy di luar dan lembut di dalam. Tambahan topping dumpling dan balutan Tepung Roti Sakti membuat camilan ini disukai anak-anak dan cocok juga untuk stok frozen food.",
-    content: `<div class="prose max-w-none">
-    <h2>Tahu Fantasy Dumpling Crispy ala Sakti</h2>
-    <p>Camilan yang aku buat kali ini versi aslinya hanya menggunakan topping telur puyuh dan balutan telur saja. Tapi kali ini aku kreasikan menggunakan <strong>Tepung Roti Sakti</strong> supaya lebih crispy serta topping <strong>dumpling</strong> yang pasti disukai anak-anak.</p>
-    <p>Bikinnya simpel dan bisa juga jadi stok frozen food untuk camilan cepat saji. Selamat mencoba 🥰</p>
-
-    <h3>✨ Tahu Fantasy Dumpling ✨</h3>
-
-    <h4>Bahan:</h4>
-    <ul>
-      <li>1 buah tahu sutra</li>
-      <li>3 sdm bihun</li>
-      <li>1 buah wortel</li>
-      <li>1 batang daun bawang</li>
-      <li>2 siung bawang putih</li>
-      <li>1 butir telur</li>
-      <li>½ sdt garam</li>
-      <li>¼ sdt lada</li>
-      <li>1 blok kaldu ayam</li>
-      <li>Dumpling aneka rasa untuk topping</li>
-    </ul>
-
-    <h4>Bahan Pelapis:</h4>
-    <ul>
-      <li>5 sdm tepung terigu</li>
-      <li>Secukupnya air</li>
-      <li>200 gr Tepung Roti Sakti</li>
-    </ul>
-
-    <h4>Cara Membuat:</h4>
-    <ol>
-      <li>Haluskan tahu, lalu campurkan parutan wortel, bihun yang sudah direbus, irisan daun bawang, telur, dan bumbu penyedap.</li>
-      <li>Masukkan adonan ke dalam cetakan, beri topping dumpling, lalu kukus selama 20 menit.</li>
-      <li>Keluarkan dari cetakan, baluri dengan larutan tepung terigu dan gulingkan ke <strong>Tepung Roti Sakti</strong>.</li>
-      <li>Masukkan ke kulkas selama ±1 jam agar set, lalu goreng hingga kuning keemasan dan crispy sempurna.</li>
-    </ol>
-
-    <h3>Kenapa Pilih Tepung Roti Sakti?</h3>
-    <div class="bg-orange-50 p-4 rounded-lg">
-      <ul>
-        <li>✅ Lulus uji <strong>BPOM</strong></li>
-        <li>✅ Sertifikasi <strong>Halal</strong></li>
-        <li>✅ Butirannya seragam dan warnanya cerah</li>
-        <li>✅ Tidak mudah rontok saat digoreng</li>
-        <li>✅ Hasil masakan <strong>crispy</strong> dan lembut</li>
-        <li>✅ Tersedia ukuran 200 gr & 1 kg</li>
-      </ul>
-    </div>
-
-    <p>Cuss cobain deh! Selain kualitas premium, harganya juga terjangkau banget — cocok untuk camilan rumahan atau ide usaha 😍</p>
-  </div>`,
-    featured_image: "/images/blog/tahu-fantasy-dumpling.png",
-    status: "published",
-    published_at: "2024-07-27T08:00:00.000000Z",
-    views: 0,
-    meta_title: "Tahu Fantasy Dumpling Crispy ala Sakti",
-    meta_description: "Resep Tahu Fantasy Dumpling crispy di luar, lembut di dalam dengan Tepung Roti Sakti. Camilan favorit anak-anak dan cocok untuk frozen food.",
-    meta_keywords: "tahu fantasy, dumpling, tepung roti sakti, frozen food, resep camilan, tahu crispy",
-    category_id: 6,
-    user_id: 2,
-    created_at: "2024-07-27T07:00:00.000000Z",
-    updated_at: "2024-07-27T08:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-07-27T07:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 6,
-      name: "Resep Sakti",
-      slug: "resep-sakti",
-      color: "#F97316",
-      icon: "Utensils"
-    },
-    user: {
-      id: 2,
-      name: "Tim Editor Sakti",
-      email: "editor@saktipangan.co.id"
-    }
-  },
-
-  {
-    id: 18,
-    title: "Korean Crispy Salmon Rice Ball (Jumeokbap)",
-    slug: "korean-crispy-salmon-rice-ball-jumeokbap",
-    excerpt: "Korean Crispy Salmon Rice Ball alias Jumeokbap — nasi kepal isi salmon yang dibalut Tepung Roti Sakti. Teksturnya renyah di luar, lembut di dalam, dan cocok untuk bekal atau camilan sehat anak-anak.",
-    content: `<div class="prose max-w-none">
-    <h2>Korean Crispy Salmon Rice Ball (Jumeokbap)</h2>
-    <p>Perkenalkan kreasi super simpel tapi enak banget! Kali ini kami membuat <strong>Korean Rice Ball</strong> dengan isian ikan salmon — atau disebut juga <em>Jumeokbap</em>, nasi kepal berbentuk bulat lengkap dengan campuran protein dan sayuran.</p>
-    <p>Karena anak-anak suka yang crispy dan garing, nasi ini kami baluri dengan <strong>Tepung Roti Sakti</strong>. Tepung roti terbaik dengan tekstur ringan, warna bersih, hasil crispy tahan lama, dan pastinya berkualitas premium serta halal.</p>
-    <p>Menu Korean Rice Ball ini bisa dijadikan menu makan sehari-hari, cemilan, atau bekal anak sekolah. Jika ingin rasa pedas, tambahkan saus favorit — dijamin makin lezat!</p>
-
-    <h3>✨ Korean Crispy Salmon Rice Ball ✨</h3>
-
-    <h4>Bahan:</h4>
-    <ul>
-      <li>250 gr nasi putih</li>
-      <li>80–100 gr ikan salmon fillet</li>
-      <li>2 butir telur</li>
-      <li>100 gr Tepung Roti Sakti</li>
-      <li>½ sdt garam</li>
-      <li>½ sdt merica</li>
-      <li>2 sdm wortel cincang</li>
-      <li>2–3 sdm nori cincang</li>
-      <li>2 sdm daun bawang cincang</li>
-      <li>65 gr mayones</li>
-      <li>½ sdt gula</li>
-      <li>50 gr keju melt atau mozzarella</li>
-      <li>2 sdm butter atau margarin</li>
-    </ul>
-
-    <h4>Cara Membuat:</h4>
-    <ol>
-      <li>Potong-potong salmon, cuci bersih, bumbui dengan garam dan merica. Tumis sebentar dengan margarin, lalu sisihkan.</li>
-      <li>Cincang halus wortel, nori, dan daun bawang.</li>
-      <li>Siapkan nasi, campurkan dengan salmon, nori, daun bawang, mayones, dan gula. Aduk rata.</li>
-      <li>Kepal-kepal nasi menjadi bulatan-bulatan kecil hingga adonan habis.</li>
-      <li>Kocok telur, celupkan bulatan nasi ke dalam telur, lalu gulingkan ke <strong>Tepung Roti Sakti</strong> hingga terbalur rata.</li>
-      <li>Beri potongan keju di atasnya, kemudian panggang hingga kering dan keju meleleh.</li>
-      <li>Sajikan hangat, nikmati sensasi crispy luar dan lembut dalamnya!</li>
-    </ol>
-
-    <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
-    <div class="bg-orange-50 p-4 rounded-lg">
-      <ul>
-        <li>✅ Tekstur ringan dan crispy tahan lama</li>
-        <li>✅ Warna bersih dan seragam</li>
-        <li>✅ Lulus uji <strong>BPOM</strong> & bersertifikat <strong>Halal</strong></li>
-        <li>✅ Hasil gorengan premium, cocok untuk ide jualan</li>
-      </ul>
-    </div>
-
-    <p>Korean Crispy Salmon Rice Ball ini bisa jadi pilihan sehat, praktis, dan lezat untuk keluarga tercinta ❤️</p>
-  </div>`,
-    featured_image: "/images/blog/korean-crispy-salmon-rice-ball.png",
-    status: "published",
-    published_at: "2024-07-27T08:00:00.000000Z",
-    views: 0,
-    meta_title: "Korean Crispy Salmon Rice Ball (Jumeokbap) dengan Tepung Roti Sakti",
-    meta_description: "Kreasi Korean Rice Ball isi salmon dengan Tepung Roti Sakti. Tekstur crispy dan lembut, cocok untuk bekal, camilan, atau ide jualan sehat.",
-    meta_keywords: "rice ball, jumeokbap, korean food, tepung roti sakti, salmon crispy, resep anak, bekal sehat",
-    category_id: 6,
-    user_id: 2,
-    created_at: "2024-07-27T07:00:00.000000Z",
-    updated_at: "2024-07-27T08:00:00.000000Z",
-    approved_by: 1,
-    approved_at: "2024-07-27T07:30:00.000000Z",
-    rejection_reason: null,
-    category: {
-      id: 6,
-      name: "Resep Sakti",
-      slug: "resep-sakti",
-      color: "#F97316",
-      icon: "Utensils"
-    },
-    user: {
-      id: 2,
-      name: "Tim Editor Sakti",
-      email: "editor@saktipangan.co.id"
-    }
-  },
-
-  {
     id: 19,
     title: "Sandwich Dendeng Sapi Crispy",
     slug: "sandwich-dendeng-sapi-crispy",
@@ -1718,7 +1481,259 @@ export const generateDummyBlogs = () => [
     }
   },
 
-  
+  {
+    id: 20,
+    title: "Beef Cheese Hot Plate Crispy",
+    slug: "beef-cheese-hot-plate-crispy",
+    excerpt: "Beef Cheese Hot Plate — hidangan spesial tahun baru dengan kombinasi daging slice juicy, keju lumer, dan lapisan crispy dari Tepung Roti Sakti. Rasanya bikin nagih dan cocok disantap bareng keluarga!",
+    content: `<div class="prose max-w-none">
+    <h2>Beef Cheese Hot Plate Crispy</h2>
+    <p>Tiap tahun baru agendanya pasti kumpul keluarga sambil makan-makan. Nah, yang namanya <strong>slice beef</strong> udah pasti selalu ada buat BBQ-an. Tapi tahu nggak? Slice beef juga bisa diolah jadi menu lain yang super menggugah selera seperti ini 😍</p>
+    <p><strong>Beef Cheese Hot Plate</strong> — hidangan utama yang pas banget buat momen spesial bareng keluarga. Bagian luarnya crispy sempurna, dalamnya juicy dengan keju yang lumer. Bayangin deh, seenak apa!</p>
+    <p>Yang bikin crispy-nya juara tentu karena aku pakai <strong>Tepung Roti Sakti</strong> — tepung roti andalan yang butirannya seragam, warnanya cerah, dan kualitasnya premium.</p>
+
+    <h3>✨ Beef Cheese Hot Plate ✨</h3>
+
+    <h4>Bahan 1:</h4>
+    <ul>
+      <li>200 gr slice beef</li>
+      <li>1 bungkus keju quick melt / mozzarella</li>
+      <li><em>(Isi slice beef dengan keju, lalu bekukan di freezer agar mudah dilapisi tepung)</em></li>
+    </ul>
+
+    <h4>Bahan 2 (Pelapis):</h4>
+    <ul>
+      <li>1 butir telur</li>
+      <li>70 gr tepung bumbu serbaguna</li>
+      <li>100 gr <strong>Tepung Roti Sakti</strong></li>
+    </ul>
+
+    <h4>Bahan 3 (Saus):</h4>
+    <ul>
+      <li>2 sdm mentega</li>
+      <li>3 siung bawang putih cincang</li>
+      <li>8 sdm saus barbeque</li>
+      <li>1 sdm saus tiram</li>
+      <li>2 sdm saus blackpepper</li>
+      <li>2 sdm saus tomat</li>
+      <li>3 sdm saus cabai</li>
+      <li>⅕ sdt garam, kaldu bubuk, dan lada bubuk</li>
+      <li>Secukupnya air</li>
+    </ul>
+
+    <h4>Bahan 4 (Pelengkap):</h4>
+    <ul>
+      <li>Jagung manis</li>
+      <li>Wortel</li>
+      <li>Buncis</li>
+      <li>Kentang goreng</li>
+    </ul>
+
+    <h4>Cara Membuat:</h4>
+    <ol>
+      <li>Isi slice beef dengan potongan keju, gulung rapat, lalu bekukan di freezer agar padat dan mudah dilapisi tepung.</li>
+      <li>Celupkan beef ke dalam telur, gulingkan ke tepung bumbu, lalu lapisi dengan <strong>Tepung Roti Sakti</strong> hingga rata.</li>
+      <li>Goreng hingga berwarna kuning keemasan dan teksturnya renyah.</li>
+      <li>Panaskan mentega, tumis bawang putih hingga harum. Masukkan semua bahan saus, aduk hingga mengental.</li>
+      <li>Sajikan beef crispy di hot plate bersama saus, sayuran, dan kentang goreng.</li>
+    </ol>
+
+    <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
+    <div class="bg-orange-50 p-4 rounded-lg">
+      <ul>
+        <li>✅ Butiran seragam dan halus</li>
+        <li>✅ Warna cerah dan hasil gorengan keemasan</li>
+        <li>✅ Tidak mudah gosong</li>
+        <li>✅ Tekstur crispy yang tahan lama</li>
+      </ul>
+    </div>
+
+    <p>Beef Cheese Hot Plate ini bisa banget jadi menu istimewa untuk keluarga, cocok untuk malam tahun baru atau momen kumpul bareng orang tercinta! ❤️</p>
+  </div>`,
+    featured_image: "/images/blog/beef-cheese-hot-plate.png",
+    status: "published",
+    published_at: "2024-12-30T08:00:00.000000Z",
+    views: 0,
+    meta_title: "Beef Cheese Hot Plate Crispy dengan Tepung Roti Sakti",
+    meta_description: "Resep Beef Cheese Hot Plate dengan lapisan crispy dari Tepung Roti Sakti, daging juicy, dan keju lumer. Menu tahun baru spesial bareng keluarga!",
+    meta_keywords: "beef cheese hot plate, tepung roti sakti, slice beef crispy, resep tahun baru, ide masakan keluarga, hidangan keju",
+    category_id: 6,
+    user_id: 2,
+    created_at: "2024-12-30T07:00:00.000000Z",
+    updated_at: "2024-12-30T08:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2024-12-30T07:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 6,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F97316",
+      icon: "Utensils"
+    },
+    user: {
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    id: 21,
+    title: "Crispy Banana Bites",
+    slug: "crispy-banana-bites",
+    excerpt: "Cemilan renyah khas tahun baru yang simpel tapi nikmat! Crispy Banana Bites ini punya tekstur super crunchy berkat Tepung Roti Sakti — cocok banget buat kumpul keluarga!",
+    content: `<div class="prose max-w-none">
+    <h2>Crispy Banana Bites</h2>
+    <p>Tahun baru kemarin seperti biasa, berkumpul bersama keluarga besar di rumah. Kalo kumpul rasanya kurang lengkap kalau nggak ada cemilan. Kebetulan aku punya stok pisang, kulit pangsit, dan <strong>Tepung Roti Sakti</strong>, jadi ngide deh bikin cemilan ini ☺</p>
+
+    <p>Untuk hasil makanan yang super crispy, aku selalu pakai <strong>Tepung Roti Sakti</strong> dari <em>@sakt1_id</em>. Tepung roti ini jadi andalan karena punya banyak keunggulan:</p>
+
+    <div class="bg-orange-50 p-4 rounded-lg">
+      <ul>
+        <li>✨ Kualitas Premium dengan harga terjangkau</li>
+        <li>✨ Bersertifikasi Halal MUI</li>
+        <li>✨ BPOM</li>
+        <li>✨ Butiran halus dan seragam</li>
+        <li>✨ Renyah dan lembut</li>
+        <li>✨ Cocok untuk berbagai jenis makanan</li>
+      </ul>
+    </div>
+
+    <h3>✨ Resep Crispy Banana Bites ✨</h3>
+
+    <h4>Bahan:</h4>
+    <ul>
+      <li>6 buah pisang raja yang sudah matang</li>
+      <li>10 lembar kulit pangsit</li>
+      <li>3 sdm tepung terigu</li>
+      <li>1 sdm gula pasir</li>
+      <li>1/4 sdt garam</li>
+      <li>Secukupnya air</li>
+      <li>Secukupnya <strong>Tepung Roti Sakti</strong></li>
+    </ul>
+
+    <h4>Cara Membuat:</h4>
+    <ol>
+      <li>Bentuk mangkuk dari kulit lumpia seperti di video.</li>
+      <li>Potong kecil pisang sesuai selera.</li>
+      <li>Campur tepung terigu, gula pasir, garam, dan air hingga tercampur rata.</li>
+      <li>Masukkan potongan pisang ke dalam mangkuk lumpia, lalu celupkan ke adonan tepung, dan balurkan dengan <strong>Tepung Roti Sakti</strong>.</li>
+      <li>Goreng dalam minyak panas hingga berwarna keemasan dan renyah.</li>
+      <li>Beri topping sesuai selera — bisa cokelat, keju, atau kental manis.</li>
+    </ol>
+
+    <p>Cemilan ini cocok banget buat nemenin kumpul keluarga di tahun baru atau sore santai di rumah. Super renyah, manisnya pas, dan pastinya bikin nagih! 💛</p>
+
+    <p class="text-gray-500 italic mt-6">Dibuat pada 19 Januari 2025</p>
+  </div>`,
+    featured_image: "/images/blog/crispy-banana-bites.png",
+    status: "published",
+    published_at: "2025-01-19T10:00:00.000000Z",
+    views: 0,
+    meta_title: "Crispy Banana Bites Renyah dengan Tepung Roti Sakti",
+    meta_description: "Resep Crispy Banana Bites — cemilan tahun baru yang renyah, manis, dan mudah dibuat dengan Tepung Roti Sakti. Butiran halus, hasil keemasan sempurna!",
+    meta_keywords: "crispy banana bites, tepung roti sakti, cemilan renyah, resep pisang goreng, ide makanan tahun baru, snack keluarga",
+    category_id: 6,
+    user_id: 2,
+    created_at: "2025-01-19T10:00:00.000000Z",
+    updated_at: "2024-12-30T08:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2024-12-30T07:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 6,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F97316",
+      icon: "Utensils"
+    },
+    user: {
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
+    }
+  },
+  {
+    id: 22,
+    title: "Sate Bola Ayam Mozzarella Crispy",
+    slug: "sate-bola-ayam-mozzarella-crispy",
+    excerpt: "Bola-bola ayam renyah dengan isian keju mozzarella yang molor dan gurih. Sate Bola Ayam Mozzarella Crispy ini cocok untuk ide bekal, cemilan, atau jualan — praktis, cantik, dan super lezat!",
+    content: `<div class="prose max-w-none">
+    <h2>Sate Bola Ayam Mozzarella Crispy</h2>
+    <p><strong>Sate Bola Ayam Mozzarella Crispy</strong> — bisa jadi ide bekal, ide cemilan, maupun ide jualan yang menarik! Bola-bola ayam ini renyah di luar dengan isian keju mozzarella yang molor dan gurih, dijamin bikin ketagihan 😋</p>
+    <p>Cara membuatnya sangat mudah, bahan-bahannya pun bisa disesuaikan dengan isi kulkas masing-masing. Untuk hasil crispy sempurna, aku pakai <strong>Tepung Roti Sakti</strong> sebagai pelapisnya.</p>
+
+    <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
+    <div class="bg-orange-50 p-4 rounded-lg">
+      <ul>
+        <li>✅ Teksturnya kering dan ringan</li>
+        <li>✅ Warna stabil dan bersih</li>
+        <li>✅ Butiran seragam</li>
+      </ul>
+    </div>
+
+    <p>Dengan <strong>Tepung Roti Sakti</strong>, gorengan jadi cantik, menempel sempurna, dan renyah tahan lama. Produk ini mudah didapatkan di pasar, toko bahan kue, maupun marketplace seperti Shopee dan Tokopedia.</p>
+
+    <h3>✨ Resep Sate Bola Ayam Mozzarella Crispy ✨</h3>
+
+    <h4>Bahan:</h4>
+    <ul>
+      <li>200 g fillet paha ayam</li>
+      <li>50 g wortel parut</li>
+      <li>1 batang daun bawang, iris halus</li>
+      <li>1 sdm tepung sagu</li>
+      <li>1 butir telur ayam, kocok lepas</li>
+      <li>1/2 sdt garam</li>
+      <li>1/4 sdt lada hitam bubuk</li>
+      <li>Keju mozzarella secukupnya, potong dadu</li>
+      <li><strong>Tepung Roti Sakti</strong> secukupnya</li>
+    </ul>
+
+    <h4>Cara Membuat:</h4>
+    <ol>
+      <li>Cincang halus fillet ayam, lalu campur dengan wortel parut, daun bawang, garam, lada, tepung sagu, dan telur kocok. Aduk hingga rata.</li>
+      <li>Ambil sesendok adonan daging, isi dengan potongan keju mozzarella, lalu bentuk bulat-bulat.</li>
+      <li>Balur bola-bola ayam ke dalam <strong>Tepung Roti Sakti</strong> hingga seluruh permukaan tertutup rata.</li>
+      <li>Goreng dalam minyak panas hingga berwarna kuning keemasan dan matang merata. Angkat dan tiriskan.</li>
+      <li>Tusuk dengan tusukan sate, lalu hias menyerupai anak ayam — gunakan jagung manis pipil untuk paruhnya dan irisan cabai merah besar untuk jenggernya.</li>
+      <li>Sajikan hangat selagi crispy!</li>
+    </ol>
+
+    <p>Menu ini bisa jadi camilan lucu untuk anak-anak, bekal sekolah, atau ide jualan kekinian yang menggoda! 🧀🍢</p>
+
+    <p class="text-gray-500 italic mt-6">Dibuat pada 28 Juli 2024</p>
+  </div>`,
+    featured_image: "/images/blog/sate-bola-ayam-mozzarella.png",
+    status: "published",
+    published_at: "2024-07-28T08:00:00.000000Z",
+    views: 0,
+    meta_title: "Sate Bola Ayam Mozzarella Crispy dengan Tepung Roti Sakti",
+    meta_description: "Resep Sate Bola Ayam Mozzarella Crispy — bola ayam renyah dengan keju mozzarella lumer, dilapisi Tepung Roti Sakti. Cocok untuk bekal, cemilan, atau ide jualan.",
+    meta_keywords: "sate bola ayam mozzarella, tepung roti sakti, resep bekal, ide jualan, cemilan renyah, bola ayam keju",
+    category_id: 6,
+    user_id: 2,
+    created_at: "2024-07-28T07:00:00.000000Z",
+    updated_at: "2024-07-28T08:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2024-07-28T07:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 6,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F97316",
+      icon: "Utensils"
+    },
+    user: {
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
+    }
+  },
+
+
+
 
   // {
   //   id: 20,
