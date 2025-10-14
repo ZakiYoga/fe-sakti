@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
@@ -32,16 +32,11 @@ import {
 } from 'lucide-react'
 import { getProductBySlug, getRelatedProducts } from '@/DataDummy/DataProduct'
 
-// Tambahkan interface untuk params
-interface ProductDetailPageProps {
-    params: {
-        slug: string
-    }
-}
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+export default function ProductDetailPage() {
     const router = useRouter()
-    const { slug } = params
+    const params = useParams()
+    const slug = params.slug as string
 
     const product = getProductBySlug(slug)
     const [selectedImage, setSelectedImage] = useState(0)
