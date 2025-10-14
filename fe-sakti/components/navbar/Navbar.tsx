@@ -20,7 +20,7 @@ import {
 const defaultNavItems: NavItem[] = [
     { id: '1', label: 'Homepage', href: '/', isActive: true },
     { id: '2', label: 'Tentang Kami', href: '/about', isActive: false },
-    { id: '3', label: 'Produk', href: '/product', isActive: false },
+    { id: '3', label: 'Produk', href: '/products', isActive: false },
     { id: '4', label: 'Blog', href: '/blog', isActive: false },
     { id: '5', label: 'Kontak', href: '/contact', isActive: false },
 ];

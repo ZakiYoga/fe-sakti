@@ -70,7 +70,7 @@ const NewsletterModal = ({
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       // Here you would make the actual API call
       // await newsletterApi.subscribe({ email, name });

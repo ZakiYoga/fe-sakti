@@ -399,7 +399,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
                     className="text-center my-6 sm:my-8 sm:mb-0"
                 >
                     <motion.div>
-                        <Link href="/product" className="w-fit">
+                        <Link href="/products" className="w-fit">
                             <Button
                                 variant="press"
                                 className="w-fit text-sm sm:text-base active:bg-orange-500 active:border-orange-50 active:text-orange-100 bg-orange-50 border-orange-600 text-orange-500 font-poppins font-normal"

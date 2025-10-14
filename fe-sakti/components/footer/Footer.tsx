@@ -15,7 +15,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = () => {
   const quickLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Products', href: '/product' },
+    { name: 'Products', href: '/products' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
     // { name: 'Career', href: '/career' },
