@@ -20,15 +20,9 @@ import {
     ArrowLeft,
     CheckCircle,
     Package,
-    Shield,
-    Clock,
     ChevronDown,
-    Award,
     Info,
     Layers,
-    Palette,
-    Coffee,
-    Wind
 } from 'lucide-react'
 import { getProductBySlug, getRelatedProducts } from '@/DataDummy/DataProduct'
 

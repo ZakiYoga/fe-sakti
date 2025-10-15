@@ -1,36 +1,44 @@
-import { MetadataRoute } from 'next';
-import { defaultSEO } from '@/config/seo';
-import { sampleProducts as products } from '@/DataDummy';
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  function joinUrl(...parts: string[]) {
-    return parts
-      .map((part) => part.replace(/^\/+|\/+$/g, '')) // hapus leading & trailing slash
-      .filter(Boolean)
-      .join('/');
-  }
+import { MetadataRoute } from 'next'
+import { defaultSEO } from '@/config/seo'
 
-  const baseUrl = defaultSEO.openGraph?.url ?? "https://www.saktipangan.co.id";
+// Gunakan alias agar jelas sumber datanya
+import { sampleProducts as products } from '@/DataDummy'
+import { generateDummyBlogs as getBlogs } from '@/lib/DataBlog'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = defaultSEO.openGraph?.url ?? 'https://www.saktipangan.co.id'
 
   // Static pages
-  const routes = [
+  const staticRoutes = [
     '',
     '/about',
-    '/product',
+    '/products',
     '/blog',
     '/contact',
     '/faq',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+  ].map((path) => ({
+    url: `${baseUrl}${path}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' as const : 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
+    changeFrequency: path === '' ? ('daily' as const) : ('weekly' as const),
+    priority: path === '' ? 1 : 0.8,
+  }))
 
-  // Dynamic product pages
-  const productRoutes = products.map((product) => ({
-    url: `${baseUrl}/${joinUrl('produk', product.href ?? "")}`,
+  // Dynamic product pages (pakai alias products)
+  const productRoutes = products.map((item) => ({
+    url: `${baseUrl}/products/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
     priority: 0.7,
-  }));
+  }))
 
-  return [...routes, ...productRoutes];
+  // Dynamic blog pages (pakai alias getBlogs)
+  const blogs = getBlogs()
+  const blogRoutes = blogs.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at ?? post.published_at ?? new Date()),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticRoutes, ...productRoutes, ...blogRoutes]
 }
