@@ -1731,7 +1731,177 @@ export const generateDummyBlogs = () => [
       email: "editor@saktipangan.co.id"
     }
   },
+  {
+    id: 23,
+    title: "Corndog ala SAKTI",
+    slug: "corndog-ala-sakti",
+    excerpt: "Corndog renyah dengan balutan Tepung Roti SAKTI yang kriuk di luar dan lembut di dalam. Cocok untuk ide jajanan kekinian, bekal, atau camilan sore bersama keluarga!",
+    content: `<div class="prose max-w-none">
+    <h2>Corndog ala SAKTI</h2>
+    <p><strong>Corndog ala SAKTI</strong> — jajanan kekinian yang mudah dibuat, lezat, dan pasti disukai semua usia! Dengan balutan <strong>Tepung Roti SAKTI</strong>, hasil gorengan jadi lebih renyah, berwarna keemasan, dan tidak berminyak.</p>
 
+    <h3>Kenapa Pakai Tepung Roti SAKTI?</h3>
+    <div class="bg-orange-50 p-4 rounded-lg">
+      <ul>
+        <li>✅ Terbuat dari roti pilihan berkualitas tinggi</li>
+        <li>✅ Tekstur lebih kriuk dan renyah</li>
+        <li>✅ Warna keemasan alami saat digoreng</li>
+        <li>✅ Daya serap minyak rendah, hasil gorengan tidak berminyak</li>
+      </ul>
+    </div>
+
+    <p>Dengan <strong>Tepung Roti SAKTI</strong>, corndog jadi cantik, renyah, dan tetap gurih meski sudah dingin. Sangat cocok untuk ide jualan, bekal anak, atau camilan di rumah!</p>
+
+    <h3>✨ Resep Corndog ala SAKTI ✨</h3>
+
+    <h4>Bahan-bahan:</h4>
+    <ul>
+      <li>4 buah sosis ayam</li>
+      <li>4 buah sumpit bambu</li>
+      <li>200 gr <strong>Tepung Roti SAKTI</strong></li>
+      <li>800 ml minyak goreng</li>
+    </ul>
+
+    <h4>Bahan Adonan:</h4>
+    <ul>
+      <li>200 gr tepung terigu</li>
+      <li>1 bungkus bumbu masak</li>
+      <li>1 sdt ragi instan</li>
+      <li>1 sdm gula pasir</li>
+      <li>170 ml air hangat</li>
+      <li>1 bungkus mayones (100 gr)</li>
+    </ul>
+
+    <h4>Cara Membuat:</h4>
+    <ol>
+      <li>Campurkan air hangat, ragi, dan gula. Aduk hingga rata.</li>
+      <li>Masukkan tepung terigu dan bumbu masak, aduk hingga adonan halus dan tercampur rata.</li>
+      <li>Tutup rapat adonan dan diamkan selama ±35 menit hingga mengembang.</li>
+      <li>Tusuk sosis dengan sumpit bambu, lalu lilitkan sosis ke dalam adonan hingga tertutup rata.</li>
+      <li>Gulingkan ke dalam <strong>Tepung Roti SAKTI</strong> hingga terbalut sempurna.</li>
+      <li>Goreng dalam minyak panas hingga berwarna kuning keemasan.</li>
+      <li>Angkat dan sajikan dengan cocolan mayones atau saus favoritmu!</li>
+    </ol>
+
+    <h4>💡 Tips SAKTI:</h4>
+    <ul>
+      <li>Pastikan minyak cukup panas agar corndog matang merata dan tidak menyerap terlalu banyak minyak.</li>
+      <li>Untuk hasil lebih renyah, tekan-tekan <strong>Tepung Roti SAKTI</strong> sedikit saat melapisi adonan.</li>
+      <li>Sajikan selagi hangat agar corndog tetap crispy dan lembut di dalam.</li>
+    </ul>
+
+    <p class="text-gray-500 italic mt-6">Dibuat pada 14 Oktober 2025</p>
+  </div>`,
+    featured_image: "/images/blog/corndog-ala-sakti.jpg",
+    status: "published",
+    published_at: "2025-10-14T08:00:00.000000Z",
+    views: 0,
+    meta_title: "Resep Corndog ala SAKTI dengan Tepung Roti Sakti",
+    meta_description: "Resep Corndog ala SAKTI — sosis renyah berbalut Tepung Roti SAKTI yang kriuk dan berwarna keemasan. Cocok untuk ide jualan, bekal, atau camilan keluarga.",
+    meta_keywords: "corndog, tepung roti sakti, resep jajanan, ide jualan, camilan renyah, resep sosis goreng",
+    category_id: 6,
+    user_id: 2,
+    created_at: "2025-10-14T07:00:00.000000Z",
+    updated_at: "2025-10-14T08:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-10-14T07:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 6,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F97316",
+      icon: "Utensils"
+    },
+    user: {
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
+    }
+  },
+  {
+    id: 24,
+    title: "Kroket Kangkung ala SAKTI",
+    slug: "kroket-kangkung-ala-sakti",
+    excerpt: "Kroket dengan isian kangkung dan ayam cincang yang gurih dan lezat. Balutan Tepung Roti SAKTI membuat teksturnya renyah di luar dan lembut di dalam — cocok untuk ide camilan sehat atau lauk praktis!",
+    content: `<div class="prose max-w-none">
+    <h2>Kroket Kangkung ala SAKTI</h2>
+    <p><strong>Kroket Kangkung ala SAKTI</strong> menghadirkan kombinasi sayur kangkung, ayam cincang, dan kentang yang lembut di dalam, dibalut dengan <strong>Tepung Roti SAKTI</strong> yang menjadikannya renyah dan keemasan sempurna!</p>
+
+    <h3>Kenapa Pakai Tepung Roti SAKTI?</h3>
+    <div class="bg-orange-50 p-4 rounded-lg">
+      <ul>
+        <li>✅ Terbuat dari roti pilihan berkualitas premium</li>
+        <li>✅ Warna gorengan lebih keemasan dan menarik</li>
+        <li>✅ Tekstur renyah tahan lama</li>
+        <li>✅ Daya serap minyak rendah — hasil gorengan tidak berminyak</li>
+      </ul>
+    </div>
+
+    <p>Dengan <strong>Tepung Roti SAKTI</strong>, kroket tampil cantik, terasa ringan, dan tetap crispy meski sudah dingin!</p>
+
+    <h3>✨ Resep Kroket Kangkung ala SAKTI ✨</h3>
+
+    <h4>Bahan-bahan:</h4>
+    <ul>
+      <li>300 gr kentang kukus, tumbuk halus</li>
+      <li>100 gr kangkung, iris kasar</li>
+      <li>20 gr wortel, potong dadu kecil</li>
+      <li>50 gr ayam cincang</li>
+      <li>3 butir telur ayam (2 untuk adonan, 1 untuk pelapis)</li>
+      <li>3/4 bungkus penyedap kaldu ayam</li>
+      <li>100 gr tepung terigu</li>
+      <li>200 gr <strong>Tepung Roti SAKTI</strong></li>
+      <li>500 ml minyak goreng</li>
+    </ul>
+
+    <h4>Cara Membuat:</h4>
+    <ol>
+      <li>Iris kangkung dan potong wortel bentuk dadu kecil, sisihkan.</li>
+      <li>Panaskan 2 sdm minyak, tumis wortel, ayam cincang, dan kangkung hingga layu dan ayam matang. Angkat lalu sisihkan.</li>
+      <li>Dalam wadah, campurkan tumisan sayur, kentang tumbuk, 2 butir telur, dan penyedap kaldu ayam. Aduk rata hingga adonan tercampur baik.</li>
+      <li>Bagi adonan menjadi 12 bagian dan bentuk lonjong seperti kroket.</li>
+      <li>Gulingkan kroket ke dalam tepung terigu, celupkan ke sisa 1 butir telur kocok, lalu balurkan dengan <strong>Tepung Roti SAKTI</strong> hingga terlapisi rata.</li>
+      <li>Panaskan minyak goreng, goreng kroket hingga matang dan berwarna kuning keemasan.</li>
+      <li>Angkat dan sajikan selagi hangat.</li>
+    </ol>
+
+    <h4>💡 Tips SAKTI:</h4>
+    <ul>
+      <li>Gunakan api sedang agar kroket matang merata dan tidak mudah pecah.</li>
+      <li>Diamkan kroket berbalut tepung roti sekitar 10 menit sebelum digoreng untuk hasil yang lebih renyah.</li>
+      <li>Nikmati dengan saus sambal, mayones, atau saus tomat sesuai selera.</li>
+    </ul>
+
+    <p class="text-gray-500 italic mt-6">Dibuat pada 14 Oktober 2025</p>
+  </div>`,
+    featured_image: "/images/blog/kroket-kangkung-ala-sakti.png",
+    status: "published",
+    published_at: "2025-10-14T09:00:00.000000Z",
+    views: 0,
+    meta_title: "Resep Kroket Kangkung ala SAKTI yang Gurih dan Renyah",
+    meta_description: "Resep Kroket Kangkung ala SAKTI — kroket isi ayam dan kangkung dengan balutan Tepung Roti SAKTI yang renyah di luar, lembut di dalam. Cocok untuk camilan sehat atau lauk praktis.",
+    meta_keywords: "kroket kangkung, tepung roti sakti, resep camilan sehat, ide jualan, resep kroket ayam, gorengan renyah",
+    category_id: 6,
+    user_id: 2,
+    created_at: "2025-10-14T08:00:00.000000Z",
+    updated_at: "2025-10-14T09:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-10-14T08:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 6,
+      name: "Resep Sakti",
+      slug: "resep-sakti",
+      color: "#F97316",
+      icon: "Utensils"
+    },
+    user: {
+      id: 2,
+      name: "Tim Editor Sakti",
+      email: "editor@saktipangan.co.id"
+    }
+  },
 
 
 
