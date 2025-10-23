@@ -2,7 +2,7 @@
 import { JSX, useState, useRef, useMemo } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
-import { blogApi, extractApiData } from '../../lib/api';
+import { blogApi, extractApiData } from '@/lib/api/api';
 import useSWR from 'swr';
 import { Blog, BlogParams, Category, PaginatedResponse } from '@/types/blog.types';
 import Image from 'next/image';

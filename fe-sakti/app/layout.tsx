@@ -9,6 +9,9 @@ import { companyInfo } from "@/config/company";
 import { ThemeProvider } from '@/lib/ThemeProvider'
 import 'leaflet/dist/leaflet.css'
 import { defaultSEO } from "@/config/seo";
+import { NProgressOptions } from "nprogress";
+import PageLoader from "@/components/Loading";
+import AppShell from "@/components/AppShell";
 
 const ephesis = Ephesis({
   weight: '400',
@@ -54,6 +57,11 @@ export const metadata: Metadata = {
     "tepung roti",
     "tepung panir",
     "breadcrumb",
+    "tepung roti panko",
+    "tepung roti produksi Indonesia",
+    "pabrik tepung roti",
+    "produsen tepung roti Indonesia",
+    "PT Sakti Pangan Perkasa tepung roti",
     "risol",
     "renyah",
     "industri pangan Indonesia",
@@ -111,11 +119,10 @@ export default function RootLayout({
     <html lang="id" suppressHydrationWarning>
       <body className={`${bebasNeue.variable} ${ephesis.variable} ${poppins.variable} bg-white text-gray-900 antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
+          <PageLoader />
+          {/* <Navbar /> */}
+          <AppShell>{children}</AppShell>
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>

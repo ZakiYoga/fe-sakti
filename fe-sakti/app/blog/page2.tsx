@@ -22,7 +22,7 @@ import {
 } from 'lucide-react'
 
 import useSWR from 'swr'
-import { blogApi } from '../../lib/api';
+import { blogApi } from '../../lib/api/api';
 
 interface BlogPost {
   id: number

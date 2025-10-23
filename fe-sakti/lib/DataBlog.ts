@@ -1875,7 +1875,7 @@ export const generateDummyBlogs = () => [
 
     <p class="text-gray-500 italic mt-6">Dibuat pada 14 Oktober 2025</p>
   </div>`,
-    featured_image: "/images/blog/kroket-kangkung-ala-sakti.png",
+    featured_image: "/images/blog/kroket-kangkung-ala-sakti.jpg",
     status: "published",
     published_at: "2025-10-14T09:00:00.000000Z",
     views: 0,

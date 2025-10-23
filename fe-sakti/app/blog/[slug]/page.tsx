@@ -4,7 +4,7 @@ import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { blogApi, extractApiData, handleApiError } from '@/lib/api';
+import { blogApi, extractApiData, handleApiError } from '@/lib/api/api';
 import { Blog } from '@/types/blog.types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

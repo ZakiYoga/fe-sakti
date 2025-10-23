@@ -21,7 +21,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
-import { blogApi, extractApiData } from '../../lib/api'
+import { blogApi, extractApiData } from '../../lib/api/api'
 import { Blog, BlogParams, PaginatedResponse } from '@/types/blog.types'
 
 // Types for component props
