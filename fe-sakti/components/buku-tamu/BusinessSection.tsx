@@ -143,8 +143,8 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
                 Pilih bidang usaha
               </option>
               {BIDANG_USAHA_OPTIONS.map((bidang) => (
-                <option key={bidang} value={bidang} className="bg-gray-900">
-                  {bidang}
+                <option key={bidang.value} value={bidang.value} className="bg-gray-900">
+                  {bidang.label}
                 </option>
               ))}
             </select>

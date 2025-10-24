@@ -20,7 +20,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Camera, Upload, X, Loader2, Check, User, Mail, MapPin, Briefcase, MessageSquare, Star, Package } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WebcamCapture from './WebcamCapture';
-import { bukuTamuService, BukuTamuData } from '@/lib/api/bukuTamuService';
+import { bukuTamuService } from '@/lib/api/bukuTamuService';
+import { BukuTamuCreateData, BukuTamuItem, BukuTamuResponse, BukuTamuUpdateData } from '@/types/guestBook.type';
+import { handleApiError } from '@/lib/api/api';
 
 const stepSchemas = [
     z.object({
@@ -125,7 +127,7 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
     const [fotoPreview, setFotoPreview] = useState<string | null>(defaultValues?.foto_url || null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    
+
     // State for multi-select and additional fields
     const [selectedProduk, setSelectedProduk] = useState<string[]>(
         defaultValues?.produk_minat_list || []
@@ -170,8 +172,8 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
 
     // Check if kategori needs "punya usaha" question
     const needsUsahaQuestion = ['individu', 'pelajar', 'lainnya'].includes(allFormData.kategori_usaha);
-    const shouldShowInstansiFields = 
-        !needsUsahaQuestion || 
+    const shouldShowInstansiFields =
+        !needsUsahaQuestion ||
         (needsUsahaQuestion && allFormData.punya_usaha === 'punya');
 
     const handleWebcamCapture = (blob: Blob) => {
@@ -205,7 +207,7 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
     };
 
     const toggleProduk = (produk: string) => {
-        setSelectedProduk(prev => 
+        setSelectedProduk(prev =>
             prev.includes(produk)
                 ? prev.filter(p => p !== produk)
                 : [...prev, produk]
@@ -219,34 +221,55 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
             } else {
                 setIsSubmitting(true);
 
-                // Prepare complete data matching backend structure
-                const formData: BukuTamuData = {
+                // Prepare complete data matching BukuTamuCreateData interface
+                const formData: BukuTamuCreateData = {
                     nama_lengkap: allFormData.nama_lengkap.trim(),
                     no_hp: allFormData.no_hp.trim(),
-                    email: allFormData.email?.trim() || '',
+                    email: allFormData.email?.trim() || undefined,
                     asal_kota: allFormData.asal_kota.trim(),
                     asal_negara: allFormData.asal_negara || 'Indonesia',
                     is_whatsapp: allFormData.is_whatsapp || false,
-                    kategori_usaha: allFormData.kategori_usaha,
-                    punya_usaha: allFormData.punya_usaha || '',
-                    instansi: allFormData.instansi?.trim() || '',
-                    jabatan: allFormData.jabatan?.trim() || '',
-                    bidang_usaha: allFormData.bidang_usaha || '',
-                    tujuan_kunjungan: allFormData.tujuan_kunjungan,
-                    produk_minat: selectedProduk, // Send as array
-                    rating: rating,
-                    kritik_saran: kritikSaran.trim(),
+                    kategori_usaha: allFormData.kategori_usaha || undefined,
+                    punya_usaha: allFormData.punya_usaha || undefined,
+                    instansi: allFormData.instansi?.trim() || undefined,
+                    jabatan: allFormData.jabatan?.trim() || undefined,
+                    bidang_usaha: allFormData.bidang_usaha || undefined,
+                    tujuan_kunjungan: allFormData.tujuan_kunjungan || undefined,
+                    produk_minat: selectedProduk.length ? selectedProduk.join(', ') : undefined,
+                    rating: rating || undefined,
+                    kritik_saran: kritikSaran.trim() || undefined,
                     follow_up: followUp,
                     persetujuan_foto: allFormData.persetujuan_foto || !!fotoFile,
-                    catatan: allFormData.catatan?.trim() || '',
+                    catatan: allFormData.catatan?.trim() || undefined,
                 };
 
                 console.log('📋 Submitting data:', formData);
                 console.log('📷 Photo:', fotoFile ? 'Yes' : 'No');
 
-                let result;
+                let result: BukuTamuItem;
                 if (defaultValues?.id) {
-                    result = await bukuTamuService.update(defaultValues.id, formData, fotoFile || undefined);
+                    // For update, convert to BukuTamuUpdateData
+                    const updateData: BukuTamuUpdateData = {
+                        nama_lengkap: allFormData.nama_lengkap.trim(),
+                        no_hp: allFormData.no_hp.trim(),
+                        email: allFormData.email?.trim() || undefined,
+                        asal_kota: allFormData.asal_kota.trim(),
+                        asal_negara: allFormData.asal_negara || 'Indonesia',
+                        is_whatsapp: allFormData.is_whatsapp || false,
+                        kategori_usaha: allFormData.kategori_usaha || undefined,
+                        punya_usaha: allFormData.punya_usaha || undefined,
+                        instansi: allFormData.instansi?.trim() || undefined,
+                        jabatan: allFormData.jabatan?.trim() || undefined,
+                        bidang_usaha: allFormData.bidang_usaha || undefined,
+                        tujuan_kunjungan: allFormData.tujuan_kunjungan || undefined,
+                        produk_minat: selectedProduk.length ? selectedProduk.join(', ') : undefined,
+                        rating: rating || undefined,
+                        kritik_saran: kritikSaran.trim() || undefined,
+                        follow_up: followUp,
+                        persetujuan_foto: allFormData.persetujuan_foto || !!fotoFile,
+                        catatan: allFormData.catatan?.trim() || undefined,
+                    };
+                    result = await bukuTamuService.update(defaultValues.id, updateData, fotoFile || undefined);
                 } else {
                     result = await bukuTamuService.create(formData, fotoFile || null);
                 }
@@ -274,11 +297,14 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
             }
         } catch (error) {
             console.error('❌ Error submit form:', error);
-            alert('Gagal menyimpan data: ' + (error instanceof Error ? error.message : 'Unknown error'));
+            const errorMessage = handleApiError(error);
+            alert('Gagal menyimpan data: ' + errorMessage);
         } finally {
             setIsSubmitting(false);
         }
     };
+
+
 
     const handleNext = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -320,11 +346,10 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => toggleProduk(produk)}
-                                className={`px-4 py-3 rounded-xl border-2 transition-all text-left ${
-                                    selectedProduk.includes(produk)
-                                        ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                                        : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
-                                }`}
+                                className={`px-4 py-3 rounded-xl border-2 transition-all text-left ${selectedProduk.includes(produk)
+                                    ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
+                                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                                    }`}
                             >
                                 {selectedProduk.includes(produk) && (
                                     <Check className="w-4 h-4 inline mr-2 text-indigo-600" />
@@ -366,11 +391,10 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                     className="transition-all"
                                 >
                                     <Star
-                                        className={`w-12 h-12 ${
-                                            star <= rating
-                                                ? 'fill-yellow-400 text-yellow-400'
-                                                : 'text-gray-300'
-                                        }`}
+                                        className={`w-12 h-12 ${star <= rating
+                                            ? 'fill-yellow-400 text-yellow-400'
+                                            : 'text-gray-300'
+                                            }`}
                                     />
                                 </motion.button>
                             ))}
@@ -403,7 +427,7 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                 className="mt-1"
                             />
                             <span className="text-sm text-gray-700">
-                                Saya bersedia dihubungi kembali oleh PT. Sakti Pangan Perkasa melalui email 
+                                Saya bersedia dihubungi kembali oleh PT. Sakti Pangan Perkasa melalui email
                                 atau WhatsApp terkait informasi produk atau kerjasama.
                             </span>
                         </label>
@@ -546,11 +570,10 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                         setValue('punya_usaha', '');
                                     }
                                 }}
-                                className={`px-4 py-3 rounded-xl border-2 transition-all ${
-                                    allFormData.kategori_usaha === opt.value
-                                        ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                                        : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
-                                }`}
+                                className={`px-4 py-3 rounded-xl border-2 transition-all ${allFormData.kategori_usaha === opt.value
+                                    ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
+                                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                                    }`}
                             >
                                 {opt.label}
                             </motion.button>
@@ -591,11 +614,10 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => setValue('punya_usaha', opt)}
-                                className={`px-4 py-3 rounded-xl border-2 transition-all ${
-                                    allFormData.punya_usaha === opt
-                                        ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                                        : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
-                                }`}
+                                className={`px-4 py-3 rounded-xl border-2 transition-all ${allFormData.punya_usaha === opt
+                                    ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
+                                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                                    }`}
                             >
                                 {opt === 'punya' ? 'Punya' : 'Tidak Punya'}
                             </motion.button>
@@ -678,11 +700,10 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                 whileHover={{ scale: 1.01 }}
                                 whileTap={{ scale: 0.99 }}
                                 onClick={() => setValue('tujuan_kunjungan', opt.value)}
-                                className={`px-4 py-3 rounded-xl border-2 transition-all text-left ${
-                                    allFormData.tujuan_kunjungan === opt.value
-                                        ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                                        : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
-                                }`}
+                                className={`px-4 py-3 rounded-xl border-2 transition-all text-left ${allFormData.tujuan_kunjungan === opt.value
+                                    ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
+                                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                                    }`}
                             >
                                 {opt.label}
                             </motion.button>
@@ -830,9 +851,8 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
                                                 disabled={!isClickable}
                                                 whileHover={isClickable ? { x: 5 } : {}}
                                                 whileTap={isClickable ? { scale: 0.98 } : {}}
-                                                className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${
-                                                    isCurrent ? 'bg-gray-100' : ''
-                                                } ${isClickable ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}
+                                                className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${isCurrent ? 'bg-gray-100' : ''
+                                                    } ${isClickable ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}
                                             >
                                                 <motion.div
                                                     animate={{
@@ -851,9 +871,8 @@ const BukuTamuForm = ({ onSuccess, defaultValues = null }: BukuTamuFormProps) =>
 
                                                 <div className="flex-1 text-left">
                                                     <div
-                                                        className={`font-medium text-sm ${
-                                                            isCurrent ? 'text-gray-800' : isCompleted ? 'text-green-600' : 'text-gray-400'
-                                                        }`}
+                                                        className={`font-medium text-sm ${isCurrent ? 'text-gray-800' : isCompleted ? 'text-green-600' : 'text-gray-400'
+                                                            }`}
                                                     >
                                                         {step.title}
                                                     </div>

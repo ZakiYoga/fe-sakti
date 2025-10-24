@@ -38,26 +38,7 @@ import {
   CheckCircle,
   Circle
 } from 'lucide-react';
-
-interface BukuTamuItem {
-  id: number;
-  nama_lengkap: string;
-  no_hp: string;
-  is_whatsapp: boolean;
-  email: string;
-  asal_kota: string;
-  asal_negara: string;
-  instansi: string;
-  jabatan: string;
-  kategori_usaha: string;
-  bidang_usaha: string;
-  tujuan_kunjungan: string;
-  produk_minat: string;
-  foto_url: string;
-  catatan: string;
-  tanggal_kunjungan: string;
-  follow_up: boolean;
-}
+import { BukuTamuItem } from '@/types/guestBook.type';
 
 const BukuTamuTable = () => {
   const [data, setData] = useState<BukuTamuItem[]>([]);

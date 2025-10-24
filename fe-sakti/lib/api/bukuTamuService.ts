@@ -1,42 +1,7 @@
+import { BukuTamuCreateData, BukuTamuItem, BukuTamuResponse, BukuTamuUpdateData } from "@/types/guestBook.type";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const API_URL = process.env.NEXT_PUBLIC_API_BUKUTAMU_URL || 'http://localhost:8000/api';
-
-export interface BukuTamuData {
-  // Section 1: Data Diri
-  nama_lengkap: string;
-  no_hp: string;
-  is_whatsapp?: boolean;
-  email?: string;
-  asal_kota: string;
-  asal_negara?: string;
-  persetujuan_foto?: boolean;
-
-  // Section 2: Instansi/Usaha
-  kategori_usaha?: string;
-  punya_usaha?: string;
-  instansi?: string;
-  jabatan?: string;
-  bidang_usaha?: string;
-
-  // Section 3: Tujuan Kunjungan
-  tujuan_kunjungan?: string;
-  produk_minat?: string | string[];
-
-  // Section 4: Rating & Feedback
-  rating?: number;
-  kritik_saran?: string;
-
-  // Metadata
-  catatan?: string;
-  follow_up?: boolean;
-}
-
-export interface BukuTamuResponse extends Omit<BukuTamuData, 'produk_minat'> {
-  id: number;
-  foto_url?: string;
-  tanggal_kunjungan: string;
-  produk_minat?: string; // Backend stores as string
-}
 
 export interface StatisticsResponse {
   total_pengunjung: number;
@@ -71,12 +36,7 @@ export const bukuTamuService = {
   /**
    * Get all data dengan filtering
    */
-  async getAll(params?: Record<string, any>): Promise<{
-    results: BukuTamuResponse[];
-    count: number;
-    next: string | null;
-    previous: string | null;
-  }> {
+  async getAll(params?: any): Promise<BukuTamuResponse> {
     const queryString = new URLSearchParams(params || {}).toString();
     const url = `${API_URL}/buku-tamu/?${queryString}`;
 
@@ -96,7 +56,7 @@ export const bukuTamuService = {
   /**
    * Get detail data by ID
    */
-  async getById(id: number): Promise<BukuTamuResponse> {
+  async getById(id: number): Promise<BukuTamuItem> {
     const response = await fetch(`${API_URL}/buku-tamu/${id}/`, {
       credentials: 'include',
       headers: {
@@ -113,36 +73,44 @@ export const bukuTamuService = {
   /**
    * Create data baru
    */
-  async create(data: any, foto: Blob | null) {
+  async create(data: BukuTamuCreateData, foto?: File | Blob | null): Promise<BukuTamuItem> {
     const formData = new FormData();
-
-    // FIXED: Send produk_minat as JSON string
-    if (Array.isArray(data.produk_minat) && data.produk_minat.length > 0) {
-      formData.append('produk_minat_list', JSON.stringify(data.produk_minat));
+    
+    // Handle produk_minat - extract it from data and don't include in processedData
+    const { produk_minat, ...otherData } = data as any;
+    
+    // Send produk_minat as JSON array
+    if (Array.isArray(produk_minat) && produk_minat.length > 0) {
+      formData.append('produk_minat_list', JSON.stringify(produk_minat));
+    } else if (typeof produk_minat === 'string' && produk_minat) {
+      // If it's a string (comma-separated), convert to array
+      const produkArray = produk_minat.split(',').map((p: string) => p.trim()).filter((p: string) => p);
+      if (produkArray.length > 0) {
+        formData.append('produk_minat_list', JSON.stringify(produkArray));
+      }
     }
 
-    // Add other fields (EXCLUDE produk_minat)
-    const { produk_minat, ...otherData } = data;
-
+    // Add all other fields (without produk_minat)
     Object.entries(otherData).forEach(([key, value]) => {
-      if (value !== null && value !== undefined && value !== '') {
+      if (value !== undefined && value !== null && value !== '') {
         formData.append(key, typeof value === 'boolean' ? String(value) : String(value));
       }
     });
 
-    // Add photo
+    // Add photo if exists
     if (foto) {
       formData.append('foto', foto, 'photo.jpg');
     }
 
     const response = await fetch(`${API_URL}/buku-tamu/`, {
       method: 'POST',
+      credentials: 'include',
       body: formData,
     });
 
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(JSON.stringify(error));
+      throw new Error(error.detail || error.non_field_errors?.[0] || 'Failed to create');
     }
 
     const result = await response.json();
@@ -152,13 +120,20 @@ export const bukuTamuService = {
   /**
    * Update data existing
    */
-  async update(id: number, data: Partial<BukuTamuData>, foto?: File | Blob): Promise<BukuTamuResponse> {
+  async update(id: number, data: BukuTamuUpdateData, foto?: File | Blob): Promise<BukuTamuItem> {
     const formData = new FormData();
 
-    // Convert produk_minat array to JSON string for backend
+    // Handle produk_minat array
     const processedData = { ...data };
-    if (Array.isArray(data.produk_minat)) {
-      formData.append('produk_minat_list', JSON.stringify(data.produk_minat));
+    const produkMinat = (data as any).produk_minat;
+    
+    if (Array.isArray(produkMinat)) {
+      formData.append('produk_minat_list', JSON.stringify(produkMinat));
+      delete (processedData as any).produk_minat;
+    } else if (typeof produkMinat === 'string' && produkMinat) {
+      // If it's a string (comma-separated), convert to array
+      const produkArray = produkMinat.split(',').map(p => p.trim()).filter(p => p);
+      formData.append('produk_minat_list', JSON.stringify(produkArray));
       delete (processedData as any).produk_minat;
     }
 
@@ -204,7 +179,7 @@ export const bukuTamuService = {
   },
 
   /**
-   * Get statistics - UPDATED with new fields
+   * Get statistics
    */
   async getStatistics(): Promise<StatisticsResponse> {
     const response = await fetch(`${API_URL}/buku-tamu/statistics/`, {
@@ -223,7 +198,7 @@ export const bukuTamuService = {
   /**
    * Toggle follow up status
    */
-  async toggleFollowUp(id: number): Promise<BukuTamuResponse> {
+  async toggleFollowUp(id: number): Promise<BukuTamuItem> {
     const response = await fetch(`${API_URL}/buku-tamu/${id}/toggle_follow_up/`, {
       method: 'POST',
       credentials: 'include',
@@ -241,7 +216,7 @@ export const bukuTamuService = {
   },
 
   /**
-   * Export summary - NEW
+   * Export summary
    */
   async exportSummary(): Promise<any> {
     const response = await fetch(`${API_URL}/buku-tamu/export_summary/`, {
