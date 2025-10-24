@@ -1,4 +1,3 @@
-// app/sial2025/buku-tamu/components/ProgressSidebar.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -8,13 +7,11 @@ import { ProgressSidebarProps } from '@/types/guestBook.type';
 const ProgressSidebar = ({ sections, currentSection }: ProgressSidebarProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -30 }}
+      initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
-      className="w-full lg:w-72 flex-shrink-0"
+      className="w-24 min-h-max lg:w-72 flex-shrink-0 overflow-y-auto custom-scrollbar"
     >
-      <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-2xl sticky top-4">
-        <h3 className="text-lg font-bold text-white mb-6">Progress</h3>
-
+      <div className="bg-black/10 backdrop-blur-md border border-r-0 border-white/20 rounded-2xl overflow-hidden p-6 shadow-2xl sticky top-4">
         <div className="space-y-4">
           {sections.map((section, idx) => {
             const Icon = section.icon;

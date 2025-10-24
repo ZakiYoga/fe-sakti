@@ -73,9 +73,9 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
 
       {/* Nama Lengkap */}
       <div>
-        <label className="block text-white font-medium mb-2">
+        <label className="block text-orange-400 font-medium mb-2">
           <User className="inline w-5 h-5 mr-2" />
-          Nama Lengkap <span className="text-orange-300">*</span>
+          Nama Lengkap <span className="text-red-600">*</span>
         </label>
         <input
           type="text"
@@ -90,7 +90,7 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       <div>
         <label className="block text-white font-medium mb-2">
           <Phone className="inline w-5 h-5 mr-2" />
-          Nomor HP <span className="text-orange-300">*</span>
+          Nomor HP <span className="text-red-600">*</span>
         </label>
         <input
           type="tel"
@@ -120,7 +120,7 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       <div>
         <label className="block text-white font-medium mb-2">
           <MapPin className="inline w-5 h-5 mr-2" />
-          Asal Kota <span className="text-orange-300">*</span>
+          Asal Kota <span className="text-red-600">*</span>
         </label>
         <input
           type="text"

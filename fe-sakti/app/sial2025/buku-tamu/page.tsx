@@ -281,7 +281,7 @@ const BukuTamuForm = () => {
         onReset={resetForm}
       />
 
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden">
+      <div className="min-h-[70vh] flex items-start justify-center relative overflow-hidden">
         {/* Decorative Background */}
         <motion.div
           className="absolute top-20 left-10 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"
@@ -294,18 +294,8 @@ const BukuTamuForm = () => {
           transition={{ duration: 10, repeat: Infinity }}
         />
 
-        <div className="max-w-6xl w-full mx-auto relative z-10">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-6"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Buku Tamu</h1>
-            <p className="text-white/80">PT. Sakti Pangan Perkasa</p>
-          </motion.div>
-
-          <div className="flex flex-col lg:flex-row gap-6 items-start">
+        <div className="max-w-6xl lg:min-w-6xl flex w-full h-full mx-auto relative z-10">
+          <div className="flex w-full h-full gap-6 items-start">
             {/* Progress Sidebar */}
             <ProgressSidebar
               sections={sections}
@@ -314,8 +304,10 @@ const BukuTamuForm = () => {
 
             {/* Main Form */}
             <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
               layout
-              className="flex-1 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden"
+              className="flex-1 bg-black/10 backdrop-blur-sm border border-t-0 border-l-0 border-white/20 rounded-3xl shadow-2xl overflow-hidden"
             >
               <div className="max-h-[70vh] overflow-y-auto p-6 md:p-10 custom-scrollbar">
                 <AnimatePresence mode="wait">
@@ -361,7 +353,7 @@ const BukuTamuForm = () => {
                     whileTap={{ scale: 0.98 }}
                     onClick={handleNext}
                     disabled={isSubmitting}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 px-6 rounded-full font-medium hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-gradient-to-br from-orange-500 to-amber-500 text-white py-3 px-6 rounded-full font-medium hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
