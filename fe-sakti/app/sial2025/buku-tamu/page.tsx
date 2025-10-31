@@ -26,9 +26,12 @@ const bukuTamuService = {
 
     const processedData = { ...data };
     if (Array.isArray(data.produk_minat)) {
-      formData.append('produk_minat_list', JSON.stringify(data.produk_minat));
+      data.produk_minat.forEach((item: string) => {
+        formData.append('produk_minat_list', item);
+      });
       delete processedData.produk_minat;
     }
+
 
     Object.entries(processedData).forEach(([key, value]) => {
       if (value !== null && value !== undefined && value !== '') {
@@ -133,7 +136,7 @@ const BukuTamuForm = () => {
           alert('Nama lengkap wajib diisi');
           return false;
         }
-        if (!formData.no_hp.trim() || formData.no_hp.length < 10) {
+        if (!formData.no_hp.trim() || formData.no_hp.length < 6) {
           alert('Nomor HP minimal 10 digit');
           return false;
         }

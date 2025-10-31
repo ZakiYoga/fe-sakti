@@ -35,7 +35,7 @@ const SuccessModal = ({ isOpen, userName, onReset }: SuccessModalProps) => {
             {/* Animated rings */}
             <motion.div
               animate={{
-                scale: [1, 1.2, 1],
+                scale: [1, 1.1, 1],
                 opacity: [0.3, 0.6, 0.3],
               }}
               transition={{
@@ -43,12 +43,12 @@ const SuccessModal = ({ isOpen, userName, onReset }: SuccessModalProps) => {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="absolute inset-0 rounded-3xl border-2 border-orange-400/50"
+              className="absolute -z-10 inset-0 rounded-3xl border-2 border-orange-400/50"
             />
             
             <motion.div
               animate={{
-                scale: [1, 1.4, 1],
+                scale: [1, 1.3, 1],
                 opacity: [0.2, 0.4, 0.2],
               }}
               transition={{
@@ -57,7 +57,7 @@ const SuccessModal = ({ isOpen, userName, onReset }: SuccessModalProps) => {
                 ease: 'easeInOut',
                 delay: 0.3,
               }}
-              className="absolute inset-0 rounded-3xl border-2 border-orange-300/30"
+              className="absolute -z-10 inset-0 rounded-3xl border-2 border-orange-300/30"
             />
 
             {/* Success Icon */}
