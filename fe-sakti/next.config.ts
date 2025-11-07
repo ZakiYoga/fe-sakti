@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    esmExternals: 'loose', // <-- allows importing ESM-only packages
+  },
+
   // React Strict Mode untuk development best practices
   reactStrictMode: true,
   

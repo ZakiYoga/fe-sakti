@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Target, Check, ShoppingBag } from 'lucide-react';
 import { FormSectionProps, TUJUAN_OPTIONS, PRODUK_OPTIONS } from '@/types/guestBook.type';
 
-const VisitPurposeSection = ({ formData, onChange }: FormSectionProps) => {
+const VisitPurposeSection = ({ formData, onChange, fieldRefs }: FormSectionProps) => {
   const toggleProduk = (produk: string) => {
     const currentProduk = formData.produk_minat || [];
     const newProduk = currentProduk.includes(produk)
@@ -21,10 +21,10 @@ const VisitPurposeSection = ({ formData, onChange }: FormSectionProps) => {
       className="space-y-6"
     >
       {/* Tujuan Kunjungan */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['tujuan_kunjungan'] = el; }}>
         <label className="block text-white font-medium mb-3">
           <Target className="inline w-5 h-5 mr-2" />
-          Tujuan Kunjungan <span className="text-orange-300">*</span>
+          Tujuan Kunjungan<span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 gap-3">
           {TUJUAN_OPTIONS.map((option) => (
@@ -58,11 +58,14 @@ const VisitPurposeSection = ({ formData, onChange }: FormSectionProps) => {
       </div>
 
       {/* Produk yang Diminati */}
-      <div className="pt-6 border-t border-white/20">
+      <div 
+        className="pt-6 border-t border-white/20"
+        ref={el => { if (fieldRefs?.current) fieldRefs.current['produk_minat'] = el; }}
+      >
         <label className="block text-white font-medium mb-3">
           <ShoppingBag className="inline w-5 h-5 mr-2" />
-          Produk yang Diminati{' '}
-          <span className="text-white/60 text-sm">(Pilih semua yang sesuai)</span>
+          Produk yang Diminati&nbsp;
+          <span className="text-white/60 text-sm">(Pilih satu atau lebih produk yang diminati)</span>
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {PRODUK_OPTIONS.map((produk) => (

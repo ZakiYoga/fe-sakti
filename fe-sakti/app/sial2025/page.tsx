@@ -9,7 +9,7 @@ export default function Sial2025() {
             {/* Glassy Card */}
             <div className="relative group max-w-md w-full z-10">
                 {/* Gradient border glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-white/40 via-white/50 to-white/40 rounded-3xl opacity-75 group-hover:opacity-100 transition duration-500 blur-xl animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-black/40 via-black/60 to-black/40 rounded-3xl opacity-75 group-hover:opacity-100 transition duration-500 blur-xl animate-pulse"></div>
 
                 {/* Glass container */}
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/30 overflow-hidden shadow-2xl">
@@ -22,21 +22,21 @@ export default function Sial2025() {
                     {/* Content */}
                     <div className="relative z-20 flex flex-col items-center gap-6">
                         {/* QR Code */}
-                        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition">
+                        <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 hover:border-black/40 transition">
                             <img
-                                src="/images/frame.png"
+                                src="/images/QR_guestbook.png"
                                 alt="QR Code Buku Tamu"
                                 className="w-48 h-48 object-contain"
                             />
                         </div>
 
                         {/* Scan Text */}
-                        <div className="text-center">
-                            <p className="font-medium uppercase font-bebas-neue tracking-widest text-xl lg:text-3xl">
+                        <div className="text-center mt-4">
+                            <p className="font-medium text-white uppercase font-bebas-neue tracking-widest text-xl lg:text-3xl">
                                 Scan Me
                             </p>
-                            <p className="text-base lg:text-lg mt-1">
-                                Scan QR untuk isi buku tamu 📱.
+                            <p className="text-base text-gray-200 lg:text-lg mt-1">
+                                Scan QR untuk isi buku tamu
                             </p>
                         </div>
                     </div>

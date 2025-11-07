@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Building, Briefcase, Check } from 'lucide-react';
 import { FormSectionProps, KATEGORI_OPTIONS, BIDANG_USAHA_OPTIONS } from '@/types/guestBook.type';
 
-const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
+const BusinessSection = ({ formData, onChange, fieldRefs }: FormSectionProps) => {
   const needsUsahaQuestion = ['individu', 'pelajar', 'lainnya', ''].includes(formData.kategori_usaha);
   const shouldShowInstansiFields =
     !needsUsahaQuestion || (needsUsahaQuestion && formData.punya_usaha === 'punya');
@@ -17,9 +17,9 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
       className="space-y-6"
     >
       {/* Kategori Kunjungan */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['kategori_usaha'] = el; }}>
         <label className="block text-white font-medium mb-3">
-          Anda berkunjung sebagai? <span className="text-orange-300">*</span>
+          Anda berkunjung sebagai?<span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
           {KATEGORI_OPTIONS.map((option) => (
@@ -55,9 +55,10 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
+          ref={el => { if (fieldRefs?.current) fieldRefs.current['punya_usaha'] = el; }}
         >
           <label className="block text-white font-medium mb-3">
-            Apakah Anda punya usaha/bisnis? <span className="text-orange-300">*</span>
+            Apakah Anda punya usaha/bisnis?<span className="text-red-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
             {[
@@ -86,18 +87,18 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
         </motion.div>
       )}
 
-      {/* Fields Instansi */}
+      {/* Fields Instansi - NOW WITH REQUIRED ASTERISKS */}
       {shouldShowInstansiFields && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="space-y-6 mt-6 pt-6 border-t border-white/20"
         >
-          {/* Instansi/Perusahaan */}
-          <div>
+          {/* Instansi/Perusahaan - NOW REQUIRED */}
+          <div ref={el => { if (fieldRefs?.current) fieldRefs.current['instansi'] = el; }}>
             <label className="block text-white font-medium mb-2">
               <Building className="inline w-5 h-5 mr-2" />
-              Asal Instansi/Perusahaan
+              Asal Instansi/Perusahaan<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -105,14 +106,15 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
               onChange={(e) => onChange('instansi', e.target.value)}
               className="w-full px-5 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-orange-400/60 focus:bg-white/15 transition-all shadow-inner"
               placeholder="Nama instansi/perusahaan"
+              required
             />
           </div>
 
-          {/* Jabatan */}
-          <div>
+          {/* Jabatan - NOW REQUIRED */}
+          <div ref={el => { if (fieldRefs?.current) fieldRefs.current['jabatan'] = el; }}>
             <label className="block text-white font-medium mb-2">
               <Briefcase className="inline w-5 h-5 mr-2" />
-              Jabatan
+              Jabatan<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -120,13 +122,14 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
               onChange={(e) => onChange('jabatan', e.target.value)}
               className="w-full px-5 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-orange-400/60 focus:bg-white/15 transition-all shadow-inner"
               placeholder="Jabatan Anda"
+              required
             />
           </div>
 
-          {/* Bidang Usaha */}
-          <div>
+          {/* Bidang Usaha - NOW REQUIRED */}
+          <div ref={el => { if (fieldRefs?.current) fieldRefs.current['bidang_usaha'] = el; }}>
             <label className="block text-white font-medium mb-2">
-              Bidang Usaha
+              Bidang Usaha<span className="text-red-500">*</span>
             </label>
             <select
               value={formData.bidang_usaha}
@@ -138,6 +141,7 @@ const BusinessSection = ({ formData, onChange }: FormSectionProps) => {
                 backgroundPosition: 'right 1rem center',
                 backgroundSize: '1.5rem',
               }}
+              required
             >
               <option value="" className="bg-gray-900">
                 Pilih bidang usaha

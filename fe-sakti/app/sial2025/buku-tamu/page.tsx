@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   User, Building, Target, Star, Check, ChevronRight, ChevronLeft, Loader2
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 import ProgressSidebar from '@/components/buku-tamu/ProgressSidebar';
 import SuccessModal from '@/components/buku-tamu/SuccessModal';
@@ -31,7 +30,6 @@ const bukuTamuService = {
       });
       delete processedData.produk_minat;
     }
-
 
     Object.entries(processedData).forEach(([key, value]) => {
       if (value !== null && value !== undefined && value !== '') {
@@ -84,6 +82,8 @@ const BukuTamuForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [fotoBlob, setFotoBlob] = useState<Blob | null>(null);
+  const formContainerRef = useRef<HTMLDivElement>(null);
+  const fieldRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   const needsUsahaQuestion = ['individu', 'pelajar', 'lainnya', ''].includes(formData.kategori_usaha);
   const shouldShowInstansiFields =
@@ -119,14 +119,49 @@ const BukuTamuForm = () => {
     },
   ];
 
+  // Auto-scroll to next field
+  const scrollToNextField = useCallback((currentField: string) => {
+    setTimeout(() => {
+      const fieldOrder: { [key: number]: string[] } = {
+        0: ['persetujuan_foto', 'foto', 'nama_lengkap', 'no_hp', 'email', 'asal_kota', 'asal_negara'],
+        1: ['kategori_usaha', 'punya_usaha', 'instansi', 'jabatan', 'bidang_usaha'],
+        2: ['tujuan_kunjungan', 'produk_minat'],
+        3: ['rating', 'kritik_saran', 'follow_up'],
+      };
+
+      const currentFields = fieldOrder[currentSection];
+      if (!currentFields) return;
+
+      const currentIndex = currentFields.indexOf(currentField);
+      
+      if (currentIndex >= 0 && currentIndex < currentFields.length - 1) {
+        const nextField = currentFields[currentIndex + 1];
+        const nextElement = fieldRefs.current[nextField];
+        
+        if (nextElement) {
+          nextElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Focus if it's an input element
+          if (nextElement instanceof HTMLInputElement || 
+              nextElement instanceof HTMLTextAreaElement || 
+              nextElement instanceof HTMLSelectElement) {
+            setTimeout(() => nextElement.focus(), 300);
+          }
+        }
+      }
+    }, 150);
+  }, [currentSection]);
+
   const handleChange = (field: keyof FormDataType, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    scrollToNextField(field);
   };
 
   const handlePhotoCapture = (photoBlob: Blob) => {
     setFotoBlob(photoBlob);
     const previewUrl = URL.createObjectURL(photoBlob);
     setFormData(prev => ({ ...prev, foto: previewUrl }));
+    scrollToNextField('foto');
   };
 
   const validateSection = () => {
@@ -136,7 +171,7 @@ const BukuTamuForm = () => {
           alert('Nama lengkap wajib diisi');
           return false;
         }
-        if (!formData.no_hp.trim() || formData.no_hp.length < 6) {
+        if (!formData.no_hp.trim() || formData.no_hp.length < 10) {
           alert('Nomor HP minimal 10 digit');
           return false;
         }
@@ -154,6 +189,22 @@ const BukuTamuForm = () => {
           alert('Jawab pertanyaan kepemilikan usaha');
           return false;
         }
+        
+        // NEW: Validate required fields when shouldShowInstansiFields is true
+        if (shouldShowInstansiFields) {
+          if (!formData.instansi.trim()) {
+            alert('Asal Instansi/Perusahaan wajib diisi');
+            return false;
+          }
+          if (!formData.jabatan.trim()) {
+            alert('Jabatan wajib diisi');
+            return false;
+          }
+          if (!formData.bidang_usaha) {
+            alert('Bidang Usaha wajib dipilih');
+            return false;
+          }
+        }
         break;
       case 2:
         if (!formData.tujuan_kunjungan) {
@@ -166,6 +217,10 @@ const BukuTamuForm = () => {
           alert('Berikan rating untuk booth kami');
           return false;
         }
+        if (formData.rating >= 1 && formData.rating <= 2 && !formData.kritik_saran.trim()) {
+          alert('Masukan Anda sangat berharga. Mohon lengkapi kritik dan saran agar kami dapat meningkatkan layanan dengan lebih baik.');
+          return false;
+        }
         break;
     }
     return true;
@@ -174,11 +229,24 @@ const BukuTamuForm = () => {
   const handleNext = () => {
     if (!validateSection()) return;
 
+    // Scroll to top when moving to next section
+    if (formContainerRef.current) {
+      formContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     if (currentSection < sections.length - 1) {
       setCurrentSection(currentSection + 1);
     } else {
       handleSubmit();
     }
+  };
+
+  const handleBack = () => {
+    // Scroll to top when going back
+    if (formContainerRef.current) {
+      formContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setCurrentSection(currentSection - 1);
   };
 
   const handleSubmit = async () => {
@@ -237,6 +305,10 @@ const BukuTamuForm = () => {
       persetujuan_foto: false,
     });
     setFotoBlob(null);
+    // Scroll to top on reset
+    if (formContainerRef.current) {
+      formContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const renderSection = () => {
@@ -248,6 +320,7 @@ const BukuTamuForm = () => {
             onChange={handleChange}
             onPhotoCapture={handlePhotoCapture}
             fotoBlob={fotoBlob}
+            fieldRefs={fieldRefs}
           />
         );
       case 1:
@@ -255,6 +328,7 @@ const BukuTamuForm = () => {
           <BusinessSection
             formData={formData}
             onChange={handleChange}
+            fieldRefs={fieldRefs}
           />
         );
       case 2:
@@ -262,6 +336,7 @@ const BukuTamuForm = () => {
           <VisitPurposeSection
             formData={formData}
             onChange={handleChange}
+            fieldRefs={fieldRefs}
           />
         );
       case 3:
@@ -269,6 +344,7 @@ const BukuTamuForm = () => {
           <FeedbackSection
             formData={formData}
             onChange={handleChange}
+            fieldRefs={fieldRefs}
           />
         );
       default:
@@ -291,14 +367,15 @@ const BukuTamuForm = () => {
           animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
+
         <motion.div
           className="absolute bottom-20 right-10 w-60 h-60 bg-indigo-400/20 rounded-full blur-3xl"
           animate={{ y: [0, 20, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 10, repeat: Infinity }}
         />
 
-        <div className="max-w-6xl lg:min-w-6xl flex w-full h-full mx-auto relative z-10">
-          <div className="flex w-full h-full gap-6 items-start">
+        <div className="max-w-6xl lg:min-w-6xl w-full h-full mx-auto relative z-10">
+          <div className="flex flex-col sm:flex-row w-full h-full gap-6 items-start">
             {/* Progress Sidebar */}
             <ProgressSidebar
               sections={sections}
@@ -310,9 +387,12 @@ const BukuTamuForm = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               layout
-              className="flex-1 bg-black/10 backdrop-blur-sm border border-t-0 border-l-0 border-white/20 rounded-3xl shadow-2xl overflow-hidden"
+              className="flex-1 bg-black/20 backdrop-blur-xl border border-t-0 border-l-0 border-white/20 rounded-3xl shadow-2xl overflow-hidden"
             >
-              <div className="max-h-[70vh] overflow-y-auto p-6 md:p-10 custom-scrollbar">
+              <div 
+                ref={formContainerRef}
+                className="max-h-[70vh] overflow-y-auto p-6 md:p-10 custom-scrollbar"
+              >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSection}
@@ -343,7 +423,7 @@ const BukuTamuForm = () => {
                       type="button"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      onClick={() => setCurrentSection(currentSection - 1)}
+                      onClick={handleBack}
                       className="flex-1 bg-white/20 backdrop-blur-md text-white py-3 px-6 rounded-full font-medium hover:bg-white/30 transition-all border border-white/20"
                     >
                       <ChevronLeft className="w-5 h-5 inline mr-2" />

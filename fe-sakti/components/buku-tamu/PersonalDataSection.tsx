@@ -6,8 +6,15 @@ import { User, Phone, Mail, MapPin, Globe, Camera, X } from 'lucide-react';
 import { FormSectionProps } from '@/types/guestBook.type';
 import WebcamCapture from '@/components/buku-tamu/WebcamCapture';
 
-const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: FormSectionProps) => {
+const PersonalDataSection = ({ 
+  formData, 
+  onChange, 
+  onPhotoCapture, 
+  fotoBlob,
+  fieldRefs 
+}: FormSectionProps) => {
   const [showWebcam, setShowWebcam] = useState(false);
+  const [showPhotoField, setShowPhotoField] = useState(false);
 
   const handlePhotoCapture = (photoBlob: Blob) => {
     if (onPhotoCapture) {
@@ -29,53 +36,73 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       exit={{ opacity: 0, y: -20 }}
       className="space-y-6"
     >
-      {/* Photo Section */}
-      <div>
-        <label className="block text-white font-medium mb-3 text-center">
-          <Camera className="inline w-5 h-5 mr-2" />
-          Foto <span className="text-white/60 text-sm">(Opsional)</span>
+      {/* Persetujuan Foto */}
+      <div 
+        className="flex items-center"
+        ref={el => { if (fieldRefs?.current) fieldRefs.current['persetujuan_foto'] = el; }}
+      >
+        <input
+          type="checkbox"
+          id="consentCheckbox"
+          checked={showPhotoField}
+          onChange={(e) => {
+            setShowPhotoField(e.target.checked);
+            onChange('persetujuan_foto', e.target.checked);
+          }}
+          className="w-5 h-5 rounded-lg border border-white/20 bg-white/10 cursor-pointer"
+        />
+        <label htmlFor="consentCheckbox" className="ml-2 text-white select-none cursor-pointer">
+          Saya bersedia mengunggah foto untuk keperluan dokumentasi acara.
         </label>
-        
-        {formData.foto && !showWebcam ? (
-          <div className="relative w-48 h-48 mx-auto group">
-            <img
-              src={formData.foto}
-              alt="Preview"
-              className="w-full h-full object-cover rounded-2xl border-4 border-white/20 shadow-lg"
-            />
-            <button
-              type="button"
-              onClick={handleRemovePhoto}
-              className="absolute -top-2 -right-2 bg-gradient-to-br from-red-500 to-red-600 text-white rounded-full p-2 hover:from-red-600 hover:to-red-700 shadow-lg transform hover:scale-110 transition-all"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-2xl transition-all" />
-          </div>
-        ) : showWebcam ? (
-          <WebcamCapture
-            onCapture={handlePhotoCapture}
-            onCancel={() => setShowWebcam(false)}
-          />
-        ) : (
-          <div className="flex justify-center">
-            <button
-              type="button"
-              onClick={() => setShowWebcam(true)}
-              className="bg-white/15 backdrop-blur-md text-white px-8 py-4 rounded-2xl hover:bg-white/25 transition-all border border-white/20 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              <Camera className="w-6 h-6 inline mr-2" />
-              Ambil/Upload Foto
-            </button>
-          </div>
-        )}
       </div>
 
+      {/* Photo Section */}
+      {showPhotoField && (
+        <div ref={el => { if (fieldRefs?.current) fieldRefs.current['foto'] = el; }}>
+          <label className="block text-white font-medium mb-3 text-center">
+            <Camera className="inline w-5 h-5 mr-2" />
+            Foto <span className="text-white/60 text-sm">(Opsional)</span>
+          </label>
+
+          {formData.foto && !showWebcam ? (
+            <div className="relative w-48 h-48 mx-auto group">
+              <img
+                src={formData.foto}
+                alt="Preview"
+                className="w-full h-full object-cover rounded-full border-4 border-white/20 shadow-lg"
+              />
+              <button
+                onClick={handleRemovePhoto}
+                className="absolute top-2 right-2 z-10 px-2 py-2 bg-gradient-to-br from-red-500 to-red-600 text-white rounded-full hover:from-red-600 hover:to-red-700 shadow-lg transform hover:scale-110 transition-all"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          ) : showWebcam ? (
+            <WebcamCapture
+              onCapture={handlePhotoCapture}
+              onCancel={() => setShowWebcam(false)}
+            />
+          ) : (
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowWebcam(true)}
+                className="bg-white/15 backdrop-blur-md text-white px-8 py-4 rounded-2xl hover:bg-white/25 transition-all border border-white/20 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <Camera className="w-6 h-6 inline mr-2" />
+                Ambil/Upload Foto
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Nama Lengkap */}
-      <div>
-        <label className="block text-orange-400 font-medium mb-2">
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['nama_lengkap'] = el; }}>
+        <label className="block text-white font-medium mb-2">
           <User className="inline w-5 h-5 mr-2" />
-          Nama Lengkap <span className="text-red-600">*</span>
+          Nama Lengkap<span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -87,10 +114,10 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       </div>
 
       {/* Nomor HP */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['no_hp'] = el; }}>
         <label className="block text-white font-medium mb-2">
           <Phone className="inline w-5 h-5 mr-2" />
-          Nomor HP <span className="text-red-600">*</span>
+          Nomor HP<span className="text-red-500">*</span>
         </label>
         <input
           type="tel"
@@ -102,10 +129,10 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       </div>
 
       {/* Email */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['email'] = el; }}>
         <label className="block text-white font-medium mb-2">
           <Mail className="inline w-5 h-5 mr-2" />
-          Email <span className="text-white/60 text-sm">(Opsional)</span>
+          Email<span className="text-white/60 text-sm">(Opsional)</span>
         </label>
         <input
           type="email"
@@ -117,10 +144,10 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       </div>
 
       {/* Asal Kota */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['asal_kota'] = el; }}>
         <label className="block text-white font-medium mb-2">
           <MapPin className="inline w-5 h-5 mr-2" />
-          Asal Kota <span className="text-red-600">*</span>
+          Asal Kota<span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -132,7 +159,7 @@ const PersonalDataSection = ({ formData, onChange, onPhotoCapture, fotoBlob }: F
       </div>
 
       {/* Asal Negara */}
-      <div>
+      <div ref={el => { if (fieldRefs?.current) fieldRefs.current['asal_negara'] = el; }}>
         <label className="block text-white font-medium mb-2">
           <Globe className="inline w-5 h-5 mr-2" />
           Asal Negara

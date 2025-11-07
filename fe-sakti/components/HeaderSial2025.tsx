@@ -86,12 +86,12 @@ export default function HeaderSial2025() {
         }
       `}</style>
 
-      <div className="group relative rounded-b-2xl overflow-hidden">
+      <div className="group relative rounded-b-2xl border border-white/20 border-t-0 overflow-hidden">
         {/* Animated gradient border glow effect */}
         <div className="absolute -inset-0.5 gradient-border opacity-0 group-hover:opacity-75 transition-opacity duration-700 blur-lg gradient-border-animated"></div>
         
         {/* Glass container */}
-        <div className="glass-container relative bg-gradient-to-r from-white/30 via-white/60 to-white/30 backdrop-blur-sm border py-2 px-8 border-orange-100 border-t-0 overflow-hidden">
+        <div className="glass-container relative bg-gradient-to-r from-black/10 via-black/20 to-black/10 backdrop-blur-md py-2 px-8">
           {/* Shine effect on hover */}
           <div className="shine-effect pointer-events-none"></div>
           

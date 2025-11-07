@@ -252,13 +252,14 @@ export interface WebcamCaptureProps {
 }
 
 /**
- * Props for FormSection component
+ * Props for FormSection component - UPDATED
  */
 export interface FormSectionProps {
   formData: FormData;
   onChange: (field: keyof FormData, value: any) => void;
   onPhotoCapture?: (photoBlob: Blob) => void;
   fotoBlob?: Blob | null;
+  fieldRefs?: React.MutableRefObject<{ [key: string]: HTMLElement | null }>; // ⭐ ADDED
 }
 
 /**
