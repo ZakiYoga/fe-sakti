@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import Webcam from 'react-webcam';
 import { Camera, RotateCcw, Check, X, Upload, FlipHorizontal2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/button';
@@ -12,80 +13,36 @@ interface WebcamCaptureProps {
 }
 
 const WebcamCapture = ({ onCapture, onCancel }: WebcamCaptureProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [stream, setStream] = useState<MediaStream | null>(null);
+  const webcamRef = useRef<Webcam>(null);
   const [imgSrc, setImgSrc] = useState<string | null>(null);
   const [facingMode, setFacingMode] = useState<'user' | 'environment'>('user');
   const [mirrored, setMirrored] = useState(true);
   const [mode, setMode] = useState<'choose' | 'webcam'>('choose');
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Ensure we're mounted on client side
   useEffect(() => {
     setMounted(true);
+    setIsMobile(window.innerWidth < 640);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (mode === 'webcam' && !imgSrc) {
-      startCamera();
-    }
-    return () => {
-      stopCamera();
-    };
-  }, [mode, facingMode]);
-
-  const startCamera = async () => {
-    try {
-      // Detect if mobile (screen width < 640px)
-      const isMobile = window.innerWidth < 640;
-      
-      const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { 
-          facingMode, 
-          width: isMobile ? 720 : 1280, 
-          height: isMobile ? 1280 : 720 
-        }
-      });
-      setStream(mediaStream);
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-      }
-    } catch (err) {
-      console.error('Camera error:', err);
-      alert('Tidak dapat mengakses kamera');
-      setMode('choose');
-    }
-  };
-
-  const stopCamera = () => {
-    if (stream) {
-      stream.getTracks().forEach(track => track.stop());
-      setStream(null);
-    }
-  };
-
-  const capture = () => {
-    if (videoRef.current && canvasRef.current) {
-      const video = videoRef.current;
-      const canvas = canvasRef.current;
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        if (mirrored) {
-          ctx.scale(-1, 1);
-          ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);
-        } else {
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        }
-        const imageSrc = canvas.toDataURL('image/jpeg');
+  const capture = useCallback(() => {
+    if (webcamRef.current) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      if (imageSrc) {
         setImgSrc(imageSrc);
-        stopCamera();
       }
     }
-  };
+  }, [webcamRef]);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -121,7 +78,17 @@ const WebcamCapture = ({ onCapture, onCancel }: WebcamCaptureProps) => {
     }
   };
 
+  const retake = () => {
+    setImgSrc(null);
+  };
+
   if (!mounted) return null;
+
+  // Video constraints - let browser choose best resolution
+  const videoConstraints = {
+    facingMode,
+    aspectRatio: isMobile ? 3/4 : 16/9,
+  };
 
   const modalContent = (
     <AnimatePresence>
@@ -184,13 +151,14 @@ const WebcamCapture = ({ onCapture, onCancel }: WebcamCaptureProps) => {
             <div className="relative aspect-[3/4] sm:aspect-video bg-black rounded-2xl overflow-hidden mb-4">
               {!imgSrc ? (
                 <>
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    playsInline
-                    className={`w-full h-full object-cover ${mirrored ? 'scale-x-[-1]' : ''}`}
+                  <Webcam
+                    ref={webcamRef}
+                    audio={false}
+                    screenshotFormat="image/jpeg"
+                    videoConstraints={videoConstraints}
+                    mirrored={mirrored}
+                    className="w-full h-full object-contain"
                   />
-                  <canvas ref={canvasRef} className="hidden" />
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4">
                     <button
                       onClick={() => setMirrored(!mirrored)}
@@ -226,7 +194,7 @@ const WebcamCapture = ({ onCapture, onCancel }: WebcamCaptureProps) => {
                 </>
               ) : (
                 <>
-                  <img src={imgSrc} alt="Captured" className="w-full h-full object-cover" />
+                  <img src={imgSrc} alt="Captured" className="w-full h-full object-contain" />
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3">
                     <button
                       onClick={handleConfirm}
@@ -236,7 +204,7 @@ const WebcamCapture = ({ onCapture, onCancel }: WebcamCaptureProps) => {
                       Gunakan
                     </button>
                     <button
-                      onClick={() => { setImgSrc(null); startCamera(); }}
+                      onClick={retake}
                       className="bg-white/90 hover:bg-white text-gray-800 px-6 py-3 rounded-full flex items-center gap-2 transition-all hover:scale-105 shadow-lg"
                     >
                       <RotateCcw className="w-5 h-5" />
