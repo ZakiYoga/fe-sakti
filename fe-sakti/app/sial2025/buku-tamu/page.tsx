@@ -189,7 +189,7 @@ const BukuTamuForm = () => {
           alert('Jawab pertanyaan kepemilikan usaha');
           return false;
         }
-        
+
         // NEW: Validate required fields when shouldShowInstansiFields is true
         if (shouldShowInstansiFields) {
           if (!formData.instansi.trim()) {
@@ -217,7 +217,7 @@ const BukuTamuForm = () => {
           alert('Berikan rating untuk booth kami');
           return false;
         }
-        if (formData.rating >= 1 && formData.rating <= 2 && !formData.kritik_saran.trim()) {
+        if (formData.rating >= 1 && formData.rating <= 3 && !formData.kritik_saran.trim()) {
           alert('Masukan Anda sangat berharga. Mohon lengkapi kritik dan saran agar kami dapat meningkatkan layanan dengan lebih baik.');
           return false;
         }
