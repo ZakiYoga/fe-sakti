@@ -91,7 +91,7 @@ export default function HeaderSial2025() {
         <div className="absolute -inset-0.5 gradient-border opacity-0 group-hover:opacity-75 transition-opacity duration-700 blur-lg gradient-border-animated"></div>
         
         {/* Glass container */}
-        <div className="glass-container relative bg-gradient-to-r from-black/10 via-black/20 to-black/10 backdrop-blur-md py-2 px-8">
+        <div className="glass-container relative bg-gradient-to-r from-white/20 via-white/30 to-white/20 backdrop-blur-xl py-2 px-8 xl:px-10 xl:py-3">
           {/* Shine effect on hover */}
           <div className="shine-effect pointer-events-none"></div>
           
@@ -113,13 +113,13 @@ export default function HeaderSial2025() {
             <img 
               src="/images/logo/SaktiFood.png" 
               alt="Logo SaktiFood" 
-              className="h-7 object-contain transition-all duration-300 group-hover:brightness-110" 
+              className="h-7 lg:h-9 xl:h-10 object-contain transition-all duration-300 group-hover:brightness-110" 
             />
-            <span className="font-medium pt-2 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent group-hover:from-cyan-600 group-hover:to-purple-600 transition-all duration-500">At</span>
+            <span className="font-medium lg:text-xl xl:text-2xl pt-2 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent group-hover:from-cyan-600 group-hover:to-purple-600 transition-all duration-500">At</span>
             <img 
               src="/images/logo/sialInterfood.png" 
               alt="Logo SIAL InterfOOD" 
-              className="h-6 object-contain transition-all duration-300 group-hover:brightness-110" 
+              className="h-6 lg:h-9 xl:h-10object-contain transition-all duration-300 group-hover:brightness-110" 
             />
           </div>
         </div>
