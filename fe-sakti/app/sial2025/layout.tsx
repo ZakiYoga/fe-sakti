@@ -18,7 +18,7 @@ export default function SialLayout({ children }: { children: ReactNode }) {
         <div className={`${poppins.variable} relative`}>
             {/* Background blur layer */}
             <div
-                className="fixed inset-0 bg-[url('/images/bg-sial.jpg')] bg-cover bg-center blur-[1px] -z-10"
+                className="fixed inset-0 bg-[url('/images/bg_booth.png')] bg-cover bg-center blur-[1px] -z-10"
                 aria-hidden="true"
             />
             

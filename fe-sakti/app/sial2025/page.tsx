@@ -11,7 +11,7 @@ export default function Sial2025() {
     const [direction, setDirection] = useState(0);
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
     const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-    const [isMuted, setIsMuted] = useState(true);
+    const [isMuted, setIsMuted] = useState(false);
     const [isVideoLoading, setIsVideoLoading] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
     const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
