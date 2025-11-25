@@ -1903,6 +1903,156 @@ export const generateDummyBlogs = () => [
     }
   },
 
+  {
+  id: 25,
+  title: "Sakti Food Sukses Menyemarakkan SIAL Interfood 2025 di Jakarta",
+  slug: "sakti-food-sukses-menyemarakkan-sial-interfood-2025-di-jakarta",
+  excerpt: "Sakti Food (PT Sakti Pangan Perkasa) sukses berpartisipasi dalam SIAL Interfood 2025 di JIExpo Kemayoran pada 12–15 November. Booth Sakti Food menarik ratusan pengunjung lokal dan mancanegara melalui promo produk, kerja sama bisnis hingga permainan interaktif berhadiah.",
+  content: `<div class="prose max-w-none">
+    <h2>Sakti Food Sukses Menyemarakkan SIAL Interfood 2025</h2>
+    <p>PT Sakti Pangan Perkasa (Sakti Food) menutup partisipasi empat harinya di <strong>SIAL Interfood 2025</strong>, pameran makanan dan minuman terbesar di Asia Tenggara yang diselenggarakan pada <strong>12–15 November di JIExpo Kemayoran, Jakarta</strong>, dengan penuh antusiasme dan hasil yang menggembirakan.</p>
+    
+    <p>Pada kesempatan istimewa ini, booth Sakti Food turut dihadiri langsung oleh Direktur PT Sakti Pangan Perkasa, <strong>Bapak Widiyarsa Aksama</strong>, yang memberikan dukungan penuh serta menyapa langsung para pengunjung, mitra bisnis, hingga buyer internasional.</p>
+
+    <br>
+    <h2>Antusiasme Pengunjung dari Dalam & Luar Negeri</h2>
+    <p>SIAL Interfood tahun ini kembali menghadirkan ribuan pelaku industri dan pembeli potensial dari berbagai negara. Booth Sakti Food menjadi salah satu titik yang banyak dikunjungi, baik oleh pebisnis kuliner, pemilik bakery, UMKM, distributor, hingga pengunjung umum yang tertarik mencoba langsung produk-produk Sakti Food.</p>
+    
+    <p>Respons positif datang dari pengunjung dalam negeri maupun mancanegara, yang menunjukkan besarnya potensi pasar dan peluang ekspansi produk Sakti Food di masa mendatang.</p>
+
+    <h2>Booth Interaktif dengan Hadiah Menarik</h2>
+    <p>Untuk memberikan pengalaman terbaik, Sakti Food menghadirkan <strong>permainan dart board</strong> yang menjadi favorit banyak pengunjung. Berbagai hadiah menarik disiapkan, di antaranya:</p>
+    
+    <div class="bg-orange-50 p-4 rounded-lg my-4">
+      <ul>
+        <li>Kaos eksklusif Sakti Food</li>
+        <li>Topi branded</li>
+        <li>Celemek premium</li>
+        <li>Kipas promosi</li>
+        <li>Goodie bag</li>
+        <li>Sample produk tepung roti 200 g</li>
+        <li>Gantungan kunci</li>
+      </ul>
+    </div>
+
+    <p>Pengunjung yang mem-follow Instagram Sakti Food serta membagikan pengalaman mereka melalui Instastory juga mendapatkan hadiah tambahan sebagai bentuk apresiasi atas dukungan mereka.</p>
+
+    <h2>Produk Premium & Promo Eksklusif Selama Pameran</h2>
+    <p>Sakti Food memperkenalkan dan menjual langsung produk <strong>Tepung Roti Sakti Premium</strong>, tersedia dalam kemasan:</p>
+    
+    <div class="grid grid-cols-3 gap-4 my-6">
+      <div class="bg-blue-50 p-4 rounded-lg text-center">
+        <h4 class="font-bold text-blue-800">200 g</h4>
+        <p class="text-sm text-blue-600">Kemasan praktis untuk rumahan</p>
+      </div>
+      <div class="bg-green-50 p-4 rounded-lg text-center">
+        <h4 class="font-bold text-green-800">500 g</h4>
+        <p class="text-sm text-green-600">Pilihan tepat untuk UMKM</p>
+      </div>
+      <div class="bg-purple-50 p-4 rounded-lg text-center">
+        <h4 class="font-bold text-purple-800">1 kg</h4>
+        <p class="text-sm text-purple-600">Kemasan ekonomis untuk bisnis</p>
+      </div>
+    </div>
+
+    <p>Selama pameran, seluruh varian produk ditawarkan dengan <strong>harga promo khusus</strong>, menjadikannya kesempatan terbaik bagi pengunjung untuk mencoba produk berkualitas dengan harga terjangkau.</p>
+    
+    <p>Promo ini menarik perhatian banyak pelaku bisnis kuliner yang sedang mencari mitra atau produk baru untuk meningkatkan kualitas sajian mereka.</p>
+
+    <h2>Keunggulan Tepung Roti Sakti</h2>
+    <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg my-6">
+      <h3 class="text-xl font-bold mb-4 text-orange-800">Mengapa Tepung Roti Sakti?</h3>
+      <ul class="space-y-2">
+        <li>✅ <strong>Kualitas Premium:</strong> Terbuat dari roti pilihan berkualitas tinggi</li>
+        <li>✅ <strong>Tekstur Sempurna:</strong> Butiran halus dan seragam</li>
+        <li>✅ <strong>Warna Cantik:</strong> Hasil gorengan kuning keemasan</li>
+        <li>✅ <strong>Crispy Tahan Lama:</strong> Kerenyahan yang awet</li>
+        <li>✅ <strong>Tidak Berminyak:</strong> Daya serap minyak rendah</li>
+        <li>✅ <strong>Bersertifikat:</strong> Halal MUI & BPOM</li>
+      </ul>
+    </div>
+
+    <h2>Komitmen Sakti Food untuk Terus Bertumbuh</h2>
+    <p>Kehadiran <strong>Bapak Widiyarsa Aksama</strong> memberikan nilai lebih bagi booth Sakti Food. Beliau turut menyampaikan apresiasinya kepada seluruh tim dan menyebutkan bahwa partisipasi dalam SIAL Interfood menjadi langkah strategis untuk:</p>
+    
+    <div class="bg-blue-50 p-4 rounded-lg my-4">
+      <ul>
+        <li>🌐 Memperluas jaringan distribusi</li>
+        <li>💪 Memperkuat brand awareness</li>
+        <li>🤝 Membuka peluang kerja sama baru</li>
+        <li>📈 Mengeksplorasi pasar ekspor</li>
+      </ul>
+    </div>
+
+    <h2>Sorotan Event</h2>
+    <div class="grid grid-cols-2 gap-4 my-6">
+      <div class="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+        <h4 class="font-bold text-orange-800 mb-2">📍 Lokasi</h4>
+        <p class="text-sm text-orange-600">JIExpo Kemayoran, Jakarta</p>
+      </div>
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-lg">
+        <h4 class="font-bold text-blue-800 mb-2">📅 Tanggal</h4>
+        <p class="text-sm text-blue-600">12–15 November 2025</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg">
+        <h4 class="font-bold text-green-800 mb-2">👥 Pengunjung</h4>
+        <p class="text-sm text-green-600">Ratusan buyer lokal & internasional</p>
+      </div>
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg">
+        <h4 class="font-bold text-purple-800 mb-2">🎯 Fokus</h4>
+        <p class="text-sm text-purple-600">Demo produk & networking bisnis</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-lg my-6 border-l-4 border-orange-500">
+      <p class="font-bold text-lg text-orange-800 mb-2">💬 Testimoni Pengunjung:</p>
+      <p class="italic text-orange-700">"Produk Tepung Roti Sakti sangat berkualitas! Hasil gorengan jadi lebih renyah dan tidak mudah gosong. Harga promonya juga sangat menarik untuk stok bisnis kami."</p>
+      <p class="text-sm text-orange-600 mt-2">— Pengunjung SIAL Interfood 2025</p>
+    </div>
+
+    <h2>Terima Kasih</h2>
+    <p>Sakti Food mengucapkan terima kasih kepada seluruh pengunjung, pelanggan, mitra bisnis, serta pihak penyelenggara SIAL Interfood 2025. Antusiasme dan dukungan selama pameran menjadi motivasi bagi Sakti Food untuk terus menghadirkan produk berkualitas bagi masyarakat Indonesia dan dunia.</p>
+
+    <div class="bg-orange-50 p-6 rounded-lg text-center my-6">
+      <h3 class="text-2xl font-bold text-orange-800 mb-2">Ikuti Kami!</h3>
+      <p class="text-orange-600 mb-4">Dapatkan update terbaru, resep eksklusif, dan promo menarik dari Sakti Food</p>
+      <p class="font-bold text-orange-700">
+        Instagram: <a href="https://www.instagram.com/sakt1_id" target="_blank" class="underline hover:text-orange-900">@sakt1_id</a>
+      </p>
+    </div>
+
+    <p class="text-center font-bold text-xl text-orange-600 mt-8">
+      "Sakti Food, Sajian Kualitas Tinggi" 🧡
+    </p>
+  </div>`,
+  featured_image: "/images/blog/sial-interfood-2025.png",
+  status: "published",
+  published_at: "2025-11-16T08:00:00.000000Z",
+  views: 0,
+  meta_title: "Sakti Food Sukses di SIAL Interfood 2025 Jakarta - Antusiasme Buyer Lokal & Internasional",
+  meta_description: "PT Sakti Pangan Perkasa tampil memukau di SIAL Interfood 2025. Direktur Widiyarsa Aksama hadir langsung, booth interaktif dengan hadiah menarik, dan promo eksklusif Tepung Roti Sakti Premium.",
+  meta_keywords: "sial interfood 2025, sakti food, tepung roti sakti, pameran makanan jakarta, jiexpo kemayoran, widiyarsa aksama, produk pangan premium",
+  category_id: 3,
+  user_id: 1,
+  created_at: "2025-11-16T07:00:00.000000Z",
+  updated_at: "2025-11-16T08:00:00.000000Z",
+  approved_by: 1,
+  approved_at: "2025-11-16T07:30:00.000000Z",
+  rejection_reason: null,
+  category: {
+    id: 3,
+    name: "Kegiatan Sakti",
+    slug: "kegiatan-sakti",
+    color: "#10B981",
+    icon: "Calendar"
+  },
+  user: {
+    id: 1,
+    name: "Tim Editorial",
+    email: "editorial@saktipangan.co.id"
+  }
+}
+
 
 
   // {
@@ -2081,14 +2231,13 @@ export const generateDummyBlogs = () => [
   // }
 ];
 
-// Format response untuk API blogs dengan pagination
 export const generateDummyBlogResponse = (params: any = {}) => {
   const allBlogs = generateDummyBlogs();
   let filteredBlogs = [...allBlogs];
 
   // Filter berdasarkan category
   if (params.category) {
-    filteredBlogs = allBlogs.filter(blog =>
+    filteredBlogs = filteredBlogs.filter(blog =>
       blog.category.slug === params.category
     );
   }
@@ -2096,13 +2245,43 @@ export const generateDummyBlogResponse = (params: any = {}) => {
   // Filter berdasarkan search
   if (params.search) {
     const searchTerm = params.search.toLowerCase();
-    filteredBlogs = allBlogs.filter(blog =>
+    filteredBlogs = filteredBlogs.filter(blog =>
       blog.title.toLowerCase().includes(searchTerm) ||
       blog.excerpt.toLowerCase().includes(searchTerm)
     );
   }
 
-  // Pagination
+  // ✅ SORTING - Dilakukan SEBELUM pagination
+  const sortField = params.sort || 'published_at';
+  const sortOrder = params.order || 'desc';
+  
+  filteredBlogs.sort((a, b) => {
+    let valueA: any, valueB: any;
+    
+    if (sortField === 'published_at' || sortField === 'created_at') {
+      valueA = new Date(a.published_at).getTime();
+      valueB = new Date(b.published_at).getTime();
+    } else if (sortField === 'views') {
+      valueA = a.views || 0;
+      valueB = b.views || 0;
+    } else if (sortField === 'title') {
+      valueA = a.title.toLowerCase();
+      valueB = b.title.toLowerCase();
+    } else {
+      // Fallback untuk field lainnya
+      valueA = a.published_at;
+      valueB = b.published_at;
+    }
+    
+    // Sort logic
+    if (sortOrder === 'asc') {
+      return valueA > valueB ? 1 : valueA < valueB ? -1 : 0;
+    } else {
+      return valueA < valueB ? 1 : valueA > valueB ? -1 : 0;
+    }
+  });
+
+  // Pagination - SETELAH sorting
   const page = params.page || 1;
   const perPage = params.per_page || 12;
   const start = (page - 1) * perPage;

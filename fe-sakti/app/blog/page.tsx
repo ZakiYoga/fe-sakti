@@ -347,10 +347,9 @@ export default function BlogIndex(): JSX.Element {
 
   const sortedBlogs = useMemo(() => {
     if (!blogData?.data) return [];
-
-    return [...blogData.data].sort((a, b) =>
-      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
-    );
+    
+    // Backend already sorted, just return the data
+    return blogData.data;
   }, [blogData]);
 
   // Stats data for blog
