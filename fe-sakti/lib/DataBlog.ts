@@ -2051,7 +2051,739 @@ export const generateDummyBlogs = () => [
     name: "Tim Editorial",
     email: "editorial@saktipangan.co.id"
   }
-}
+},
+
+  {
+    "id": 26,
+    "title": "Cireng Crispy Ala SAKTI",
+    "slug": "cireng-crispy-ala-sakti",
+    "excerpt": "Cireng renyah di luar, kenyal di dalam! Cireng Crispy Ala SAKTI ini cocok untuk camilan harian maupun ide jualan. Lebih crispy karena dilapisi Tepung Roti SAKTI.",
+    "content": `<div class="prose max-w-none">
+      <h2>Cireng Crispy Ala SAKTI</h2>
+      <p><strong>Cireng Crispy Ala SAKTI</strong> adalah camilan sederhana yang selalu jadi favorit! Teksturnya crispy di luar namun tetap kenyal di dalam. Kuncinya ada pada penggunaan <strong>Tepung Roti SAKTI</strong> yang bikin permukaan cireng jadi lebih renyah dan cantik.</p>
+
+      <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Hasil gorengan lebih renyah dan kriuk tahan lama</li>
+          <li>✅ Butiran seragam sehingga melapisi cireng dengan sempurna</li>
+          <li>✅ Warna gorengan lebih cantik dan stabil</li>
+          <li>✅ Daya serap minyak rendah, hasil lebih ringan</li>
+        </ul>
+      </div>
+
+      <p><strong>Tepung Roti SAKTI</strong> juga mudah ditemukan di toko bahan kue, pasar, maupun marketplace seperti Shopee dan Tokopedia.</p>
+
+      <h3>✨ Resep Cireng Crispy Ala SAKTI ✨</h3>
+
+      <h4>Bahan-bahan:</h4>
+      <ul>
+        <li>250 g tepung tapioka</li>
+        <li>3 siung bawang putih, haluskan</li>
+        <li>1 batang daun bawang, iris tipis</li>
+        <li>1 sdt garam</li>
+        <li>1 sdt kaldu bubuk</li>
+        <li>150 ml air panas</li>
+        <li>200 g <strong>Tepung Roti SAKTI</strong></li>
+        <li>500 ml minyak goreng</li>
+      </ul>
+
+      <h4>Cara Membuat:</h4>
+      <ol>
+        <li>Campurkan tepung tapioka, bawang putih halus, daun bawang, garam, dan kaldu bubuk ke dalam wadah.</li>
+        <li>Tuang air panas sedikit demi sedikit sambil diaduk hingga adonan kalis dan bisa dipulung.</li>
+        <li>Bentuk adonan cireng sesuai selera, bisa pipih atau bulat.</li>
+        <li>Balurkan permukaan cireng ke dalam <strong>Tepung Roti SAKTI</strong> untuk mendapatkan tekstur crispy.</li>
+        <li>Panaskan minyak, lalu goreng hingga cireng berwarna kuning keemasan.</li>
+        <li>Angkat, tiriskan, dan sajikan selagi panas.</li>
+      </ol>
+
+      <p>Cireng ini cocok sebagai camilan sore, teman nonton, atau bisa juga dijadikan menu jualan rumahan! 😋</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/cireng-crispy.png",
+    "status": "published",
+    "published_at": "2025-12-02T08:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Resep Cireng Crispy Ala SAKTI",
+    "meta_description": "Cireng Crispy Ala SAKTI — renyah di luar, kenyal di dalam, dan lebih crispy berkat Tepung Roti SAKTI. Cocok untuk camilan atau ide jualan.",
+    "meta_keywords": "cireng crispy, tepung roti sakti, resep camilan, ide jualan, cireng renyah",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T07:00:00.000000Z",
+    "updated_at": "2025-12-02T08:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T07:30:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 27,
+    "title": "Potato Cheese Bomb Ala SAKTI",
+    "slug": "potato-cheese-bomb-ala-sakti",
+    "excerpt": "Bola-bola kentang isi keju yang lumer dan renyah di luar! Potato Cheese Bomb Ala SAKTI ini cocok untuk camilan keluarga dan ide jualan kekinian.",
+    "content": `<div class="prose max-w-none">
+      <h2>Potato Cheese Bomb Ala SAKTI</h2>
+      <p><strong>Potato Cheese Bomb Ala SAKTI</strong> adalah camilan kekinian berupa bola-bola kentang yang lembut dengan isian keju leleh di dalamnya. Bagian luarnya super crispy berkat balutan <strong>Tepung Roti SAKTI</strong>.</p>
+
+      <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Lebih crispy dan renyah tahan lama</li>
+          <li>✅ Butiran seragam, membuat hasil gorengan lebih cantik</li>
+          <li>✅ Warna golden yang bersih dan stabil saat digoreng</li>
+          <li>✅ Daya serap minyak rendah, bikin camilan lebih ringan</li>
+        </ul>
+      </div>
+
+      <p><strong>Tepung Roti SAKTI</strong> dapat dibeli di pasar, toko bahan kue, dan marketplace seperti Shopee atau Tokopedia.</p>
+
+      <h3>✨ Resep Potato Cheese Bomb Ala SAKTI ✨</h3>
+
+      <h4>Bahan-bahan:</h4>
+      <ul>
+        <li>300 g kentang, kukus dan tumbuk halus</li>
+        <li>50 g keju cheddar parut</li>
+        <li>Keju mozzarella secukupnya, potong dadu</li>
+        <li>1 butir telur</li>
+        <li>1/2 sdt garam</li>
+        <li>1/4 sdt lada bubuk</li>
+        <li>100 g tepung terigu</li>
+        <li>1 butir telur kocok (untuk celupan)</li>
+        <li>200 g <strong>Tepung Roti SAKTI</strong></li>
+        <li>500 ml minyak goreng</li>
+      </ul>
+
+      <h4>Cara Membuat:</h4>
+      <ol>
+        <li>Campurkan kentang tumbuk dengan keju cheddar parut, telur, garam, dan lada. Aduk hingga rata.</li>
+        <li>Ambil sedikit adonan, pipihkan, lalu isi dengan potongan keju mozzarella. Bentuk bulat.</li>
+        <li>Gulingkan bola-bola kentang ke dalam tepung terigu.</li>
+        <li>Celupkan ke dalam telur kocok.</li>
+        <li>Balurkan ke dalam <strong>Tepung Roti SAKTI</strong> hingga terlapisi sempurna.</li>
+        <li>Panaskan minyak, goreng hingga berwarna kuning keemasan dan crispy.</li>
+        <li>Angkat dan sajikan selagi hangat agar keju tetap lumer.</li>
+      </ol>
+
+      <p>Cocok untuk ide jualan, camilan keluarga, atau bekal anak. Gurih, lumer, dan super crispy! 😋🧀</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/potato-cheese-bomb.png",
+    "status": "published",
+    "published_at": "2025-12-02T08:30:00.000000Z",
+    "views": 0,
+    "meta_title": "Resep Potato Cheese Bomb Ala SAKTI",
+    "meta_description": "Potato Cheese Bomb Ala SAKTI — bola-bola kentang isi keju lumer dengan lapisan Tepung Roti SAKTI yang super renyah. Cocok untuk camilan dan ide jualan.",
+    "meta_keywords": "potato cheese bomb, kentang keju, tepung roti sakti, ide jualan, camilan crispy",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T08:00:00.000000Z",
+    "updated_at": "2025-12-02T08:30:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T08:10:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 28,
+    "title": "Chicken Drumstick ala SAKTI Tepung Roti",
+    "slug": "chicken-drumstick-ala-sakti-tepung-roti",
+    "excerpt": "Chicken Drumstick ala SAKTI — olahan sayap ayam yang dibentuk seperti paha mini dengan balutan Tepung Roti SAKTI sehingga renyah, gurih, dan cantik.",
+    "content": `<div class="prose max-w-none">
+      <h2>Chicken Drumstick ala SAKTI</h2>
+      <p><strong>Chicken Drumstick ala SAKTI</strong> adalah olahan sayap ayam yang dibentuk menyerupai paha mini. Teksturnya juicy, gurih, dan bagian luarnya super crispy berkat <strong>Tepung Roti SAKTI</strong>. Cocok untuk camilan keluarga atau ide jualan kekinian!</p>
+
+      <h3>Kenapa Pakai Tepung Roti SAKTI?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Hasilkan lapisan crispy yang tebal namun tetap ringan</li>
+          <li>✅ Warna golden cantik dan stabil saat digoreng</li>
+          <li>✅ Menempel dengan baik pada ayam sehingga tidak mudah rontok</li>
+          <li>✅ Daya serap minyak rendah membuat hasil gorengan tidak berminyak</li>
+        </ul>
+      </div>
+
+      <p>Tepung Roti SAKTI mudah ditemukan di toko bahan kue, pasar tradisional, dan marketplace seperti Shopee atau Tokopedia.</p>
+
+      <h3>✨ Bahan-Bahan:</h3>
+      <ul>
+        <li>1 kg ayam potong / sayap ayam</li>
+        <li>Minyak goreng secukupnya</li>
+        <li>3–4 g bawang putih halus</li>
+        <li>10–12 g garam</li>
+        <li>1–3 g lada bubuk</li>
+        <li>1 g ketumbar bubuk</li>
+        <li>5 g kaldu jamur</li>
+        <li>Paprika bubuk (opsional)</li>
+        <li>Susu bubuk (opsional)</li>
+        <li>Tepung bumbu serbaguna secukupnya</li>
+        <li>Air secukupnya</li>
+        <li><strong>Tepung Roti SAKTI</strong> secukupnya</li>
+      </ul>
+
+      <h3>✨ Cara Memasak:</h3>
+      <ol>
+        <li>Cuci bersih sayap ayam kemudian potong menjadi 2 bagian.</li>
+        <li><strong>Untuk Chicken Drumstick:</strong> ambil bagian sayap yang lebih banyak dagingnya, kerat urat bagian ujung, lalu dorong daging ke atas hingga menyerupai paha mini.</li>
+        <li><strong>Untuk Chicken Wings:</strong> patahkan sendi tulang bagian tengah lalu luruskan bagian sayap.</li>
+        <li>Marinasi semua ayam dengan bumbu bawang putih, garam, lada, ketumbar, kaldu jamur, paprika (opsional), dan susu bubuk (opsional). Diamkan lalu kukus hingga matang.</li>
+        <li>Siapkan <strong>Baluran I</strong>: campuran tepung bumbu serbaguna dan air.</li>
+        <li>Setelah ayam matang, celupkan ke Baluran I lalu gulingkan ke <strong>Tepung Roti SAKTI</strong> hingga terlapisi sempurna.</li>
+        <li>Panaskan minyak, goreng ayam hingga berwarna kuning keemasan dan crispy.</li>
+        <li>Tiriskan dan sajikan selagi hangat.</li>
+      </ol>
+
+      <p>Chicken Drumstick ala SAKTI ini cocok untuk lauk, camilan, hingga ide jualan karena tampilannya cantik dan rasanya gurih crispy! 🍗✨</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/chicken-drumstick-ala-sakti.png",
+    "status": "published",
+    "published_at": "2025-12-02T09:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Resep Chicken Drumstick Ala SAKTI",
+    "meta_description": "Chicken Drumstick ala SAKTI — sayap ayam yang dibentuk seperti paha mini dengan balutan Tepung Roti SAKTI, menghasilkan tekstur crispy dan juicy.",
+    "meta_keywords": "chicken drumstick, sayap ayam crispy, tepung roti sakti, resep ayam crispy, ide jualan",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T08:50:00.000000Z",
+    "updated_at": "2025-12-02T09:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T08:55:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 29,
+    "title": "Potato Prawn Cheese Balls (Bola Kentang Udang Keju) Ala SAKTI",
+    "slug": "tepung-roti-potato-prawn-cheese-balls-ala-sakti",
+    "excerpt": "Bola kentang lembut berisi udang dan keju yang lumer! Renyah di luar berkat Tepung Roti Premium SAKTI. Cocok untuk camilan spesial ataupun ide jualan.",
+    "content": `<div class="prose max-w-none">
+      <h2>Potato Prawn Cheese Balls (Bola Kentang Udang Keju) Ala SAKTI</h2>
+      <p><strong>Potato Prawn Cheese Balls</strong> adalah camilan premium yang memadukan lembutnya kentang, gurihnya udang, dan lumeran keju di dalamnya. Bagian luarnya super renyah berkat balutan <strong>Tepung Roti Premium SAKTI</strong>.</p>
+
+      <h3>Kenapa Pakai Tepung Roti Premium SAKTI?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Hasil lebih crispy dan renyah tahan lama</li>
+          <li>✅ Warna golden yang cantik dan tidak mudah gosong</li>
+          <li>✅ Butiran premium, membuat tampilan lebih tebal dan crunchy</li>
+          <li>✅ Daya serap minyak rendah sehingga tidak membuat empuk cepat lembek</li>
+        </ul>
+      </div>
+
+      <p><strong>Tepung Roti Premium SAKTI</strong> mudah ditemukan di pasar, toko bahan kue, dan marketplace seperti Shopee & Tokopedia.</p>
+
+      <h3>✨ Resep Potato Prawn Cheese Balls Ala SAKTI ✨</h3>
+
+      <h4>🦐 Bahan Udang (Isi):</h4>
+      <ul>
+        <li>15 pcs udang kupas, sisakan ekor</li>
+        <li>1/2 sdt garam</li>
+        <li>1/4 sdt lada</li>
+        <li>1/4 sdt garlic powder</li>
+      </ul>
+      <p><em>→ Bumbui udang & simpan dalam chiller.</em></p>
+
+      <h4>🥔 Bahan Adonan Kentang:</h4>
+      <ul>
+        <li>500 g kentang, goreng matang & tumbuk halus</li>
+        <li>1 sdt garam</li>
+        <li>1 sdt kaldu bubuk</li>
+        <li>1/2 sdt lada</li>
+        <li>1/2 sdt garlic powder</li>
+        <li>1 sdt dried parsley</li>
+        <li>Keju cheddar leleh / mozzarella secukupnya (untuk isi)</li>
+      </ul>
+
+      <h4>🥚 Bahan Pelapis:</h4>
+      <ul>
+        <li>Tepung terigu secukupnya</li>
+        <li>2 butir telur, kocok lepas + 1/2 sdt garam</li>
+        <li>200 g <strong>Tepung Roti Premium SAKTI</strong></li>
+      </ul>
+
+      <h3>Cara Memasak:</h3>
+      <ol>
+        <li>Marinasi udang dengan garam, lada, dan garlic powder. Simpan dalam chiller.</li>
+        <li>Dalam mangkuk, campur kentang tumbuk, garam, kaldu bubuk, lada, garlic powder, dan dried parsley. Aduk rata.</li>
+        <li>Ambil sedikit adonan kentang, pipihkan, beri keju, dan 1 ekor udang (bagian kepala & badan masuk adonan, ekor dibiarkan di luar).</li>
+        <li>Bulatkan hingga tertutup rapat dan rapi.</li>
+        <li>Gulingkan bola kentang ke tepung terigu, celup ke telur kocok, lalu balurkan <strong>Tepung Roti Premium SAKTI</strong> hingga terlapisi sempurna.</li>
+        <li>Panaskan minyak, goreng dengan api sedang hingga kuning keemasan dan crispy.</li>
+        <li>Angkat, tiriskan, dan sajikan selagi panas agar keju tetap lumer.</li>
+      </ol>
+
+      <p>Tekstur crunchy, isi keju lumer, dan udang juicy menjadikan menu ini cocok sebagai camilan premium atau ide jualan yang menguntungkan! 😋🦐🧀</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/potato-prawn-cheese-balls.png",
+    "status": "published",
+    "published_at": "2025-12-02T09:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Potato Prawn Cheese Balls Ala SAKTI",
+    "meta_description": "Potato Prawn Cheese Balls — bola kentang lembut isi udang dan keju, dilapisi Tepung Roti Premium SAKTI yang super crispy. Cocok untuk camilan mewah atau ide jualan.",
+    "meta_keywords": "potato prawn cheese balls, bola kentang udang keju, tepung roti premium sakti, camilan crispy, ide jualan premium",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T08:40:00.000000Z",
+    "updated_at": "2025-12-02T09:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T08:45:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+ 
+  {
+    "id": 30,
+    "title": "Crispy Chicken Burger Ala SAKTI",
+    "slug": "tepung-roti-crispy-chicken-burger-ala-sakti",
+    "excerpt": "Crispy Chicken Burger ala SAKTI—burger lembut dengan bun empuk dan patty ayam super crispy berkat Tepung Panir SAKTI. Cocok untuk jualan premium!",
+    "content": `<div class="prose max-w-none">
+      <h2>Crispy Chicken Burger Ala SAKTI</h2>
+      <p><strong>Crispy Chicken Burger Ala SAKTI</strong> hadir dengan bun lembut buatan sendiri dan patty ayam yang juicy di dalam namun super crispy di luar, berkat balutan <strong>Tepung Panir SAKTI</strong>. Cocok banget untuk menu jualan premium, bekal, atau hidangan spesial di rumah!</p>
+
+      <h3>Kenapa Pakai Tepung Panir Sakti?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Butiran seragam, hasil gorengan lebih cantik dan premium</li>
+          <li>✅ Super renyah dan tidak cepat lembek</li>
+          <li>✅ Warna golden yang bersih saat digoreng</li>
+          <li>✅ Lebih hemat minyak karena daya serapnya rendah</li>
+        </ul>
+      </div>
+
+      <p>Tepung Panir SAKTI tersedia di pasar tradisional, toko bahan kue, dan marketplace seperti Shopee & Tokopedia.</p>
+
+      <h3>✨ Bahan Burger Bun ✨</h3>
+      <ul>
+        <li>1000 g terigu double zero</li>
+        <li>150 g gula pasir</li>
+        <li>15 g ragi</li>
+        <li>5 g improver</li>
+        <li>50 g susu bubuk</li>
+        <li>15 g garam</li>
+        <li>2 butir telur</li>
+        <li>100 g susu cair</li>
+        <li>580 g air</li>
+        <li>150 g margarin</li>
+      </ul>
+
+      <h4>Cara Membuat Burger Bun:</h4>
+      <ol>
+        <li>Masukkan terigu, gula, ragi, improver, susu bubuk, telur, susu cair, dan air. Mixer hingga setengah kalis.</li>
+        <li>Masukkan margarin dan garam, mixer hingga adonan kalis elastis.</li>
+        <li>Timbang adonan 35–50 gram, bulatkan, dan diamkan 10 menit.</li>
+        <li>Proofing hingga hampir mengembang 2 kali lipat, lalu oles permukaan dengan campuran telur dan susu cair.</li>
+        <li>Proofing kembali hingga mengembang 2 kali lipat.</li>
+        <li>Panggang pada suhu 180–190°C hingga matang dan kecokelatan.</li>
+      </ol>
+
+      <h3>✨ Bahan Patty Burger ✨</h3>
+      <ul>
+        <li>1000 g dada ayam</li>
+        <li>12 lembar roti tawar tanpa kulit</li>
+        <li>100 g susu cair</li>
+        <li>22 g bawang putih</li>
+        <li>3 g lada bubuk</li>
+        <li>15 g garam</li>
+        <li>8 g kaldu jamur</li>
+        <li>10 g gula pasir</li>
+        <li>2 sdm minyak wijen</li>
+        <li>2 butir telur</li>
+        <li>100 g susu cair atau air</li>
+        <li>Lada dan garam secukupnya</li>
+        <li>Terigu secukupnya</li>
+        <li><strong>Tepung Panir SAKTI</strong> secukupnya</li>
+      </ul>
+
+      <h4>Cara Membuat Patty Burger:</h4>
+      <ol>
+        <li>Campur semua bahan patty menggunakan food processor hingga halus.</li>
+        <li>Timbang adonan 35–50 g, bentuk bulat.</li>
+        <li>Masukkan ke freezer selama ±10 menit agar set.</li>
+        <li>Celupkan ke bahan pelapis cair → balur terigu → celup kembali ke bahan pelapis.</li>
+        <li>Baluri dengan <strong>Tepung Panir SAKTI</strong> lalu pipihkan.</li>
+        <li>Goreng hingga matang dan berwarna golden crispy.</li>
+      </ol>
+
+      <h3>✨ Penyajian</h3>
+      <p>Rakit burger dengan urutan:</p>
+      <ul>
+        <li>Burger bun</li>
+        <li>Saus (mayonnaise, chili sauce, atau tartar)</li>
+        <li>Selada & tomat</li>
+        <li>Patty ayam crispy</li>
+        <li>Bun penutup</li>
+      </ul>
+
+      <p>Sajikan hangat untuk hasil paling crispy dan juicy! 🍔🔥</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/crispy-chicken-burger.png",
+    "status": "published",
+    "published_at": "2025-12-02T10:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Crispy Chicken Burger Ala SAKTI – Patty Ayam Super Renyah",
+    "meta_description": "Resep Crispy Chicken Burger Ala SAKTI—burger bun lembut dan patty ayam super crispy memakai Tepung Panir SAKTI. Cocok untuk jualan premium!",
+    "meta_keywords": "crispy chicken burger, burger ayam crispy, tepung panir sakti, resep burger, ide jualan burger",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T09:30:00.000000Z",
+    "updated_at": "2025-12-02T10:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T09:45:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 31,
+    "title": "Donat Labu Kabocha Isi Ayam Cincang Ala SAKTI",
+    "slug": "tepung-roti-donat-labu-kabocha-isi-ayam-cincang-ala-sakti",
+    "excerpt": "Donat lembut dari labu kabocha dengan isian ayam cincang gurih. Bisa dibuat versi crispy dengan balutan Tepung Roti SAKTI!",
+    "content": `<div class="prose max-w-none">
+
+      <h2>Donat Labu Kabocha Isi Ayam Cincang Ala SAKTI</h2>
+      <p>Donat lembut dengan aroma labu kabocha yang manis alami dipadukan dengan isian ayam cincang yang gurih. Jika ingin sensasi berbeda, donat bisa dibuat <strong>crispy</strong> dengan balutan <strong>Tepung Roti SAKTI</strong>. Hasilnya unik, renyah, dan cocok untuk ide jualan!</p>
+
+      <h3>Kenapa Pakai Tepung Roti SAKTI?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Tekstur crispy lebih lama</li>
+          <li>✅ Warna golden cantik saat digoreng</li>
+          <li>✅ Butiran seragam, bikin donat tampak premium</li>
+          <li>✅ Tidak mudah gosong, cocok untuk produk manis</li>
+        </ul>
+      </div>
+
+      <p>Tepung Roti SAKTI tersedia di pasar tradisional, toko bahan kue, hingga marketplace seperti Shopee dan Tokopedia.</p>
+
+      <h3>✨ Bahan Donat Labu Kabocha ✨</h3>
+
+      <ul>
+        <li>300 gr tepung terigu protein tinggi</li>
+        <li>120 gr labu kabocha kukus, haluskan (boleh pakai labu kuning)</li>
+        <li>35 gr gula pasir</li>
+        <li>4 gr ragi instan</li>
+        <li>20 gr susu bubuk</li>
+        <li>1 butir telur utuh</li>
+        <li>± 50 ml susu cair dingin (bertahap, sesuaikan kadar air)</li>
+        <li>35 gr mentega atau margarin</li>
+        <li>4 gr garam</li>
+      </ul>
+
+      <h4>Bahan Pelapis (Opsional Crispy):</h4>
+      <ul>
+        <li>Air secukupnya</li>
+        <li><strong>Tepung Roti SAKTI</strong></li>
+      </ul>
+
+      <h3>🍩 Cara Membuat Donat</h3>
+      <ol>
+        <li>Campur semua bahan kecuali mentega dan garam, uleni hingga setengah kalis.</li>
+        <li>Tambahkan mentega dan garam, lanjut ulen hingga kalis elastis.</li>
+        <li>Fermentasi adonan sampai mengembang 2× lipat.</li>
+        <li>Kempiskan, timbang adonan, bulatkan, dan diamkan 15 menit.</li>
+        <li>Bentuk donat sesuai selera dan goreng hingga golden.</li>
+        <li>Jika ingin donat crispy: celupkan ke air dan gulingkan di <strong>Tepung Roti SAKTI</strong> sebelum digoreng.</li>
+      </ol>
+
+      <hr/>
+
+      <h3>🥘 Isian Daging Ayam Cincang</h3>
+
+      <h4>Bahan:</h4>
+      <ul>
+        <li>300 gr daging ayam cincang</li>
+        <li>60 gr bawang bombai cincang</li>
+        <li>3 siung bawang putih cincang</li>
+        <li>1 sdm mentega atau minyak goreng</li>
+        <li>100–200 ml air</li>
+        <li>1 batang daun bawang, iris halus</li>
+      </ul>
+
+      <h4>Bumbu:</h4>
+      <ul>
+        <li>Garam, lada, gula pasir</li>
+        <li>Kecap manis</li>
+        <li>Saus tiram</li>
+        <li>Kecap asin</li>
+        <li>1 sdm maizena + 2 sdm air (larutkan)</li>
+      </ul>
+
+      <h4>Cara Membuat Isian:</h4>
+      <ol>
+        <li>Tumis bawang bombai dan bawang putih dengan mentega hingga harum.</li>
+        <li>Masukkan daging ayam cincang dan masak hingga berubah warna.</li>
+        <li>Tambahkan garam, lada, gula, kecap manis, saus tiram, kecap asin, dan air.</li>
+        <li>Masak hingga bumbu meresap dan ayam empuk.</li>
+        <li>Masukkan larutan maizena dan masak hingga mengental.</li>
+        <li>Terakhir masukkan daun bawang dan matikan api.</li>
+      </ol>
+
+      <p>Isian siap digunakan untuk donat, roti goreng, atau camilan lainnya!</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/donat-labu-kabocha.png",
+    "status": "published",
+    "published_at": "2025-12-02T10:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Resep Donat Labu Kabocha Isi Ayam Cincang Ala SAKTI",
+    "meta_description": "Donat Labu Kabocha isi ayam cincang dengan opsi crispy memakai Tepung Roti SAKTI. Lembut, gurih, dan cocok untuk ide jualan!",
+    "meta_keywords": "donat labu, donat kabocha, donat isi ayam, resep donat, tepung roti sakti",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T09:30:00.000000Z",
+    "updated_at": "2025-12-02T10:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T09:45:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 32,
+    "title": "Roti Goreng Daging Kambing Ala SAKTI",
+    "slug": "tepung-roti-goreng-daging-kambing-ala-sakti",
+    "excerpt": "Roti goreng empuk dengan isian daging kambing berbumbu yang gurih dan aromatik, dibalut Tepung Roti SAKTI sehingga hasilnya renyah dan cantik. Cocok untuk camilan spesial maupun ide jualan!",
+    "content": `<div class="prose max-w-none">
+      <h2>Roti Goreng Daging Kambing Ala SAKTI</h2>
+      <p><strong>Roti Goreng Daging Kambing Ala SAKTI</strong> menghadirkan perpaduan roti lembut dengan isian daging kambing yang gurih dan wangi rempah. Bagian luarnya dilapisi <strong>Tepung Roti SAKTI</strong> sehingga menghasilkan tekstur renyah dan tampilan golden crispy yang menggugah selera.</p>
+
+      <h3>Kenapa Pakai Tepung Roti Sakti?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Tekstur renyah lebih tahan lama</li>
+          <li>✅ Butirannya seragam sehingga hasil gorengan lebih rapi</li>
+          <li>✅ Warna cantik golden brown</li>
+          <li>✅ Menyerap minyak lebih sedikit</li>
+        </ul>
+      </div>
+
+      <p><strong>Tepung Roti SAKTI</strong> mudah ditemukan di pasar, toko bahan kue, dan marketplace seperti Shopee dan Tokopedia.</p>
+
+      <h3>✨ Roti Goreng Daging Kambing Ala SAKTI ✨</h3>
+
+      <h4>Bahan Baku:</h4>
+      <ul>
+        <li>200 g daging kambing</li>
+        <li>3 siung bawang putih</li>
+        <li>1/4 sdt merica bubuk</li>
+        <li>1/2 sdt garam</li>
+        <li>1 sdt gula pasir</li>
+        <li>40 ml air</li>
+      </ul>
+
+      <h4>Bahan Roti:</h4>
+      <ul>
+        <li>250 g tepung terigu protein tinggi</li>
+        <li>1 sdt ragi instan</li>
+        <li>1 butir telur</li>
+        <li>40 g margarin</li>
+        <li>50 ml air</li>
+        <li>Sejumput garam</li>
+      </ul>
+
+      <h4>Bahan Baluran:</h4>
+      <ul>
+        <li>3 sdm tepung terigu</li>
+        <li>100 g <strong>Tepung Roti SAKTI</strong></li>
+        <li>40 ml air</li>
+        <li>200 ml minyak goreng</li>
+      </ul>
+
+      <h4>Cara Memasak:</h4>
+      <ol>
+        <li>Potong daging kambing, lalu blender hingga halus. Tambahkan garam, gula, dan merica.</li>
+        <li>Tumis bawang putih hingga harum, masukkan daging yang sudah dibumbui, tambahkan sedikit air, lalu masak hingga matang. Sisihkan.</li>
+        <li>Dalam wadah, campurkan tepung terigu, ragi instan, telur, dan gula. Tambahkan air sedikit demi sedikit hingga setengah kalis. Masukkan margarin dan garam, uleni hingga kalis.</li>
+        <li>Tutup dan diamkan adonan hingga mengembang. Kempiskan, lalu bagi menjadi beberapa bagian.</li>
+        <li>Ambil satu bagian adonan, isi dengan daging kambing, lalu tutup kembali hingga rapat.</li>
+        <li>Larutkan terigu dengan sedikit air. Gulingkan roti isi ke dalam larutan terigu, kemudian balurkan ke dalam <strong>Tepung Roti SAKTI</strong> hingga terlapisi rata.</li>
+        <li>Panaskan minyak, goreng roti hingga berwarna kuning kecoklatan.</li>
+        <li>Angkat dan sajikan selagi hangat.</li>
+      </ol>
+
+      <p>Roti goreng ini cocok sebagai camilan keluarga atau dijadikan ide jualan premium dengan rasa khas yang berbeda dari roti goreng biasa! 😋🔥</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/roti-goreng-daging-kambing.png",
+    "status": "published",
+    "published_at": "2025-12-02T10:00:00.000000Z",
+    "views": 0,
+    "meta_title": "Roti Goreng Daging Kambing Ala SAKTI",
+    "meta_description": "Roti goreng empuk isi daging kambing berbumbu, dibalut Tepung Roti SAKTI yang golden crispy. Cocok untuk camilan spesial maupun ide jualan.",
+    "meta_keywords": "roti goreng kambing, roti goreng isi daging, tepung roti sakti, resep roti goreng, ide jualan crispy",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T09:30:00.000000Z",
+    "updated_at": "2025-12-02T10:00:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T09:45:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  },
+
+  {
+    "id": 33,
+    "title": "Risol Lumer Pisang Coklat Ala SAKTI",
+    "slug": "risol-lumer-pisang-coklat-ala-sakti",
+    "excerpt": "Risol manis berisi pisang dan cokelat yang lumer, dibalut Tepung Roti SAKTI sehingga renyah sempurna. Cocok untuk camilan dan ide jualan!",
+    "content": `<div class="prose max-w-none">
+      <h2>Risol Lumer Pisang Coklat Ala SAKTI</h2>
+      <p><strong>Risol Lumer Pisang Coklat</strong> adalah camilan manis yang simpel namun selalu disukai semua usia. Kombinasi pisang yang lembut dengan cokelat lumer, ditambah balutan <strong>Tepung Roti SAKTI</strong> membuat teksturnya lebih renyah, cantik, dan tidak cepat lembek saat digoreng.</p>
+
+      <h3>Kenapa Pakai Tepung Roti SAKTI?</h3>
+      <div class="bg-orange-50 p-4 rounded-lg">
+        <ul>
+          <li>✅ Hasil gorengan lebih renyah dan tahan lama</li>
+          <li>✅ Warna golden cantik dan tidak mudah gosong</li>
+          <li>✅ Butiran seragam sehingga menempel sempurna pada kulit risol</li>
+          <li>✅ Daya serap minyak rendah — tekstur lebih ringan dan tidak berminyak</li>
+        </ul>
+      </div>
+
+      <h3>✨ Resep Risol Lumer Pisang Coklat ✨</h3>
+
+      <h4>Bahan-bahan:</h4>
+      <ul>
+        <li>2 buah pisang (pilih yang manis)</li>
+        <li>5 lembar kulit risol</li>
+        <li>Selai cokelat secukupnya</li>
+        <li>1 butir telur ayam (kocok)</li>
+        <li><strong>Tepung Roti SAKTI</strong> secukupnya</li>
+        <li>Minyak goreng secukupnya</li>
+      </ul>
+
+      <h4>Cara Memasak:</h4>
+      <ol>
+        <li>Potong pisang memanjang atau tipis sesuai selera.</li>
+        <li>Letakkan potongan pisang dan selai cokelat di atas kulit risol.</li>
+        <li>Lipat dan gulung kulit risol hingga tertutup rapat.</li>
+        <li>Celupkan risol ke dalam telur kocok.</li>
+        <li>Balurkan risol ke dalam <strong>Tepung Roti SAKTI</strong> hingga seluruh permukaan terlapisi rata.</li>
+        <li>Goreng dengan api kecil hingga kuning keemasan. Angkat dan tiriskan.</li>
+      </ol>
+
+      <p>Risol manis ini enak disajikan hangat agar cokelatnya tetap lumer. Cocok untuk camilan sore atau dijadikan ide jualan kekinian!</p>
+
+      <p class="text-gray-500 italic mt-6">Dibuat pada 2 Desember 2025</p>
+    </div>`,
+    "featured_image": "/images/blog/risol-pisang-coklat.png",
+    "status": "published",
+    "published_at": "2025-12-02T09:15:00.000000Z",
+    "views": 0,
+    "meta_title": "Resep Risol Lumer Pisang Coklat Ala SAKTI",
+    "meta_description": "Risol pisang coklat dengan Tepung Roti SAKTI — renyah di luar, cokelat lumer di dalam. Cocok sebagai camilan dan ide jualan.",
+    "meta_keywords": "risol pisang coklat, risol manis, tepung roti sakti, camilan renyah, ide jualan dessert",
+    "category_id": 6,
+    "user_id": 2,
+    "created_at": "2025-12-02T09:00:00.000000Z",
+    "updated_at": "2025-12-02T09:15:00.000000Z",
+    "approved_by": 1,
+    "approved_at": "2025-12-02T09:05:00.000000Z",
+    "rejection_reason": null,
+    "category": {
+      "id": 6,
+      "name": "Resep Sakti",
+      "slug": "resep-sakti",
+      "color": "#F97316",
+      "icon": "Utensils"
+    },
+    "user": {
+      "id": 2,
+      "name": "Tim Editor Sakti",
+      "email": "editor@saktipangan.co.id"
+    }
+  }
+
 
 
 
