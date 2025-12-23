@@ -2786,7 +2786,7 @@ export const generateDummyBlogs = () => [
 
   {
   id: 34,
-  title: "Tepung Roti",
+  title: "Tepung Roti - SaktiFood",
   slug: "tepung-roti",
   excerpt: "Tepung roti atau breadcrumbs merupakan bahan pelapis makanan yang dibuat dari roti kering yang dihaluskan. Tepung Roti SaktiFood hadir untuk menciptakan sajian krispi penuh kreasi.",
   content: `<div class="prose max-w-none">
@@ -2869,9 +2869,9 @@ export const generateDummyBlogs = () => [
     </div>
 
   </div>`,
-  featured_image: "/images/tepung-roti.png",
+  featured_image: "/images/tepung-roti-sakti.png",
   status: "published",
-  published_at: "2025-01-01T08:00:00.000000Z",
+  published_at: "2025-12-23T08:00:00.000000Z",
   views: 0,
   meta_title: "Tepung Roti - SaktiFood",
   meta_description: "Tepung roti atau breadcrumbs berkualitas untuk pelapis makanan. Tersedia berbagai varian dan ukuran kemasan Tepung Roti SaktiFood.",
