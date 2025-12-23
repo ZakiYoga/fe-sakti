@@ -2782,10 +2782,109 @@ export const generateDummyBlogs = () => [
       "name": "Tim Editor Sakti",
       "email": "editor@saktipangan.co.id"
     }
+  },
+
+  {
+  id: 34,
+  title: "Tepung Roti",
+  slug: "tepung-roti",
+  excerpt: "Tepung roti atau breadcrumbs merupakan bahan pelapis makanan yang dibuat dari roti kering yang dihaluskan. Tepung Roti SaktiFood hadir untuk menciptakan sajian krispi penuh kreasi.",
+  content: `<div class="prose max-w-none">
+
+    <h2>Apa Itu Tepung Roti?</h2>
+    <p>
+      Tepung roti atau <em>breadcrumbs</em> (tepung panir) adalah bahan pelapis luar makanan yang dibuat dari roti kering yang dihaluskan. Tepung ini digunakan untuk memberikan tekstur renyah dan tampilan menarik pada berbagai jenis olahan makanan.
+    </p>
+
+    <p>
+      Tepung roti banyak digunakan untuk kebutuhan rumah tangga maupun usaha kuliner karena mampu menghasilkan lapisan gorengan yang merata dan konsisten.
+    </p>
+
+    <h2>Tepung Roti SaktiFood</h2>
+    <p>
+      Sakti Tepung Roti telah menjadi andalan keluarga dan pelaku UKM di Indonesia sejak tahun 2020. Produk ini dibuat dari roti kering berkualitas yang diolah menjadi butiran halus dan seragam.
+    </p>
+
+    <p class="font-bold text-orange-600">
+      #SajianKrispiPenuhKreasi
+    </p>
+
+    <h2>Tepung Roti Sakti (Premium Product)</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+
+      <a href="https://saktipangan.co.id/products/sakti-200g"
+         class="block bg-blue-50 p-4 rounded-lg text-center hover:shadow-lg transition">
+        <h4 class="font-bold text-blue-800">200 g</h4>
+        <p class="text-sm text-blue-600">Kemasan praktis untuk rumahan</p>
+      </a>
+
+      <a href="https://saktipangan.co.id/products/sakti-500g"
+         class="block bg-green-50 p-4 rounded-lg text-center hover:shadow-lg transition">
+        <h4 class="font-bold text-green-800">500 g</h4>
+        <p class="text-sm text-green-600">Pilihan tepat untuk UMKM</p>
+      </a>
+
+      <a href="https://saktipangan.co.id/products/sakti-1kg"
+         class="block bg-purple-50 p-4 rounded-lg text-center hover:shadow-lg transition">
+        <h4 class="font-bold text-purple-800">1 kg</h4>
+        <p class="text-sm text-purple-600">Kemasan ekonomis untuk bisnis</p>
+      </a>
+
+    </div>
+
+    <h2>Varian Tepung Roti SaktiFood Kemasan 10 Kg</h2>
+    <div class="bg-orange-50 p-4 rounded-lg my-4">
+      <ul class="space-y-1">
+        <li>
+          <a href="https://saktipangan.co.id/products/laskar-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti Laskar – 10 kg
+          </a>
+        </li>
+        <li>
+          <a href="https://saktipangan.co.id/products/akstar-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti AK Star – 10 kg
+          </a>
+        </li>
+        <li>
+          <a href="https://saktipangan.co.id/products/agni-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti Agni – 10 kg
+          </a>
+        </li>
+        <li>
+          <a href="https://saktipangan.co.id/products/pita-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti PITA – 10 kg
+          </a>
+        </li>
+        <li>
+          <a href="https://saktipangan.co.id/products/fryfest-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti FryFest – 10 kg
+          </a>
+        </li>
+        <li>
+          <a href="https://saktipangan.co.id/products/7daun-10kg" class="hover:text-orange-600 transition">
+            Tepung Roti 7Daun – 10 kg
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>`,
+  featured_image: "/images/tepung-roti.png",
+  status: "published",
+  published_at: "2025-01-01T08:00:00.000000Z",
+  views: 0,
+  meta_title: "Tepung Roti - SaktiFood",
+  meta_description: "Tepung roti atau breadcrumbs berkualitas untuk pelapis makanan. Tersedia berbagai varian dan ukuran kemasan Tepung Roti SaktiFood.",
+  meta_keywords: "tepung roti, breadcrumbs, tepung panir, tepung roti saktifood",
+  category_id: 1,
+  user_id: 1,
+  category: {
+    id: 1,
+    name: "Sakti News",
+    slug: "company-news",
+    color: "#3B82F6"
   }
-
-
-
+}
 
   // {
   //   id: 20,
