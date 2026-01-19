@@ -1904,11 +1904,11 @@ export const generateDummyBlogs = () => [
   },
 
   {
-  id: 25,
-  title: "Sakti Food Sukses Menyemarakkan SIAL Interfood 2025 di Jakarta",
-  slug: "sakti-food-sukses-menyemarakkan-sial-interfood-2025-di-jakarta",
-  excerpt: "Sakti Food (PT Sakti Pangan Perkasa) sukses berpartisipasi dalam SIAL Interfood 2025 di JIExpo Kemayoran pada 12–15 November. Booth Sakti Food menarik ratusan pengunjung lokal dan mancanegara melalui promo produk, kerja sama bisnis hingga permainan interaktif berhadiah.",
-  content: `<div class="prose max-w-none">
+    id: 25,
+    title: "Sakti Food Sukses Menyemarakkan SIAL Interfood 2025 di Jakarta",
+    slug: "sakti-food-sukses-menyemarakkan-sial-interfood-2025-di-jakarta",
+    excerpt: "Sakti Food (PT Sakti Pangan Perkasa) sukses berpartisipasi dalam SIAL Interfood 2025 di JIExpo Kemayoran pada 12–15 November. Booth Sakti Food menarik ratusan pengunjung lokal dan mancanegara melalui promo produk, kerja sama bisnis hingga permainan interaktif berhadiah.",
+    content: `<div class="prose max-w-none">
     <h2>Sakti Food Sukses Menyemarakkan SIAL Interfood 2025</h2>
     <p>PT Sakti Pangan Perkasa (Sakti Food) menutup partisipasi empat harinya di <strong>SIAL Interfood 2025</strong>, pameran makanan dan minuman terbesar di Asia Tenggara yang diselenggarakan pada <strong>12–15 November di JIExpo Kemayoran, Jakarta</strong>, dengan penuh antusiasme dan hasil yang menggembirakan.</p>
     
@@ -2025,33 +2025,33 @@ export const generateDummyBlogs = () => [
       "Sakti Food, Sajian Kualitas Tinggi" 🧡
     </p>
   </div>`,
-  featured_image: "/images/blog/sial-interfood-2025.png",
-  status: "published",
-  published_at: "2025-11-16T08:00:00.000000Z",
-  views: 0,
-  meta_title: "Sakti Food Sukses di SIAL Interfood 2025 Jakarta - Antusiasme Buyer Lokal & Internasional",
-  meta_description: "PT Sakti Pangan Perkasa tampil memukau di SIAL Interfood 2025. Direktur Widiyarsa Aksama hadir langsung, booth interaktif dengan hadiah menarik, dan promo eksklusif Tepung Roti Sakti Premium.",
-  meta_keywords: "sial interfood 2025, sakti food, tepung roti sakti, pameran makanan jakarta, jiexpo kemayoran, widiyarsa aksama, produk pangan premium",
-  category_id: 3,
-  user_id: 1,
-  created_at: "2025-11-16T07:00:00.000000Z",
-  updated_at: "2025-11-16T08:00:00.000000Z",
-  approved_by: 1,
-  approved_at: "2025-11-16T07:30:00.000000Z",
-  rejection_reason: null,
-  category: {
-    id: 3,
-    name: "Kegiatan Sakti",
-    slug: "kegiatan-sakti",
-    color: "#10B981",
-    icon: "Calendar"
+    featured_image: "/images/blog/sial-interfood-2025.png",
+    status: "published",
+    published_at: "2025-11-16T08:00:00.000000Z",
+    views: 0,
+    meta_title: "Sakti Food Sukses di SIAL Interfood 2025 Jakarta - Antusiasme Buyer Lokal & Internasional",
+    meta_description: "PT Sakti Pangan Perkasa tampil memukau di SIAL Interfood 2025. Direktur Widiyarsa Aksama hadir langsung, booth interaktif dengan hadiah menarik, dan promo eksklusif Tepung Roti Sakti Premium.",
+    meta_keywords: "sial interfood 2025, sakti food, tepung roti sakti, pameran makanan jakarta, jiexpo kemayoran, widiyarsa aksama, produk pangan premium",
+    category_id: 3,
+    user_id: 1,
+    created_at: "2025-11-16T07:00:00.000000Z",
+    updated_at: "2025-11-16T08:00:00.000000Z",
+    approved_by: 1,
+    approved_at: "2025-11-16T07:30:00.000000Z",
+    rejection_reason: null,
+    category: {
+      id: 3,
+      name: "Kegiatan Sakti",
+      slug: "kegiatan-sakti",
+      color: "#10B981",
+      icon: "Calendar"
+    },
+    user: {
+      id: 1,
+      name: "Tim Editorial",
+      email: "editorial@saktipangan.co.id"
+    }
   },
-  user: {
-    id: 1,
-    name: "Tim Editorial",
-    email: "editorial@saktipangan.co.id"
-  }
-},
 
   {
     "id": 26,
@@ -2383,7 +2383,7 @@ export const generateDummyBlogs = () => [
       "email": "editor@saktipangan.co.id"
     }
   },
- 
+
   {
     "id": 30,
     "title": "Crispy Chicken Burger Ala SAKTI",
@@ -2785,11 +2785,11 @@ export const generateDummyBlogs = () => [
   },
 
   {
-  id: 34,
-  title: "Tepung Roti - SaktiFood",
-  slug: "tepung-roti",
-  excerpt: "Tepung roti atau breadcrumbs merupakan bahan pelapis makanan yang dibuat dari roti kering yang dihaluskan. Tepung Roti SaktiFood hadir untuk menciptakan sajian krispi penuh kreasi.",
-  content: `<div class="prose max-w-none">
+    id: 34,
+    title: "Tepung Roti - SaktiFood",
+    slug: "tepung-roti",
+    excerpt: "Tepung roti atau breadcrumbs merupakan bahan pelapis makanan yang dibuat dari roti kering yang dihaluskan. Tepung Roti SaktiFood hadir untuk menciptakan sajian krispi penuh kreasi.",
+    content: `<div class="prose max-w-none">
 
     <h2>Apa Itu Tepung Roti?</h2>
     <p>
@@ -2869,22 +2869,235 @@ export const generateDummyBlogs = () => [
     </div>
 
   </div>`,
-  featured_image: "/images/tepung-roti-sakti.png",
-  status: "published",
-  published_at: "2025-12-23T08:00:00.000000Z",
-  views: 0,
-  meta_title: "Tepung Roti - SaktiFood",
-  meta_description: "Tepung roti atau breadcrumbs berkualitas untuk pelapis makanan. Tersedia berbagai varian dan ukuran kemasan Tepung Roti SaktiFood.",
-  meta_keywords: "tepung roti, breadcrumbs, tepung panir, tepung roti saktifood",
-  category_id: 1,
-  user_id: 1,
-  category: {
-    id: 1,
-    name: "Sakti News",
-    slug: "company-news",
-    color: "#3B82F6"
+    featured_image: "/images/tepung-roti-sakti.png",
+    status: "published",
+    published_at: "2025-12-23T08:00:00.000000Z",
+    views: 0,
+    meta_title: "Tepung Roti - SaktiFood",
+    meta_description: "Tepung roti atau breadcrumbs berkualitas untuk pelapis makanan. Tersedia berbagai varian dan ukuran kemasan Tepung Roti SaktiFood.",
+    meta_keywords: "tepung roti, breadcrumbs, tepung panir, tepung roti saktifood",
+    category_id: 1,
+    user_id: 1,
+    category: {
+      id: 1,
+      name: "Sakti News",
+      slug: "company-news",
+      color: "#3B82F6"
+    }
+  },
+  {
+    id: 35,
+    title: "Tepung Roti: Tips & Trik Menggunakan Tepung Roti Agar Gorengan Lebih Krispi",
+    slug: "tepung-roti-tips-trik-krispi",
+    excerpt: "Ingin gorengan dengan lapisan tepung roti yang super krispi dan tahan lama? Simak tips dan trik menggunakan Tepung Roti SaktiFood untuk hasil maksimal. Panduan lengkap cara pakai tepung roti yang benar.",
+    content: `<div class="prose max-w-none">
+
+    <h2>Rahasia Gorengan Krispi dengan Tepung Roti</h2>
+    <p>
+      <strong>Tepung roti</strong> atau <em>breadcrumbs</em> adalah kunci untuk mendapatkan tekstur gorengan yang renyah dan krispi. <strong>Tepung roti</strong> digunakan sebagai pelapis makanan yang memberikan tekstur crunchy pada ayam goreng, udang, nugget, dan berbagai gorengan lainnya. Namun, tidak semua orang tahu cara menggunakan <strong>tepung roti</strong> dengan benar. Artikel ini akan membahas tips dan trik agar hasil gorengan dengan <strong>Tepung Roti SaktiFood</strong> selalu sempurna.
+    </p>
+
+    <h2>5 Tips Utama Menggunakan Tepung Roti untuk Hasil Maksimal</h2>
+    
+    <div class="bg-blue-50 p-5 rounded-lg my-4 border-l-4 border-blue-500">
+      <h3 class="text-blue-800 font-bold mb-2">1. Keringkan Bahan Sebelum Dibaluri Tepung Roti</h3>
+      <p>
+        Pastikan bahan makanan (ayam, ikan, udang, dll) dalam keadaan kering sebelum dibaluri <strong>tepung roti</strong>. Air berlebih akan membuat <strong>tepung roti</strong> tidak menempel dengan sempurna dan mudah rontok saat digoreng.
+      </p>
+      <p class="text-sm italic mt-2">
+        💡 Tips: Gunakan tisu dapur untuk mengeringkan permukaan bahan makanan sebelum menggunakan <strong>tepung roti</strong>.
+      </p>
+    </div>
+
+    <div class="bg-green-50 p-5 rounded-lg my-4 border-l-4 border-green-500">
+      <h3 class="text-green-800 font-bold mb-2">2. Gunakan Teknik Pelapisan Bertahap dengan Tepung Roti</h3>
+      <p>
+        Untuk hasil yang lebih krispi dan tebal, gunakan teknik pelapisan 3 tahap dengan <strong>tepung roti</strong>:
+      </p>
+      <ol class="list-decimal list-inside mt-2 space-y-1">
+        <li>Baluri dengan tepung terigu/maizena</li>
+        <li>Celupkan ke dalam kocokan telur</li>
+        <li>Gulingkan dalam <strong>Tepung Roti SaktiFood</strong> hingga merata</li>
+      </ol>
+      <p class="text-sm italic mt-2">
+        💡 Tips: Untuk lapisan <strong>tepung roti</strong> ekstra tebal, ulangi tahap 2 dan 3 satu kali lagi.
+      </p>
+    </div>
+
+    <div class="bg-orange-50 p-5 rounded-lg my-4 border-l-4 border-orange-500">
+      <h3 class="text-orange-800 font-bold mb-2">3. Tekan Tepung Roti Agar Menempel Kuat</h3>
+      <p>
+        Setelah menggulingkan bahan dalam <strong>tepung roti</strong>, tekan-tekan perlahan dengan tangan agar <strong>tepung roti</strong> menempel lebih kuat. Jangan hanya ditaburi atau digulingkan saja.
+      </p>
+      <p class="text-sm italic mt-2">
+        💡 Tips: Diamkan selama 5-10 menit di kulkas setelah dibaluri <strong>tepung roti</strong> agar lapisan lebih kuat.
+      </p>
+    </div>
+
+    <div class="bg-purple-50 p-5 rounded-lg my-4 border-l-4 border-purple-500">
+      <h3 class="text-purple-800 font-bold mb-2">4. Pastikan Minyak Benar-Benar Panas Saat Menggoreng Tepung Roti</h3>
+      <p>
+        Goreng dalam minyak yang sudah benar-benar panas (sekitar 170-180°C). Minyak yang kurang panas akan membuat <strong>tepung roti</strong> menyerap terlalu banyak minyak dan menjadi lembek, tidak krispi.
+      </p>
+      <p class="text-sm italic mt-2">
+        💡 Tips: Test dengan memasukkan sedikit <strong>tepung roti</strong>. Jika langsung mengapung dan berbunyi, minyak sudah siap.
+      </p>
+    </div>
+
+    <div class="bg-pink-50 p-5 rounded-lg my-4 border-l-4 border-pink-500">
+      <h3 class="text-pink-800 font-bold mb-2">5. Tiriskan Gorengan Tepung Roti dengan Benar</h3>
+      <p>
+        Setelah digoreng, tiriskan gorengan <strong>tepung roti</strong> dalam posisi berdiri atau gunakan rak kawat agar minyak benar-benar menetes. Jangan langsung ditumpuk atau ditaruh di atas tisu, karena akan membuat bagian bawah menjadi lembab dan <strong>tepung roti</strong> tidak krispi lagi.
+      </p>
+      <p class="text-sm italic mt-2">
+        💡 Tips: Tiriskan di rak kawat selama 2-3 menit agar <strong>tepung roti</strong> tetap krispi.
+      </p>
+    </div>
+
+    <h2>Kreasi Menu Lezat dengan Tepung Roti SaktiFood</h2>
+    <p>
+      <strong>Tepung roti</strong> bisa digunakan untuk berbagai kreasi menu yang lezat dan krispi. Berikut inspirasi resep yang bisa Anda coba:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      
+      <a href="https://www.instagram.com/p/DGsXgUupOEr/" target="_blank" class="bg-gradient-to-br from-yellow-50 to-orange-50 p-4 rounded-lg hover:shadow-lg transition">
+        <h4 class="font-bold text-orange-700 mb-2">🍔 Risoles Cheese Burger</h4>
+        <p class="text-sm">Risoles dengan isian cheese burger yang dibalut <strong>tepung roti</strong> krispi</p>
+        <p class="text-xs text-orange-600 mt-2">👉 Lihat resep lengkap di Instagram</p>
+      </a>
+
+      <a href="https://www.instagram.com/p/C8lORTkSE6F/" target="_blank" class="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg hover:shadow-lg transition">
+        <h4 class="font-bold text-orange-700 mb-2">🥕 Kroket Wortel</h4>
+        <p class="text-sm">Kroket wortel sehat dengan lapisan <strong>tepung roti</strong> yang renyah</p>
+        <p class="text-xs text-orange-600 mt-2">👉 Lihat resep lengkap di Instagram</p>
+      </a>
+
+      <a href="https://www.instagram.com/p/DOlCtsnEqMy/" target="_blank" class="bg-gradient-to-br from-yellow-50 to-amber-50 p-4 rounded-lg hover:shadow-lg transition">
+        <h4 class="font-bold text-amber-700 mb-2">🍌 Sate Pisang Crispy</h4>
+        <p class="text-sm">Sate pisang dengan balutan <strong>tepung roti</strong> yang krispi dan manis</p>
+        <p class="text-xs text-amber-600 mt-2">👉 Lihat resep lengkap di Instagram</p>
+      </a>
+
+      <a href="https://www.instagram.com/p/DKomgyUpHF4/" target="_blank" class="bg-gradient-to-br from-red-50 to-orange-50 p-4 rounded-lg hover:shadow-lg transition">
+        <h4 class="font-bold text-red-700 mb-2">🥩 Crispy Beef Patty</h4>
+        <p class="text-sm">Beef patty crispy dengan <strong>tepung roti</strong> yang gurih dan renyah</p>
+        <p class="text-xs text-red-600 mt-2">👉 Lihat resep lengkap di Instagram</p>
+      </a>
+
+      <a href="https://www.instagram.com/p/CpF7CN0vlSM/" target="_blank" class="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-lg hover:shadow-lg transition">
+        <h4 class="font-bold text-blue-700 mb-2">🦐 Udang Crispy SAKTI</h4>
+        <p class="text-sm">Udang jumbo dengan balutan <strong>Tepung Roti SAKTI</strong> yang super krispi</p>
+        <p class="text-xs text-blue-600 mt-2">👉 Lihat resep lengkap di Instagram</p>
+      </a>
+
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg">
+        <h4 class="font-bold text-purple-700 mb-2">✨ Dan masih banyak lagi!</h4>
+        <p class="text-sm">Eksplorasi kreasi <strong>tepung roti</strong> lainnya untuk berbagai menu favorit</p>
+      </div>
+
+    </div>
+
+    <h2>Kesalahan yang Harus Dihindari Saat Menggunakan Tepung Roti</h2>
+    <div class="bg-red-50 p-5 rounded-lg my-4">
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <span class="text-red-600 font-bold mr-2">✗</span>
+          <span><strong>Bahan terlalu basah</strong> - Akan membuat <strong>tepung roti</strong> mudah rontok</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-red-600 font-bold mr-2">✗</span>
+          <span><strong>Minyak kurang panas</strong> - <strong>Tepung roti</strong> jadi berminyak dan lembek</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-red-600 font-bold mr-2">✗</span>
+          <span><strong>Terlalu banyak bahan sekali goreng</strong> - Suhu minyak turun, <strong>tepung roti</strong> tidak krispi</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-red-600 font-bold mr-2">✗</span>
+          <span><strong>Langsung ditumpuk setelah goreng</strong> - Uap panas membuat <strong>tepung roti</strong> tidak krispi</span>
+        </li>
+      </ul>
+    </div>
+
+    <h2>Gunakan Tepung Roti SAKTI untuk Hasil Terbaik</h2>
+    <p>
+      Untuk mendapatkan hasil gorengan yang maksimal, pastikan Anda menggunakan <strong>Tepung Roti SAKTI</strong> dari SaktiFood. Tepung Roti SAKTI adalah produk premium yang telah terbukti menghasilkan lapisan krispi yang tahan lama dan tidak mudah melempem.
+    </p>
+
+    <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg my-6 border-2 border-orange-300">
+      <h3 class="text-orange-800 font-bold mb-3 text-lg">✨ Keunggulan Tepung Roti SAKTI</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start">
+          <span class="text-orange-600 font-bold mr-2">✓</span>
+          <span>Butiran halus dan seragam untuk hasil yang merata</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-orange-600 font-bold mr-2">✓</span>
+          <span>Krispi lebih tahan lama, tidak cepat melempem</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-orange-600 font-bold mr-2">✓</span>
+          <span>Daya serap minyak rendah, gorengan tidak berminyak</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-orange-600 font-bold mr-2">✓</span>
+          <span>Tersedia dalam berbagai ukuran kemasan (200g, 500g, 1kg)</span>
+        </li>
+      </ul>
+    </div>
+
+    <h2>Pilih Varian Tepung Roti SaktiFood Sesuai Kebutuhan</h2>
+    <p>
+      Selain Tepung Roti SAKTI, SaktiFood juga menyediakan berbagai varian lainnya untuk berbagai kebutuhan:
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+      <div class="bg-white p-4 rounded-lg shadow-md border-2 border-orange-300">
+        <h4 class="font-bold text-orange-800 mb-2">🏆 SAKTI (Premium)</h4>
+        <p class="text-sm text-gray-600 mb-3">200 g - 1 kg</p>
+        <p class="text-xs">Kualitas terbaik untuk hasil maksimal</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+        <h4 class="font-bold text-gray-800 mb-2">Varian Lainnya</h4>
+        <p class="text-sm text-gray-600 mb-3">10 kg</p>
+        <p class="text-xs">Laskar, AK Star, Agni, PITA, FryFest, 7Daun</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+        <h4 class="font-bold text-gray-800 mb-2">Untuk UMKM</h4>
+        <p class="text-sm text-gray-600 mb-3">Kemasan besar</p>
+        <p class="text-xs">Ekonomis untuk usaha kuliner</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-lg my-6 text-center">
+      <p class="text-lg font-bold text-orange-800 mb-2">
+        #SajianKrispiPenuhKreasi
+      </p>
+      <p class="text-sm text-orange-700">
+        Dengan <strong>Tepung Roti SaktiFood</strong>, setiap gorengan jadi istimewa! Pilih <strong>Tepung Roti SAKTI</strong> untuk hasil terbaik yang krispi dan tahan lama.
+      </p>
+    </div>
+
+  </div>`,
+    featured_image: "/images/blog/resep-tepung-roti.png",
+    status: "published",
+    published_at: "2026-08-18T10:00:00.000000Z",
+    views: 0,
+    meta_title: "Tepung Roti: Tips Menggunakan Tepung Roti Agar Gorengan Krispi - SaktiFood",
+    meta_description: "Panduan lengkap cara menggunakan tepung roti yang benar agar gorengan super krispi dan tahan lama. Tips tepung roti dari ahli. Gunakan Tepung Roti SAKTI untuk hasil terbaik!",
+    meta_keywords: "tepung roti, cara pakai tepung roti, tips tepung roti, gorengan krispi, tepung panir, breadcrumbs, tepung roti sakti, saktifood, tepung roti saktifood, cara menggunakan tepung roti",
+    category_id: 1,
+    user_id: 1,
+    category: {
+      id: 1,
+      name: "Sakti News",
+      slug: "company-news",
+      color: "#3B82F6"
+    }
   }
-}
+
 
   // {
   //   id: 20,
@@ -3085,10 +3298,10 @@ export const generateDummyBlogResponse = (params: any = {}) => {
   // ✅ SORTING - Dilakukan SEBELUM pagination
   const sortField = params.sort || 'published_at';
   const sortOrder = params.order || 'desc';
-  
+
   filteredBlogs.sort((a, b) => {
     let valueA: any, valueB: any;
-    
+
     if (sortField === 'published_at' || sortField === 'created_at') {
       valueA = new Date(a.published_at).getTime();
       valueB = new Date(b.published_at).getTime();
@@ -3103,7 +3316,7 @@ export const generateDummyBlogResponse = (params: any = {}) => {
       valueA = a.published_at;
       valueB = b.published_at;
     }
-    
+
     // Sort logic
     if (sortOrder === 'asc') {
       return valueA > valueB ? 1 : valueA < valueB ? -1 : 0;

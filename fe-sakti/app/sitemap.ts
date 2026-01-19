@@ -3,7 +3,7 @@ import { defaultSEO } from '@/config/seo'
 
 // Gunakan alias agar jelas sumber datanya
 import { sampleProducts as products } from '@/DataDummy'
-import { generateDummyBlogs as getBlogs } from '@/lib/DataBlog'
+import { generateDummyBlogs as getBlogs } from '@/DataDummy/DataBlog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = defaultSEO.openGraph?.url ?? 'https://www.saktipangan.co.id'
